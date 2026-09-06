@@ -32,5 +32,5 @@ function xoaPhong(idPhong)
         {
             alert('Có lỗi khi xóa phòng:\n' + loi.message);
         })
-        .xoaPhong(idPhong);
+        .xoaPhong(idPhong, APP.user.token);
 }
