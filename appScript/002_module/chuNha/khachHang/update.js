@@ -27,7 +27,7 @@ function khachHang_edit_loadForm(duLieu)
     nutLuu.textContent = 'Lưu cập nhật';        
     nutLuu.onclick = themMoiKhachHang_luuCapNhat;
     // Hiển thị form
-    hide('chuNha_danhSachKhachHang_div');        
+    hide('tab_chuNha_khachHang_danhSach');        
     show('themMoiKhachHang_form');
     // Form đang ở chế độ sửa
     APP.state = APP.state || {};        

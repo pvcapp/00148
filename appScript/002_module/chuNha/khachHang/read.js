@@ -10,7 +10,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
             <div 
                 class="menu__button" 
                 style="width: 170px;font-size: 14px;" 
-                onclick="hide('chuNha_danhSachKhachHang_div');show('themMoiKhachHang_form', 'grid');"
+                onclick="hide('tab_chuNha_khachHang_danhSach');show('themMoiKhachHang_form', 'grid');"
             >
                 <img 
                     src="https://pvcapp.github.io/00148/img/new.svg" 
@@ -128,5 +128,5 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
 
         </div>
     `;
-    $('#chuNha_danhSachKhachHang_div').innerHTML = html;
+    $('#tab_chuNha_khachHang_danhSach').innerHTML = html;
 }

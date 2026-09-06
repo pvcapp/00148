@@ -4,7 +4,7 @@
         const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'home';
         const menu =
         [
-            { manHinh: 'chuNha_home', ten: 'Home' },
+            { manHinh: 'chuNha_dashboard', ten: 'Home' },
             { manHinh: 'chuNha_khuNha', ten: 'Khu nhà' },
             { manHinh: 'chuNha_phong', ten: 'Phòng' },
             
@@ -29,6 +29,6 @@
         }).join('');
 
         show('buttonChoThuePhong');
-        APP.ui.menu.setSelectedButton($('#menu_chuNha_home'));
+        APP.ui.menu.setSelectedButton($('#menu_chuNha_dashboard'));
     }
 </script>

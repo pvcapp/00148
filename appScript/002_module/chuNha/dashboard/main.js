@@ -22,10 +22,10 @@ function chuNha_buildDashboard(tongQuan)
 
                 if (
                     APP.state.manHinhHienTai.vaiTro === 'chuNha' &&
-                    APP.state.manHinhHienTai.manHinh === 'chuNha_home'
+                    APP.state.manHinhHienTai.manHinh === 'chuNha_dashboard'
                 )
                 {
-                    $('#dashboard_div').innerHTML = chuNha_buildDashboard(APP.data.tongQuan);
+                    $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.data.tongQuan);
                 }
             })
             .withFailureHandler(function(loi)
@@ -37,5 +37,5 @@ function chuNha_buildDashboard(tongQuan)
 
     function hienThiGiaoDienChuNha() 
     {
-        APP.ui.setManHinh('chuNha', 'chuNha_home');
+        APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
     }
