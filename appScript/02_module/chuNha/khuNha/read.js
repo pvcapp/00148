@@ -24,21 +24,24 @@
                         <tbody>
                             ${danhSach.map(function(dong, index)
                             {
-                                let trangThaiArray = {'active': 'Hoạt động', 'inactive': 'Ngừng hoạt động'};
-                                return `
-                                    <tr ondblclick="khuNha_edit('${escapeHtml(dong.maKhuNha)}')">
-                                        <td>${index + 1}</td>
-                                        <td>${escapeHtml(dong.tenKhuNha || '')}</td>
-                                        <td>${escapeHtml(dong.diaChi || '')}</td>
-                                        <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
-                                        <td>
-                                            <div class="deleteButton"
-                                                onclick="event.stopPropagation(); xoaKhuNha('${escapeHtml(dong.maKhuNha)}', '${escapeHtml(dong.tenKhuNha || '')}');">
-                                                x
-                                            </div>
-                                        </td>
-                                    </tr>
-                                `;
+                                let trangThaiArray = {'dangHoatDong': 'Hoạt động', 'tamDung': 'Ngừng hoạt động'};
+                                if (dong.active == '1')
+                                {
+                                    return `
+                                        <tr ondblclick="khuNha_edit('${escapeHtml(dong.maKhuNha)}')">
+                                            <td>${index + 1}</td>
+                                            <td>${escapeHtml(dong.tenKhuNha || '')}</td>
+                                            <td>${escapeHtml(dong.diaChi || '')}</td>
+                                            <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
+                                            <td>
+                                                <div class="deleteButton"
+                                                    onclick="event.stopPropagation(); xoaKhuNha('${escapeHtml(dong.maKhuNha)}', '${escapeHtml(dong.tenKhuNha || '')}');">
+                                                    x
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    `;
+                                }
                             }).join('')}
                         </tbody>
                     </table>
