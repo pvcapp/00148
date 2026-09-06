@@ -29,8 +29,6 @@ function khuNha_edit_loadForm(duLieu)
     $('#khuNha_edit_diaChi').value = duLieu.diaChi || '';
     $('#khuNha_edit_moTa').value = duLieu.moTa || '';
     $('#khuNha_edit_trangThai').value = duLieu.trangThai || 'dangHoatDong';
-    $('#khuNha_edit_ngayTao').value = khuNha_edit_doiNgayGio(duLieu.ngayTao);
-    $('#khuNha_edit_ngayCapNhat').value = khuNha_edit_doiNgayGio(duLieu.ngayCapNhat);
     hide('chuNha_danhSachKhuNha_div');
     show('khuNha_edit_form', 'grid');
 }
@@ -65,7 +63,6 @@ function khuNha_edit_doiNgayGio(duLieu)
 function khuNha_edit_layDuLieu()
 {
     return {
-
         id:
             document.getElementById(
                 'khuNha_edit_id'
@@ -94,18 +91,7 @@ function khuNha_edit_layDuLieu()
         trangThai:
             document.getElementById(
                 'khuNha_edit_trangThai'
-            ).value,
-
-        ngayTao:
-            document.getElementById(
-                'khuNha_edit_ngayTao'
-            ).value,
-
-        ngayCapNhat:
-            document.getElementById(
-                'khuNha_edit_ngayCapNhat'
             ).value
-
     };
 }
 
