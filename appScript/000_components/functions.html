@@ -1,9 +1,16 @@
 <script>
     function formatMoney(so) 
     {
-        so = so.toString().replace(/[^0-9]/g, '');
-        const giaTri = Number(so || 0);
-        return giaTri.toLocaleString('vi-VN') + ' đ';
+        if (so)
+        {
+            so = so.toString().replace(/[^0-9]/g, '');
+            const giaTri = Number(so || 0);
+            return giaTri.toLocaleString('vi-VN') + ' đ';
+        }
+        else
+        {
+            return 'noNumber';
+        }        
     }
 
     function escapeHtml(giaTri) 
