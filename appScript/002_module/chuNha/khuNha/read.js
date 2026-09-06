@@ -53,5 +53,6 @@
             }
         }
 
-        $('#chuNha_danhSachKhuNha_table').append(dataHtml);
+        const tbody = document.querySelector('#chuNha_danhSachKhuNha_table tbody');
+        tbody.innerHTML = dataHtml;
     }

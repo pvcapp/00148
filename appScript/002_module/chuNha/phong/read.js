@@ -64,6 +64,6 @@
             }
         }
 
-
-        $('#chuNha_danhSachPhong_table').append(dataHtml);
+        const tbody = document.querySelector('#chuNha_danhSachPhong_table tbody');
+        tbody.innerHTML = dataHtml;
     }
