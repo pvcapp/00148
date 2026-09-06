@@ -103,5 +103,5 @@ function phong_edit_luu()
             $('#chuNha_updatePhong_saveButton').innerText = 'Lưu thay đổi';
             alert('Có lỗi khi cập nhật phòng:\n' + loi.message);
         })
-        .sv_capNhatPhong(idPhong, duLieu);
+        .sv_capNhatPhong(idPhong, duLieu, APP.user.token);
 }
