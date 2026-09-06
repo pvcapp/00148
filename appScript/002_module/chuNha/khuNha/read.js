@@ -1,14 +1,14 @@
     function chuNha_showDanhSachKhuNha(danhSach) 
     {
         if (!danhSach.length) {
-            $('#danhSachKhuNha_div').innerHTML = '<div class="chu-phu">Chưa có khu nhà.</div>';
+            $('#chuNha_danhSachKhuNha_div').innerHTML = '<div class="chu-phu">Chưa có khu nhà.</div>';
             return;
         }
 
-        $('#danhSachKhuNha_div').innerHTML = `            
+        $('#chuNha_danhSachKhuNha_div').innerHTML = `            
                 <div style="width: 100%;display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 0.6rem;">
                     <span class="card__caption">Danh sách khu/tòa nhà</span>
-                    <div class="menu__button" style="width: 160px;" onclick="themMoiKhuNha_lamMoi();hide('danhSachKhuNha_div');show('themMoiKhuNha_form', 'grid');">Khu nhà mới</div>
+                    <div class="menu__button" style="width: 160px;" onclick="themMoiKhuNha_lamMoi();hide('chuNha_danhSachKhuNha_div');show('themMoiKhuNha_form', 'grid');">Khu nhà mới</div>
                 </div>
                 <div class="card">
                     <table class="bang" id="chuNha_danhSachKhuNha_table">
