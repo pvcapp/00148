@@ -24,8 +24,6 @@ function khuNha_edit_loadForm(duLieu)
         toast('Không tìm thấy dữ liệu khu nhà');
         return;
     }
-
-    $('#khuNha_edit_id').value = duLieu.id || '';
     $('#khuNha_edit_idKhuNha').value = duLieu.idKhuNha || '';
     $('#khuNha_edit_tenKhuNha').value = duLieu.tenKhuNha || '';
     $('#khuNha_edit_diaChi').value = duLieu.diaChi || '';
@@ -33,7 +31,7 @@ function khuNha_edit_loadForm(duLieu)
     $('#khuNha_edit_trangThai').value = duLieu.trangThai || 'dangHoatDong';
     $('#khuNha_edit_ngayTao').value = khuNha_edit_doiNgayGio(duLieu.ngayTao);
     $('#khuNha_edit_ngayCapNhat').value = khuNha_edit_doiNgayGio(duLieu.ngayCapNhat);
-    hide('khuNha_danhSach_div');
+    hide('chuNha_danhSachKhuNha_div');
     show('khuNha_edit_form', 'grid');
 }
 
