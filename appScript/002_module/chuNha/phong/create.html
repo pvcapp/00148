@@ -1,0 +1,238 @@
+<div id="themMoiPhong_form" class="formPhong">
+    <h2>THÊM MỚI PHÒNG</h2><br>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_idKhuNha">Khu nhà</label>
+        <select id="themMoiPhong_idKhuNha"></select>
+    </div>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_tenPhong">Tên phòng</label>
+        <input type="text" id="themMoiPhong_tenPhong" required>
+    </div>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_tang">Tầng</label>
+        <input type="text" id="themMoiPhong_tang">
+    </div>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_dienTich">Diện tích</label>
+        <input type="number" id="themMoiPhong_dienTich" min="0" step="0.1">
+    </div>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_giaPhong">Giá phòng</label>
+        <input type="number" id="themMoiPhong_giaPhong" min="0" step="1000">
+    </div>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_tienCocMacDinh">Tiền cọc mặc định</label>
+        <input type="number" id="themMoiPhong_tienCocMacDinh" min="0" step="1000">
+    </div>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_trangThai">Trạng thái</label>
+        <select id="themMoiPhong_trangThai">
+            <option value="Trong">Trống</option>
+            <option value="DangThue">Đang thuê</option>
+            <option value="BaoTri">Bảo trì</option>
+            <option value="NgungHoatDong">Ngừng hoạt động</option>
+        </select>
+    </div>
+
+    <div class="inputBox">
+        <label for="themMoiPhong_moTa">Mô tả</label>
+        <input type="text" id="themMoiPhong_moTa">
+    </div>
+
+    <div class="formPhong__cuoi">
+        <div class="menu__button menu__button__selected" 
+            id="khachHang_newPhong_saveButton"
+            onclick="themMoiPhong_them()">
+            Thêm phòng
+        </div>
+        <div class="button menu__button " onclick="themMoiPhong_lamMoi()">
+            Làm mới
+        </div>
+        <div class="menu__button" onclick="themMoiPhong_boQua()">Bỏ qua</div>
+    </div>
+</div>
+
+<style>
+.formPhong
+{
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 0.6rem;
+}
+
+.formPhong .inputBox
+{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formPhong .inputBox label
+{
+    font-weight: 500;
+}
+
+.formPhong .inputBox input,
+.formPhong .inputBox select,
+.formPhong .inputBox textarea
+{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.formPhong .inputBox textarea
+{
+    min-height: 80px;
+    resize: vertical;
+}
+
+.formPhong__cuoi
+{
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 700px)
+{
+    .formPhong
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .formPhong__cuoi
+    {
+        grid-column: auto;
+    }
+}
+</style>
+
+<script>
+function themMoiPhong_capNhatDanhSachKhu()
+{
+    const select = $('#themMoiPhong_idKhuNha');
+
+    if (!select)
+    {
+        return;
+    }
+
+    const danhSachKhuNha = APP.data && APP.data.khuNha ? APP.data.khuNha : [];
+
+    select.innerHTML = `
+        <option value="">-- Chọn khu nhà --</option>
+        ${danhSachKhuNha.map(function(khuNha)
+        {
+            const idKhuNha = khuNha.idKhuNha || '';
+            const tenKhuNha = khuNha.tenKhuNha;
+
+            return `
+                <option value="${escapeHtml(idKhuNha)}">
+                    ${escapeHtml(tenKhuNha)}
+                </option>
+            `;
+        }).join('')}
+    `;
+}
+
+function themMoiPhong_layDuLieu()
+{
+    return {
+        idKhuNha: $('#themMoiPhong_idKhuNha').value,
+        tenPhong: $('#themMoiPhong_tenPhong').value.trim(),
+        tang: $('#themMoiPhong_tang').value.trim(),
+        dienTich: $('#themMoiPhong_dienTich').value,
+        giaPhong: $('#themMoiPhong_giaPhong').value || 0,
+        tienCocMacDinh: $('#themMoiPhong_tienCocMacDinh').value || 0,
+        trangThai: $('#themMoiPhong_trangThai').value,
+        moTa: $('#themMoiPhong_moTa').value.trim()
+    };
+}
+
+function themMoiPhong_lamMoi()
+{
+    themMoiPhong_capNhatDanhSachKhu();
+    $('#themMoiPhong_idKhuNha').value = '';
+    $('#themMoiPhong_tenPhong').value = '';
+    $('#themMoiPhong_tang').value = '';
+    $('#themMoiPhong_dienTich').value = '';
+    $('#themMoiPhong_giaPhong').value = '';
+    $('#themMoiPhong_tienCocMacDinh').value = '';
+    $('#themMoiPhong_trangThai').value = 'Trong';
+    $('#themMoiPhong_moTa').value = '';
+}
+
+function themMoiPhong_boQua()
+{
+    themMoiPhong_lamMoi();
+    hide('themMoiPhong_form');
+    show('danhSachPhong_div');
+}
+
+function themMoiPhong_them()
+{
+    const duLieu = themMoiPhong_layDuLieu();
+    //Kiểm tra phòng tồn tại chưa: tên phòng và khu nhà đã có:    
+
+    if (!duLieu.idKhuNha)
+    {
+        toast('Vui lòng chọn khu nhà');
+        return;
+    }
+
+    if (!duLieu.tenPhong)
+    {
+        toast('Vui lòng nhập tên phòng');
+        return;
+    }
+
+    const phongTonTai = APP.data.phong && APP.data.phong.find(p => p.tenPhong === duLieu.tenPhong && p.idKhuNha === duLieu.idKhuNha);
+    if (phongTonTai) 
+    {
+        toast('Phòng đã tồn tại trong khu nhà này');
+        return;
+    }
+
+    inactiveButton('khachHang_newPhong_saveButton');
+    $('#khachHang_newPhong_saveButton').innerText = 'Đang thêm..';
+
+    google.script.run
+        .withSuccessHandler(function(ketQua)
+        {
+            activeButton('khachHang_newPhong_saveButton');
+            $('#khachHang_newPhong_saveButton').innerText = 'Thêm phòng';
+
+            if (ketQua)
+            {
+                APP.data.phong = APP.data.phong || [];
+                APP.data.phong.push(ketQua);
+                chuNha_showDanhSachPhong(APP.data.phong);
+                themMoiPhong_boQua();
+                capNhatTongQuanTuCache();
+                toast('Thêm phòng thành công');
+                return;
+            }
+
+            toast('Không thể thêm phòng');
+        })
+        .withFailureHandler(function(loi)
+        {
+            activeButton('khachHang_newPhong_saveButton');
+            $('#khachHang_newPhong_saveButton').innerText = 'Thêm phòng';
+            alert('Có lỗi khi thêm phòng:\n' + loi.message);
+        })
+        .sv_themPhong(duLieu);
+}
+</script>
