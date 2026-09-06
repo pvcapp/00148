@@ -49,10 +49,16 @@
     const hide = (id) => 
     {
         let el = $('#' + id);
+        if (!el)
+        {
+            alert('Hàm hide: không tìm thấy element id: ' + id); 
+            return;
+        }
+
         if (!el.dataset.display)
         {
-        let dsp = getComputedStyle(el).display;
-        if (dsp !== "none"){el.dataset.display = dsp;}
+            let dsp = getComputedStyle(el).display;
+            if (dsp !== "none"){el.dataset.display = dsp;}
         }
         el.style.display = 'none';
     }
@@ -62,7 +68,7 @@
         let el = $('#' + id);
         if (!el)
         {
-            alert('Hàm show: không tìm thấy id: ' + id);
+            alert('Hàm show: không tìm thấy element id: ' + id);
             return;
         }
 
