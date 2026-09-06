@@ -13,7 +13,7 @@ function phong_edit_capNhatDanhSachKhu()
     `;
 }
 
-function phong_edit(idPhong)
+function chuNha_editPhong(idPhong)
 {
     const phong = (APP.data.phong || []).find(function(dong)
     {

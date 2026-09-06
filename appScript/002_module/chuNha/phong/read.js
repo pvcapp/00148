@@ -47,7 +47,7 @@
 
                 
                 dataHtml += `
-                    <tr>
+                    <tr ondblclick="chuNha_editPhong('${escapeHtml(dong.idPhong)}')">
                         <td>${escapeHtml(dong.tenPhong || '')}</td>
                         <td>${escapeHtml(tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.tang || '')}</td>
@@ -55,8 +55,7 @@
                         <td>${formatMoney(dong.giaPhong)}</td>                                   
                         <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
                         <td>
-                            <div class="button" onclick="phong_edit('${escapeHtml(dong.idPhong)}')">Sửa</div>
-                            <div class="deleteButton" onclick="xoaPhong('${escapeHtml(dong.idPhong)}')">x</div>
+                            <div class="deleteButton" onclick="event.stopPropagation();chuNha_xoaPhong('${escapeHtml(dong.idPhong)}')">x</div>
                         </td>
                     </tr>
                 `;

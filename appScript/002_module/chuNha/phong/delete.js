@@ -1,4 +1,4 @@
-function xoaPhong(idPhong)
+function chuNha_xoaPhong(idPhong)
 {
     if (!confirm('Xóa phòng này?'))
     {
