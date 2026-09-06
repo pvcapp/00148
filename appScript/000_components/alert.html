@@ -1,0 +1,145 @@
+<style>
+  .thong-bao-popup__container
+  {
+      position:fixed;
+      z-index:1001;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:100%;
+      background-color:rgba(0,0,0,0.3);
+      display:none;
+      place-items: center;
+  }
+
+  .thong-bao-popup__div-noi-dung
+  {
+      background-color:white;
+      border-radius: var(--border-radius-lg);
+      padding: 0px;
+      max-width:350px;
+      min-width:300px;
+      min-height:200px;
+
+      display:grid;
+      grid-template-rows: 1.9rem 1fr 40px;
+      position: relative;
+      animation: thong-bao-popup-startup 0.2s ease-in-out;
+  }
+
+  .thong-bao-popup__div-noi-dung__caption
+  {
+      border-radius: var(--border-radius-lg) var(--border-radius-lg) 0px 0px;
+      background-color: var(--brand-primary);
+      color: var(--surface);
+      padding: var(--padding-md);
+      display:grid;
+      grid-template-columns: 1.9rem 1fr;
+  }
+
+  .thong-bao-popup__div-noi-dung__noi-dung-thong-bao
+  {
+      display:grid;
+      place-items:center;
+      color: var(--brand-text-primary);
+      padding: var(--padding-lg);
+      font-size: var(--text-lg);
+  }
+
+  @keyframes thong-bao-popup-startup
+  {
+      0% {
+          left: -100%;
+      }
+      100% {
+          left: 0;
+      }
+  }
+
+  .thong-bao-popup__button
+  {
+      padding: var(--padding-sm);
+      border-radius: var(--border-radius-md);
+      border: 0.5px solid var(--brand-primary-dark);
+      text-align: center;
+      font-size: var(--text-md);
+  }
+</style>
+<div class="thong-bao-popup__container" id="canhBaoPopup">
+    <div class="thong-bao-popup__div-noi-dung">
+        <div class="thong-bao-popup__div-noi-dung__caption">
+            <img src="https://PVCTech.github.io/webWidgets/icons/infor.svg" style="height:15px;">      
+            <div id="canhBaoPopup_caption" style="color:white;">
+              Cập nhật thông tin ...
+            </div>
+        </div>
+        <div id="canhBaoPopup_noiDungThongBao" class="thong-bao-popup__div-noi-dung__noi-dung-thong-bao">
+            NỘI DUNG THÔNG BÁO
+        </div>
+        
+        
+        <div style="display:flex;justify-content:right;gap:0.7rem;padding:2px 8px 8px 0px;">      
+            <div class="thong-bao-popup__button" id="canhBaoPopup_buttonOk"
+              style="font-weight:bold;width:100px;">
+                Ok
+            </div>  
+            <div class="thong-bao-popup__button" id="canhBaoPopup_buttonCancel"
+              style="color:var(--brand-text-secondary);width:100px;">
+                Bỏ qua
+            </div>
+            
+            <div class="thong-bao-popup__button" id="canhBaoPopup_buttonOkOnly"
+              style="width:100px;display:none">
+                Ok
+            </div>  
+        </div>  
+    </div>
+</div>
+<script>
+  function canhBao(noiDung, caption="Thông báo", hinhThucXacThuc ="ok")
+  {
+      //hình thức xác thực: "ok", "okCancel"
+      return new Promise(resolve => {
+          $('#canhBaoPopup_noiDungThongBao').innerHTML = noiDung;
+          if (hinhThucXacThuc == "ok")
+          {        
+              $('#canhBaoPopup_buttonOk').style.display = "none";
+              $('#canhBaoPopup_buttonCancel').style.display = "none";
+              $('#canhBaoPopup_buttonOkOnly').style.display = "block";
+          }
+          else
+          {
+              $('#canhBaoPopup_buttonOk').style.display = "block";
+              $('#canhBaoPopup_buttonCancel').style.display = "block";
+              $('#canhBaoPopup_buttonOkOnly').style.display = "none";
+          }
+          $('#canhBaoPopup').style.display = "grid";
+
+          function onOk()
+          {
+              cleanup();
+              resolve(true);
+          }
+
+          function onCancel()
+          {
+              cleanup();
+              resolve(false);
+          }
+
+          function cleanup()
+          {
+              $('#canhBaoPopup').style.display = "none";
+              $('#canhBaoPopup_buttonCancel').removeEventListener('click',onCancel);
+              $('#canhBaoPopup_buttonOk').removeEventListener('click',onOk);
+              $('#canhBaoPopup_buttonOkOnly').removeEventListener('click',onOk);
+          }
+
+          $('#canhBaoPopup_buttonCancel').addEventListener('click',onCancel);
+          $('#canhBaoPopup_buttonOk').addEventListener('click',onOk);
+          $('#canhBaoPopup_buttonOkOnly').addEventListener('click',onOk); 
+      });       
+  }
+</script>
+
+

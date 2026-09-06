@@ -1,0 +1,82 @@
+<style>
+  .toast__container
+  {
+    position:fixed;
+    z-index:999;
+    top:1.5rem;
+    left:0.7rem;
+    /*box-shadow: 4px 4px 8px rgba(0,0,0,0.3);*/
+    display:none;
+    padding: 0.7rem;
+    animation: thong-bao-popup-startup 0.2s ease-in-out;       
+    border-radius: 0.6rem;    
+  }
+
+  .toast-infor
+  {
+    color: #1F2937;
+    border: 1px solid var(--text-sub);
+    border-left: 4px solid var(--text-sub);
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);    
+  }
+
+  .toast__noiDung
+  {
+    margin-top: 0.6rem;
+    font-size: var(--text-lg);
+  }
+
+  @keyframes thong-bao-popup-startup
+  {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
+  }
+</style>
+<div class="toast__container" id="toast" onclick="hideToast();">
+    <div style="position: relative;">
+        <script>
+            if (APP.showIcon)
+            {
+                document.write(`
+                    <div id="toast_icon" style="position: absolute;top: -48px; left:-40px;z-index:1000;"><img src="https://pvctech.github.io/quanLyMauXetNghiemGAS_publicContents/img/bac-hoc_standard.svg" style="width:60px;"></div>
+                `);
+            }
+        </script>        
+        
+        <div class="toast__noiDung" id="toast__noiDung">    
+        </div>
+    </div>
+</div>
+<script>
+    var hideToastTimeout = setTimeout(function(){}, 0);
+    function toast(noiDung = "", thoiGian = 5000, status = 'infor')
+    {
+        let t = $('#toast');
+        t.className = 'toast__container';
+        t.classList.add('toast-' + status);
+
+        $('#toast__noiDung').innerHTML = noiDung;
+        $('#toast').style.display = "block";
+        clearTimeout(hideToastTimeout);
+        hideToastTimeout = setTimeout
+        (
+            function()
+            {
+                t.style.display = "none";
+            }, thoiGian
+        );
+    }
+
+    function hideToast()
+    {
+        clearTimeout(hideToastTimeout);
+        $('#toast').style.display = "none";
+    }
+</script>
+
+
