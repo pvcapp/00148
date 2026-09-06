@@ -19,7 +19,7 @@ async function chuNha_xoaPhong(idPhong)
 
             if (phong)
             {
-                phong.trangThai = 'NgungHoatDong';
+                phong.active = '0';
             }
 
             chuNha_showDanhSachPhong(APP.data.phong || []);
