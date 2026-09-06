@@ -8,7 +8,7 @@ const chuNha_showMenu = () =>
         { manHinh: 'chuNha_phong', ten: 'Phòng' },
         
         { manHinh: 'chuNha_khachHang', ten: 'Khách hàng' },
-        { manHinh: 'chuNha_hopDong', ten: 'Phòng cho thuể'},
+        { manHinh: 'chuNha_hopDong', ten: 'Phòng cho thuê'},
         { manHinh: 'chuNha_thanhToan', ten: 'Thanh toán' }
         //{ manHinh: 'chuNha_noiQuy', ten: 'Nội quy' },   
         //{ manHinh: 'chuNha_huongDanSuDung', ten: 'Hướng dẫn sử dụng thiết bị' }       
