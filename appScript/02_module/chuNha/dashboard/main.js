@@ -22,7 +22,7 @@ function chuNha_buildDashboard(tongQuan)
 
                 if (
                     APP.state.manHinhHienTai.vaiTro === 'chuNha' &&
-                    APP.state.manHinhHienTai.manHinh === 'home'
+                    APP.state.manHinhHienTai.manHinh === 'chuNha_home'
                 )
                 {
                     $('#dashboard_div').innerHTML = chuNha_buildDashboard(APP.data.tongQuan);
@@ -37,5 +37,5 @@ function chuNha_buildDashboard(tongQuan)
 
     function hienThiGiaoDienChuNha() 
     {
-        APP.ui.setManHinh('chuNha', 'home');
+        APP.ui.setManHinh('chuNha', 'chuNha_home');
     }
