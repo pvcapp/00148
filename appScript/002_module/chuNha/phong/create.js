@@ -111,5 +111,5 @@ function themMoiPhong_them()
             $('#khachHang_newPhong_saveButton').innerText = 'Thêm phòng';
             alert('Có lỗi khi thêm phòng:\n' + loi.message);
         })
-        .sv_themPhong(duLieu);
+        .sv_themPhong(duLieu, APP.user.token);
 }
