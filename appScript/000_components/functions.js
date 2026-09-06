@@ -89,6 +89,25 @@
         }
     }
 
+    const toggle = (id) =>
+    {
+        let el = $('#' + id);
+        if (!el)
+        {
+            alert('Hàm toggle display: không tìm thấy element id: ' + id);
+            return;
+        }
+        const isHidden = el.classList.contains('hide') || getComputedStyle(el).display === 'none';
+        if (isHidden) 
+        {
+            show(id);    
+        } 
+        else 
+        {
+            hide(id);
+        }
+    }
+
 
     function formatNumber(gia)
     {        
