@@ -1,4 +1,3 @@
-<script>
 function xoaPhong(idPhong)
 {
     if (!confirm('Xóa phòng này?'))
@@ -35,4 +34,3 @@ function xoaPhong(idPhong)
         })
         .xoaPhong(idPhong);
 }
-</script>

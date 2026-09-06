@@ -1,64 +1,3 @@
-<div id="phong_edit_form" class="formPhong">
-    <h2>CHỈNH SỬA PHÒNG</h2>
-
-    <input type="hidden" id="phong_edit_idPhong">
-
-    <div class="inputBox">
-        <label for="phong_edit_idKhuNha">Khu nhà</label>
-        <select id="phong_edit_idKhuNha"></select>
-    </div>
-
-    <div class="inputBox">
-        <label for="phong_edit_tenPhong">Tên phòng</label>
-        <input type="text" id="phong_edit_tenPhong" required>
-    </div>
-
-    <div class="inputBox">
-        <label for="phong_edit_tang">Tầng</label>
-        <input type="text" id="phong_edit_tang">
-    </div>
-
-    <div class="inputBox">
-        <label for="phong_edit_dienTich">Diện tích</label>
-        <input type="number" id="phong_edit_dienTich" min="0" step="0.1">
-    </div>
-
-    <div class="inputBox">
-        <label for="phong_edit_giaPhong">Giá phòng</label>
-        <input type="number" id="phong_edit_giaPhong" min="0" step="1000">
-    </div>
-
-    <div class="inputBox">
-        <label for="phong_edit_tienCocMacDinh">Tiền cọc mặc định</label>
-        <input type="number" id="phong_edit_tienCocMacDinh" min="0" step="1000">
-    </div>
-
-    <div class="inputBox">
-        <label for="phong_edit_trangThai">Trạng thái</label>
-        <select id="phong_edit_trangThai">
-            <option value="Trong">Trống</option>
-            <option value="DangThue">Đang thuê</option>
-            <option value="BaoTri">Bảo trì</option>
-            <option value="NgungHoatDong">Ngừng hoạt động</option>
-        </select>
-    </div>
-
-    <div class="inputBox">
-        <label for="phong_edit_moTa">Mô tả</label>
-        <textarea id="phong_edit_moTa"></textarea>
-    </div>
-
-    <div class="formPhong__cuoi">
-        <div class="button menu__button" 
-            id="chuNha_updatePhong_saveButton"
-            onclick="phong_edit_luu()">
-            Lưu thay đổi
-        </div>
-        <div class="menu__button" onclick="phong_edit_boQua()">Bỏ qua</div>
-    </div>
-</div>
-
-<script>
 function phong_edit_capNhatDanhSachKhu()
 {
     const select = $('#phong_edit_idKhuNha');
@@ -166,4 +105,3 @@ function phong_edit_luu()
         })
         .sv_capNhatPhong(idPhong, duLieu);
 }
-</script>
