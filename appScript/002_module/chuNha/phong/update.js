@@ -37,7 +37,7 @@ function chuNha_editPhong(idPhong)
     $('#phong_edit_trangThai').value = phong.trangThai || 'Trong';
     $('#phong_edit_moTa').value = phong.moTa || '';
 
-    hide('danhSachPhong_div');
+    hide('tab_chuNha_phong_danhSach');
     show('phong_edit_form', 'grid');
 }
 
@@ -58,7 +58,7 @@ function phong_edit_layDuLieu()
 function phong_edit_boQua()
 {
     hide('phong_edit_form');
-    show('danhSachPhong_div');
+    show('tab_chuNha_phong_danhSach');
 }
 
 function phong_edit_luu()

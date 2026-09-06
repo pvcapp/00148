@@ -29,7 +29,7 @@ function khuNha_edit_loadForm(duLieu)
     $('#khuNha_edit_diaChi').value = duLieu.diaChi || '';
     $('#khuNha_edit_moTa').value = duLieu.moTa || '';
     $('#khuNha_edit_trangThai').value = duLieu.trangThai || 'dangHoatDong';
-    hide('chuNha_danhSachKhuNha_div');
+    hide('tab_chuNha_khuNha_danhSach');
     show('khuNha_edit_form', 'grid');
 }
 
@@ -295,10 +295,6 @@ function khuNha_edit_lamMoi()
 function khuNha_edit_boQua()
 {
     khuNha_edit_lamMoi();
-
     hide('khuNha_edit_form');
-
-    show(
-        'khuNha_danhSach_div'
-    );
+    show('tab_chuNha_khuNha_danhSach');
 }

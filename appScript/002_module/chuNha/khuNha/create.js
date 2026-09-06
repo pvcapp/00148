@@ -22,7 +22,7 @@ function themMoiKhuNha_boQua()
 {
     themMoiKhuNha_lamMoi();
     hide('themMoiKhuNha_form');
-    show('chuNha_danhSachKhuNha_div');
+    show('tab_chuNha_khuNha_danhSach');
 }
 
 function themMoiKhuNha_them()
