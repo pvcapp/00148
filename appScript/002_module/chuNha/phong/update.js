@@ -32,7 +32,7 @@ function chuNha_editPhong(idPhong)
     $('#phong_edit_tenPhong').value = phong.tenPhong || '';
     $('#phong_edit_tang').value = phong.tang || '';
     $('#phong_edit_dienTich').value = phong.dienTich || '';
-    $('#phong_edit_giaPhong').value = phong.giaPhong || '';
+    $('#phong_edit_giaNiemYet').value = phong.giaNiemYet || '';
     $('#phong_edit_tienCocMacDinh').value = phong.tienCocMacDinh || '';
     $('#phong_edit_trangThai').value = phong.trangThai || 'Trong';
     $('#phong_edit_moTa').value = phong.moTa || '';
@@ -48,7 +48,7 @@ function phong_edit_layDuLieu()
         tenPhong: $('#phong_edit_tenPhong').value.trim(),
         tang: $('#phong_edit_tang').value.trim(),
         dienTich: $('#phong_edit_dienTich').value,
-        giaPhong: $('#phong_edit_giaPhong').value || 0,
+        giaNiemYet: $('#phong_edit_giaNiemYet').value || 0,
         tienCocMacDinh: $('#phong_edit_tienCocMacDinh').value || 0,
         trangThai: $('#phong_edit_trangThai').value,
         moTa: $('#phong_edit_moTa').value.trim()

@@ -52,7 +52,7 @@
                         <td>${escapeHtml(tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.tang || '')}</td>
                         <td>${escapeHtml(String(dong.dienTich || ''))}</td>
-                        <td>${formatMoney(dong.giaPhong)}</td>                                   
+                        <td>${formatMoney(dong.giaNiemYet)}</td>                                   
                         <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
                         <td>
                             <div class="deleteButton" onclick="event.stopPropagation();chuNha_xoaPhong('${escapeHtml(dong.idPhong)}')">x</div>
