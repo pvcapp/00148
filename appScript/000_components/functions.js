@@ -60,16 +60,22 @@
     const show = (id, stl = "block") =>
     {
         let el = $('#' + id);
+        if (!el)
+        {
+            alert('Hàm show: không tìm thấy id: ' + id);
+            return;
+        }
+
         if (el.dataset.display)
         {      
-        if (el.dataset.display == "none")
-        {
-            el.style.display = stl;
-        }
-        else
-        {
-            el.style.display = el.dataset.display;
-        }
+            if (el.dataset.display == "none")
+            {
+                el.style.display = stl;
+            }
+            else
+            {
+                el.style.display = el.dataset.display;
+            }
         }
         else
         {
