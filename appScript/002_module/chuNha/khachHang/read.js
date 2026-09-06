@@ -10,7 +10,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
             <div 
                 class="menu__button" 
                 style="width: 170px;font-size: 14px;" 
-                onclick="hide('danhSachKhachHang_div');show('themMoiKhachHang_form', 'grid');"
+                onclick="hide('chuNha_danhSachKhachHang_div');show('themMoiKhachHang_form', 'grid');"
             >
                 <img 
                     src="https://pvcapp.github.io/00148/img/new.svg" 
