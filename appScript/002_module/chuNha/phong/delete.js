@@ -1,9 +1,7 @@
 function chuNha_xoaPhong(idPhong)
 {
-    if (!confirm('Xóa phòng này?'))
-    {
-        return;
-    }
+    let cb = canhBao('Bạn có chắc chắn muốn xóa phòng?', 'Xác nhận xóa phòng', 'okCancel');
+    if (!cb) return;
 
     google.script.run
         .withSuccessHandler(function(ketQua)

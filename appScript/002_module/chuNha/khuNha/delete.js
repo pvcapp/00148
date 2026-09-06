@@ -1,5 +1,7 @@
 function xoaKhuNha(idKhuNha, tenKhuNha)
 {
+    let cb = canhBao('Bạn có chắc chắn muốn xóa khu nhà: ' + tenKhuNha, 'Xác nhận xóa khu nhà', 'okCancel');
+    if (!cb) return;
     toast('Đang xóa khu nhà: ' + tenKhuNha);
     google.script.run
     .withSuccessHandler(function(ketQua) 
