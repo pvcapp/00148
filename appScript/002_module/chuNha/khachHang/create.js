@@ -129,35 +129,4 @@ function themMoiKhachHang_lamMoi() {
     document.getElementById(
         'themMoiKhachHang_trangThai'
     ).value = 'DangThue';
-
-    themMoiKhachHang_datThoiGian();
 }
-
-
-function themMoiKhachHang_datThoiGian() {
-
-    const hienTai = new Date();
-
-    const chuoiThoiGian =
-        hienTai.getFullYear() + '-' +
-        String(hienTai.getMonth() + 1).padStart(2, '0') + '-' +
-        String(hienTai.getDate()).padStart(2, '0') + 'T' +
-        String(hienTai.getHours()).padStart(2, '0') + ':' +
-        String(hienTai.getMinutes()).padStart(2, '0');
-
-    document.getElementById(
-        'themMoiKhachHang_ngayTao'
-    ).value = chuoiThoiGian;
-
-    document.getElementById(
-        'themMoiKhachHang_ngayCapNhat'
-    ).value = chuoiThoiGian;
-}
-
-
-document.addEventListener(
-    'DOMContentLoaded',
-    function() {
-        themMoiKhachHang_datThoiGian();
-    }
-);
