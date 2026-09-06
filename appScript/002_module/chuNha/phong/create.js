@@ -56,7 +56,7 @@ function themMoiPhong_boQua()
 {
     themMoiPhong_lamMoi();
     hide('themMoiPhong_form');
-    show('');
+    show('tab_chuNha_phong_danhSach');
 }
 
 function themMoiPhong_them()
