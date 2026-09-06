@@ -3,7 +3,7 @@
         --brand-primary: #00a4de;
         --brand-secondary: #5dc8ed;
         --brand-primary-dark: #0088b9;
-        --brand-gradient: -webkit-linear-gradient(top left, #a5e2f8, var(--brand-primary));
+        --brand-gradient: -webkit-linear-gradient(top left, white, #dffafb);
 
         --brand-background: #f4fbfe;
         --card-background: #ffffff;
