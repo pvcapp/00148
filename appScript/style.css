@@ -255,6 +255,8 @@
 
     .bang {
       width: 100%;
+        padding: 8px;
+        border-raidus: 12px;
       border-collapse: collapse;
     }
 
