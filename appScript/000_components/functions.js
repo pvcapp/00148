@@ -1,4 +1,3 @@
-<script>
     function formatMoney(so) 
     {
         if (so)
@@ -262,4 +261,3 @@
             return true;
         }
     }
-</script>
