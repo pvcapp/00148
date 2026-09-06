@@ -38,7 +38,7 @@
                 stt++;
                 dataHtml += `
                     <tr ondblclick="khuNha_edit('${escapeHtml(dong.maKhuNha)}')">
-                        <td>${index + 1}</td>
+                        <td>${stt}</td>
                         <td>${escapeHtml(dong.tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.diaChi || '')}</td>
                         <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
