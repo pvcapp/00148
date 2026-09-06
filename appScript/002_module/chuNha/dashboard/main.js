@@ -19,14 +19,7 @@ function chuNha_buildDashboard(tongQuan)
             .withSuccessHandler(function(tongQuan)
             {
                 APP.data.tongQuan = tongQuan || {};
-
-                if (
-                    APP.state.manHinhHienTai.vaiTro === 'chuNha' &&
-                    APP.state.manHinhHienTai.manHinh === 'chuNha_dashboard'
-                )
-                {
-                    $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.data.tongQuan);
-                }
+                $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.data.tongQuan);                
             })
             .withFailureHandler(function(loi)
             {
