@@ -37,14 +37,14 @@
             {
                 stt++;
                 dataHtml += `
-                    <tr ondblclick="khuNha_edit('${escapeHtml(dong.maKhuNha)}')">
+                    <tr ondblclick="khuNha_edit('${escapeHtml(dong.idKhuNha)}')">
                         <td>${stt}</td>
                         <td>${escapeHtml(dong.tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.diaChi || '')}</td>
                         <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
                         <td>
                             <div class="deleteButton"
-                                onclick="event.stopPropagation(); xoaKhuNha('${escapeHtml(dong.maKhuNha)}', '${escapeHtml(dong.tenKhuNha || '')}');">
+                                onclick="event.stopPropagation(); xoaKhuNha('${escapeHtml(dong.idKhuNha)}', '${escapeHtml(dong.tenKhuNha || '')}');">
                                 x
                             </div>
                         </td>

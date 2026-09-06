@@ -1,7 +1,7 @@
 function themMoiKhuNha_layDuLieu()
 {
     return {
-        maKhuNha: $('#themMoiKhuNha_maKhuNha').value.trim(),
+        idKhuNha: $('#themMoiKhuNha_idKhuNha').value.trim(),
         tenKhuNha: $('#themMoiKhuNha_tenKhuNha').value.trim(),
         diaChi: $('#themMoiKhuNha_diaChi').value.trim(),
         moTa: $('#themMoiKhuNha_moTa').value.trim(),
@@ -11,11 +11,11 @@ function themMoiKhuNha_layDuLieu()
 
 function themMoiKhuNha_lamMoi()
 {
-    $('#themMoiKhuNha_maKhuNha').value = '';
+    $('#themMoiKhuNha_idKhuNha').value = '';
     $('#themMoiKhuNha_tenKhuNha').value = '';
     $('#themMoiKhuNha_diaChi').value = '';
     $('#themMoiKhuNha_moTa').value = '';
-    $('#themMoiKhuNha_trangThai').value = 'DangHoatDong';
+    $('#themMoiKhuNha_trangThai').value = 'dangHoatDong';
 }
 
 function themMoiKhuNha_boQua()
@@ -27,7 +27,6 @@ function themMoiKhuNha_boQua()
 
 function themMoiKhuNha_them()
 {
-    console.log('asdsad');
     const duLieu = themMoiKhuNha_layDuLieu();
 
     if (!duLieu.tenKhuNha)
@@ -85,8 +84,8 @@ function khuNha_edit_loadForm(duLieu)
 
 
     document.getElementById(
-        'khuNha_edit_maKhuNha'
-    ).value = duLieu.maKhuNha || '';
+        'khuNha_edit_idKhuNha'
+    ).value = duLieu.idKhuNha || '';
 
 
     document.getElementById(
@@ -106,7 +105,7 @@ function khuNha_edit_loadForm(duLieu)
 
     document.getElementById(
         'khuNha_edit_trangThai'
-    ).value = duLieu.trangThai || 'DangHoatDong';
+    ).value = duLieu.trangThai || 'dangHoatDong';
 
 
     document.getElementById(
@@ -184,9 +183,9 @@ function khuNha_edit_layDuLieu()
                 'khuNha_edit_id'
             ).value.trim(),
 
-        maKhuNha:
+        idKhuNha:
             document.getElementById(
-                'khuNha_edit_maKhuNha'
+                'khuNha_edit_idKhuNha'
             ).value.trim(),
 
         tenKhuNha:
