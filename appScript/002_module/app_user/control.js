@@ -1,4 +1,3 @@
-<script>
     APP.user = 
     {
         token: '',
@@ -143,5 +142,3 @@
             }).sv_doLogout(token);
         }
     };
-</script>
-
