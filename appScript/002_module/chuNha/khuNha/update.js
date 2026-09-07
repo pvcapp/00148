@@ -117,7 +117,7 @@ function khuNha_edit_luu()
                 alert('Có lỗi khi cập nhật khu nhà:\n' + loi.message);
             }
         )
-        .capNhatKhuNha(duLieu);
+        .sv_capNhatKhuNha(duLieu, APP.user.token);
 }
 
 
