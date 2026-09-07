@@ -12,7 +12,7 @@ function toast_render()
     return container;
 }
 
-document.appendChild(toast_render());
+document.body.appendChild(toast_render());
 document.getElementById('toast').addEventListener('click', function(){hideToast()});
 
 var hideToastTimeout = setTimeout(function(){}, 0);

@@ -35,7 +35,7 @@ function canhBao_render()
         return container;
 }
 
-document.appendChild(canhBao_render());
+document.body.appendChild(canhBao_render());
 
 function canhBao(noiDung, caption="Thông báo", hinhThucXacThuc ="ok")
 {
