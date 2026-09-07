@@ -83,28 +83,28 @@ function khuNha_edit_luu()
             {
                 activeButton('chuNha_newKhuNha_saveButton');
                 $('#chuNha_newKhuNha_saveButton').innerText = 'Lưu thay đổi';
-                if (ketQua && ketQua.thanhCong)
+                if (ketQua)
                 {
-                    toast(ketQua.thongBao || 'Cập nhật khu nhà thành công');
+                    toast('Cập nhật khu nhà thành công');
                     khuNha_edit_boQua();
-                    if (ketQua.duLieu && APP.data && Array.isArray(APP.data.khu))
+                    if (ketQua.data && APP.data && Array.isArray(APP.data.khu))
                     {
                         const viTri = APP.data.khuNha.findIndex(
                             function(dong)
                             {
-                                return String(dong.idKhuNha) === String(duLieu.idKhuNha);
+                                return String(dong.idKhuNha) === String(ketQua.data.idKhuNha);
                             }
                         );
 
                         if (viTri !== -1)
                         {
-                            APP.data.khu[viTri] = ketQua.duLieu;
+                            APP.data.khu[viTri] = ketQua.data;
                         }
                     }
                 }
                 else
                 {
-                    alert(ketQua && ketQua.thongBao? ketQua.thongBao : 'Không thể cập nhật khu nhà');
+                    canhBao('Không thể cập nhật khu nhà');
                 }
             }
         )
@@ -114,7 +114,7 @@ function khuNha_edit_luu()
                 activeButton('chuNha_newKhuNha_saveButton');
                 $('#chuNha_newKhuNha_saveButton').innerText = 'Lưu thay đổi';
                 console.error(loi);
-                alert('Có lỗi khi cập nhật khu nhà:\n' + loi.message);
+                canhBao('Có lỗi khi cập nhật khu nhà:\n' + loi.message);
             }
         )
         .sv_capNhatKhuNha(duLieu, APP.user.token);
