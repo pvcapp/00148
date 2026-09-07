@@ -158,7 +158,7 @@
             },
             hide: function()
             {
-                hide('user_changPassword_divChe');
+                hide('user_changePassword_divChe');
                 $('#changePass_newPassword1').value = '';
                 $('#changePass_newPassword2').value = '';
                 hide('changePassword_container');
