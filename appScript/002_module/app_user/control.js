@@ -145,7 +145,7 @@
         {
             show: function()
             {
-                show('user_changPassword_divChe');
+                show('user_changePassword_divChe');
                 $('#changePassword_Container').style.display = 'flex';
                 $('#changePass_newPassword1').value = '';
                 $('#changePass_newPassword2').value = '';
