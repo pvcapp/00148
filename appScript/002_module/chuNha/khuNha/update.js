@@ -85,8 +85,7 @@ function khuNha_edit_luu()
                 $('#chuNha_newKhuNha_saveButton').innerText = 'Lưu thay đổi';
                 if (ketQua)
                 {
-                    toast('Cập nhật khu nhà thành công');
-                    khuNha_edit_boQua();
+                    toast('Cập nhật khu nhà thành công');                    
                     if (ketQua.data && APP.data && Array.isArray(APP.data.khu))
                     {
                         const viTri = APP.data.khuNha.findIndex(
@@ -101,6 +100,8 @@ function khuNha_edit_luu()
                             APP.data.khu[viTri] = ketQua.data;
                         }
                     }
+                    chuNha_showDanhSachKhuNha(APP.data.khu);
+                    khuNha_edit_boQua();
                 }
                 else
                 {
