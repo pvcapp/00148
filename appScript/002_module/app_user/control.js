@@ -165,6 +165,17 @@
             submit: async function()
             {
                 console.log('APP.User:::::' + JSON.stringify(APP.user));
+                console.log('APP.user.data:', APP.user.data);
+
+                console.log(
+                    'userName:',
+                    APP.user.data.userName
+                );
+
+                console.log(
+                    'token:',
+                    APP.user.token
+                );
                 let cb;
                 let pass1 = document.getElementById("changePass_newPassword1").value;
                 let pass2 = document.getElementById("changePass_newPassword2").value;
