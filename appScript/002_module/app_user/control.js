@@ -50,6 +50,7 @@
                     {
                         APP.user = user;
                         $('#user_hoVaTen').innerText = user.hoVaTen;
+                        activeButton('user_changePassword_submitButton');
                         APP.getStartupData();
                     }
                 }).sv_user_getLoginStatus_(loginStatus.token);
