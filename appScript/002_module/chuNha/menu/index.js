@@ -10,7 +10,7 @@ const chuNha_showMenu = () =>
         { manHinh: 'chuNha_khachHang', ten: 'Khách hàng' },
         { manHinh: 'chuNha_hopDong', ten: 'Phòng cho thuê'},
         { manHinh: 'chuNha_thanhToan', ten: 'Thanh toán' },
-        { manHinh: 'chuNha_cauHinh', ten: 'Setting' }
+        { manHinh: 'chuNha_setting', ten: 'Setting' }
         //{ manHinh: 'chuNha_noiQuy', ten: 'Nội quy' },   
         //{ manHinh: 'chuNha_huongDanSuDung', ten: 'Hướng dẫn sử dụng thiết bị' }       
     ];
