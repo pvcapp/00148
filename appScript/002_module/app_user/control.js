@@ -31,6 +31,7 @@
         },
         checkUser: async function()
         {
+            inactiveButton('user_changePassword_submitButton');
             let loginStatus = localStorage.getItem('a00148user');
             if (loginStatus)
             {
