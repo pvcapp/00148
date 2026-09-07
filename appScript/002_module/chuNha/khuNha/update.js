@@ -63,11 +63,6 @@ function khuNha_edit_doiNgayGio(duLieu)
 function khuNha_edit_layDuLieu()
 {
     return {
-        id:
-            document.getElementById(
-                'khuNha_edit_id'
-            ).value.trim(),
-
         idKhuNha:
             document.getElementById(
                 'khuNha_edit_idKhuNha'
@@ -101,13 +96,6 @@ function khuNha_edit_layDuLieu()
  */
 function khuNha_edit_kiemTra(duLieu)
 {
-    if (!duLieu.id)
-    {
-        toast('Không xác định được khu nhà');
-        return false;
-    }
-
-
     if (!duLieu.tenKhuNha)
     {
         toast('Vui lòng nhập tên khu');
@@ -248,18 +236,6 @@ function khuNha_edit_luu()
  */
 function khuNha_edit_lamMoi()
 {
-    const id =
-        document.getElementById(
-            'khuNha_edit_id'
-        ).value.trim();
-
-
-    if (!id)
-    {
-        return;
-    }
-
-
     if (
         !APP.data ||
         !Array.isArray(APP.data.khuNha)
