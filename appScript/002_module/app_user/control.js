@@ -50,6 +50,7 @@
                     }
                     else
                     {
+                        console.log('CheckUSER: ' + JSON.stringify(user));
                         APP.user.data = user;
                         APP.user.token = user.token;
                         $('#user_hoVaTen').innerText = user.hoVaTen;
