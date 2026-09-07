@@ -45,7 +45,7 @@
 
                 
                 dataHtml += `
-                    <tr ondblclick="chuNha_editPhong('${escapeHtml(dong.idPhong)}')">
+                    <tr onclick="chuNha_editPhong('${escapeHtml(dong.idPhong)}')">
                         <td>${escapeHtml(dong.tenPhong || '')}</td>
                         <td>${escapeHtml(tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.tang || '')}</td>

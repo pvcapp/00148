@@ -2,7 +2,7 @@
     {
         $('#tab_chuNha_setting_danhSach').innerHTML = `
             <h2 class="card__caption">Cài đặt giá cước</h2>
-            <div style="padding:12px;display: flex; flex-direction: rows;gap:12px;">
+            <div style="padding:12px;display: flex; flex-direction: column;gap:12px;">
                 <div class="card">
                     <div class="card__caption">Đơn giá điện</div>
                     Đơn vị: đ/kwh

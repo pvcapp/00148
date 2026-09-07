@@ -37,7 +37,7 @@
             {
                 stt++;
                 dataHtml += `
-                    <tr ondblclick="khuNha_edit('${escapeHtml(dong.idKhuNha)}')">
+                    <tr onclick="khuNha_edit('${escapeHtml(dong.idKhuNha)}')">
                         <td>${stt}</td>
                         <td>${escapeHtml(dong.tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.diaChi || '')}</td>
