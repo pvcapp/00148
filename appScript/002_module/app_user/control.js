@@ -161,6 +161,7 @@
             },
             submit: async function()
             {
+                console.log(JSON.stringify(APP.user));
                 let cb;
                 let pass1 = document.getElementById("changePass_newPassword1").value;
                 let pass2 = document.getElementById("changePass_newPassword2").value;
