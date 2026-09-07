@@ -6,7 +6,7 @@ function canhBao_render()
     container.innerHTML = 
         `<div class="thong-bao-popup__div-noi-dung">
             <div class="thong-bao-popup__div-noi-dung__caption">
-                <img src="https://pvcapp.github.io/00148/appScript/img/infor.svg" style="height:15px;">      
+                <img src="https://pvcapp.github.io/00148/img/infor.svg" style="height:15px;">      
                 <div id="canhBaoPopup_caption" style="color:white;">
                 Cập nhật thông tin ...
                 </div>
