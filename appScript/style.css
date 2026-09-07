@@ -275,9 +275,16 @@ textarea {
     font-weight: 600;
 }
 
-.bang tr:hover
+.bang tbody tr 
 {
-    background-color: var(--brand-background-gradient);
+    transition: background 0.2s ease;
+}
+
+
+.bang tbody tr:hover 
+{
+    background: var(--brand-background-gradient);
+    cursor: pointer;
 }
 
 .nhom-bieu-mau 
