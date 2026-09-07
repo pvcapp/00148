@@ -146,7 +146,7 @@
             show: function()
             {
                 show('user_changePassword_divChe');
-                $('#changePassword_Container').style.display = 'flex';
+                $('#changePassword_container').style.display = 'flex';
                 $('#changePass_newPassword1').value = '';
                 $('#changePass_newPassword2').value = '';
             },
@@ -155,7 +155,7 @@
                 hide('user_changPassword_divChe');
                 $('#changePass_newPassword1').value = '';
                 $('#changePass_newPassword2').value = '';
-                hide('changePassword_Container');
+                hide('changePassword_container');
             },
             submit: async function()
             {
