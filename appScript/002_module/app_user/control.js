@@ -160,8 +160,8 @@
             submit: async function()
             {
                 let cb;
-                let pass1 = document.getElementById("login_userName").value;
-                let pass2 = document.getElementById("login_password").value;
+                let pass1 = document.getElementById("changePass_newPassword1").value;
+                let pass2 = document.getElementById("changePass_newPassword2").value;
                 if (pass1.length < 6)
                 {
                     cb = await canhBao('Mật khẩu tối thiểu phải có từ 6 ký tự trở lên!');
