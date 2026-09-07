@@ -1,20 +1,17 @@
 function khuNha_edit(idKhuNha)
 {
-    const khu =
-        (APP.data.khuNha || []).find(function(khu)
-        {
-            return String(khu.idKhuNha) === String(idKhuNha);
-        });
+    const khu = (APP.data.khuNha || []).find(function(khu)
+    {
+        return String(khu.idKhuNha) === String(idKhuNha);
+    });
 
     if (!khu)
     {
         toast('Không tìm thấy khu nhà');
         return;
     }
-
     khuNha_edit_loadForm(khu);
 }
-
 
 
 function khuNha_edit_loadForm(duLieu)
@@ -34,66 +31,18 @@ function khuNha_edit_loadForm(duLieu)
 }
 
 
-function khuNha_edit_doiNgayGio(duLieu)
-{
-    if (!duLieu)
-    {
-        return '';
-    }
-
-    const ngay = new Date(duLieu);
-    if (isNaN(ngay.getTime()))
-    {
-        return '';
-    }
-
-    return (
-        ngay.getFullYear() + '-' +
-        String(ngay.getMonth() + 1).padStart(2, '0') + '-'+
-        String(ngay.getDate()).padStart(2, '0') + 'T' +  
-        String(ngay.getHours()).padStart(2, '0') + ':' +
-        String(ngay.getMinutes()).padStart(2, '0')
-    );
-}
-
-
-/*
- * Lấy dữ liệu từ form
- */
 function khuNha_edit_layDuLieu()
 {
     return {
-        idKhuNha:
-            document.getElementById(
-                'khuNha_edit_idKhuNha'
-            ).value.trim(),
-
-        tenKhuNha:
-            document.getElementById(
-                'khuNha_edit_tenKhuNha'
-            ).value.trim(),
-
-        diaChi:
-            document.getElementById(
-                'khuNha_edit_diaChi'
-            ).value.trim(),
-
-        moTa:
-            document.getElementById(
-                'khuNha_edit_moTa'
-            ).value.trim(),
-
-        trangThai:
-            document.getElementById(
-                'khuNha_edit_trangThai'
-            ).value
+        idKhuNha:   $('#khuNha_edit_idKhuNha').value.trim(),
+        tenKhuNha:  $('#khuNha_edit_tenKhuNha').value.trim(),
+        diaChi:     $('#khuNha_edit_diaChi').value.trim(),
+        moTa:       $('#khuNha_edit_moTa').value.trim(),
+        trangThai:  $('#khuNha_edit_trangThai').value
     };
 }
 
 
-/*
- * Kiểm tra dữ liệu
- */
 function khuNha_edit_kiemTra(duLieu)
 {
     if (!duLieu.tenKhuNha)
@@ -109,168 +58,72 @@ function khuNha_edit_kiemTra(duLieu)
         return false;
     }
 
-
     if (!duLieu.trangThai)
     {
         toast('Vui lòng chọn trạng thái khu nhà');
         return false;
     }
-
-
     return true;
 }
 
 
-/*
- * Lưu thay đổi
- */
 function khuNha_edit_luu()
 {
-    const duLieu =
-        khuNha_edit_layDuLieu();
-
-
+    const duLieu = khuNha_edit_layDuLieu();
     if (!khuNha_edit_kiemTra(duLieu))
     {
         return;
     }
-
-
-
     inactiveButton('chuNha_newKhuNha_saveButton');
     $('#chuNha_newKhuNha_saveButton').innerText = 'Đang lưu..';
 
-
     google.script.run
-
         .withSuccessHandler(
             function(ketQua)
             {
                 activeButton('chuNha_newKhuNha_saveButton');
                 $('#chuNha_newKhuNha_saveButton').innerText = 'Lưu thay đổi';
-
-
-                if (
-                    ketQua &&
-                    ketQua.thanhCong
-                )
+                if (ketQua && ketQua.thanhCong)
                 {
-                    toast(
-                        ketQua.thongBao ||
-                        'Cập nhật khu nhà thành công'
-                    );
-
-
+                    toast(ketQua.thongBao || 'Cập nhật khu nhà thành công');
                     khuNha_edit_boQua();
-
-                    /*
-                     * Nếu API trả lại dữ liệu khu
-                     * đã cập nhật thì cập nhật APP.data.khu
-                     */
-                    if (
-                        ketQua.duLieu &&
-                        APP.data &&
-                        Array.isArray(
-                            APP.data.khu
-                        )
-                    )
+                    if (ketQua.duLieu && APP.data && Array.isArray(APP.data.khu))
                     {
-                        const viTri =
-                            APP.data.khuNha.findIndex(
-                                function(dong)
-                                {
-                                    return String(
-                                        dong.id
-                                    ) === String(
-                                        duLieu.id
-                                    );
-                                }
-                            );
-
+                        const viTri = APP.data.khuNha.findIndex(
+                            function(dong)
+                            {
+                                return String(dong.idKhuNha) === String(duLieu.idKhuNha);
+                            }
+                        );
 
                         if (viTri !== -1)
                         {
-                            APP.data.khu[viTri] =
-                                ketQua.duLieu;
+                            APP.data.khu[viTri] = ketQua.duLieu;
                         }
                     }
                 }
                 else
                 {
-                    alert(
-                        ketQua &&
-                        ketQua.thongBao
-                            ? ketQua.thongBao
-                            : 'Không thể cập nhật khu nhà'
-                    );
+                    alert(ketQua && ketQua.thongBao? ketQua.thongBao : 'Không thể cập nhật khu nhà');
                 }
             }
         )
-
         .withFailureHandler(
             function(loi)
             {
                 activeButton('chuNha_newKhuNha_saveButton');
                 $('#chuNha_newKhuNha_saveButton').innerText = 'Lưu thay đổi';
-
-
                 console.error(loi);
-
-
-                alert(
-                    'Có lỗi khi cập nhật khu nhà:\n' +
-                    loi.message
-                );
+                alert('Có lỗi khi cập nhật khu nhà:\n' + loi.message);
             }
         )
-
         .capNhatKhuNha(duLieu);
 }
 
 
-/*
- * Làm mới form
- *
- * Không tạo dữ liệu mới.
- * Chỉ lấy lại dữ liệu hiện tại của khu nhà.
- */
-function khuNha_edit_lamMoi()
-{
-    if (
-        !APP.data ||
-        !Array.isArray(APP.data.khuNha)
-    )
-    {
-        return;
-    }
-
-
-    const duLieu =
-        APP.data.khuNha.find(
-            function(dong)
-            {
-                return String(
-                    dong.id
-                ) === String(id);
-            }
-        );
-
-
-    if (duLieu)
-    {
-        khuNha_edit_loadForm(
-            duLieu
-        );
-    }
-}
-
-
-/*
- * Bỏ qua chỉnh sửa
- */
 function khuNha_edit_boQua()
 {
-    khuNha_edit_lamMoi();
+    $('#khuNha_edit_idKhuNha').value = '';
     hide('khuNha_edit_form');
     show('tab_chuNha_khuNha_danhSach');
 }
