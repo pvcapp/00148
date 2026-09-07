@@ -29,27 +29,29 @@ function chuNha_editPhong(idPhong)
     phong_edit_capNhatDanhSachKhu();
     $('#phong_edit_idPhong').value = phong.idPhong || '';
     $('#phong_edit_idKhuNha').value = phong.idKhuNha || '';
-    $('#phong_edit_tenPhong').value = phong.tenPhong || '';
     $('#phong_edit_tang').value = phong.tang || '';
+
+    $('#phong_edit_tenPhong').value = phong.tenPhong || '';    
     $('#phong_edit_dienTich').value = phong.dienTich || '';
     $('#phong_edit_giaNiemYet').value = phong.giaNiemYet || '';
-    $('#phong_edit_tienCocMacDinh').value = phong.tienCocMacDinh || '';
-    $('#phong_edit_trangThai').value = phong.trangThai || 'Trong';
+    $('#phong_edit_tienDatCoc').value = phong.tienDatCoc || '';
+    $('#phong_edit_trangThai').value = phong.trangThai || 'dangHoatDong';
     $('#phong_edit_moTa').value = phong.moTa || '';
 
     hide('tab_chuNha_phong_danhSach');
     show('phong_edit_form', 'grid');
 }
 
+
 function phong_edit_layDuLieu()
 {
     return {
         idKhuNha: $('#phong_edit_idKhuNha').value,
-        tenPhong: $('#phong_edit_tenPhong').value.trim(),
         tang: $('#phong_edit_tang').value.trim(),
+        tenPhong: $('#phong_edit_tenPhong').value.trim(),        
         dienTich: $('#phong_edit_dienTich').value,
         giaNiemYet: $('#phong_edit_giaNiemYet').value || 0,
-        tienCocMacDinh: $('#phong_edit_tienCocMacDinh').value || 0,
+        tienDatCoc: $('#phong_edit_tienDatCoc').value || 0,
         trangThai: $('#phong_edit_trangThai').value,
         moTa: $('#phong_edit_moTa').value.trim()
     };

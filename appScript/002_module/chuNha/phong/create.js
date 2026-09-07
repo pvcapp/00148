@@ -33,7 +33,7 @@ function themMoiPhong_layDuLieu()
         tang: $('#themMoiPhong_tang').value.trim(),
         dienTich: $('#themMoiPhong_dienTich').value,
         giaNiemYet: $('#themMoiPhong_giaNiemYet').value || 0,
-        tienCocMacDinh: $('#themMoiPhong_tienCocMacDinh').value || 0,
+        tienDatCoc: $('#themMoiPhong_tienDatCoc').value || 0,
         trangThai: $('#themMoiPhong_trangThai').value,
         moTa: $('#themMoiPhong_moTa').value.trim()
     };
@@ -47,7 +47,7 @@ function themMoiPhong_lamMoi()
     $('#themMoiPhong_tang').value = '';
     $('#themMoiPhong_dienTich').value = '';
     $('#themMoiPhong_giaNiemYet').value = '';
-    $('#themMoiPhong_tienCocMacDinh').value = '';
+    $('#themMoiPhong_tienDatCoc').value = '';
     $('#themMoiPhong_trangThai').value = 'Trong';
     $('#themMoiPhong_moTa').value = '';
 }
