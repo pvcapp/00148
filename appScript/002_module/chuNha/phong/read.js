@@ -25,9 +25,7 @@
 
         let dataHtml = '';
         let stt =0;
-        let trangThaiArray = {'Trong': 'Trống', 'DangThue': 'Đang thuê', 
-                    'DangSuaChua': 'Đang sửa chữa', 'DangBaoTri': 'Đang bảo trì', 
-                    'NgungHoatDong': 'Ngừng hoạt động'};
+        let trangThaiArray = {'dangHoatDong': 'Đang hoạt động', 'tamDung': 'Tạm dừng hoạt động'};
         
         for(let i=0; i<danhSach.length; i++)
         {  
