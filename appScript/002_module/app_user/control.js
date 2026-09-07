@@ -140,5 +140,56 @@
             {
                         
             }).sv_doLogout(token);
+        },
+        changePassword:
+        {
+            show: function()
+            {
+                show('user_changPassword_divChe');
+                $('#changePassword_Container').style.display = 'flex';
+                $('#changePass_newPassword1').value = '';
+                $('#changePass_newPassword2').value = '';
+            },
+            hide: function()
+            {
+                hide('user_changPassword_divChe');
+                $('#changePass_newPassword1').value = '';
+                $('#changePass_newPassword2').value = '';
+                hide('changePassword_Container');
+            },
+            submit: async function()
+            {
+                let cb;
+                let pass1 = document.getElementById("login_userName").value;
+                let pass2 = document.getElementById("login_password").value;
+                if (pass1.length < 6)
+                {
+                    cb = await canhBao('Mật khẩu tối thiểu phải có từ 6 ký tự trở lên!');
+                    return;
+                }
+                else if (pass1 !== pass2)
+                {
+                    cb = await canhBao('Hai mật khẩu chưa trùng khớp!');
+                    return;
+                }
+                else
+                {
+                    toast('Đang đổi mật khẩu..');
+                    google.script.run.withSuccessHandler(function(user)
+                    {
+                        user = JSON.parse(user);
+                        if (user.status == 'ok')
+                        {
+                            localStorage.setItem('a00148user', JSON.stringify(user));
+                            APP.user.token = user.token;
+                            APP.user.changePassword.hide();
+                        }
+                        else
+                        {
+                            canhBao(user.message);
+                        }
+                    }).sv_user_changePassword(APP.user.userName, pass1, APP.user.token);
+                }
+            }
         }
     };
