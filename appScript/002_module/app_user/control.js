@@ -153,6 +153,7 @@
                 $('#changePassword_container').style.display = 'flex';
                 $('#changePass_newPassword1').value = '';
                 $('#changePass_newPassword2').value = '';
+                APP.user.menu.hide();
             },
             hide: function()
             {
