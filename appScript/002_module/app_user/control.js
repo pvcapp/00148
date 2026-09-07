@@ -113,7 +113,7 @@
                             APP.user.token = user.token;
                             APP.getStartupData();
                             $('#user_hoVaTen').innerText = user.hoVaTen;
-
+                            activeButton('user_changePassword_submitButton');
                             APP.user.login.hide();
                         }
                         else
