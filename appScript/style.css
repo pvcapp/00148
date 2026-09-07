@@ -111,6 +111,13 @@ textarea {
     box-shadow: none;
 }
 
+.button__selected
+{
+    background:var(--brand-secondary);
+    border-color: var(--brand-prmary);
+    color: white;
+}
+
 .khung 
 {
     min-height: 100vh;
