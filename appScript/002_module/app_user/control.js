@@ -179,12 +179,16 @@
                 }
                 else
                 {
+                    $('#user_changePassword_submitButton').innerText = 'Đang đổi mật khẩu..';
+                    inactiveButton('user_changePassword_submitButton');
                     toast('Đang đổi mật khẩu..');
                     google.script.run.withSuccessHandler(function(user)
                     {
                         user = JSON.parse(user);
                         if (user.status == 'ok')
                         {
+                            $('#user_changePassword_submitButton').innerText = 'Đổi mật khẩu';
+                            activeButton('user_changePassword_submitButton');
                             localStorage.setItem('a00148user', JSON.stringify(user));
                             APP.user.token = user.token;
                             APP.user.changePassword.hide();
