@@ -1,0 +1,110 @@
+<style>
+    @keyframes hideShow 
+    {
+        0%   {opacity: 0;}
+        25%  {opacity: 0.25;}
+        50%  {opacity: 0.5;}
+        100% {opacity: 1;}
+    }
+
+    .login__container  
+    {
+        display:none;
+        position:fixed;
+        top:0px;
+        left:0px;
+        z-index: 1000;
+        width: 100%;
+        height:100vh;
+        justify-content:center;
+        background: white;
+    }
+
+
+    .login__div 
+    {
+        margin-top:60px;
+        border-radius: var(--border-radius-lg);
+        background: var(--brand-secondary);
+        max-height:410px;
+        animation-name: hideShow;
+        animation-duration: 0.5s;
+    }
+
+
+
+    @media only screen and (max-width:576px) 
+    {
+        .login__div {width: 90%;}
+    }
+
+    @media only screen and (min-width:577px) 
+    {
+        .login__div {width: 400px;}
+    }
+
+
+    .login__error
+    {
+        animation-name: hideShow;
+        animation-duration: 0.5s;
+    }
+
+    .login__form
+    {
+        animation-name: hideShow;
+        animation-duration: 0.5s;
+    }
+
+    .login__header 
+    {
+        width: 100%;
+        height: 50px;
+        padding-top: 5px;
+        padding-left: 5px;
+        font-weight: bold;
+        text-align: left;
+        font: 20px Arial, Helvetica, sans-serif;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+        border-radius:var(--border-radius-lg) var(--border-radius-lg) 0px 0px;
+        z-index: 101;
+        background: var(-brand-header-gradient);
+    }
+        
+    @media only screen and (min-width: 577px)
+    {
+        .login__header 	{width:400px;}
+    }
+        
+    .InputA
+    {
+        animation-name: hideShow;
+        animation-duration: 0.5s;
+
+        box-sizing: border-box;
+        margin-top: 20px;
+        width: 92%;
+        padding: 8px 8px 4px 30px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .InputA:focus
+    {
+        outline: none;
+        background: rgba(255,255,255,0.1);
+        border-radius: 6px;
+        border-bottom: 2px solid white;
+    }
+
+    ::-webkit-input-placeholder { /* Edge */
+    color: rgba(255,255,255,0.6);
+    font-size:14px;
+    }
+        
+</style>
