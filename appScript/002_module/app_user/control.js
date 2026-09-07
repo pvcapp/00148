@@ -1,6 +1,7 @@
     APP.user = 
     {
         token: '',
+        data: {},
         menu:
         {
             showing: false,
@@ -49,7 +50,8 @@
                     }
                     else
                     {
-                        APP.user = user;
+                        APP.user.data = user;
+                        APP.user.token = user.token;
                         $('#user_hoVaTen').innerText = user.hoVaTen;
                         activeButton('user_changePassword_submitButton');
                         APP.getStartupData();
@@ -113,6 +115,7 @@
                         {
                             localStorage.setItem('a00148user', JSON.stringify(user));
                             APP.user.token = user.token;
+                            APP.user.data = user;
                             APP.getStartupData();
                             $('#user_hoVaTen').innerText = user.hoVaTen;
                             activeButton('user_changePassword_submitButton');
@@ -132,7 +135,7 @@
             APP.user.menu.hide();
             APP.ui.hideAllTabs();
             APP.ui.hideAllForms();
-
+            APP.user.data = {};
             APP.user.login.show();
 
             localStorage.setItem('a00148user', '');
@@ -191,7 +194,7 @@
                         {
                             canhBao(user.message);
                         }
-                    }).sv_user_changePassword(APP.user.userName, pass1, APP.user.token);
+                    }).sv_user_changePassword(APP.user.data.userName, pass1, APP.user.token);
                 }
             }
         }
