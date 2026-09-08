@@ -54,7 +54,7 @@
                         <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
                         <td>
                             <div class="deleteButton" onclick="event.stopPropagation();chuNha_xoaPhong('${escapeHtml(dong.idPhong)}')">
-                                ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px', 'margin-right:6px;').render()}
+                                ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px', 'margin-right:6px;', '0.6').render()}
                             </div>
                         </td>
                     </tr>
