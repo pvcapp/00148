@@ -112,6 +112,7 @@
 
     const toggle = (id) =>
     {
+        console.log('toggle ' + id);
         let el = $('#' + id);
         if (!el)
         {

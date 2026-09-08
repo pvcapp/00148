@@ -111,22 +111,22 @@ function themMoiKhachHang_them() {
 }
 
 
-function themMoiKhachHang_lamMoi() {
-
+function themMoiKhachHang_lamMoi()
+ {
     const danhSachInput = document.querySelectorAll(
         '#themMoiKhachHang_form input:not([readonly]), ' +
         '#themMoiKhachHang_form textarea'
     );
-
     danhSachInput.forEach(function(input) {
         input.value = '';
     });
+    $('#themMoiKhachHang_gioiTinh').value = '';
+    $('#themMoiKhachHang_trangThai').value = 'DangThue';
+}
 
-    document.getElementById(
-        'themMoiKhachHang_gioiTinh'
-    ).value = '';
-
-    document.getElementById(
-        'themMoiKhachHang_trangThai'
-    ).value = 'DangThue';
+function themMoiKhachHang_boQua()
+{
+    themMoiKhachHang_lamMoi();
+    hide('themMoiKhachHang_form');
+    show('chuNha_khachHang_danhSach_div');
 }
