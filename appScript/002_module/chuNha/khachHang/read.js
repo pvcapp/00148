@@ -87,7 +87,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
 
 
                 <div style="display: flex; flex-direction:column; gap:10px" class="hide-on-pc">
-                        ${danhSach
+                        ${APP.data.danhSachKhachHang
                         .filter(function(dong) {
                             return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
                         })
