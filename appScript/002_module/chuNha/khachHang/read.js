@@ -65,7 +65,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
             d += '<td>';
                 d += '<div class="button menu__button menu__button__selected" '
                     + 'onclick="event.stopPropagation(); chuNha_danhSachKhachHang_choThue();">';
-                    d =+ new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render();
+                    d += new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render();
                     d += 'Cho thuê';
                 d += '</div>';
                 d += '<div class="deleteButton hide" '
