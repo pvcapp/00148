@@ -92,14 +92,29 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
                         return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
                     })
                     .map(function(dong) {
-                        return `
+                        let html2 = '';
+                        html2 +=  `
                             <div class="card" onclick="khachHang_edit('${dong.idKhachHang}');">
                                 <div class="card__caption">
                                     ${escapeHtml(dong.hoVaTen || '')}                                    
                                 </div>
                                 ${escapeHtml(dong.dienThoai || '')}<br>
                                 ${escapeHtml(dong.dienChi || '')}<br>
-                                ${escapeHtml(dong.email || '')}
+                                ${escapeHtml(dong.email || '')}`;
+                                
+                                let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
+                                if (dong.xacMinh == 0)
+                                {
+                                    xacMinh = `
+                                        <div class="menu__button" style="width: 170px;font-size: 14px;" 
+                                            onclick="event.stopPropagation();chuNha_khachHang_xacMinh('${dong.userName}');">                        
+                                            Xác minh
+                                        </div>
+                                    `;
+                                }
+                                html2 += '<td>' + xacMinh + '</td>';
+
+                                html2 += `
                                 <center>
                                     <div class="button menu__button menu__button__selected" style="width:160px;display: flex; flex-wrap: nowrap;"
                                         onclick="chuNha_danhSachKhachHang_choThue();">         
@@ -109,6 +124,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
                                 </center>
                             </div>
                         `;
+                        return html2;
 
                     })
                     .join('')
