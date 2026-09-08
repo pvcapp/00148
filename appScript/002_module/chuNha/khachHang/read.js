@@ -6,7 +6,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                 <div class="card__caption">
                     DS khách hàng
                 </div>
-                <seclect class="menu__button" id="chuNha_khachHang_showAllButton" onchange="chuNha_showDanhSachKhachHang(APP.data.khachHang, ${this.value})">
+                <select class="menu__button" id="chuNha_khachHang_showAllButton" onchange="chuNha_showDanhSachKhachHang(APP.data.khachHang, ${this.value})">
                     <option value="0" selected>Khách hàng chưa thuê</option>
                     <option value="1">Khách hàng đã thuê</option>
                     <option value="2">Tất cả</option>
