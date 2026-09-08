@@ -68,14 +68,14 @@ function themMoiKhachHang_them() {
 
 
 
-    inactiveButton('khachHang_newKhachHang_saveButton');
-    $('#khachHang_newKhachHang_saveButton').innerText = 'Đang thêm..';
+    inactiveButton('chuNha_khachHang_saveButton');
+    $('#chuNha_khachHang_saveButton').innerText = 'Đang thêm..';
 
     google.script.run
         .withSuccessHandler(function(ketQua) {
 
-            activeButton('khachHang_newKhachHang_saveButton');
-            $('#khachHang_newKhachHang_saveButton').innerText = 'Thêm khách hàng';
+            activeButton('chuNha_khachHang_saveButton');
+            $('#chuNha_khachHang_saveButton').innerText = 'Thêm khách hàng';
 
             if (ketQua && ketQua.thanhCong) {
 
@@ -97,8 +97,8 @@ function themMoiKhachHang_them() {
         })
         .withFailureHandler(function(loi) {
 
-            activeButton('khachHang_newKhachHang_saveButton');
-            $('#khachHang_newKhachHang_saveButton').innerText = 'Thêm khách hàng';
+            activeButton('chuNha_khachHang_saveButton');
+            $('#chuNha_khachHang_saveButton').innerText = 'Thêm khách hàng';
 
             console.error(loi);
 

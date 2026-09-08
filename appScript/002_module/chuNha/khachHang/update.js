@@ -21,18 +21,12 @@ function khachHang_edit_loadForm(duLieu)
     $('#themMoiKhachHang_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
     $('#themMoiKhachHang_trangThai').value = duLieu.trangThai || 'DangThue';
     $('#themMoiKhachHang_ghiChu').value = duLieu.ghiChu || '';
-    // Đổi giao diện form sang chế độ sửa
+
     $('#themMoiKhachHang_caption').innerText = 'CẬP NHẬT KHÁCH HÀNG';
-    const nutLuu = document.querySelector('#themMoiKhachHang_form .menu__button');
-    nutLuu.textContent = 'Lưu cập nhật';        
-    nutLuu.onclick = themMoiKhachHang_luuCapNhat;
-    // Hiển thị form
+    show('chuNha_khachHang_updateButton');
+    hide();
     hide('tab_chuNha_khachHang_danhSach');        
     show('themMoiKhachHang_form');
-    // Form đang ở chế độ sửa
-    APP.state = APP.state || {};        
-    APP.state.cheDoKhachHang = 'sua';        
-    APP.state.idKhachHangDangSua = duLieu.idKhachHang;
 }
 
 
