@@ -8,8 +8,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
         $('#themMoiKhachHang_soCCCD').value = duLieu.soCCCD || '';
 
         $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
-        $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
-        $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
+        $('#themMoiKhachHang_thangSinh').value = duLieu.thangSinh || '';
+        $('#themMoiKhachHang_namSinh').value = duLieu.namSinh || '';
     
         $('#themMoiKhachHang_gioiTinh').value = duLieu.gioiTinh || '';
         $('#themMoiKhachHang_dienThoai').value = duLieu.dienThoai || '';
@@ -35,8 +35,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
             soCCCD: $('#themMoiKhachHang_soCCCD').value || '',
 
             ngaySinh: $('#themMoiKhachHang_ngaySinh').value || '',
-            ngaySinh: $('#themMoiKhachHang_thangSinh').value || '',
-            ngaySinh: $('#themMoiKhachHang_namSinh').value || '',
+            thangSinh: $('#themMoiKhachHang_thangSinh').value || '',
+            namSinh: $('#themMoiKhachHang_namSinh').value || '',
 
             gioiTinh: $('#themMoiKhachHang_gioiTinh').value || '',
             dienThoai: $('#themMoiKhachHang_dienThoai').value || '',
