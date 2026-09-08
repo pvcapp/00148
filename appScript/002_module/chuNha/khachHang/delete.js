@@ -1,35 +1,40 @@
-function xoaKhachHang(idKhachHang, hoVaTen)
+APP.ui.chuNha.quanLyKhachHang.delete = 
 {
-    toast('Đang xóa khách hàng: ' + hoVaTen);
-    google.script.run
-    .withSuccessHandler(function(ketQua) 
+    submit:async function(idKhachHang, hoVaTen)
     {
-        if (!ketQua.thanhCong) 
+        let cb = canhBao('Cảnh báo', 'Bạn có thực sự muốn xóa khách hàng: ' + hoVaTen);
+        if (!cb) return;
+        toast('Đang xóa khách hàng: ' + hoVaTen);
+        google.script.run
+        .withSuccessHandler(function(ketQua) 
         {
-            toast(ketQua.thongBao);
-            return;
-        }
-
-        if (ketQua && ketQua.thanhCong) 
-        {
-            toast('Đã xóa khách hàng!');
-            // Tìm khách hàng trong danh sách hiện tại
-            const khachHang = APP.data.danhSachKhachHang.find(
-                khach => String(khach.idKhachHang) === String(idKhachHang)
-            );
-            if (khachHang) 
+            if (!ketQua.thanhCong) 
             {
-                khachHang.trangThai = 'inactive';
+                toast(ketQua.thongBao);
+                return;
             }
-            chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang);
-            capNhatTongQuanTuCache();
-        }
-    })
-    .withFailureHandler(function(loi) 
-    {   
-        console.error(loi);
-        alert('Có lỗi khi xóa khách hàng:\n' + loi.message);
-    })
-    .xoaKhachHang(idKhachHang, hoVaTen);
+
+            if (ketQua && ketQua.thanhCong) 
+            {
+                toast('Đã xóa khách hàng!');
+                // Tìm khách hàng trong danh sách hiện tại
+                const khachHang = APP.data.danhSachKhachHang.find(
+                    khach => String(khach.idKhachHang) === String(idKhachHang)
+                );
+                if (khachHang) 
+                {
+                    khachHang.trangThai = 'inactive';
+                }
+                chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang);
+                capNhatTongQuanTuCache();
+            }
+        })
+        .withFailureHandler(function(loi) 
+        {   
+            console.error(loi);
+            alert('Có lỗi khi xóa khách hàng:\n' + loi.message);
+        })
+        .sv_xoaKhachHang(idKhachHang, hoVaTen);
+    }
 }
 

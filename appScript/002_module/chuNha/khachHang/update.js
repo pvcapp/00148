@@ -1,98 +1,137 @@
-function khachHang_edit_loadForm(duLieu) 
+
+APP.ui.chuNha.quanLyKhachHang.update = 
 {
-    if (!duLieu) 
+    loadData: function(duLieu)
     {
-        toast('Không tìm thấy thông tin khách hàng');            
-        return;        
-    }
+        $('#themMoiKhachHang_idKhachHang').value = duLieu.idKhachHang || '';
+        $('#themMoiKhachHang_hoVaTen').value = duLieu.hoVaTen || '';
+        $('#themMoiKhachHang_soCCCD').value = duLieu.soCCCD || '';
 
-    // Đổ dữ liệu vào form
-    $('#themMoiKhachHang_idKhachHang').value = duLieu.idKhachHang || '';
-    $('#themMoiKhachHang_hoVaTen').value = duLieu.hoVaTen || '';
-    $('#themMoiKhachHang_soCCCD').value = duLieu.soCCCD || '';
-    $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
-    $('#themMoiKhachHang_gioiTinh').value = duLieu.gioiTinh || '';
-    $('#themMoiKhachHang_dienThoai').value = duLieu.dienThoai || '';
-    $('#themMoiKhachHang_email').value = duLieu.email || '';
-    $('#themMoiKhachHang_diaChiThuongTru').value = duLieu.diaChiThuongTru || '';
-    $('#themMoiKhachHang_ngheNghiep').value = duLieu.ngheNghiep || '';
-    $('#themMoiKhachHang_anhKhach').value = duLieu.anhKhach || '';
-    $('#themMoiKhachHang_anhCCCDMatTruoc').value = duLieu.anhCCCDMatTruoc || '';
-    $('#themMoiKhachHang_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
-    $('#themMoiKhachHang_trangThai').value = duLieu.trangThai || 'DangThue';
-    $('#themMoiKhachHang_ghiChu').value = duLieu.ghiChu || '';
+        $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
+        $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
+        $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
+    
+        $('#themMoiKhachHang_gioiTinh').value = duLieu.gioiTinh || '';
+        $('#themMoiKhachHang_dienThoai').value = duLieu.dienThoai || '';
+        $('#themMoiKhachHang_email').value = duLieu.email || '';
 
-    $('#themMoiKhachHang_caption').innerText = 'CẬP NHẬT KHÁCH HÀNG';
-    show('chuNha_khachHang_updateButton');
-    hide();
-    hide('tab_chuNha_khachHang_danhSach');        
-    show('themMoiKhachHang_form');
-}
+        $('#themMoiKhachHang_diaChiThuongTru').value = duLieu.diaChiThuongTru || '';
+        $('#themMoiKhachHang_ngheNghiep').value = duLieu.ngheNghiep || '';
 
+        $('#themMoiKhachHang_anhKhach').value = duLieu.anhKhach || '';
+        $('#themMoiKhachHang_anhCCCDMatTruoc').value = duLieu.anhCCCDMatTruoc || '';
+        $('#themMoiKhachHang_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
 
+        $('#themMoiKhachHang_ghiChu').value = duLieu.ghiChu || '';
+        $('#themMoiKhachHang_dangThue').value = duLieu.dangThue || '1';
+        $('#themMoiKhachHang_xacMinh').value = duLieu.xacMinh || '';
+        $('#themMoiKhachHang_active').value = '1';
+    },
+    readData: function()
+    {
+        return {
+            idKhachHang: $('#themMoiKhachHang_idKhachHang').value || '',
+            hoVaTen: $('#themMoiKhachHang_hoVaTen').value || '',
+            soCCCD: $('#themMoiKhachHang_soCCCD').value || '',
 
-function khachHang_edit(idKhachHang)
-{
-    const khachHang =
-        APP.data.danhSachKhachHang.find(function(khach) 
+            ngaySinh: $('#themMoiKhachHang_ngaySinh').value || '',
+            ngaySinh: $('#themMoiKhachHang_thangSinh').value || '',
+            ngaySinh: $('#themMoiKhachHang_namSinh').value || '',
+
+            gioiTinh: $('#themMoiKhachHang_gioiTinh').value || '',
+            dienThoai: $('#themMoiKhachHang_dienThoai').value || '',
+            email: $('#themMoiKhachHang_email').value || '',
+
+            diaChiThuongTru: $('#themMoiKhachHang_diaChiThuongTru').value || '',
+            ngheNghiep: $('#themMoiKhachHang_ngheNghiep').value || '',
+
+            anhKhach: $('#themMoiKhachHang_anhKhach').value || '',
+            anhCCCDMatTruoc: $('#themMoiKhachHang_anhCCCDMatTruoc').value || '',
+            anhCCCDMatSau: $('#themMoiKhachHang_anhCCCDMatSau').value || '',  
+
+            ghiChu: $('#themMoiKhachHang_ghiChu').value || '',
+            dangThue: $('#themMoiKhachHang_trangThai').value || 'DangThue',
+            xacMinh: $('#themMoiKhachHang_trangThai').value || 'DangThue',
+            active: '1'
+        };
+    },
+    show: function(idKhachHang)
+    {
+        const khachHang = APP.data.danhSachKhachHang.find(function(khach) 
         {
             return String(khach.idKhachHang) === String(idKhachHang);
         });
 
-    if (!khachHang)
-    {
-        toast('Không tìm thấy khách hàng');
-        return;
-    }
+        if (!khachHang)
+        {
+            toast('Không tìm thấy khách hàng');
+            return;
+        }
 
-    khachHang_edit_loadForm(khachHang);
+        APP.ui.chuNha.quanLyKhachHang.update.loadData(khachHang);
+
+        $('#themMoiKhachHang_caption').innerText = 'CẬP NHẬT THÔNG TIN';
+        show('chuNha_khachHang_updateButton');
+        hide('chuNha_khachHang_saveButton');
+
+        hide('tab_chuNha_khachHang_danhSach'); 
+        show('themMoiKhachHang_form', 'grid');
+    },
+    hide: function()
+    {
+        show('tab_chuNha_khachHang_danhSach'); 
+        hide('themMoiKhachHang_form', 'grid');
+    },
+    submit: async function()
+    {
+        const data = APP.ui.chuNha.quanLyKhachHang.update.readData();
+        if (!data.idKhachHang) 
+        {
+            canhBao('Lỗi kỹ thuật' , 'Không thấy id Khách hàng cần cập nhật');
+            return;
+        }
+
+        if (!data.hoVaTen || data.dienThoai)
+        {
+            canhBao('Vui lòng nhập Tên Khách hàng và số điện thoại');
+            return;
+        }
+        
+        inactiveButton('chuNha_khachHang_updateButton');
+        $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
+        google.script.run
+            .withSuccessHandler(function(phong)
+            {
+                activeButton('chuNha_khachHang_updateButton');
+                $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
+                const viTri = (APP.data.danhSachKhachHang || []).findIndex(function(kh)
+                {
+                    return String(kh.idKhachHang) === String(data.idKhachHang);
+                });
+                if (viTri !== -1)
+                {
+                    APP.data.danhSachKhachHang[viTri] = kh;
+                }
+                
+                APP.ui.chuNha.quanLyKhachHang.danhSach.render();
+
+                APP.ui.chuNha.quanLyKhachHang.update.hide();
+                APP.ui.chuNha.quanLyKhachHang.danhSach.show();
+                capNhatTongQuanTuCache();
+                toast('Đã cập nhật Khách hàng');
+            })
+            .withFailureHandler(function(loi)
+            {
+                activeButton('chuNha_khachHang_updateButton');
+                $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
+                alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
+            })
+            .sv_capNhatKhachHang(data, APP.user.token);
+    }
 }
 
 
-function khachHang_edit_luu()
-{
-    const idPhong = $('#phong_edit_idPhong').value;
-    const duLieu = phong_edit_layDuLieu();
 
-    if (!duLieu.idKhuNha || !duLieu.tenPhong)
-    {
-        toast('Vui lòng nhập đủ khu nhà và tên phòng');
-        return;
-    }
-
-    
-    inactiveButton('chuNha_updatePhong_saveButton');
-    $('#chuNha_updatePhong_saveButton').innerText = 'Đang lưu..';
-
-    google.script.run
-        .withSuccessHandler(function(phong)
-        {
-            activeButton('chuNha_updatePhong_saveButton');
-            $('#chuNha_updatePhong_saveButton').innerText = 'Lưu thay đổi';
-
-            const viTri = (APP.data.phong || []).findIndex(function(dong)
-            {
-                return String(dong.idPhong) === String(idPhong);
-            });
-
-            if (viTri !== -1)
-            {
-                APP.data.phong[viTri] = phong;
-            }
-
-            chuNha_showDanhSachPhong(APP.data.phong || []);
-            phong_edit_boQua();
-            capNhatTongQuanTuCache();
-            toast('Đã cập nhật phòng');
-        })
-        .withFailureHandler(function(loi)
-        {
-            activeButton('chuNha_updatePhong_saveButton');
-            $('#chuNha_updatePhong_saveButton').innerText = 'Lưu thay đổi';
-            alert('Có lỗi khi cập nhật phòng:\n' + loi.message);
-        })
-        .sv_capNhatPhong(idPhong, duLieu, APP.user.token);
-}
 
 
 const chuNha_khachHang_xacMinh = (userName) =>
