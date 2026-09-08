@@ -4,7 +4,7 @@ $('#tab_chuNha_khachHang_danhSach_header').innerHTML =`
             <div class="card__caption">
                 DS khách hàng
             </div>
-            <select class="menu__button" id="chuNha_khachHang_filterButton" onchange="APP.ui.chuNha.quanLykhachHang.dangThue=this.value;chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang, this.value);">
+            <select class="menu__button" id="chuNha_khachHang_filterButton" onchange="APP.ui.chuNha.quanLyKhachHang.dangThue=this.value;chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang, this.value);">
                 <option value="0" selected>Khách hàng chưa thuê</option>
                 <option value="1">Khách hàng đã thuê</option>
                 <option value="2">Tất cả</option>
