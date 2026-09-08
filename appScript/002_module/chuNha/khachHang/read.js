@@ -36,7 +36,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                         <th>Điện thoại</th>
                         <th>Trạng thái</th>
                         <th>Khóa chỉnh sửa</th>
-                        <th>Thuê nhà</th>
+                        <th>Cho thuê phòng</th>
                     </tr>
 
                 </thead>
