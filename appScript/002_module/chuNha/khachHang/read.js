@@ -48,7 +48,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
             return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
         })
         .map(function(dong) {
-            let d = '<tr ondblclick="khachHang_edit('
+            let d = '<tr onclick="khachHang_edit('
                 + "'" + dong.idKhachHang + "'" 
                 + ')">';
             d += '<td>' + dong.hoVaTen + '</td>';
@@ -91,7 +91,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
                     })
                     .map(function(dong) {
                         return `
-                            <div class="card">
+                            <div class="card" onclick="khachHang_edit('${dong.idKhachHang}');">
                                 <div class="card__caption">
                                     ${escapeHtml(dong.hoVaTen || '')}                                    
                                 </div>
