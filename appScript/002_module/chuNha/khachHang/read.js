@@ -123,13 +123,13 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                                 ${escapeHtml(dong.email || '')}
                                 <center>
                                     <div class="button menu__button menu__button__selected" style="width:120px;"
-                                        onclick="chuNha_danhSachKhachHang_choThue();">                                    
+                                        onclick="chuNha_danhSachKhachHang_choThue();">         
+                                        ${new PVCImage("https://pvcapp.github.io/00148/img/rent_white.svg", 'auto', '16px','margin-right:16px;').render()}                           
                                         Cho thuê    
                                     </div>
 
                                     <div class="deleteButton" style="display:none;"
                                         onclick="event.stopPropagation(); xoaKhachHang('${escapeHtml(dong.idKhachHang)}', '${escapeHtml(dong.hoVaTen || '')}');">
-                                        ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px').render()}
                                     </div>
                                 </center>
                             </div>
