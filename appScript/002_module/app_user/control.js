@@ -99,11 +99,15 @@
                 if (userName.length < 3)
                 {
                     cb = await canhBao('Vui lòng kiểm tra tên đăng nhập!');
+                    $('#login_submitButton').innerText = 'Đăng nhập';
+                    activeButton('login_submitButton');
                     return;
                 }
                 else if (pass.length < 3)
                 {
                     cb = await canhBao('Vui lòng kiểm tra lại mật khẩu!');
+                    $('#login_submitButton').innerText = 'Đăng nhập';
+                    activeButton('login_submitButton');
                     return;
                 }
                 else
@@ -127,6 +131,8 @@
                         else
                         {
                             canhBao(user.message);
+                            $('#login_submitButton').innerText = 'Đăng nhập';
+                            activeButton('login_submitButton');
                         }
                     }).sv_user_doLogin(JSON.stringify(loginInfor));
                 }
