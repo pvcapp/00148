@@ -1,24 +1,3 @@
-class PVCImage
-{
-    constructor(src, width = "auto", height = "auto", style ='', opacity = 1)
-    {
-        this.src = src;
-        this.width = width;
-        this.height = height;
-        this.style = style;
-        this.opacity = opacity;
-    }
-
-    render()
-    {
-        return `
-            <img src="${this.src}" style="width: ${this.width};height: ${this.height};opacity: ${this.opacity}; ${this.style}">
-        `;
-    }
-}
-
-
-
 function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0) 
 {
     let html = `
