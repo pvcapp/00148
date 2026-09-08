@@ -6,7 +6,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                 <div class="card__caption">
                     DS khách hàng
                 </div>
-                <select class="menu__button" id="chuNha_khachHang_showAllButton" onchange="chuNha_showDanhSachKhachHang(APP.data.khachHang, ${this.value})">
+                <select class="menu__button" id="chuNha_khachHang_showAllButton" onchange="chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang, ${this.value})">
                     <option value="0" selected>Khách hàng chưa thuê</option>
                     <option value="1">Khách hàng đã thuê</option>
                     <option value="2">Tất cả</option>
@@ -102,7 +102,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                                 ${escapeHtml(dong.dienChi || '')}<br>
                                 ${escapeHtml(dong.email || '')}
                                 <center>
-                                    <div class="button menu__button menu__button__selected" style="min-width:120px;display: flex; flex-wrap: nowrap;"
+                                    <div class="button menu__button menu__button__selected" style="width:160px;display: flex; flex-wrap: nowrap;"
                                         onclick="chuNha_danhSachKhachHang_choThue();">         
                                         ${new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render()}                           
                                         Cho thuê    
