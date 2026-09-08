@@ -1,6 +1,20 @@
-class chuNha_showDanhSachKhachHang_Button
+class PVCImage
 {
-    
+    constructor(src, width = "auto", height = "auto", style ='', opacity = 1)
+    {
+        this.src = src;
+        this.width = width;
+        this.height = height;
+        this.style = style;
+        this.opacity = opacity;
+    }
+
+    render()
+    {
+        return `
+            <img src="${this.src}" style="width: ${this.width};height: ${this.height};opacity: ${this.opacity}; ${this.style}">
+        `;
+    }
 }
 
 
@@ -20,16 +34,9 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                 </select>
             </div>
 
-            <div 
-                class="menu__button" 
-                style="width: 170px;font-size: 14px;" 
-                onclick="hide('tab_chuNha_khachHang_danhSach');show('themMoiKhachHang_form', 'grid');"
-            >
-                <img 
-                    src="https://pvcapp.github.io/00148/img/new.svg" 
-                    style="height:16px;margin-right:6px;"
-                >
-
+            <div class="menu__button" style="width: 170px;font-size: 14px;" 
+                onclick="hide('tab_chuNha_khachHang_danhSach');show('themMoiKhachHang_form', 'grid');">
+                ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
                 Khách hàng mới
             </div>
 
@@ -122,7 +129,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
 
                                     <div class="deleteButton" style="display:none;"
                                         onclick="event.stopPropagation(); xoaKhachHang('${escapeHtml(dong.idKhachHang)}', '${escapeHtml(dong.hoVaTen || '')}');">
-                                        x
+                                        ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px').render()}
                                     </div>
                                 </center>
                             </div>
