@@ -1,4 +1,4 @@
-$('#tab_chuNha_khachHang_danhSach').innerHTML =`
+$('#tab_chuNha_khachHang_danhSach_header').innerHTML =`
     <div style="width: 100%;display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 0.6rem;">
         <div style="display: flex; flex-wrap: nowrap;">
             <div class="card__caption">
@@ -121,5 +121,5 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
 
         </div>
     `;
-    $('#tab_chuNha_khachHang_danhSach').innerHTML = html;
+    $('#tab_chuNha_khachHang_danhSach_body').innerHTML = html;
 }
