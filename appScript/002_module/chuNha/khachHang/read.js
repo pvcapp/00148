@@ -101,9 +101,9 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                                 ${escapeHtml(dong.dienChi || '')}<br>
                                 ${escapeHtml(dong.email || '')}
                                 <center>
-                                    <div class="button menu__button menu__button__selected" style="width:120px;"
+                                    <div class="button menu__button menu__button__selected" style="min-width:120px;"
                                         onclick="chuNha_danhSachKhachHang_choThue();">         
-                                        ${new PVCImage('444https://pvcapp.github.io/00148/img/rent_white.svg', 'auto', '16px','margin-right:16px;').render()}                           
+                                        ${new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', 'auto', '16px','margin-right:16px;').render()}                           
                                         Cho thuê    
                                     </div>
 
