@@ -53,3 +53,9 @@ function khachHang_edit(idKhachHang)
 
     khachHang_edit_loadForm(khachHang);
 }
+
+
+const chuNha_khachHang_xacMinh = (userName) =>
+{
+    
+}

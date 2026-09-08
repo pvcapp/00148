@@ -33,7 +33,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
                         <th>Email</th>
                         <th>Điện thoại</th>
                         <th>Trạng thái</th>
-                        <th>Khóa chỉnh sửa</th>
+                        <th>Xác minh</th>
                         <th>Cho thuê phòng</th>
                     </tr>
 
@@ -54,24 +54,27 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
             d += '<td>' + dong.hoVaTen + '</td>';
             d += '<td>' + dong.email + '</td>';
             d += '<td>' + dong.dienThoai + '</td>';
-            let thue = String(dong.dangThue) === '0'
-                ? 'Chưa thuê'
-                : 'Đang thuê';
+            let thue = String(dong.dangThue) === '0'  ? 'Chưa thuê' : 'Đang thuê';
             d += '<td>' + thue + '</td>';
-
+            
+            let xacMinh = 'Đã xác minh';
+            if (dong.xacMinh == 0)
+            {
+                xacMinh = `
+                    <div class="menu__button" style="width: 170px;font-size: 14px;" 
+                        onclick="chuNha_khachHang_xacMinh('${dong.userName}');">
+                        ${new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render()}
+                        Xác minh
+                    </div>
+                `;
+            }
             d += '<td></td>';
+
             d += '<td>';
                 d += '<div class="button menu__button menu__button__selected" '
                     + 'onclick="event.stopPropagation(); chuNha_danhSachKhachHang_choThue();">';
                     d += new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render();
                     d += 'Cho thuê';
-                d += '</div>';
-                d += '<div class="deleteButton hide" '
-                    + 'onclick="event.stopPropagation(); xoaKhachHang('
-                    + "'" + dong.idKhachHang + "', "
-                    + "'" + dong.hoVaTen + "'"
-                    + ');">';
-                    d += 'x';
                 d += '</div>';
             d += '</td>';
             d += '</tr>';
@@ -103,10 +106,6 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
                                         onclick="chuNha_danhSachKhachHang_choThue();">         
                                         ${new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render()}                           
                                         Cho thuê    
-                                    </div>
-
-                                    <div class="deleteButton" style="display:none;"
-                                        onclick="event.stopPropagation(); xoaKhachHang('${escapeHtml(dong.idKhachHang)}', '${escapeHtml(dong.hoVaTen || '')}');">
                                     </div>
                                 </center>
                             </div>
