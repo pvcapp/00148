@@ -48,7 +48,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
             })
             .map(function(dong) {
-                let d = '<tr onclick="khachHang_edit('
+                let d = '<tr onclick="APP.ui.chuNha.quanLyKhachHang.update.show('
                     + "'" + dong.idKhachHang + "'" 
                     + ')">';
                 d += '<td>' + dong.hoVaTen + '</td>';
@@ -94,7 +94,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                         .map(function(dong) {
                             let html2 = '';
                             html2 +=  `
-                                <div class="card" onclick="khachHang_edit('${dong.idKhachHang}');">
+                                <div class="card" onclick="APP.ui.chuNha.quanLyKhachHang.update.show('${dong.idKhachHang}');">
                                     <div class="card__caption">
                                         ${escapeHtml(dong.hoVaTen || '')}                                    
                                     </div>

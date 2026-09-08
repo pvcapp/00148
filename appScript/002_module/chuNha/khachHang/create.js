@@ -22,6 +22,7 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
 
         hide('chuNha_khachHang_updateButton');
         show('chuNha_khachHang_saveButton');
+        hide('formKhachHang_deleteButton');
     },
     hide: function()
     {
