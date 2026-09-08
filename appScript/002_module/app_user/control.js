@@ -91,7 +91,9 @@
             submit: async function()
             {
                 let cb;
-                $('#loginError').innerHTML = 'Đang kiểm tra thông tin đăng nhập <marquee style="width:4px;">......</marquee>';
+                $('#loginError').innerHTML = 'Đang kiểm tra thông tin <marquee style="width:8px;">......</marquee>';
+                $('#login_submitButton').innerText = 'Đang đăng nhập..';
+                inactiveButton('login_submitButton');
                 let userName = document.getElementById("login_userName").value;
                 let pass = document.getElementById("login_password").value;
                 if (userName.length < 3)
@@ -118,6 +120,8 @@
                             APP.getStartupData();
                             $('#user_hoVaTen').innerText = user.hoVaTen;
                             activeButton('user_changePassword_submitButton');
+                            $('#login_submitButton').innerText = 'Đăng nhập';
+                            activeButton('login_submitButton');
                             APP.user.login.hide();
                         }
                         else
