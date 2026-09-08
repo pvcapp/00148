@@ -1,3 +1,10 @@
+class chuNha_showDanhSachKhachHang_Button
+{
+    
+}
+
+
+
 function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0) 
 {
     let html = `
