@@ -73,6 +73,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
         $('#themMoiKhachHang_caption').innerText = 'CẬP NHẬT THÔNG TIN';
         show('chuNha_khachHang_updateButton');
         hide('chuNha_khachHang_saveButton');
+        show('formKhachHang_deleteButton');
 
         hide('tab_chuNha_khachHang_danhSach'); 
         show('themMoiKhachHang_form', 'grid');
