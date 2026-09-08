@@ -57,13 +57,12 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
             let thue = String(dong.dangThue) === '0'  ? 'Chưa thuê' : 'Đang thuê';
             d += '<td>' + thue + '</td>';
             
-            let xacMinh = 'Đã xác minh';
+            let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
             if (dong.xacMinh == 0)
             {
                 xacMinh = `
                     <div class="menu__button" style="width: 170px;font-size: 14px;" 
-                        onclick="chuNha_khachHang_xacMinh('${dong.userName}');">
-                        ${new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render()}
+                        onclick="event.stopPropagation();chuNha_khachHang_xacMinh('${dong.userName}');">                        
                         Xác minh
                     </div>
                 `;
