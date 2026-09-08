@@ -93,6 +93,8 @@
             return;
         }
 
+        el.classList.remove('hide');
+
         if (el.dataset.display)
         {      
             if (el.dataset.display == "none")
