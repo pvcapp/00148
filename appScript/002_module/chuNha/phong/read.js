@@ -53,7 +53,9 @@
                         <td>${formatMoney(dong.giaNiemYet)}</td>                                   
                         <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
                         <td>
-                            <div class="deleteButton" onclick="event.stopPropagation();chuNha_xoaPhong('${escapeHtml(dong.idPhong)}')">x</div>
+                            <div class="deleteButton" onclick="event.stopPropagation();chuNha_xoaPhong('${escapeHtml(dong.idPhong)}')">
+                                ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px', 'margin-right:6px;').render()}
+                            </div>
                         </td>
                     </tr>
                 `;

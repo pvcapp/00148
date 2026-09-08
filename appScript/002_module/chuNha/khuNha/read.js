@@ -45,7 +45,7 @@
                         <td>
                             <div class="deleteButton"
                                 onclick="event.stopPropagation(); xoaKhuNha('${escapeHtml(dong.idKhuNha)}', '${escapeHtml(dong.tenKhuNha || '')}');">
-                                x
+                                ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px', 'margin-right:6px;').render()}
                             </div>
                         </td>
                     </tr>
