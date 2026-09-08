@@ -78,7 +78,7 @@
 
         render()
         {
-            console.log('return new image: ' + src);
+            console.log('return new image: ' + this.src);
             return `
                 <img src="${this.src}" style="width:${this.width}; height:${this.height}; opacity:${this.opacity}; ${this.style}">
             `;
