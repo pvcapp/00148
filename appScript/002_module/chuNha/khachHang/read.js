@@ -1,29 +1,27 @@
-function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0) 
+$('#tab_chuNha_khachHang_danhSach').innerHTML =`
+    <div style="width: 100%;display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 0.6rem;">
+        <div style="display: flex; flex-wrap: nowrap;">
+            <div class="card__caption">
+                DS khách hàng
+            </div>
+            <select class="menu__button" id="chuNha_khachHang_filterButton" onchange="APP.ui.chuNha.quanLykhachHang.dangThue=this.value;chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang, this.value);">
+                <option value="0" selected>Khách hàng chưa thuê</option>
+                <option value="1">Khách hàng đã thuê</option>
+                <option value="2">Tất cả</option>
+            </select>
+        </div>
+
+        <div class="menu__button" style="width: 170px;font-size: 14px;" 
+            onclick="hide('tab_chuNha_khachHang_danhSach');show('themMoiKhachHang_form', 'grid');">
+            ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
+            Khách hàng mới
+        </div>
+
+    </div>`;
+
+function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0') 
 {
     let html = `
-        <div style="width: 100%;display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 0.6rem;">
-            <div style="display: flex; flex-wrap: nowrap;">
-                <div class="card__caption">
-                    DS khách hàng
-                </div>
-                <select class="menu__button" id="chuNha_khachHang_showAllButton" onchange="chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang, ${this.value})">
-                    <option value="0" selected>Khách hàng chưa thuê</option>
-                    <option value="1">Khách hàng đã thuê</option>
-                    <option value="2">Tất cả</option>
-                </select>
-            </div>
-
-            <div class="menu__button" style="width: 170px;font-size: 14px;" 
-                onclick="hide('tab_chuNha_khachHang_danhSach');show('themMoiKhachHang_form', 'grid');">
-                ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
-                Khách hàng mới
-            </div>
-
-        </div>
-    `;
-
-
-    html += `
         <div class="card">
 
             <table class="bang hide-on-mobile">
@@ -47,7 +45,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                     
     html += danhSach
         .filter(function(dong) {
-            return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || dangThue == 2);
+            return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
         })
         .map(function(dong) {
             let d = '<tr ondblclick="khachHang_edit('
@@ -89,8 +87,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
             <div style="display: flex; flex-direction:column; gap:10px" class="hide-on-pc">
                     ${danhSach
                     .filter(function(dong) {
-                        return String(dong.active) === '1'
-                        && (String(dong.dangThue) === '0' || dangThue == 1);
+                        return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
                     })
                     .map(function(dong) {
                         return `
