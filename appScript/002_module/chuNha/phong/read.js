@@ -3,7 +3,10 @@
         $('#tab_chuNha_phong_danhSach').innerHTML = `
             <div style="width: 100%;display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 0.6rem;">
                 <span class="card__caption">Danh sách phòng</span>
-                <div class="menu__button" style="width: 160px;" onclick="themMoiPhong_lamMoi();hide('tab_chuNha_phong_danhSach');show('themMoiPhong_form', 'grid');">Phòng mới</div>
+                <div class="menu__button" style="width: 160px;" onclick="themMoiPhong_lamMoi();hide('tab_chuNha_phong_danhSach');show('themMoiPhong_form', 'grid');">
+                    ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
+                    Phòng mới
+                </div>
             </div>
             <div class="card">
                 <table class="bang" id="chuNha_danhSachPhong_table">
