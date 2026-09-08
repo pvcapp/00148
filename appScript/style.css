@@ -114,7 +114,7 @@ textarea {
 .button__selected
 {
     background:var(--brand-secondary);
-    border-color: var(--brand-prmary);
+    border-color: var(--brand-primary);
     color: white;
 }
 
