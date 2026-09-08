@@ -68,7 +68,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = '0')
                     </div>
                 `;
             }
-            d += '<td></td>';
+            d += '<td>' + xacMinh + '</td>';
 
             d += '<td>';
                 d += '<div class="button menu__button menu__button__selected" '
