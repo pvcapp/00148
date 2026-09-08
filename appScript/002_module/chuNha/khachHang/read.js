@@ -2,10 +2,16 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
 {
     let html = `
         <div style="width: 100%;display: flex; flex-wrap: nowrap; justify-content: space-between; gap: 0.6rem;">
-
-            <span class="card__caption">
-                DS khách hàng
-            </span>
+            <div style="display: flex; flex-wrap: nowrap;">
+                <div class="card__caption">
+                    DS khách hàng
+                </div>
+                <seclect class="menu__button" id="chuNha_khachHang_showAllButton" onchange="chuNha_showDanhSachKhachHang(APP.data.khachHang, ${this.value})">
+                    <option value="0" selected>Khách hàng chưa thuê</option>
+                    <option value="1">Khách hàng đã thuê</option>
+                    <option value="2">Tất cả</option>
+                </select>
+            </div>
 
             <div 
                 class="menu__button" 
@@ -48,11 +54,7 @@ function chuNha_showDanhSachKhachHang(danhSach, dangThue = 0)
                     
     html += danhSach
         .filter(function(dong) {
-            return String(dong.active) === '1'
-                && (
-                    String(dong.dangThue) === '0'
-                    || dangThue == 1
-                );
+            return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || dangThue == 2);
         })
         .map(function(dong) {
             let d = '<tr ondblclick="khachHang_edit('
