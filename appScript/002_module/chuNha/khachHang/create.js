@@ -11,7 +11,6 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
             input.value = '';
         });
         $('#themMoiKhachHang_gioiTinh').value = '';
-        $('#themMoiKhachHang_trangThai').value = 'DangThue';
     },
     show: function()
     {
