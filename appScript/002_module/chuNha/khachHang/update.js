@@ -50,8 +50,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
             anhCCCDMatSau: $('#themMoiKhachHang_anhCCCDMatSau').value || '',  
 
             ghiChu: $('#themMoiKhachHang_ghiChu').value || '',
-            dangThue: $('#themMoiKhachHang_trangThai').value || 'DangThue',
-            xacMinh: $('#themMoiKhachHang_trangThai').value || 'DangThue',
+            dangThue: $('#themMoiKhachHang_dangThue').value || '1',
+            xacMinh: $('#themMoiKhachHang_xacMinh').value || '0',
             active: '1'
         };
     },
