@@ -17,12 +17,18 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
     {
         APP.ui.chuNha.quanLyKhachHang.addNew.reset();
         $('#themMoiKhachHang_caption').innerText = 'THÊM KHÁCH HÀNG MỚI';        
+        
+        hide('chuNha_khachHang_updateButton');
+        hide('chuNha_khachHang_update_reset');
+        
+        show('chuNha_khachHang_saveButton');
+        show('chuNha_khachHang_addNew_reset');
+    
+        hide('formKhachHang_deleteButton');
+        
+        
         hide('tab_chuNha_khachHang_danhSach'); 
         show('themMoiKhachHang_form', 'grid');
-
-        hide('chuNha_khachHang_updateButton');
-        show('chuNha_khachHang_saveButton');
-        hide('formKhachHang_deleteButton');
     },
     hide: function()
     {
