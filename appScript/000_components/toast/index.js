@@ -7,7 +7,7 @@ function toast_render()
         let el = '<div style="position: relative;">';
         if (APP.showIcon)
         {
-            el += '<image src="' + APP.publicUrl + '/img/favicon.png" style="position:absolute; top:-36px; left:-24px; height:48px;">';
+            el += '<image src="' + APP.publicUrl + '/img/favicon.png" style="position:absolute; top:-36px; left:-24px; height:36px;">';
         }
         el += `
                 <div class="toast__noiDung" id="toast__noiDung">
