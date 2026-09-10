@@ -69,6 +69,7 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
 
         inactiveButton('chuNha_khachHang_saveButton');
         $('#chuNha_khachHang_saveButton').innerText = 'Đang thêm..';
+        toast('Đang thêm khách hàng..');
         google.script.run
             .withSuccessHandler(function(ketQua) 
             {
@@ -77,12 +78,16 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
                 if (ketQua && ketQua.thanhCong) 
                 {
                     toast('Thêm khách hàng thành công: ' + duLieu.hoVaTen);
+                    APP.data.danhSachKhachHang = APP.data.danhSachKhachHang || [];
+                    APP.data.danhSachKhachHang.push(ketQua.data);
+                    APP.ui.chuNha.quanLyKhachHang.danhSach.render();
                     APP.ui.chuNha.quanLyKhachHang.addNew.hide();
                     capNhatTongQuanTuCache();
+                    return;
                 } 
                 else 
                 {
-                    alert(ketQua.thongBao || 'Không thể thêm khách hàng');
+                    canhBao('Không thành công!', ketQua.thongBao || 'Không thể thêm khách hàng');
                 }
             })
             .withFailureHandler(function(loi) {
@@ -92,10 +97,7 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
 
                 console.error(loi);
 
-                alert(
-                    'Có lỗi khi thêm khách hàng:\n' +
-                    loi.message
-                );
+                alert('Không thành công!', 'Có lỗi khi thêm khách hàng:\n' + loi.message);
             })
             .sv_themKhachHang(duLieu, APP.user.token);
     },
