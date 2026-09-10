@@ -110,9 +110,9 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 console.log(JSON.stringify(kh));
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
-                const viTri = (APP.data.danhSachKhachHang || []).findIndex(function(kh)
+                const viTri = (APP.data.danhSachKhachHang || []).findIndex(function(khach)
                 {
-                    return String(kh.idKhachHang) === String(data.idKhachHang);
+                    return String(khach.idKhachHang) === String(data.idKhachHang);
                 });
 
                 if (viTri !== -1)
