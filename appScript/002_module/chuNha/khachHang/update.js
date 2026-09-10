@@ -96,7 +96,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
             return;
         }
 
-        if (!data.hoVaTen || data.dienThoai)
+        if (!data.hoVaTen || !data.dienThoai)
         {
             canhBao('Vui lòng nhập Tên Khách hàng và số điện thoại');
             return;
