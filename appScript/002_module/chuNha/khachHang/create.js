@@ -43,8 +43,8 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
             soCCCD: $('#themMoiKhachHang_soCCCD').value || '',
 
             ngaySinh: $('#themMoiKhachHang_ngaySinh').value || '',
-            ngaySinh: $('#themMoiKhachHang_thangSinh').value || '',
-            ngaySinh: $('#themMoiKhachHang_namSinh').value || '',
+            thangSinh: $('#themMoiKhachHang_thangSinh').value || '',
+            namSinh: $('#themMoiKhachHang_namSinh').value || '',
 
             gioiTinh: $('#themMoiKhachHang_gioiTinh').value || '',
             dienThoai: $('#themMoiKhachHang_dienThoai').value || '',
@@ -79,7 +79,7 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
                 {
                     toast('Thêm khách hàng thành công: ' + duLieu.hoVaTen);
                     APP.data.danhSachKhachHang = APP.data.danhSachKhachHang || [];
-                    APP.data.danhSachKhachHang.push(ketQua.data);
+                    APP.data.danhSachKhachHang.push(ketQua.khachHang);
                     APP.ui.chuNha.quanLyKhachHang.danhSach.render();
                     APP.ui.chuNha.quanLyKhachHang.addNew.hide();
                     capNhatTongQuanTuCache();
