@@ -131,7 +131,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
                 alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
             })
-            .sv_capNhatKhachHang(data, APP.user.token);
+            .sv_capNhatKhachHang(APP.ui.chuNha.quanLyKhachHang.update.idKhachHang, data, APP.user.token);
     },
     reset: function()
     {
