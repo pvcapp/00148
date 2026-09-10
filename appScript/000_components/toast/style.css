@@ -23,7 +23,7 @@
 .toast__noiDung
 {
     margin-top: 0.6rem;
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
 }
 
 @keyframes thong-bao-popup-startup
