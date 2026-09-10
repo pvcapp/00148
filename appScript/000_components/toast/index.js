@@ -9,8 +9,8 @@ function toast_render()
         {
             el += '<image src="' + APP.publicUrl + '/img/favicon.png" style="position: absolute; top:-4px;left:-4px;height:16px;">';
         }
-        el += `        
-                <div class="toast__noiDung" id="toast__noiDung">    
+        el += `
+                <div class="toast__noiDung" id="toast__noiDung">
                 </div>
             </div>
         `;
