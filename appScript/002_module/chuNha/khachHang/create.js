@@ -97,7 +97,7 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
                     loi.message
                 );
             })
-            .sv_themKhachHang(duLieu);
+            .sv_themKhachHang(duLieu, APP.user.token);
     },
     checkData: function(duLieu)
     {
