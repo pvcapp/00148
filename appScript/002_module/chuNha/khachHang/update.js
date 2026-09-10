@@ -24,7 +24,6 @@ APP.ui.chuNha.quanLyKhachHang.update =
         $('#themMoiKhachHang_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
 
         $('#themMoiKhachHang_ghiChu').value = duLieu.ghiChu || '';
-        $('#themMoiKhachHang_dangThue').value = duLieu.dangThue || '1';
         $('#themMoiKhachHang_xacMinh').value = duLieu.xacMinh || '';
         $('#themMoiKhachHang_active').value = '1';
     },
@@ -51,7 +50,6 @@ APP.ui.chuNha.quanLyKhachHang.update =
             anhCCCDMatSau: $('#themMoiKhachHang_anhCCCDMatSau').value || '',  
 
             ghiChu: $('#themMoiKhachHang_ghiChu').value || '',
-            dangThue: $('#themMoiKhachHang_dangThue').value || '1',
             xacMinh: $('#themMoiKhachHang_xacMinh').value || '0',
             active: '1'
         };
@@ -75,7 +73,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
         $('#themMoiKhachHang_caption').innerText = 'CẬP NHẬT THÔNG TIN';
         show('chuNha_khachHang_updateButton');
         show('chuNha_khachHang_update_reset');
-        
+
         hide('chuNha_khachHang_saveButton');
         hide('chuNha_khachHang_addNew_reset');
     
