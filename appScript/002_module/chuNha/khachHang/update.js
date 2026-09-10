@@ -105,7 +105,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
         inactiveButton('chuNha_khachHang_updateButton');
         $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
         google.script.run
-            .withSuccessHandler(function(phong)
+            .withSuccessHandler(function(kh)
             {
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
