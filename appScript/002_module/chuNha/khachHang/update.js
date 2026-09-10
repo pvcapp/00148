@@ -107,12 +107,14 @@ APP.ui.chuNha.quanLyKhachHang.update =
         google.script.run
             .withSuccessHandler(function(kh)
             {
+                console.log(JSON.stringify(kh));
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
                 const viTri = (APP.data.danhSachKhachHang || []).findIndex(function(kh)
                 {
                     return String(kh.idKhachHang) === String(data.idKhachHang);
                 });
+
                 if (viTri !== -1)
                 {
                     APP.data.danhSachKhachHang[viTri] = kh;
