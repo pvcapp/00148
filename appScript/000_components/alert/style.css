@@ -32,9 +32,9 @@
     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0px 0px;
     background-color: var(--brand-primary);
     color: var(--surface);
-    padding: var(--padding-md);
+    padding: var(--padding-lg);
     display:grid;
-    grid-template-columns: 1.9rem 1fr;
+    grid-template-columns: 2.4rem 1fr;
 }
 
 .thong-bao-popup__div-noi-dung__noi-dung-thong-bao
