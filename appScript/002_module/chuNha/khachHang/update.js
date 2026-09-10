@@ -96,12 +96,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
             return;
         }
 
-        if (!data.hoVaTen || !data.dienThoai)
-        {
-            canhBao('Vui lòng nhập Tên Khách hàng và số điện thoại');
-            return;
-        }
-        
+        if (!APP.ui.chuNha.quanLyKhachHang.addNew.checkData(data)) return;
+
         inactiveButton('chuNha_khachHang_updateButton');
         $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
         toast('Đang cập nhật thông tin..');

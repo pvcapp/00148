@@ -127,11 +127,6 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
             return false;
         }
 
-        if (!duLieu.trangThai) {
-            toast('Vui lòng chọn trạng thái khách hàng');
-            return false;
-        }
-
         return true;
     }
 }
