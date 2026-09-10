@@ -45,7 +45,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
         let dangThue = APP.ui.chuNha.quanLyKhachHang.danhSach.showDangThue;
         html += APP.data.danhSachKhachHang
             .filter(function(dong) {
-                return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
+                return String(dong.active) === '1';
             })
             .map(function(dong) {
                 let d = '<tr onclick="APP.ui.chuNha.quanLyKhachHang.update.show('
@@ -89,7 +89,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 <div style="display: flex; flex-direction:column; gap:10px" class="hide-on-pc">
                         ${APP.data.danhSachKhachHang
                         .filter(function(dong) {
-                            return String(dong.active) === '1'  && (String(dong.dangThue) === String(dangThue) || String(dangThue) === '2');
+                            return String(dong.active) === '1';
                         })
                         .map(function(dong) {
                             let html2 = '';
