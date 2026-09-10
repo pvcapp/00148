@@ -1,0 +1,65 @@
+.bang {
+    width: 100%;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+.bang th,
+.bang td 
+{
+    padding: 0.7rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.bang th 
+{
+    color: var(--chu-phu);
+    font-weight: 600;
+}
+
+.bang tbody tr 
+{
+    transition: background 0.2s ease;
+}
+
+
+.bang tbody tr:hover 
+{
+    background: var(--brand-background-gradient);
+    cursor: pointer;
+}
+
+.o {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.o label {
+    color: var(--chu-phu);
+    font-size: 0.9rem;
+}
+
+.o input,
+.o select,
+.o textarea 
+{
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--nen2);
+    color: var(--chu);
+    border-radius: 12px;
+    padding: 0.7rem 0.8rem;
+    outline: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.o input:focus,
+.o select:focus,
+.o textarea:focus 
+{
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 4px rgba(0, 164, 222, 0.08);
+    background: #fff;
+}

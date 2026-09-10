@@ -1,0 +1,48 @@
+.loading-container 
+{
+    width: 100%;
+    max-width: 450px;
+    height: 0.7rem;
+    background: #e0e0e0;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    margin: 50px auto;
+}
+
+.loading-bar 
+{
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(90deg, #4facfe, white);
+    border-radius: 1.2rem;
+    position: relative;
+    animation: loadingMove 6s infinite ease-in-out;
+}
+
+@keyframes loadingMove 
+{
+    0% {
+        left: -40%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: -40%;
+    }
+}
+
+
+.luoi-tong-quan {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 981px) 
+{
+    .luoi-tong-quan {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

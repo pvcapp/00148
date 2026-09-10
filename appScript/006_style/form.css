@@ -1,0 +1,49 @@
+.button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.button {
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+}
+
+.button:hover 
+{
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 164, 222, 0.18);
+}
+
+.button:active 
+{
+    transform: translateY(0);
+    box-shadow: none;
+    filter: brightness(0.98);
+}
+
+.button__inactive 
+{
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: none;
+    box-shadow: none;
+}
+
+.button__selected
+{
+    background:var(--brand-secondary);
+    border-color: var(--brand-primary);
+    color: white;
+}
+
+.nhom-bieu-mau 
+{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}

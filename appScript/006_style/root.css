@@ -1,0 +1,81 @@
+:root 
+{
+    --brand-primary: #00a4de;
+    --brand-secondary: #5dc8ed;
+    --brand-primary-dark: #0088b9;
+    --brand-background-gradient: -webkit-linear-gradient(top left, white, #dffafb);
+    --brand-header-gradient: -webkit-linear-gradient(top left, var(--brand-secondary), var(--brand-primary-dark));
+
+    --brand-background: #f4fbfe;
+    --card-background: #ffffff;
+
+    --brand-text-primary: #16313d;
+    --brand-text-secondary: #6c8793;
+    --brand-text-invert: #6c8793;
+
+    --text-xm: 12px;
+    --text-sm: 14px;
+    --text-md: 16px;
+    --text-lg: 20px;
+    --text-xl: 24px;
+    --text-xxl: 32px;
+
+    --success-color: #16a673;
+    --error-color: #e55353;
+    --alert-color: #e59a20;
+
+    --border: #dcecf2;
+    
+    --border-radius-sm: 6px;
+    --border-radius-md: 14px;
+    --border-radius-lg: 22px;
+    
+    --shadow: 0 12px 35px rgba(0, 130, 175, 0.10);
+    
+
+    --do-rong-toi-da: 1180px;
+
+    --nen: var(--brand-background);
+    --nen2: #f7fcfe;
+    --the: var(--card-background);
+    --chu: var(--brand-text-primary);
+    --chu-phu: var(--brand-text-secondary);
+    --chinh: var(--brand-primary);
+    --chinh-2: var(--mau-phu);
+    --thanh-cong: var(--success-color);
+    --canh-bao: var(--alert-color);
+    --loi: var(--error-color);
+    --header-height: 56px;
+
+    --padding-sm: 6px;
+    --padding-md: 8px;
+    --padding-lg: 10px;
+    --padding-xl: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+.hide 
+{
+    display: none !important;
+}
+
+@media (min-width: 982px) 
+{
+    .hide-on-pc
+    {
+        display: none !important;
+    }
+}
+
+@media (max-width: 981px) 
+{
+    .hide-on-mobile
+    {
+        display: none !important;
+    }
+}
