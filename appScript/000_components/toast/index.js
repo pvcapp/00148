@@ -3,12 +3,19 @@ function toast_render()
     let container = document.createElement('div');
     container.id = 'toast';
     container.className = 'toast__container';
-    container.innerHTML = `
-        <div style="position: relative;">
-            <div class="toast__noiDung" id="toast__noiDung">    
+
+        let el = '<div style="position: relative;">';
+        if (APP.showIcon)
+        {
+            el += '<image src="' + APP.publicUrl + '/img/favicon.png" style="position: absolute; top:-4px;left:-4px;height:16px;">';
+        }
+        el += `        
+                <div class="toast__noiDung" id="toast__noiDung">    
+                </div>
             </div>
-        </div>
-    `;
+        `;
+
+    container.innerHTML = el;
     return container;
 }
 
