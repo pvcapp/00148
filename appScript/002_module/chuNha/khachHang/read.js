@@ -137,11 +137,11 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
     },
     show: function()
     {
-        show('chuNha_khachHang_danhSach');
+        show('tab_chuNha_khachHang_danhSach');
     },
     hide: function()
     {
-        hide('chuNha_khachHang_danhSach');
+        hide('tab_chuNha_khachHang_danhSach');
     }
 }
 
