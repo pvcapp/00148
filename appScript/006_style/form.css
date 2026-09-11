@@ -15,7 +15,7 @@
     font-weight: 500;
 }
 
-.form__field input
+.form__field input select textarea
 {
     width: 100%;
     box-sizing: border-box;
