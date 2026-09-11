@@ -122,7 +122,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 APP.ui.chuNha.quanLyKhachHang.update.hide();
                 APP.ui.chuNha.quanLyKhachHang.danhSach.show();
                 capNhatTongQuanTuCache();
-                toast('Đã cập nhật Khách hàng', 3000);
+                toast('Đã cập nhật Khách hàng', 1500);
             })
             .withFailureHandler(function(loi)
             {
