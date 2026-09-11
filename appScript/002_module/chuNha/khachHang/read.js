@@ -58,7 +58,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 d += '<td>' + thue + '</td>';
                 
                 let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                console.log(JSON(APP.data.danhSachKhachHang_xacMinh));
+                console.log(JSON.stringify(APP.data.danhSachKhachHang_xacMinh));
                 let dongXacMinh = APP.data.danhSachKhachHang_xacMinh.find(function(dxm){
                     return dxm.idKhachHang == dong.idKhachHang
                 });
