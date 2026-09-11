@@ -7,10 +7,10 @@ APP.ui.khachHang.menu =
         const menu =
         [
             { manHinh: 'khachHang_dashboard', ten: 'Home' },
+            { manHinh: 'khachHang_hoSo', ten: 'Hồ sơ' },
             { manHinh: 'khachHang_hopDong', ten: 'Hợp đồng' },
             { manHinh: 'khachHang_dienNuoc', ten: 'Điện nước' },
-            { manHinh: 'khachHang_thanhToan', ten: 'Thanh toán' },
-            { manHinh: 'khachHang_hoSo', ten: 'Hồ sơ' },
+            { manHinh: 'khachHang_thanhToan', ten: 'Thanh toán' },            
             { manHinh: 'khachHang_tamTru', ten: 'Thủ tục tạm trú' },
             { manHinh: 'khachHang_vi', ten: 'Ví' }
         ];
