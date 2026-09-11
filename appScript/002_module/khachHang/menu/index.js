@@ -3,7 +3,7 @@ APP.ui.khachHang.menu =
     show: function()
     {
         const manHinhDangChon =
-        APP.state.manHinhHienTai.manHinh || 'khachHang_trangChu';
+        APP.state.manHinhHienTai.manHinh || 'khachHang_dashboard';
 
         const menu =
         [
