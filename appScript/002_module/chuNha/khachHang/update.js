@@ -149,7 +149,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                     return kh.idKhachHang == idKhachHang;
                 }
             );
-            
+
             if (!phieuXacMinh)
             {
                 canhBao('show Bảng thông tin xác minhh bị lỗi: không thấy phiếu');
@@ -215,10 +215,11 @@ APP.ui.chuNha.quanLyKhachHang.update =
         },
         notOk: function(idKhachHang) 
         {
+            toast('Đang từ chối duyệt..');
             google.script.run
                 .withSuccessHandler(function(kh)
                 {                
-                    toast('Đã TỪ CHỐI thông tin Khách hàng', 1500);
+                    toast('Đã Từ chối thông tin Khách hàng', 1500);
                 })
                 .withFailureHandler(function(loi)
                 {
