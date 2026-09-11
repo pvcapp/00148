@@ -21,7 +21,7 @@ const chuNha_showMenu = () =>
         return `
             <div
                 id="menu_${item.manHinh}"
-                class="button menu__button${active}"
+                class="menu__button${active}"
                 onclick="APP.ui.setManHinh('chuNha','${item.manHinh}'); APP.ui.menu.hideIfMobile(); APP.ui.menu.setSelectedButton(this);">
                 ${item.ten}
             </div>

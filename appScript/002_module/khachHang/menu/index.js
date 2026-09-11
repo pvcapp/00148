@@ -23,7 +23,7 @@ function khachHang_showMenu()
         return `
             <div
                 id="menu_${item.manHinh}"
-                class="button menu__button${selected}"
+                class="menu__button${selected}"
                 onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.ui.menu.hideIfMobile(); APP.ui.menu.setSelectedButton(this);">
                 ${item.ten}
             </div>

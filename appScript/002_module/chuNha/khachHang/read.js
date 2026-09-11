@@ -75,7 +75,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 d += '<td>' + xacMinh + '</td>';
 
                 d += '<td>';
-                    d += '<div class="button menu__button menu__button__selected" '
+                    d += '<div class="button button__selected" '
                         + 'onclick="event.stopPropagation(); chuNha_danhSachKhachHang_choThue();">';
                         d += new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render();
                         d += 'Cho thuê';
@@ -125,7 +125,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
 
                                     html2 += `
                                     <center>
-                                        <div class="button menu__button menu__button__selected" style="width:160px;display: flex; flex-wrap: nowrap;"
+                                        <div class="button button__selected" style="width:160px;display: flex; flex-wrap: nowrap;"
                                             onclick="chuNha_danhSachKhachHang_choThue();">         
                                             ${new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render()}                           
                                             Cho thuê    
