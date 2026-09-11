@@ -27,6 +27,7 @@
 
     function xuLyLoi(loi) {
       toast(loi && loi.message ? loi.message : 'Có lỗi xảy ra');
+      console.log(loi && loi.message ? loi.message : 'Có lỗi xảy ra');
     }    
 
     const chuanHoaNgayThang = (number) =>

@@ -123,6 +123,7 @@
                             localStorage.setItem('a00148user', JSON.stringify(user));
                             APP.user.token = user.token;
                             APP.user.data = user;
+                            
                             APP.getStartupData();
                             $('#user_hoVaTen').innerText = user.hoVaTen;
                             activeButton('user_changePassword_submitButton');
