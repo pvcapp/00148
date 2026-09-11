@@ -149,8 +149,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                     return kh.idKhachHang == idKhachHang;
                 }
             );
-            console.log(JSON.stringify(APP.data.danhSachKhachHang_xacMinh));
-            console.log("PHIEU XAC MINH: " + JSON.stringify(phieuXacMinh));
+            
             if (!phieuXacMinh)
             {
                 canhBao('show Bảng thông tin xác minhh bị lỗi: không thấy phiếu');
