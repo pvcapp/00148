@@ -223,7 +223,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 })
                 .withFailureHandler(function(loi)
                 {
-                    alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
+                    alert('Có lỗi khi từ chối duyệt:\n' + loi.message);
                 })
                 .sv_capNhatKhachHang_xacMinh_notOk(idKhachHang, APP.user.token);
         }
