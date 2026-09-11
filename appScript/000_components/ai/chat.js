@@ -1,9 +1,16 @@
-function chat_line(chatData=[], speed = 2000)
+function chat_line(chatData=[], divId ='',speed = 2000)
 {
     for (let i=0; i< chatData.length; i++)
     {
         setTimeout(function(){
-            toast(chatData[i],speed * 2);
+            if (divId !=='')
+            {
+                $('#' + divId).innerText = chatData[i];
+            }
+            else
+            {
+                toast(chatData[i],speed * 2);
+            }            
         }, i * speed);
     }
 }
