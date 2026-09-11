@@ -63,7 +63,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                     return dxm.idKhachHang == dong.idKhachHang
                 });
 
-                if (dongXacMinh)
+                if (dongXacMinh && dongXacMinh.xacMinh == '')
                 {
                     xacMinh = `
                         <div class="menu__button" style="width: 170px;font-size: 14px;" 
