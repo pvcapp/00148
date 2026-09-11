@@ -155,7 +155,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 canhBao('show Bảng thông tin xác minhh bị lỗi: không thấy phiếu');
                 return;
             } 
-            
+            APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = idKhachHang;
+
             $('#formKhachHang_xacMinhThongTin_hoVaTen').innerText = 'Họ và tên: ' + phieuXacMinh.hoVaTen      ;
             $('#formKhachHang_xacMinhThongTin_dienThoai').innerText = 'Điện thoại: ' + phieuXacMinh.dienThoai      ;
             $('#formKhachHang_xacMinhThongTin_soCCCD').innerText = 'Số CCCD: ' + phieuXacMinh.soCCCD      ;
