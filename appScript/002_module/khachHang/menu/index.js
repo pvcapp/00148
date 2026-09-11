@@ -17,15 +17,9 @@ APP.ui.khachHang.menu =
 
         $('#menuGrid').innerHTML = menu.map(function(item)
         {
-            const selected =
-                item.manHinh === manHinhDangChon
-                    ? ' menu__button__selected'
-                    : '';
-
+            const selected = item.manHinh === manHinhDangChon ? ' menu__button__selected' : '';
             return `
-                <div
-                    id="menu_${item.manHinh}"
-                    class="menu__button${selected}"
+                <div id="menu_${item.manHinh}" class="menu__button${selected}"
                     onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.ui.menu.hideIfMobile(); APP.ui.menu.setSelectedButton(this);">
                     ${item.ten}
                 </div>
@@ -33,6 +27,6 @@ APP.ui.khachHang.menu =
         }).join('');
 
         hide('buttonChoThuePhong');
-        APP.ui.menu.setSelectedButton($('#menu_khachHang_trangChu'));
+        APP.ui.menu.setSelectedButton($('#menu_khachHang_dashboard'));
     }
 };
