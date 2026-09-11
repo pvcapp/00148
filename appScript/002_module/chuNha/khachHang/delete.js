@@ -2,7 +2,7 @@ APP.ui.chuNha.quanLyKhachHang.delete =
 {
     submit:async function(idKhachHang, hoVaTen)
     {
-        let cb = canhBao('Bạn có thực sự muốn xóa khách hàng: ' + hoVaTen, 'Cảnh báo');
+        let cb = canhBao('Bạn có thực sự muốn xóa khách hàng: ' + hoVaTen, 'Cảnh báo', "OkCancel");
         if (!cb) return;
         toast('Đang xóa khách hàng: ' + hoVaTen);
         google.script.run
