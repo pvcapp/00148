@@ -144,7 +144,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
         show: function (idKhachHang)
         {
             console.log('show');
-            //Load thong tin can xac minh 
+            //Load thong tin can xac minh
             show('formKhachHang_xacMinhThongTin_popup');
         },
         hide: function ()
@@ -153,11 +153,55 @@ APP.ui.chuNha.quanLyKhachHang.update =
         },
         ok: function(idKhachHang) 
         {
+            const khachHang = APP.data.danhSachKhachHang.find(function(khach) 
+            {
+                return String(khach.idKhachHang) === String(idKhachHang);
+            });
 
+            if (!khachHang)
+            {
+                toast('Không tìm thấy khách hàng');
+                return;
+            }
+
+            //Cập nhật tình trạng xác minh và render lại danh sách
+            const idXoa = APP.data.danhSachKhachHang_xacMinh.findIndex(
+                khach => String(khach.idKhachHang) === String(idKhachHang)
+            );
+            if (idXoa !== -1) 
+            {
+                APP.data.danhSachKhachHang_xacMinh.splice(idXoa, 1);
+            }
+
+            //update thông tin khách hàng
+            APP.ui.chuNha.quanLyKhachHang.update.loadData(khachHang);
+            APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
+            APP.ui.chuNha.quanLyKhachHang.update.submit();
+            //Xóa phiếu chờ xác minh
+            google.script.run
+                .withSuccessHandler(function(kh)
+                {                
+                    toast('Đã xác minh thông tin Khách hàng', 1500);
+                })
+                .withFailureHandler(function(loi)
+                {
+                    alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
+                })
+                .sv_capNhatKhachHang_xacMinh_xoaDong(idKhachHang, APP.user.token);
+            
         },
         notOk: function(idKhachHang) 
         {
-
+            google.script.run
+                .withSuccessHandler(function(kh)
+                {                
+                    toast('Đã TỪ CHỐI thông tin Khách hàng', 1500);
+                })
+                .withFailureHandler(function(loi)
+                {
+                    alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
+                })
+                .sv_capNhatKhachHang_xacMinh_notOk(idKhachHang, APP.user.token);
         }
     }
 }
