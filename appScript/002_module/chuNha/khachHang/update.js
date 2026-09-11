@@ -143,7 +143,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
     {
         show: function (idKhachHang)
         {
-            //Load thong tin can xac minh
+            //Load thong tin can xac minh 
             show('formKhachHang_xacMinhThongTin_popup');
         },
         hide: function ()
