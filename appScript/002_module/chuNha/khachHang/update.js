@@ -176,7 +176,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
         },
         ok: function(idKhachHang) 
         {
-            const khachHang = APP.data.danhSachKhachHang.find(function(khach) 
+            const khachHang = APP.data.danhSachKhachHang_xacMinh.find(function(khach) 
             {
                 return String(khach.idKhachHang) === String(idKhachHang);
             });
@@ -187,6 +187,9 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 return;
             }
 
+            APP.ui.chuNha.quanLyKhachHang.update.loadData(khachHang);
+            APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
+            
             //Cập nhật tình trạng xác minh và render lại danh sách
             const idXoa = APP.data.danhSachKhachHang_xacMinh.findIndex(
                 khach => String(khach.idKhachHang) === String(idKhachHang)
@@ -196,9 +199,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 APP.data.danhSachKhachHang_xacMinh.splice(idXoa, 1);
             }
 
-            //update thông tin khách hàng
-            APP.ui.chuNha.quanLyKhachHang.update.loadData(khachHang);
-            APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
+            //update thông tin khách hàng            
             APP.ui.chuNha.quanLyKhachHang.update.submit();
             //Xóa phiếu chờ xác minh
             google.script.run
