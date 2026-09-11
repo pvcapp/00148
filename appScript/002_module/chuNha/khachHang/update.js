@@ -180,9 +180,15 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 return String(khach.idKhachHang) === String(idKhachHang);
             });
 
+            APP.data.danhSachKhachHang_xacMinh.forEach(e => {
+                console.log(idKhachHang);
+                console.log(e.idKhachHang);
+                console.log('String(khach.idKhachHang) === String(idKhachHang): ' + String(e.idKhachHang) === String(idKhachHang));
+            });
+
             if (!khachHang)
             {
-                toast('Không tìm thấy khách hàng');
+                toast('Không tìm thấy phiếu yêu cầu xác minh');
                 return;
             }
 
