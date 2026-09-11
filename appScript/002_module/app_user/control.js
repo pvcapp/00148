@@ -145,6 +145,8 @@
         {
             let token = APP.user.token;
             APP.user.menu.hide();
+            APP.ui.chuNha.menu.hide();
+
             APP.ui.hideAllTabs();
             APP.ui.hideAllForms();
             APP.user.data = {};
