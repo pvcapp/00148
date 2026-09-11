@@ -39,10 +39,5 @@ APP.ui.chuNha.menu =
     {
         show('buttonChoThuePhong');
         APP.ui.menu.setSelectedButton($('#menu_chuNha_dashboard'));
-    },
-    hide: function()
-    {
-        hide('buttonChoThuePhong');
-        $('#menuGrid').innerHTML = '';
     }
 };

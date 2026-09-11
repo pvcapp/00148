@@ -44,5 +44,10 @@ APP.ui.menu =
             });
 
         button.classList.add('menu__button__selected');
-    }            
+    },
+    clear: function()
+    {
+        hide('buttonChoThuePhong');
+        $('#menuGrid').innerHTML = '';
+    }
 };
