@@ -58,7 +58,6 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
             anhCCCDMatSau: $('#themMoiKhachHang_anhCCCDMatSau').value || '',  
 
             ghiChu: $('#themMoiKhachHang_ghiChu').value || '',
-            xacMinh: $('#themMoiKhachHang_xacMinh').value || '0',
             active: '1'
         };
     },

@@ -58,6 +58,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 d += '<td>' + thue + '</td>';
                 
                 let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
+                let 
                 if (dong.xacMinh == 0)
                 {
                     xacMinh = `

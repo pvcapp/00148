@@ -24,7 +24,6 @@ APP.ui.chuNha.quanLyKhachHang.update =
         $('#themMoiKhachHang_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
 
         $('#themMoiKhachHang_ghiChu').value = duLieu.ghiChu || '';
-        $('#themMoiKhachHang_xacMinh').value = duLieu.xacMinh || '';
         $('#themMoiKhachHang_active').value = '1';
     },
     readData: function()
@@ -50,7 +49,6 @@ APP.ui.chuNha.quanLyKhachHang.update =
             anhCCCDMatSau: $('#themMoiKhachHang_anhCCCDMatSau').value || '',  
 
             ghiChu: $('#themMoiKhachHang_ghiChu').value || '',
-            xacMinh: $('#themMoiKhachHang_xacMinh').value || '0',
             active: '1'
         };
     },
@@ -140,14 +138,25 @@ APP.ui.chuNha.quanLyKhachHang.update =
     {
         APP.ui.chuNha.quanLyKhachHang.addNew.reset();
         APP.ui.chuNha.quanLyKhachHang.update.hide();
+    },
+    xacMinh:
+    {
+        show: function (idKhachHang)
+        {
+            //Load thong tin can xac minh
+            show('formKhachHang_xacMinhThongTin_popup');
+        },
+        hide: function ()
+        {
+            hide('formKhachHang_xacMinhThongTin_popup');
+        },
+        ok: function(idKhachHang) 
+        {
+
+        },
+        notOk: function(idKhachHang) 
+        {
+
+        }
     }
-}
-
-
-
-
-
-const chuNha_khachHang_xacMinh = (userName) =>
-{
-
 }
