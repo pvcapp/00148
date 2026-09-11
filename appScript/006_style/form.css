@@ -52,6 +52,7 @@ textarea {
     text-align: center;
     cursor: pointer;
     border-radius: 12px;
+    padding: 8px 16px 8px 16px;
     transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
 }
 
