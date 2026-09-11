@@ -164,7 +164,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
             $('#formKhachHang_xacMinhThongTin_gioiTinh').innerText = 'Giới tính: ' + phieuXacMinh.gioiTinh      ; 
             $('#formKhachHang_xacMinhThongTin_email').innerText = 'Email: ' + phieuXacMinh.email      ;
             $('#formKhachHang_xacMinhThongTin_diaChiThuongTru').innerText = 'Địa chỉ: ' + phieuXacMinh.diaChiThuongTru      ;
-            $('#formKhachHang_xacMinhThongTin_ngheNghiep').innerText = 'Nghề nghiệp: ' + phieuXacMinh.ngheNghiep      ;           
+            $('#formKhachHang_xacMinhThongTin_ngheNghiep').
+            innerText = 'Nghề nghiệp: ' + phieuXacMinh.ngheNghiep      ;           
             $('#formKhachHang_xacMinhThongTin_ghiChu').innerText = 'Ghi chú: ' + phieuXacMinh.ghiChu      ;
 
 
