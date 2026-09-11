@@ -6,8 +6,9 @@
     box-shadow: var(--shadow);
 }
 
+
 .card__number {
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 800;
     margin-top: 8px;
     color: var(--brand-primary-dark);
@@ -19,8 +20,8 @@
 
 .card__caption 
 {
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 500;
     margin: 0 0 1rem;
     color: var(--brand-text-primary);
 }
@@ -36,11 +37,11 @@
 
     .card__number 
     {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .card__caption 
     {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
