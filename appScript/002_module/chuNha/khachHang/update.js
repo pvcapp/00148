@@ -149,7 +149,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                     kh.idKhachHang == idKhachHang;
                 }
             );
-
+            console.log("PHIEU XAC MINH: " + JSON.stringify(phieuXacMinh));
             if (!phieuXacMinh) 
             {
                 canhBao('show Bảng thông tin xác minhh bị lỗi: không thấy phiếu');
