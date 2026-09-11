@@ -1,5 +1,6 @@
 APP.ui.khachHang =
 {
+    dashboard: {},
     thongTinHopDong:
     {
         startup: function()
