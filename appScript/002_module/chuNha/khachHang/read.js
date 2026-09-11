@@ -108,7 +108,11 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                                     ${escapeHtml(dong.email || '')}`;
                                     
                                     let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                                    if (dong.xacMinh == 0)
+                                    let dongXacMinh = APP.data.danhSachKhachHang_xacMinh.find(function(dxm){
+                                        return dxm.idKhachHang == dong.idKhachHang
+                                    });
+                                    
+                                    if (dongXacMinh && dongXacMinh.xacMinh == '')
                                     {
                                         xacMinh = `
                                             <div class="menu__button" style="width: 170px;font-size: 14px;" 

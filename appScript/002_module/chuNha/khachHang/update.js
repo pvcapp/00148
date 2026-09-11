@@ -146,7 +146,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
             let phieuXacMinh = APP.data.danhSachKhachHang_xacMinh.find(
                 function(kh)
                 {
-                    kh.idKhachHang == idKhachHang;
+                    return kh.idKhachHang == idKhachHang;
                 }
             );
             console.log(JSON.stringify(APP.data.danhSachKhachHang_xacMinh));
