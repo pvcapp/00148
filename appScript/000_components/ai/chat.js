@@ -1,4 +1,4 @@
-function chat_line(chatData=[], speed = 1000)
+function chat_line(chatData=[], speed = 2000)
 {
     for (let i=0; i< chatData.length; i++)
     {
