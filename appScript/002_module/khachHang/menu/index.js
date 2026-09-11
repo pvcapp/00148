@@ -1,35 +1,38 @@
-function khachHang_showMenu()
+APP.ui.khachHang.menu =
 {
-    const manHinhDangChon =
+    show: function()
+    {
+        const manHinhDangChon =
         APP.state.manHinhHienTai.manHinh || 'khachHang_trangChu';
 
-    const menu =
-    [
-        { manHinh: 'khachHang_dashboard', ten: 'Home' },
-        { manHinh: 'khachHang_hopDong', ten: 'Hợp đồng' },
-        { manHinh: 'khachHang_dienNuoc', ten: 'Điện nước' },
-        { manHinh: 'khachHang_thanhToan', ten: 'Thanh toán' },
-        { manHinh: 'khachHang_hoSo', ten: 'Hồ sơ' },
-        { manHinh: 'khachHang_tamTru', ten: 'Thủ tục tạm trú' }
-    ];
+        const menu =
+        [
+            { manHinh: 'khachHang_dashboard', ten: 'Home' },
+            { manHinh: 'khachHang_hopDong', ten: 'Hợp đồng' },
+            { manHinh: 'khachHang_dienNuoc', ten: 'Điện nước' },
+            { manHinh: 'khachHang_thanhToan', ten: 'Thanh toán' },
+            { manHinh: 'khachHang_hoSo', ten: 'Hồ sơ' },
+            { manHinh: 'khachHang_tamTru', ten: 'Thủ tục tạm trú' }
+        ];
 
-    $('#menuGrid').innerHTML = menu.map(function(item)
-    {
-        const selected =
-            item.manHinh === manHinhDangChon
-                ? ' menu__button__selected'
-                : '';
+        $('#menuGrid').innerHTML = menu.map(function(item)
+        {
+            const selected =
+                item.manHinh === manHinhDangChon
+                    ? ' menu__button__selected'
+                    : '';
 
-        return `
-            <div
-                id="menu_${item.manHinh}"
-                class="menu__button${selected}"
-                onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.ui.menu.hideIfMobile(); APP.ui.menu.setSelectedButton(this);">
-                ${item.ten}
-            </div>
-        `;
-    }).join('');
+            return `
+                <div
+                    id="menu_${item.manHinh}"
+                    class="menu__button${selected}"
+                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.ui.menu.hideIfMobile(); APP.ui.menu.setSelectedButton(this);">
+                    ${item.ten}
+                </div>
+            `;
+        }).join('');
 
-    hide('buttonChoThuePhong');
-    APP.ui.menu.setSelectedButton($('#menu_khachHang_trangChu'));
-}
+        hide('buttonChoThuePhong');
+        APP.ui.menu.setSelectedButton($('#menu_khachHang_trangChu'));
+    }
+};
