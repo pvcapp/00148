@@ -59,6 +59,7 @@
             }
             else
             {
+                console.log('Client checkUser: localstorage not found!');
                 localStorage.setItem('a00148user', 'notOk');
                 APP.user.login.show();
             }
@@ -118,6 +119,7 @@
                         user = JSON.parse(user);
                         if (user.status == 'ok')
                         {
+                            console.log('Client login success: localstorage is: ' + JSON.stringify(user));
                             localStorage.setItem('a00148user', JSON.stringify(user));
                             APP.user.token = user.token;
                             APP.user.data = user;
