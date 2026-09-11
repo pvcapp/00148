@@ -160,12 +160,11 @@ APP.ui.chuNha.quanLyKhachHang.update =
             $('#formKhachHang_xacMinhThongTin_hoVaTen').innerText = 'Họ và tên: ' + phieuXacMinh.hoVaTen      ;
             $('#formKhachHang_xacMinhThongTin_dienThoai').innerText = 'Điện thoại: ' + phieuXacMinh.dienThoai      ;
             $('#formKhachHang_xacMinhThongTin_soCCCD').innerText = 'Số CCCD: ' + phieuXacMinh.soCCCD      ;
-            $('#formKhachHang_xacMinhThongTin_ngayThangNamSinh').innerText = 'Ngày sinh: ' + phieuXacMinh.ngaySinh + '/' + phieuXacMinh.thangSinh + '/' + phieuXacMinh.namSinh   ;
+            $('#formKhachHang_xacMinhThongTin_ngayThangNamSinh').innerText = 'Ngày sinh: ' + phieuXacMinh.ngaySinh + '/' + phieuXacMinh.thangSinh + '/' + phieuXacMinh.namSinh;
             $('#formKhachHang_xacMinhThongTin_gioiTinh').innerText = 'Giới tính: ' + phieuXacMinh.gioiTinh      ; 
             $('#formKhachHang_xacMinhThongTin_email').innerText = 'Email: ' + phieuXacMinh.email      ;
             $('#formKhachHang_xacMinhThongTin_diaChiThuongTru').innerText = 'Địa chỉ: ' + phieuXacMinh.diaChiThuongTru      ;
-            $('#formKhachHang_xacMinhThongTin_ngheNghiep').
-            innerText = 'Nghề nghiệp: ' + phieuXacMinh.ngheNghiep      ;           
+            $('#formKhachHang_xacMinhThongTin_ngheNghiep').innerText = 'Nghề nghiệp: ' + phieuXacMinh.ngheNghiep      ;           
             $('#formKhachHang_xacMinhThongTin_ghiChu').innerText = 'Ghi chú: ' + phieuXacMinh.ghiChu      ;
 
 
