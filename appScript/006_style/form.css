@@ -5,6 +5,25 @@
     gap: 6px;    
 }
 
+.form__field label
+{
+    font-weight: 500;
+}
+
+.form__field__label
+{
+    font-weight: 500;
+}
+
+.form__field input
+{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
 .inputBox
 {
     width: 100%;
@@ -14,6 +33,11 @@
     border-radius: 6px;
 }
 
+.form__field textarea
+{
+    min-height: 80px;
+    resize: vertical;
+}
 
 
 .button,
