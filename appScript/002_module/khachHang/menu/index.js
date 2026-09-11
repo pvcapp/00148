@@ -11,7 +11,8 @@ APP.ui.khachHang.menu =
             { manHinh: 'khachHang_dienNuoc', ten: 'Điện nước' },
             { manHinh: 'khachHang_thanhToan', ten: 'Thanh toán' },
             { manHinh: 'khachHang_hoSo', ten: 'Hồ sơ' },
-            { manHinh: 'khachHang_tamTru', ten: 'Thủ tục tạm trú' }
+            { manHinh: 'khachHang_tamTru', ten: 'Thủ tục tạm trú' },
+            { manHinh: 'khachHang_vi', ten: 'Ví' }
         ];
 
         $('#menuGrid').innerHTML = menu.map(function(item)
