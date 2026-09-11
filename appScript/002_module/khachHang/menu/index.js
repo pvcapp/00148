@@ -1,6 +1,11 @@
 APP.ui.khachHang.menu =
 {
-    show: function()
+    startup: function()
+    {
+        APP.ui.khachHang.menu.render();
+        APP.ui.khachHang.menu.show();
+    },
+    render: function()
     {
         const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'khachHang_dashboard';
 
@@ -24,8 +29,10 @@ APP.ui.khachHang.menu =
                     ${item.ten}
                 </div>
             `;
-        }).join('');
-
+        }).join('');        
+    },
+    show: function()
+    {
         hide('buttonChoThuePhong');
         APP.ui.menu.setSelectedButton($('#menu_khachHang_dashboard'));
     }
