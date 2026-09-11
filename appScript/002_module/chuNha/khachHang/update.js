@@ -212,6 +212,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 .withSuccessHandler(function(kh)
                 {                
                     toast('Đã xác minh thông tin Khách hàng', 1500);
+                    APP.ui.chuNha.quanLyKhachHang.update.xacMinh.hide();
                 })
                 .withFailureHandler(function(loi)
                 {
@@ -227,6 +228,20 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 .withSuccessHandler(function(kh)
                 {                
                     toast('Đã Từ chối thông tin Khách hàng', 1500);
+                    const idPhieu = APP.data.danhSachKhachHang_xacMinh.findIndex(
+                        khach => String(khach.idKhachHang) === String(idKhachHang)
+                    );
+
+                    if (idPhieu !== -1) 
+                    {
+                        APP.data.danhSachKhachHang_xacMinh[idPhieu].xacMinh = '0';
+                    }
+
+                    APP.ui.chuNha.quanLyKhachHang.danhSach.render();
+
+                    APP.ui.chuNha.quanLyKhachHang.update.hide();
+                    APP.ui.chuNha.quanLyKhachHang.danhSach.show();
+                    APP.ui.chuNha.quanLyKhachHang.update.xacMinh.hide();
                 })
                 .withFailureHandler(function(loi)
                 {
