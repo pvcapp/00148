@@ -66,7 +66,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 {
                     xacMinh = `
                         <div class="menu__button" style="width: 170px;font-size: 14px;" 
-                            onclick="event.stopPropagation();chuNha_khachHang_xacMinh('${dong.userName}');">                        
+                            onclick="event.stopPropagation();APP.ui.chuNha.quanLyKhachHang.update.xacMinh.show('${dong.idKhachHang}');">                        
                             Xác minh
                         </div>
                     `;
