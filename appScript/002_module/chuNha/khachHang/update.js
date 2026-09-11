@@ -102,7 +102,6 @@ APP.ui.chuNha.quanLyKhachHang.update =
         google.script.run
             .withSuccessHandler(function(kh)
             {
-                console.log(JSON.stringify(kh));
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
                 const viTri = (APP.data.danhSachKhachHang || []).findIndex(function(khach)
@@ -189,7 +188,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
 
             APP.ui.chuNha.quanLyKhachHang.update.loadData(khachHang);
             APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
-            
+
             //Cập nhật tình trạng xác minh và render lại danh sách
             const idXoa = APP.data.danhSachKhachHang_xacMinh.findIndex(
                 khach => String(khach.idKhachHang) === String(idKhachHang)
