@@ -1,21 +1,10 @@
-.card {
+.card 
+{
     background: var(--the);
     border: 1px solid var(--border);
     border-radius: var(--border-radius-lg);
-    padding: 1.1rem;
+    padding: var(--padding-lg);
     box-shadow: var(--shadow);
-}
-
-
-.card__number {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-top: 8px;
-    color: var(--brand-primary-dark);
-}
-
-.chu-phu {
-    color: var(--chu-phu);
 }
 
 .card__caption 
@@ -27,6 +16,22 @@
 }
 
 
+.card__number 
+{
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 8px;
+    color: var(--brand-primary-dark);
+}
+
+.chu-phu 
+{
+    color: var(--chu-phu);
+}
+
+
+
+
 @media (max-width: 981px) 
 {
     .card 
@@ -35,13 +40,13 @@
         overflow-x: auto;
     }
 
-    .card__number 
-    {
-        font-size: 1.6rem;
-    }
-
     .card__caption 
     {
         font-size: 1rem;
+    }
+
+    .card__number 
+    {
+        font-size: 1.6rem;
     }
 }
