@@ -1,5 +1,10 @@
 APP.ui.khachHang =
 {
+    startup: function()
+    {
+        APP.ui.khachHang.menu.startup();
+        APP.ui.khachHang.dashboard.startup();
+    },
     dashboard: {},
     thongTinHopDong:
     {

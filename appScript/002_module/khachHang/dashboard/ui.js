@@ -2,32 +2,37 @@
 // và các thông tin tổng quát khác
 APP.ui.khachHang.dashboard =
 {
-    startup: function(khachHang, danhSachHopDong) 
+    startup: function() 
     {
+        APP.ui.khachHang.dashboard.init();
+        APP.data.danhSachKhachHang
+        APP.data.danhSachHopDong  //chỉ load hợp đồng của khách
+        APP.data.user.data
         const hopDong = (danhSachHopDong || []).filter(function(item) {
             return ['HieuLuc', 'DangThue'].indexOf(item.trangThai) !== -1;
         })[0] || (danhSachHopDong || [])[0] || {};
         let trangThaiArray = {
             'DangThue':'Đang thuê',
             'HetThue' : 'Hết thuê'};
+        
+        
         return `
-        <div class="tab__grid">
-            ${totalCard_render('Trạng thái', trangThaiArray[khachHang.trangThai] || '')}
-            ${totalCard_render('Phòng', hopDong.tenPhong || 'Chưa có')}
-        </div>
+            <div class="tab__grid">
+                ${totalCard_render('Trạng thái', trangThaiArray[khachHang.trangThai] || '')}
+                ${totalCard_render('Phòng', hopDong.tenPhong || 'Chưa có')}
+            </div>
 
-        <div class="card">
-            <h2 class="card__caption">Thông tin của tôi</h2>
-            <p>email: ${escapeHtml(khachHang.email || '')}</p>
-            <p>Điện thoại: ${escapeHtml(khachHang.dienThoai || '')}</p>
-            <p>CCCD: ${escapeHtml(khachHang.soCCCD || '')}</p>
-        </div>
-        `;
+            <div class="card">
+                <h2 class="card__caption">Thông tin của tôi</h2>
+                <p>email: ${escapeHtml(khachHang.email || '')}</p>
+                <p>Điện thoại: ${escapeHtml(khachHang.dienThoai || '')}</p>
+                <p>CCCD: ${escapeHtml(khachHang.soCCCD || '')}</p>
+            </div>`;
         
 
         APP.ui.setManHinh('khachHang', 'khachHang_dashboard');
     },
-    render: function()
+    init: function()
     {
         let ndDiv = document.createElement('div');
         ndDiv.id = 'tab_khachHang_dashboard_danhSach';
@@ -44,7 +49,6 @@ APP.ui.khachHang.dashboard =
             thongTinKhachHangDiv.id = 'tab_khachHang_dashboard_thongTinKhachHang';
             totalDiv.className = 'card';
         ndDiv.appendChild(totalDiv);
-
 
         $('#tab_khachHang_dashboard').appendChild(ndDiv);
     },
