@@ -12,8 +12,8 @@ APP.ui.khachHang.dashboard =
             'HetThue' : 'Hết thuê'};
         return `
         <div class="tab__grid">
-            ${taoTheSo('Trạng thái', trangThaiArray[khachHang.trangThai] || '')}
-            ${taoTheSo('Phòng', hopDong.tenPhong || 'Chưa có')}
+            ${totalCard_render('Trạng thái', trangThaiArray[khachHang.trangThai] || '')}
+            ${totalCard_render('Phòng', hopDong.tenPhong || 'Chưa có')}
         </div>
 
         <div class="card">
@@ -36,12 +36,15 @@ APP.ui.khachHang.dashboard =
             welcomeDiv.id = 'tab_khachHang_dashboard_welcome';
             welcomeDiv.className = 'card__caption';
         ndDiv.appendChild(welcomeDiv);
-            let  
+            let totalDiv = document.createElement('div');
+            totalDiv.id = 'tab_khachHang_dashboard_total';
+            totalDiv.className = 'tab__grid';
+        ndDiv.appendChild(totalDiv);
+            let thongTinKhachHangDiv = document.createElement('div');
+            thongTinKhachHangDiv.id = 'tab_khachHang_dashboard_thongTinKhachHang';
+            totalDiv.className = 'card';
+        ndDiv.appendChild(totalDiv);
 
-            <div class="tab__grid">
-            ${taoTheSo('Trạng thái', trangThaiArray[khachHang.trangThai] || '')}
-            ${taoTheSo('Phòng', hopDong.tenPhong || 'Chưa có')}
-        </div>
 
         $('#tab_khachHang_dashboard').appendChild(ndDiv);
     },

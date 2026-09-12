@@ -1,4 +1,4 @@
-function taoTheSo(tieuDe, so) 
+function totalCard_render(tieuDe, so) 
 {
     return `
         <div class="card">
