@@ -24,13 +24,6 @@
     color: var(--brand-primary-dark);
 }
 
-.chu-phu 
-{
-    color: var(--chu-phu);
-}
-
-
-
 
 @media (max-width: 981px) 
 {
@@ -49,4 +42,12 @@
     {
         font-size: 1.6rem;
     }
+}
+
+
+
+.text-sub 
+{
+    color: var(--text-sub);
+    font-size: 0.8rem;
 }

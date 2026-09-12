@@ -44,7 +44,7 @@ body
 
 .header__nguoi-dung 
 {
-    color: var(--chu-phu);
+    color: var(--text-sub);
     font-size: 0.9rem;
 }
 

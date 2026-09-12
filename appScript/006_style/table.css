@@ -14,7 +14,7 @@
 
 .bang th 
 {
-    color: var(--chu-phu);
+    color: var(--text-sub);
     font-weight: 600;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .o label {
-    color: var(--chu-phu);
+    color: var(--text-sub);
     font-size: 0.9rem;
 }
 

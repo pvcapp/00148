@@ -40,7 +40,7 @@
     --nen2: #f7fcfe;
     --the: var(--card-background);
     --chu: var(--brand-text-primary);
-    --chu-phu: var(--brand-text-secondary);
+    --text-sub: var(--brand-text-secondary);
     --chinh: var(--brand-primary);
     --chinh-2: var(--mau-phu);
     --thanh-cong: var(--success-color);

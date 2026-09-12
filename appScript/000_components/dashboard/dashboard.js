@@ -2,7 +2,7 @@ function taoTheSo(tieuDe, so)
 {
     return `
         <div class="card">
-        <div class="chu-phu">${escapeHtml(tieuDe)}</div>
+        <div class="text-sub">${escapeHtml(tieuDe)}</div>
         <div class="card__number">${escapeHtml(String(so))}</div>
         </div>
     `;

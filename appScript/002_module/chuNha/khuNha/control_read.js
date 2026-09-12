@@ -1,7 +1,7 @@
     function chuNha_showDanhSachKhuNha(danhSach) 
     {
         if (!danhSach.length) {
-            $('#tab_chuNha_khuNha_danhSach').innerHTML = '<div class="chu-phu">Chưa có khu nhà.</div>';
+            $('#tab_chuNha_khuNha_danhSach').innerHTML = '<div class="text-sub">Chưa có khu nhà.</div>';
             return;
         }
 
