@@ -36,6 +36,12 @@ APP.ui.khachHang.dashboard =
             welcomeDiv.id = 'tab_khachHang_dashboard_welcome';
             welcomeDiv.className = 'card__caption';
         ndDiv.appendChild(welcomeDiv);
+            let  
+
+            <div class="tab__grid">
+            ${taoTheSo('Trạng thái', trangThaiArray[khachHang.trangThai] || '')}
+            ${taoTheSo('Phòng', hopDong.tenPhong || 'Chưa có')}
+        </div>
 
         $('#tab_khachHang_dashboard').appendChild(ndDiv);
     },
