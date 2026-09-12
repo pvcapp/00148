@@ -3,7 +3,7 @@ function chuNha_buildDashboard(tongQuan)
         return `
             <h1 class="card__caption">Trang chủ</h1>
 
-            <div class="luoi-tong-quan">
+            <div class="tab__grid">
                 ${taoTheSo('Tổng số khu nhà', tongQuan.tongSoKhuNha || 0)}
                 ${taoTheSo('Tổng số phòng', tongQuan.tongSoPhong || tongQuan.tongPhong || 0)}
                 ${taoTheSo('Số phòng đang thuê', tongQuan.soPhongDangThue || tongQuan.dangThue || 0)}
