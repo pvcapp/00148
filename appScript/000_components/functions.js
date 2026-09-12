@@ -134,7 +134,7 @@
     }
 
 
-    function formatNumber(gia)
+    const formatNumber = (gia) =>
     {        
         var kq="";
         if (gia.length<4){kq = gia;}
@@ -159,7 +159,7 @@
     }
             
                             
-    function formatNumberInput(IdInput)
+    const formatNumberInput = (IdInput) =>
     {
         
         if ($('#' + IdInput).val() == '' || $('#' + IdInput).val() == '0' || $('#' + IdInput).val() == '00' || $('#' + IdInput).val() == '000')
@@ -173,7 +173,7 @@
     }
 
 
-    function boDau(str)
+    const boDau = (str) =>
     {
         return str
             .normalize("NFD")
@@ -226,8 +226,9 @@
         return true;
     };
 
-    function ATruocB(ngayA, thangA, namA, ngayB, thangB, namB) //Thực ra là A<=B (tính cả A=B) - dùng cho từ ngày đến ngày
+    const ATruocB = (ngayA, thangA, namA, ngayB, thangB, namB) =>
     {
+        //Thực ra là A<=B (tính cả A=B) - dùng cho từ ngày đến ngày
         if (ngayA == '' || thangA == '' || namA == '' || ngayB == '' || thangB == '' || namB == '')
         {
             return true;

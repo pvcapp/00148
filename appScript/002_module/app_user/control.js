@@ -99,14 +99,14 @@
                 let pass = document.getElementById("login_password").value;
                 if (userName.length < 3)
                 {
-                    cb = await canhBao('Vui lòng kiểm tra tên đăng nhập!');
+                    cb = await canhBao('Vui lòng kiểm tra tên đăng nhập!','Đăng nhập ứng dụng');
                     $('#login_submitButton').innerText = 'Đăng nhập';
                     activeButton('login_submitButton');
                     return;
                 }
                 else if (pass.length < 3)
                 {
-                    cb = await canhBao('Vui lòng kiểm tra lại mật khẩu!');
+                    cb = await canhBao('Vui lòng kiểm tra lại mật khẩu!','Đăng nhập ứng dụng');
                     $('#login_submitButton').innerText = 'Đăng nhập';
                     activeButton('login_submitButton');
                     return;
@@ -133,7 +133,7 @@
                         }
                         else
                         {
-                            canhBao(user.message);
+                            canhBao(user.message, 'Đăng nhập ứng dụng');
                             $('#login_submitButton').innerText = 'Đăng nhập';
                             activeButton('login_submitButton');
                         }

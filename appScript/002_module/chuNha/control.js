@@ -1,6 +1,16 @@
 APP.ui.chuNha =
 {
     show: false,
+    startup: function()
+    {
+        APP.ui.chuNha.menu.startup();
+        APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
+        $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.data.tongQuan || {});
+        setTimeout(function() 
+        {
+            APP.ui.chuNha.getData();
+        }, 500);                    
+    },
     home:
     {
     },
