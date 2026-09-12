@@ -17,12 +17,6 @@ body
 }
 
 
-.khung 
-{
-    min-height: 100vh;
-    width: min(calc(100% - 32px), var(--do-rong-toi-da));
-    margin: 0 auto;
-}
 
 .header 
 {
