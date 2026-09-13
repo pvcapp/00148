@@ -42,7 +42,9 @@ APP.khachHang.dashboard =
         {
             APP.khachHang.dashboard.ui.init();
             //Thông tin nhanh hồ sơ khách hàng:
-            
+            $('#tab_khachHang_dashboard_welcome').innerText = `
+                Xin chào ${APP.user.data.hoVaTen}
+            `;
             
             
             //Thông tin nhanh hợp đồng
