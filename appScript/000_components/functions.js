@@ -1,4 +1,4 @@
-const div = ({id = '', className = '', text = '', html = '', parent = null, ...attrs} = {}) =>
+const div = ({id = '', className = '', text = '', html = '', parent = null, parentId = null,...attrs} = {}) =>
 {    
     const el = document.createElement('div');
     if (id) el.id = id;
@@ -33,7 +33,7 @@ const div = ({id = '', className = '', text = '', html = '', parent = null, ...a
     }
 
     if (parent) parent.appendChild(el);
-
+    if (parentId) $('#' + parentId).appendChild(el);
     return el;
 
     /* Example:

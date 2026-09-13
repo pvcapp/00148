@@ -20,18 +20,16 @@ APP.khachHang.dashboard =
             let ndDiv = document.createElement('div');
             ndDiv.id = 'tab_khachHang_dashboard_danhSach';
             ndDiv.className = 'tab__noi-dung';
-
-                let welcomeDiv = document.createElement('div');
-                welcomeDiv.id = 'tab_khachHang_dashboard_welcome';
-                welcomeDiv.className = 'card__caption';
-                ndDiv.appendChild(welcomeDiv);
+                div({id: 'tab_khachHang_dashboard_welcome', className: 'card__caption', 
+                    parent: 'tab_khachHang_dashboard_danhSach'});
+                
 
                 let totalDiv = document.createElement('div');
                 totalDiv.id = 'tab_khachHang_dashboard_total';
                 totalDiv.className = 'tab__grid';
                 ndDiv.appendChild(totalDiv);
 
-                
+
 
                 let thongTinKhachHangDiv = document.createElement('div');
                 thongTinKhachHangDiv.id = 'tab_khachHang_dashboard_thongTinKhachHang';
