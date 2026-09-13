@@ -1,3 +1,21 @@
+const column = (options = {}) =>
+{
+    return div({...options, className: `column ${options.className || ''}`.trim()});
+}
+
+const row = (options = {}) =>
+{
+    return div({...options, className: `row ${options.className || ''}`.trim()});
+}
+
+
+const button = (options = {}) =>
+{
+    return div({...options, className: `button ${options.className || ''}`.trim()});
+}
+
+
+
 function totalCard_render(tieuDe, so) 
 {
     return `

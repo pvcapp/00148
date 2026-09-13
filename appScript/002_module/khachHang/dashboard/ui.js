@@ -21,20 +21,13 @@ APP.khachHang.dashboard =
             ndDiv.id = 'tab_khachHang_dashboard_danhSach';
             ndDiv.className = 'tab__noi-dung';
                 div({id: 'tab_khachHang_dashboard_welcome', className: 'card__caption', 
-                    parent: 'tab_khachHang_dashboard_danhSach'});
+                    parent: ndDiv});
                 
-
-                let totalDiv = document.createElement('div');
-                totalDiv.id = 'tab_khachHang_dashboard_total';
-                totalDiv.className = 'tab__grid';
-                ndDiv.appendChild(totalDiv);
-
-
-
-                let thongTinKhachHangDiv = document.createElement('div');
-                thongTinKhachHangDiv.id = 'tab_khachHang_dashboard_thongTinKhachHang';
-                thongTinKhachHangDiv.className = 'card';
-                ndDiv.appendChild(thongTinKhachHangDiv);
+                div({id: 'tab_khachHang_dashboard_total', className: 'tab__grid', 
+                    parent: ndDiv});
+                
+                div({id: 'tab_khachHang_dashboard_thongTinKhachHang', className: 'card', 
+                    parent: ndDiv});
 
             $('#tab_khachHang_dashboard').appendChild(ndDiv);
         },
