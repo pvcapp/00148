@@ -64,7 +64,7 @@ APP.khachHang.dashboard =
             APP.ui.setManHinh('khachHang', 'khachHang_dashboard');
         },
     },
-    server:
+    api:
     {
 
     }

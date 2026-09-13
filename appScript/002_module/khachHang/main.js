@@ -1,24 +1,7 @@
 APP.khachHang =
 {
     ui:
-    {
-        dashboard: {},
-        thongTinHopDong:
-        {
-            startup: function()
-            {
-                chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang || []);
-                activeButton('menu_khachHang_hopDong');
-            },
-            render: function()
-            {
-                if (APP.state.manHinhHienTai.manHinh === 'khachHang_hopDong') 
-                {
-                    APP.ui.showTab('tab_khachHang_hopDong');
-                }
-            }
-        },
-        
+    {       
         taiDuLieuManHinh: function(manHinh)
         {
             if (APP.state.dangTai[ manHinh])
@@ -58,8 +41,23 @@ APP.khachHang =
             APP.khachHang.dashboard.startup();
         }
     },
-    server:
+    api:
     {
 
+    },
+    thongTinHopDong:
+    {
+        startup: function()
+        {
+            chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang || []);
+            activeButton('menu_khachHang_hopDong');
+        },
+        render: function()
+        {
+            if (APP.state.manHinhHienTai.manHinh === 'khachHang_hopDong') 
+            {
+                APP.ui.showTab('tab_khachHang_hopDong');
+            }
+        }
     }
 };
