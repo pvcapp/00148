@@ -1,3 +1,14 @@
+class Div
+{
+    constructor(options = {})
+    {
+        const el = document.createElement('div');
+        if (options.id) el.id = options.id;
+        if (options.class) el.class = options.class;
+        return el;
+    }
+}    
+    
     
     
     function formatMoney(so) 

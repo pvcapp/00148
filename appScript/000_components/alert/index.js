@@ -37,11 +37,20 @@ function canhBao_render()
 
 document.body.appendChild(canhBao_render());
 
-function canhBao(noiDung, caption="Thông báo", hinhThucXacThuc ="ok")
+function canhBao(noiDung = '', caption="Thông báo", hinhThucXacThuc ="ok")
 {
     //hình thức xác thực: "ok", "okCancel"
     return new Promise(resolve => {
         $('#canhBaoPopup_noiDungThongBao').innerHTML = noiDung;
+        if (caption)
+        {
+            $('#canhBaoPopup_caption').innerText = caption;
+        }
+        else
+        {
+            $('#canhBaoPopup_caption').innerText = 'Thông báo';
+        }
+
         if (hinhThucXacThuc == "ok")
         {        
             $('#canhBaoPopup_buttonOk').style.display = "none";
