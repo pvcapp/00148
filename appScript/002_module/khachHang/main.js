@@ -1,10 +1,5 @@
 APP.khachHang =
 {
-    startup: function()
-    {
-        APP.khachHang.menu.startup();
-        APP.khachHang.dashboard.startup();
-    },
     ui:
     {
         dashboard: {},
@@ -57,7 +52,11 @@ APP.khachHang =
     },
     control:
     {
-
+        startup: function()
+        {
+            APP.khachHang.menu.startup();
+            APP.khachHang.dashboard.startup();
+        }
     },
     server:
     {
