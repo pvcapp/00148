@@ -2,8 +2,8 @@ APP.khachHang.menu =
 {
     startup: function()
     {
-        APP.ui.khachHang.menu.render();
-        APP.ui.khachHang.menu.show();
+        APP.khachHang.menu.render();
+        APP.khachHang.menu.show();
     },
     render: function()
     {
