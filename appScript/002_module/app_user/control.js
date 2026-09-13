@@ -101,6 +101,7 @@
                 {
                     cb = await canhBao('Vui lòng kiểm tra tên đăng nhập!','Đăng nhập ứng dụng');
                     $('#login_submitButton').innerText = 'Đăng nhập';
+                    $('#loginError').innerHTML = 'Vui lòng đăng nhập để vào trang này';
                     activeButton('login_submitButton');
                     return;
                 }
@@ -108,6 +109,7 @@
                 {
                     cb = await canhBao('Vui lòng kiểm tra lại mật khẩu!','Đăng nhập ứng dụng');
                     $('#login_submitButton').innerText = 'Đăng nhập';
+                    $('#loginError').innerHTML = 'Vui lòng đăng nhập để vào trang này';
                     activeButton('login_submitButton');
                     return;
                 }
