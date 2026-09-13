@@ -17,6 +17,11 @@ APP.khachHang.dashboard =
     {
         init: function()
         {
+            <div class="tab" id="tab_khachHang_dashboard" style="display: none;">
+                <div class="tab__noi-dung" id="tab_khachHang_dashboard_danhSach">
+                </div>
+            </div>
+
             let ndDiv = column({id: 'tab_khachHang_dashboard_danhSach', className: 'tab__noi-dung', 
                 parentId: 'tab_khachHang_dashboard'});
                 div({id: 'tab_khachHang_dashboard_welcome', className: 'card__caption', 
