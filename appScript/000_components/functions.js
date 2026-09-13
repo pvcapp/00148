@@ -1,346 +1,386 @@
-class Div
+const div = ({id = '', className = '', text = '', html = '', parent = null, ...attrs} = {}) =>
+{    
+    const el = document.createElement('div');
+    if (id) el.id = id;
+    if (className) el.className = className;
+    if (text) el.innerText = text;
+    if (html) el.innerHTML = html;
+
+    for (const [key, value] of Object.entries(attrs)) 
+    {
+        if (value == null) continue;
+        if (key.startsWith('on') && typeof value === 'function') 
+        {
+            const eventName = key.substring(2);
+            el.addEventListener(eventName, event => {
+                if (eventName === 'keydown' || eventName === 'keyup' || eventName === 'keypress' ||
+                    eventName === 'wheel' || 
+                    eventName === 'dragstart' || eventName === 'dragover' || eventName === 'drop'
+                ) 
+                {
+                    value(event, event.currentTarget);
+                }
+                else {
+                    value(event.currentTarget);
+                }
+            });
+
+        }
+        else 
+        {
+            el.setAttribute(key, value);
+        }
+    }
+
+    if (parent) parent.appendChild(el);
+
+    return el;
+
+    /* Example:
+        div({
+            id: 'input_123',
+            onkeydown: (event, el) => {
+                if (event.key === 'Enter') xuLy(el.id);
+            },
+            onclick: el => {
+                khachHang_edit(el.id);
+            }
+        }); 
+    */
+}
+    
+    
+    
+function formatMoney(so) 
 {
-    constructor(options = {})
+    if (so)
     {
-        const el = document.createElement('div');
-        if (options.id) el.id = options.id;
-        if (options.class) el.class = options.class;
-        return el;
+        so = so.toString().replace(/[^0-9]/g, '');
+        const giaTri = Number(so || 0);
+        return giaTri.toLocaleString('vi-VN') + ' đ';
     }
+    else
+    {
+        return 'noNumber';
+    }        
+}
+
+function escapeHtml(giaTri) 
+{
+    return String(giaTri ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+
+function xuLyLoi(loi) {
+    toast(loi && loi.message ? loi.message : 'Có lỗi xảy ra');
+    console.log(loi && loi.message ? loi.message : 'Có lỗi xảy ra');
 }    
-    
-    
-    
-    function formatMoney(so) 
+
+const chuanHoaNgayThang = (number) =>
+{
+    if (number == '')
     {
-        if (so)
-        {
-            so = so.toString().replace(/[^0-9]/g, '');
-            const giaTri = Number(so || 0);
-            return giaTri.toLocaleString('vi-VN') + ' đ';
-        }
-        else
-        {
-            return 'noNumber';
-        }        
+        return '';
     }
 
-    function escapeHtml(giaTri) 
+    if (parseInt(number) < 10) {return '0' + parseInt(number);} else {return parseInt(number);}
+}
+
+const $ = (selector) =>
+{
+    if (selector.startsWith('#'))
     {
-      return String(giaTri ?? '')
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
+        return document.getElementById(selector.slice(1));
+    }
+    return document.querySelector(selector);
+}
+
+const hide = (id) => 
+{
+    let el = $('#' + id);
+    if (!el)
+    {
+        alert('Hàm hide: không tìm thấy element id: ' + id); 
+        return;
     }
 
-
-    function xuLyLoi(loi) {
-      toast(loi && loi.message ? loi.message : 'Có lỗi xảy ra');
-      console.log(loi && loi.message ? loi.message : 'Có lỗi xảy ra');
-    }    
-
-    const chuanHoaNgayThang = (number) =>
+    if (!el.dataset.display)
     {
-        if (number == '')
-        {
-            return '';
-        }
+        let dsp = getComputedStyle(el).display;
+        if (dsp !== "none"){el.dataset.display = dsp;}
+    }
+    el.style.display = 'none';
+}
 
-        if (parseInt(number) < 10) {return '0' + parseInt(number);} else {return parseInt(number);}
+class PVCImage
+{
+    constructor(src, width = "auto", height = "auto", style ='', opacity = 1)
+    {
+        this.src = src;
+        this.width = width;
+        this.height = height;
+        this.style = style;
+        this.opacity = opacity;
     }
 
-    const $ = (selector) =>
+    render()
     {
-        if (selector.startsWith('#'))
-        {
-            return document.getElementById(selector.slice(1));
-        }
-        return document.querySelector(selector);
+        return `
+            <img src="${this.src}" style="width:${this.width}; height:${this.height}; opacity:${this.opacity}; ${this.style}">
+        `;
+    }
+}
+
+const show = (id, stl = "block") =>
+{
+    let el = $('#' + id);
+    if (!el)
+    {
+        alert('Hàm show: không tìm thấy element id: ' + id);
+        return;
     }
 
-    const hide = (id) => 
-    {
-        let el = $('#' + id);
-        if (!el)
-        {
-            alert('Hàm hide: không tìm thấy element id: ' + id); 
-            return;
-        }
+    el.classList.remove('hide');
 
-        if (!el.dataset.display)
-        {
-            let dsp = getComputedStyle(el).display;
-            if (dsp !== "none"){el.dataset.display = dsp;}
-        }
-        el.style.display = 'none';
-    }
-
-    class PVCImage
-    {
-        constructor(src, width = "auto", height = "auto", style ='', opacity = 1)
-        {
-            this.src = src;
-            this.width = width;
-            this.height = height;
-            this.style = style;
-            this.opacity = opacity;
-        }
-
-        render()
-        {
-            return `
-                <img src="${this.src}" style="width:${this.width}; height:${this.height}; opacity:${this.opacity}; ${this.style}">
-            `;
-        }
-    }
-
-    const show = (id, stl = "block") =>
-    {
-        let el = $('#' + id);
-        if (!el)
-        {
-            alert('Hàm show: không tìm thấy element id: ' + id);
-            return;
-        }
-
-        el.classList.remove('hide');
-
-        if (el.dataset.display)
-        {      
-            if (el.dataset.display == "none")
-            {
-                el.style.display = stl;
-            }
-            else
-            {
-                el.style.display = el.dataset.display;
-            }
-        }
-        else
+    if (el.dataset.display)
+    {      
+        if (el.dataset.display == "none")
         {
             el.style.display = stl;
         }
-    }
-
-    const toggle = (id) =>
-    {
-        console.log('toggle ' + id);
-        let el = $('#' + id);
-        if (!el)
-        {
-            alert('Hàm toggle display: không tìm thấy element id: ' + id);
-            return;
-        }
-        const isHidden = el.classList.contains('hide') || getComputedStyle(el).display === 'none';
-        if (isHidden) 
-        {
-            show(id);    
-        } 
-        else 
-        {
-            hide(id);
-        }
-    }
-
-
-    const formatNumber = (gia) =>
-    {        
-        var kq="";
-        if (gia.length<4){kq = gia;}
         else
         {
-            
-            var giatext = gia.toString();
-            var Am ='';
-            
-            if (giatext.substring(0,1) == "-"){Am ='-';}
-            gia = giatext.replace(/[^a-zA-Z0-9]/g, '');
-            gia = parseInt(gia);
-            giatext = gia.toString();
-            
-            if (giatext.length<4){kq = Am + giatext;}
-            else if(giatext.length<7){kq = Am + giatext.substring(0,giatext.length-3) + "." + giatext.substring(giatext.length-3,giatext.length);}
-            else if(giatext.length<10){kq = Am + giatext.substring(0,giatext.length-6) + "." + giatext.substring(giatext.length-6,giatext.length-6+3) + "." + giatext.substring(giatext.length-3,giatext.length);}
-            else if(giatext.length<13){kq = Am + giatext.substring(0,giatext.length-9) + "." + giatext.substring(giatext.length-9,giatext.length-6) + "." + giatext.substring(giatext.length-6,giatext.length-6+3) + "." + giatext.substring(giatext.length-3,giatext.length);}
-            else {kq = Am + giatext;}
+            el.style.display = el.dataset.display;
         }
-        return kq;
     }
-            
-                            
-    const formatNumberInput = (IdInput) =>
+    else
+    {
+        el.style.display = stl;
+    }
+}
+
+const toggle = (id) =>
+{
+    console.log('toggle ' + id);
+    let el = $('#' + id);
+    if (!el)
+    {
+        alert('Hàm toggle display: không tìm thấy element id: ' + id);
+        return;
+    }
+    const isHidden = el.classList.contains('hide') || getComputedStyle(el).display === 'none';
+    if (isHidden) 
+    {
+        show(id);    
+    } 
+    else 
+    {
+        hide(id);
+    }
+}
+
+
+const formatNumber = (gia) =>
+{        
+    var kq="";
+    if (gia.length<4){kq = gia;}
+    else
     {
         
-        if ($('#' + IdInput).val() == '' || $('#' + IdInput).val() == '0' || $('#' + IdInput).val() == '00' || $('#' + IdInput).val() == '000')
-        {
-            
-        }
-        else
-        {
-            $('#' + IdInput).val(formatNumber(parseInt($('#' + IdInput).val())));
-        }
+        var giatext = gia.toString();
+        var Am ='';
+        
+        if (giatext.substring(0,1) == "-"){Am ='-';}
+        gia = giatext.replace(/[^a-zA-Z0-9]/g, '');
+        gia = parseInt(gia);
+        giatext = gia.toString();
+        
+        if (giatext.length<4){kq = Am + giatext;}
+        else if(giatext.length<7){kq = Am + giatext.substring(0,giatext.length-3) + "." + giatext.substring(giatext.length-3,giatext.length);}
+        else if(giatext.length<10){kq = Am + giatext.substring(0,giatext.length-6) + "." + giatext.substring(giatext.length-6,giatext.length-6+3) + "." + giatext.substring(giatext.length-3,giatext.length);}
+        else if(giatext.length<13){kq = Am + giatext.substring(0,giatext.length-9) + "." + giatext.substring(giatext.length-9,giatext.length-6) + "." + giatext.substring(giatext.length-6,giatext.length-6+3) + "." + giatext.substring(giatext.length-3,giatext.length);}
+        else {kq = Am + giatext;}
     }
-
-
-    const boDau = (str) =>
+    return kq;
+}
+        
+                        
+const formatNumberInput = (IdInput) =>
+{
+    
+    if ($('#' + IdInput).val() == '' || $('#' + IdInput).val() == '0' || $('#' + IdInput).val() == '00' || $('#' + IdInput).val() == '000')
     {
-        return str
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/đ/g, "d")
-            .replace(/Đ/g, "D");
+        
     }
-
-    const activeButton = (buttonId) =>
+    else
     {
-        $('#' + buttonId).classList.remove('button__inactive');
+        $('#' + IdInput).val(formatNumber(parseInt($('#' + IdInput).val())));
     }
+}
 
-    const inactiveButton = (buttonId) =>
+
+const boDau = (str) =>
+{
+    return str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D");
+}
+
+const activeButton = (buttonId) =>
+{
+    $('#' + buttonId).classList.remove('button__inactive');
+}
+
+const inactiveButton = (buttonId) =>
+{
+    $('#' + buttonId).classList.add('button__inactive');
+}    
+
+//Tìm kiếm chuỗi A trong chuỗi B theo cách: tách từ, thứ tự xuất hiện đúng
+const ATrongB = (A, B) => 
+{
+    A = boDau(A.toLowerCase()).trim().replace(/\s+/g, " ");
+    B = boDau(B.toLowerCase()).trim().replace(/\s+/g, " ");
+
+    const tachA = A.split(" ");
+    const tachB = B.split(" ");
+
+    let indexTimThayHienTai = 0;
+
+    for (let i = 0; i < tachA.length; i++) 
     {
-        $('#' + buttonId).classList.add('button__inactive');
-    }    
+        let timThay = false;
 
-    //Tìm kiếm chuỗi A trong chuỗi B theo cách: tách từ, thứ tự xuất hiện đúng
-    const ATrongB = (A, B) => 
-    {
-        A = boDau(A.toLowerCase()).trim().replace(/\s+/g, " ");
-        B = boDau(B.toLowerCase()).trim().replace(/\s+/g, " ");
-
-        const tachA = A.split(" ");
-        const tachB = B.split(" ");
-
-        let indexTimThayHienTai = 0;
-
-        for (let i = 0; i < tachA.length; i++) 
+        for (let j = indexTimThayHienTai; j < tachB.length; j++) 
         {
-            let timThay = false;
-
-            for (let j = indexTimThayHienTai; j < tachB.length; j++) 
+            if (tachB[j].startsWith(tachA[i])) 
             {
-                if (tachB[j].startsWith(tachA[i])) 
-                {
-                    timThay = true;
-                    indexTimThayHienTai = j + 1; // từ tiếp theo phải ở phía sau
-                    break;
-                }
-            }
-
-            if (!timThay) 
-            {
-                return false;
+                timThay = true;
+                indexTimThayHienTai = j + 1; // từ tiếp theo phải ở phía sau
+                break;
             }
         }
 
+        if (!timThay) 
+        {
+            return false;
+        }
+    }
+
+    return true;
+};
+
+const ATruocB = (ngayA, thangA, namA, ngayB, thangB, namB) =>
+{
+    //Thực ra là A<=B (tính cả A=B) - dùng cho từ ngày đến ngày
+    if (ngayA == '' || thangA == '' || namA == '' || ngayB == '' || thangB == '' || namB == '')
+    {
         return true;
-    };
+    }
 
-    const ATruocB = (ngayA, thangA, namA, ngayB, thangB, namB) =>
+    ngayA = parseInt(ngayA);
+    thangA = parseInt(thangA);
+    namA = parseInt(namA);
+
+    ngayB = parseInt(ngayB);
+    thangB = parseInt(thangB);
+    namB = parseInt(namB);
+
+    if (namA<namB)
     {
-        //Thực ra là A<=B (tính cả A=B) - dùng cho từ ngày đến ngày
-        if (ngayA == '' || thangA == '' || namA == '' || ngayB == '' || thangB == '' || namB == '')
+        return true;
+    }
+    else if(namA == namB)
+    {
+        if (thangA < thangB)
         {
             return true;
-        }
-
-        ngayA = parseInt(ngayA);
-        thangA = parseInt(thangA);
-        namA = parseInt(namA);
-
-        ngayB = parseInt(ngayB);
-        thangB = parseInt(thangB);
-        namB = parseInt(namB);
-
-        if (namA<namB)
+        } 
+        else if (thangA == thangB)
         {
-            return true;
-        }
-        else if(namA == namB)
-        {
-            if (thangA < thangB)
+            if (ngayA <= ngayB)
             {
                 return true;
-            } 
-            else if (thangA == thangB)
-            {
-                if (ngayA <= ngayB)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            } 
-            else if (thangA > thangB)
+            }
+            else
             {
                 return false;
             }
-        }
-        else if(namA > namB)
+        } 
+        else if (thangA > thangB)
         {
             return false;
         }
     }
-
-
-    const hopDongActive = (hopDong) =>
+    else if(namA > namB)
     {
-        ngayBatDau = hopDong.ngayBatDau;
-        thangBatDau = hopDong.thangBatDau;
-        namBatDau = hopDong.namBatDau;
-
-        ngayKetThuc = hopDong.ngayKetThuc;
-        thangKetThuc = hopDong.thangKetThuc;
-        namKetThuc = hopDong.namKetThuc;
-        
-        if (ngayBatDau == '' || thangBatDau == '' || namBatDau == '') {return false;}
-        ngayBatDau = parseInt(ngayBatDau);
-        thangBatDau = parseInt(thangBatDau);
-        namBatDau = parseInt(namBatDau);
-
-        if (ngayKetThuc !== '')
-        {
-            ngayKetThuc = parseInt(ngayKetThuc);
-        }
-        else
-        {
-            ngayKetThuc = 31;
-        }
-
-        if (thangKetThuc !== '') 
-        {
-            thangKetThuc = parseInt(thangKetThuc);
-        }
-        else
-        {
-            thangKetThuc = 12;
-        }
-
-        if (namKetThuc !== '') 
-        {
-            namKetThuc = parseInt(namKetThuc);
-        }
-        else
-        {
-            namKetThuc = 3000;
-        }
-
-        let d = new Date();
-        let ngayHienTai = d.getDate();
-        let thangHienTai = d.getMonth() + 1;
-        let namHienTai = d.getFullYear();
-        // bat dau <= han <= ket thuc:
-        if (ATruocB(ngayBatDau, thangBatDau, namBatDau, ngayHienTai, thangHienTai, namHienTai)
-            && ATruocB(ngayHienTai, thangHienTai, namHienTai, ngayKetThuc, thangKetThuc, namKetThuc)
-        )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }        
+        return false;
     }
+}
+
+
+const hopDongActive = (hopDong) =>
+{
+    ngayBatDau = hopDong.ngayBatDau;
+    thangBatDau = hopDong.thangBatDau;
+    namBatDau = hopDong.namBatDau;
+
+    ngayKetThuc = hopDong.ngayKetThuc;
+    thangKetThuc = hopDong.thangKetThuc;
+    namKetThuc = hopDong.namKetThuc;
+    
+    if (ngayBatDau == '' || thangBatDau == '' || namBatDau == '') {return false;}
+    ngayBatDau = parseInt(ngayBatDau);
+    thangBatDau = parseInt(thangBatDau);
+    namBatDau = parseInt(namBatDau);
+
+    if (ngayKetThuc !== '')
+    {
+        ngayKetThuc = parseInt(ngayKetThuc);
+    }
+    else
+    {
+        ngayKetThuc = 31;
+    }
+
+    if (thangKetThuc !== '') 
+    {
+        thangKetThuc = parseInt(thangKetThuc);
+    }
+    else
+    {
+        thangKetThuc = 12;
+    }
+
+    if (namKetThuc !== '') 
+    {
+        namKetThuc = parseInt(namKetThuc);
+    }
+    else
+    {
+        namKetThuc = 3000;
+    }
+
+    let d = new Date();
+    let ngayHienTai = d.getDate();
+    let thangHienTai = d.getMonth() + 1;
+    let namHienTai = d.getFullYear();
+    // bat dau <= han <= ket thuc:
+    if (ATruocB(ngayBatDau, thangBatDau, namBatDau, ngayHienTai, thangHienTai, namHienTai)
+        && ATruocB(ngayHienTai, thangHienTai, namHienTai, ngayKetThuc, thangKetThuc, namKetThuc)
+    )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }        
+}

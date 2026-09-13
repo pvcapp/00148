@@ -31,6 +31,8 @@ APP.khachHang.dashboard =
                 totalDiv.className = 'tab__grid';
                 ndDiv.appendChild(totalDiv);
 
+                
+
                 let thongTinKhachHangDiv = document.createElement('div');
                 thongTinKhachHangDiv.id = 'tab_khachHang_dashboard_thongTinKhachHang';
                 thongTinKhachHangDiv.className = 'card';
@@ -44,8 +46,7 @@ APP.khachHang.dashboard =
             //Thông tin nhanh hồ sơ khách hàng:
             $('#tab_khachHang_dashboard_welcome').innerText = `
                 Xin chào ${APP.user.data.hoVaTen}
-            `;
-            
+            `;            
             
             //Thông tin nhanh hợp đồng
             danhSachHopDong = APP.data.danhSachHopDong;
