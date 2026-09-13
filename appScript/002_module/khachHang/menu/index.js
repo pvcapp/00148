@@ -1,4 +1,4 @@
-APP.ui.khachHang.menu =
+APP.khachHang.menu =
 {
     startup: function()
     {

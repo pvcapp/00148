@@ -275,46 +275,61 @@
     }
 
 
-    function isReadonly(ngay, thang, nam)
+    const hopDongActive = (hopDong) =>
     {
-        if (ngay == '' || thang == '' || nam == '') {return false;}
-        ngay = parseInt(ngay);
-        thang = parseInt(thang);
-        nam = parseInt(nam);
+        ngayBatDau = hopDong.ngayBatDau;
+        thangBatDau = hopDong.thangBatDau;
+        namBatDau = hopDong.namBatDau;
+
+        ngayKetThuc = hopDong.ngayKetThuc;
+        thangKetThuc = hopDong.thangKetThuc;
+        namKetThuc = hopDong.namKetThuc;
+        
+        if (ngayBatDau == '' || thangBatDau == '' || namBatDau == '') {return false;}
+        ngayBatDau = parseInt(ngayBatDau);
+        thangBatDau = parseInt(thangBatDau);
+        namBatDau = parseInt(namBatDau);
+
+        if (ngayKetThuc !== '')
+        {
+            ngayKetThuc = parseInt(ngayKetThuc);
+        }
+        else
+        {
+            ngayKetThuc = 31;
+        }
+
+        if (thangKetThuc !== '') 
+        {
+            thangKetThuc = parseInt(thangKetThuc);
+        }
+        else
+        {
+            thangKetThuc = 12;
+        }
+
+        if (namKetThuc !== '') 
+        {
+            namKetThuc = parseInt(namKetThuc);
+        }
+        else
+        {
+            namKetThuc = 3000;
+        }
 
         let d = new Date();
         let ngayHienTai = d.getDate();
         let thangHienTai = d.getMonth() + 1;
         let namHienTai = d.getFullYear();
-
-        if (namHienTai > nam + 1)
+        // bat dau <= han <= ket thuc:
+        if (ATruocB(ngayBatDau, thangBatDau, namBatDau, ngayHienTai, thangHienTai, namHienTai)
+            && ATruocB(ngayHienTai, thangHienTai, namHienTai, ngayKetThuc, thangKetThuc, namKetThuc)
+        )
         {
             return true;
-        }
-        else if (namHienTai == nam + 1)
-        {
-            if (thangHienTai == 1 && thang == 12)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        else if (namHienTai == nam)
-        {
-            if (thangHienTai == thang || thangHienTai == thang + 1)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
         else
         {
-            return true;
-        }
+            return false;
+        }        
     }
