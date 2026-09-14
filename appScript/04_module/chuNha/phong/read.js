@@ -37,7 +37,7 @@
             {
                 stt ++;                
                 let tenKhuNha = '';
-                APP.data.khuNha.forEach(function(khuNha)
+                APP.cache.khuNha.forEach(function(khuNha)
                 {
                     if (khuNha.idKhuNha === dong.idKhuNha) 
                     {

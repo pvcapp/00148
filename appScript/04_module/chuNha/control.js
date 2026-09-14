@@ -5,7 +5,7 @@ APP.ui.chuNha =
     {
         APP.ui.chuNha.menu.startup();
         APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
-        $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.data.tongQuan || {});
+        $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan || {});
         setTimeout(function() 
         {
             APP.ui.chuNha.getData();
@@ -20,11 +20,11 @@ APP.ui.chuNha =
         google.script.run
             .withSuccessHandler(function(ketQua)
             {
-                APP.data.khuNha = ketQua.khuNha || [];
-                APP.data.phong = ketQua.phong || [];
-                APP.data.danhSachKhachHang = ketQua.danhSachKhachHang || [];
-                APP.data.danhSachKhachHang_xacMinh = ketQua.danhSachKhachHang_xacMinh || [];
-                APP.data.setting = ketQua.setting || [];
+                APP.cache.khuNha = ketQua.khuNha || [];
+                APP.cache.phong = ketQua.phong || [];
+                APP.cache.danhSachKhachHang = ketQua.danhSachKhachHang || [];
+                APP.cache.danhSachKhachHang_xacMinh = ketQua.danhSachKhachHang_xacMinh || [];
+                APP.cache.setting = ketQua.setting || [];
 
                 APP.ui.chuNha.quanLyKhachHang.danhSach.render();
                 APP.ui.chuNha.quanLyKhuNha.startup();
@@ -50,7 +50,7 @@ APP.ui.chuNha =
     {
         startup: function()
         {
-            chuNha_showDanhSachKhuNha(APP.data.khuNha || []);
+            chuNha_showDanhSachKhuNha(APP.cache.khuNha || []);
             activeButton('menu_chuNha_khuNha');
         }
     },
@@ -58,7 +58,7 @@ APP.ui.chuNha =
     {
         startup: function()
         {
-            chuNha_showDanhSachPhong(APP.data.phong || []);
+            chuNha_showDanhSachPhong(APP.cache.phong || []);
             activeButton('menu_chuNha_phong');
         }
     },
@@ -66,7 +66,7 @@ APP.ui.chuNha =
     {
         startup: function()
         {
-            chuNha_showDanhSachHopDong(APP.data.hopDong || []);
+            chuNha_showDanhSachHopDong(APP.cache.hopDong || []);
             activeButton('menu_chuNha_hopDong');
         }
     },   
@@ -74,7 +74,7 @@ APP.ui.chuNha =
     {
         startup: function()
         {
-            buildDanhSachThuTien(APP.data.thuTien || []);
+            buildDanhSachThuTien(APP.cache.thuTien || []);
             activeButton('menu_chuNha_thuTien');
         }
     },
@@ -82,7 +82,7 @@ APP.ui.chuNha =
     {
         startup: function()
         {
-            chuNha_showSetting(APP.data.setting);
+            chuNha_showSetting(APP.cache.setting);
             activeButton('menu_chuNha_setting');
         }
     }

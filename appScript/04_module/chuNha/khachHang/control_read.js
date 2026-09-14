@@ -43,7 +43,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
         `;
 
         let dangThue = APP.ui.chuNha.quanLyKhachHang.danhSach.showDangThue;
-        html += APP.data.danhSachKhachHang
+        html += APP.cache.danhSachKhachHang
             .filter(function(dong) {
                 return String(dong.active) === '1';
             })
@@ -58,8 +58,8 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 d += '<td>' + thue + '</td>';
                 
                 let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                console.log(JSON.stringify(APP.data.danhSachKhachHang_xacMinh));
-                let dongXacMinh = APP.data.danhSachKhachHang_xacMinh.find(function(dxm){
+                console.log(JSON.stringify(APP.cache.danhSachKhachHang_xacMinh));
+                let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.find(function(dxm){
                     return dxm.idKhachHang == dong.idKhachHang
                 });
 
@@ -92,7 +92,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
 
 
                 <div style="display: flex; flex-direction:column; gap:10px" class="hide-on-pc">
-                        ${APP.data.danhSachKhachHang
+                        ${APP.cache.danhSachKhachHang
                         .filter(function(dong) {
                             return String(dong.active) === '1';
                         })
@@ -108,7 +108,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                                     ${escapeHtml(dong.email || '')}`;
                                     
                                     let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                                    let dongXacMinh = APP.data.danhSachKhachHang_xacMinh.find(function(dxm){
+                                    let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.find(function(dxm){
                                         return dxm.idKhachHang == dong.idKhachHang
                                     });
                                     

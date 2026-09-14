@@ -77,8 +77,8 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
                 if (ketQua && ketQua.thanhCong) 
                 {
                     toast('Thêm khách hàng thành công: ' + duLieu.hoVaTen);
-                    APP.data.danhSachKhachHang = APP.data.danhSachKhachHang || [];
-                    APP.data.danhSachKhachHang.push(ketQua.khachHang);
+                    APP.cache.danhSachKhachHang = APP.cache.danhSachKhachHang || [];
+                    APP.cache.danhSachKhachHang.push(ketQua.khachHang);
                     APP.ui.chuNha.quanLyKhachHang.danhSach.render();
                     APP.ui.chuNha.quanLyKhachHang.addNew.hide();
                     capNhatTongQuanTuCache();

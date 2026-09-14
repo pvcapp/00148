@@ -18,8 +18,8 @@ function chuNha_buildDashboard(tongQuan)
         google.script.run
             .withSuccessHandler(function(tongQuan)
             {
-                APP.data.tongQuan = tongQuan || {};
-                $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.data.tongQuan);                
+                APP.cache.tongQuan = tongQuan || {};
+                $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan);                
             })
             .withFailureHandler(function(loi)
             {

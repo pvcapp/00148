@@ -1,6 +1,6 @@
 function khuNha_edit(idKhuNha)
 {
-    const khu = (APP.data.khuNha || []).find(function(khu)
+    const khu = (APP.cache.khuNha || []).find(function(khu)
     {
         return String(khu.idKhuNha) === String(idKhuNha);
     });
@@ -86,9 +86,9 @@ function khuNha_edit_luu()
                 if (ketQua)
                 {
                     toast('Cập nhật khu nhà thành công');                    
-                    if (ketQua.data && APP.data && Array.isArray(APP.data.khuNha))
+                    if (ketQua.data && APP.cache && Array.isArray(APP.cache.khuNha))
                     {
-                        const viTri = APP.data.khuNha.findIndex(
+                        const viTri = APP.cache.khuNha.findIndex(
                             function(dong)
                             {
                                 return String(dong.idKhuNha) === String(ketQua.data.idKhuNha);
@@ -97,10 +97,10 @@ function khuNha_edit_luu()
 
                         if (viTri !== -1)
                         {
-                            APP.data.khuNha[viTri] = ketQua.data;
+                            APP.cache.khuNha[viTri] = ketQua.data;
                         }
                     }
-                    chuNha_showDanhSachKhuNha(APP.data.khuNha);
+                    chuNha_showDanhSachKhuNha(APP.cache.khuNha);
                     khuNha_edit_boQua();
                 }
                 else

@@ -17,7 +17,7 @@ APP.ui.chuNha.quanLyKhachHang.delete =
             if (ketQua && ketQua.thanhCong) 
             {
                 toast('Đã xóa khách hàng "' + hoVaTen + '"');
-                const khachHang = APP.data.danhSachKhachHang.find(
+                const khachHang = APP.cache.danhSachKhachHang.find(
                     khach => String(khach.idKhachHang) === String(idKhachHang)
                 );
                 if (khachHang) 

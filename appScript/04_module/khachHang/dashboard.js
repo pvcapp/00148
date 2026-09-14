@@ -41,7 +41,7 @@ APP.khachHang.dashboard =
             
             //Thông tin hồ sơ:
             //Đây là thông tin hồ sơ của bạn. Vui lòng bổ sung các thông tin còn thiếu để cập nhật hợp đồng sớm nhất. cảm ơn bạn!
-            let khachHang = APP.data.danhSachKhachHang;
+            let khachHang = APP.cache.danhSachKhachHang;
             $('#tab_khachHang_dashboard_thongTinKhachHang').innerHTML = `
                 <div class="card">
                     <h2 class="card__caption">Thông tin hồ sơ</h2>
@@ -52,7 +52,7 @@ APP.khachHang.dashboard =
 
 
             //Thông tin nhanh hợp đồng
-            danhSachHopDong = APP.data.danhSachHopDong;
+            danhSachHopDong = APP.cache.danhSachHopDong;
             if (!danhSachHopDong || danhSachHopDong.length == 0)
             {
                 $('#tab_khachHang_dashboard_thongTinHopDong').innerText = 'Bạn chưa thuê phòng nào';

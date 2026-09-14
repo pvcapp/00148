@@ -15,7 +15,7 @@ APP.khachHang =
                 .withSuccessHandler(function(duLieu)
                 {
                     APP.state.dangTai[manHinh] = false;
-                    Object.assign(APP.data, duLieu || {});
+                    Object.assign(APP.cache, duLieu || {});
 
                     if (
                         APP.state.manHinhHienTai.vaiTro === 'khachHang' &&
@@ -49,7 +49,7 @@ APP.khachHang =
     {
         startup: function()
         {
-            chuNha_showDanhSachKhachHang(APP.data.danhSachKhachHang || []);
+            chuNha_showDanhSachKhachHang(APP.cache.danhSachKhachHang || []);
             activeButton('menu_khachHang_hopDong');
         },
         render: function()

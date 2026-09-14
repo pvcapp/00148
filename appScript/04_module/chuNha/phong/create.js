@@ -7,7 +7,7 @@ function themMoiPhong_capNhatDanhSachKhu()
         return;
     }
 
-    const danhSachKhuNha = APP.data && APP.data.khuNha ? APP.data.khuNha : [];
+    const danhSachKhuNha = APP.cache && APP.cache.khuNha ? APP.cache.khuNha : [];
 
     select.innerHTML = `
         <option value="">-- Chọn khu nhà --</option>
@@ -76,7 +76,7 @@ function themMoiPhong_them()
         return;
     }
 
-    const phongTonTai = APP.data.phong && APP.data.phong.find(p => p.tenPhong === duLieu.tenPhong && p.idKhuNha === duLieu.idKhuNha);
+    const phongTonTai = APP.cache.phong && APP.cache.phong.find(p => p.tenPhong === duLieu.tenPhong && p.idKhuNha === duLieu.idKhuNha);
     if (phongTonTai) 
     {
         toast('Phòng đã tồn tại trong khu nhà này');
@@ -94,9 +94,9 @@ function themMoiPhong_them()
 
             if (ketQua)
             {
-                APP.data.phong = APP.data.phong || [];
-                APP.data.phong.push(ketQua);
-                chuNha_showDanhSachPhong(APP.data.phong);
+                APP.cache.phong = APP.cache.phong || [];
+                APP.cache.phong.push(ketQua);
+                chuNha_showDanhSachPhong(APP.cache.phong);
                 themMoiPhong_boQua();
                 capNhatTongQuanTuCache();
                 toast('Thêm phòng thành công');

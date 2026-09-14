@@ -54,7 +54,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
     },
     show: function(idKhachHang)
     {
-        const khachHang = APP.data.danhSachKhachHang.find(function(khach) 
+        const khachHang = APP.cache.danhSachKhachHang.find(function(khach) 
         {
             return String(khach.idKhachHang) === String(idKhachHang);
         });
@@ -104,14 +104,14 @@ APP.ui.chuNha.quanLyKhachHang.update =
             {
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
-                const viTri = (APP.data.danhSachKhachHang || []).findIndex(function(khach)
+                const viTri = (APP.cache.danhSachKhachHang || []).findIndex(function(khach)
                 {
                     return String(khach.idKhachHang) === String(data.idKhachHang);
                 });
 
                 if (viTri !== -1)
                 {
-                    APP.data.danhSachKhachHang[viTri] = kh;
+                    APP.cache.danhSachKhachHang[viTri] = kh;
                 }
                 
                 APP.ui.chuNha.quanLyKhachHang.danhSach.render();
@@ -143,7 +143,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
         show: function (idKhachHang)
         {
             //Load thong tin can xac minh:
-            let phieuXacMinh = APP.data.danhSachKhachHang_xacMinh.find(
+            let phieuXacMinh = APP.cache.danhSachKhachHang_xacMinh.find(
                 function(kh)
                 {
                     return kh.idKhachHang == idKhachHang;
@@ -176,12 +176,12 @@ APP.ui.chuNha.quanLyKhachHang.update =
         },
         ok: function(idKhachHang) 
         {
-            const khachHang = APP.data.danhSachKhachHang_xacMinh.find(function(khach) 
+            const khachHang = APP.cache.danhSachKhachHang_xacMinh.find(function(khach) 
             {
                 return String(khach.idKhachHang) === String(idKhachHang);
             });
 
-            APP.data.danhSachKhachHang_xacMinh.forEach(e => {
+            APP.cache.danhSachKhachHang_xacMinh.forEach(e => {
                 console.log(idKhachHang);
                 console.log(e.idKhachHang);
                 console.log('String(khach.idKhachHang) === String(idKhachHang): ' + String(e.idKhachHang) === String(idKhachHang));
@@ -197,12 +197,12 @@ APP.ui.chuNha.quanLyKhachHang.update =
             APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
 
             //Cập nhật tình trạng xác minh và render lại danh sách
-            const idXoa = APP.data.danhSachKhachHang_xacMinh.findIndex(
+            const idXoa = APP.cache.danhSachKhachHang_xacMinh.findIndex(
                 khach => String(khach.idKhachHang) === String(idKhachHang)
             );
             if (idXoa !== -1) 
             {
-                APP.data.danhSachKhachHang_xacMinh.splice(idXoa, 1);
+                APP.cache.danhSachKhachHang_xacMinh.splice(idXoa, 1);
             }
 
             //update thông tin khách hàng            
@@ -228,13 +228,13 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 .withSuccessHandler(function(kh)
                 {                
                     toast('Đã Từ chối thông tin Khách hàng', 1500);
-                    const idPhieu = APP.data.danhSachKhachHang_xacMinh.findIndex(
+                    const idPhieu = APP.cache.danhSachKhachHang_xacMinh.findIndex(
                         khach => String(khach.idKhachHang) === String(idKhachHang)
                     );
 
                     if (idPhieu !== -1) 
                     {
-                        APP.data.danhSachKhachHang_xacMinh[idPhieu].xacMinh = '0';
+                        APP.cache.danhSachKhachHang_xacMinh[idPhieu].xacMinh = '0';
                     }
 
                     APP.ui.chuNha.quanLyKhachHang.danhSach.render();

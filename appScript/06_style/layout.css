@@ -3,7 +3,7 @@
 |       header                  |
 |-------------------------------|
 |           |                   |
-|  sidebar  |         main      |
+|  sidebar  |       main/view   |
 |           |                   |
 |           |                   |
 |           |                   |
@@ -176,26 +176,3 @@ body
 
 
 
-.main-grid {
-    display: grid;
-    gap: 16px;
-}
-
-.main-grid--1 {
-    grid-template-columns: 1fr;
-}
-
-.main-grid--2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.main-grid--3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-@media (max-width: 981px) {
-    .main-grid--2,
-    .main-grid--3 {
-        grid-template-columns: 1fr;
-    }
-}
