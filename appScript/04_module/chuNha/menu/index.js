@@ -29,7 +29,7 @@ APP.ui.chuNha.menu =
                 <div
                     id="menu_${item.manHinh}"
                     class="menu__button${active}"
-                    onclick="APP.ui.setManHinh('chuNha','${item.manHinh}'); APP.ui.menu.hideIfMobile(); APP.ui.menu.setSelectedButton(this);">
+                    onclick="APP.ui.setManHinh('chuNha','${item.manHinh}'); APP.menu.ui.hideIfMobile(); APP.menu.ui.setSelectedButton(this);">
                     ${item.ten}
                 </div>
             `;
@@ -38,6 +38,6 @@ APP.ui.chuNha.menu =
     show: function()
     {
         show('buttonChoThuePhong');
-        APP.ui.menu.setSelectedButton($('#menu_chuNha_dashboard'));
+        APP.menu.ui.setSelectedButton($('#menu_chuNha_dashboard'));
     }
 };

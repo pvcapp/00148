@@ -25,7 +25,7 @@ APP.khachHang.menu =
             const selected = item.manHinh === manHinhDangChon ? ' menu__button__selected' : '';
             return `
                 <div id="menu_${item.manHinh}" class="menu__button${selected}"
-                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.ui.menu.hideIfMobile(); APP.ui.menu.setSelectedButton(this);">
+                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.menu.ui.hideIfMobile(); APP.menu.ui.setSelectedButton(this);">
                     ${item.ten}
                 </div>
             `;
@@ -34,6 +34,6 @@ APP.khachHang.menu =
     show: function()
     {
         hide('buttonChoThuePhong');
-        APP.ui.menu.setSelectedButton($('#menu_khachHang_dashboard'));
+        APP.menu.ui.setSelectedButton($('#menu_khachHang_dashboard'));
     }
 };

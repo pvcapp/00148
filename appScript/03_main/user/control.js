@@ -1,35 +1,6 @@
-    APP.user = 
+    APP.user.control = 
     {
-        token: '',
-        data: {},
-        menu:
-        {
-            showing: false,
-            show: function()
-            {
-                $('#menuUser').style.display = "flex";
-                show('userMenu_divChe');
-                APP.user.menu.showing = true;   
-                if (APP.mobileMode) APP.ui.menu.hide();             
-            },
-            hide: function()
-            {
-                hide('userMenu_divChe');
-                hide('menuUser');
-                APP.user.menu.showing = false;
-            },
-            toggle: function()
-            {
-                if (APP.user.menu.showing)
-                {
-                    APP.user.menu.hide();
-                }
-                else
-                {
-                    APP.user.menu.show();
-                }
-            }
-        },
+        init: null,
         checkUser: async function()
         {
             inactiveButton('user_changePassword_submitButton');
@@ -45,7 +16,7 @@
                     {
                         localStorage.removeItem('a00148user');
                         $('#userMenu_hoVaTen').value = '';
-                        APP.user.login.show();
+                        APP.user.ui.login.show();
                     }
                     else
                     {
@@ -61,34 +32,11 @@
             {
                 console.log('Client checkUser: localstorage not found!');
                 localStorage.setItem('a00148user', 'notOk');
-                APP.user.login.show();
+                APP.user.ui.login.show();
             }
         },
         login:
         {
-            show: function()
-            {
-                var emptyLoginStatus =
-                {
-                    loginStatus: 'notOk',
-                    message: '',
-                    token: '',
-                    userName: '',
-                    userHoVaTen: '',
-                    loaiTaiKhoan: ''
-                };
-
-                $('#loginError').innerHTML = 'Vui lòng đăng nhập để vào trang này';
-                $('#loginContainer').style.display = 'flex';
-                $('#login_password').value = '';
-                localStorage.setItem('a00148user', JSON.stringify(emptyLoginStatus));
-            },
-            hide: function()
-            {
-                hide('loginContainer');
-                $('#login_password').value = '';
-                $('#loginError').innerHTML = 'Vui lòng đăng nhập để vào trang này';
-            },
             submit: async function()
             {
                 let cb;
@@ -131,7 +79,7 @@
                             activeButton('user_changePassword_submitButton');
                             $('#login_submitButton').innerText = 'Đăng nhập';
                             activeButton('login_submitButton');
-                            APP.user.login.hide();
+                            APP.user.ui.login.hide();
                         }
                         else
                         {
@@ -146,13 +94,13 @@
         logout: function()
         {
             let token = APP.user.token;
-            APP.user.menu.hide();
-            APP.ui.menu.clear();
+            APP.user.ui.menu.hide();
+            APP.menu.ui.clear();
 
             APP.ui.hideAllTabs();
             APP.ui.hideAllForms();
             APP.user.data = {};
-            APP.user.login.show();
+            APP.user.ui.login.show();
 
             localStorage.setItem('a00148user', '');
             $('#user_hoVaTen').innerText = '--';   
@@ -164,21 +112,6 @@
         },
         changePassword:
         {
-            show: function()
-            {
-                show('user_changePassword_divChe');
-                $('#changePassword_container').style.display = 'flex';
-                $('#changePass_newPassword1').value = '';
-                $('#changePass_newPassword2').value = '';
-                APP.user.menu.hide();
-            },
-            hide: function()
-            {
-                hide('user_changePassword_divChe');
-                $('#changePass_newPassword1').value = '';
-                $('#changePass_newPassword2').value = '';
-                hide('changePassword_container');
-            },
             submit: async function()
             {
                 let cb;

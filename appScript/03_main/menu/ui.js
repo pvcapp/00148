@@ -1,17 +1,17 @@
-APP.ui.menu = 
-{        
+APP.menu.ui = 
+{
     showing: !APP.mobileMode,
     show: function()
     {
-        APP.ui.menu.showing = true;
+        APP.menu.ui.showing = true;
         show('menu_divChe');
         show('menuDiv');
         
-        APP.user.menu.hide();
+        APP.user.ui.menu.hide();
     },
     hide: function()
     {
-        APP.ui.menu.showing = false;
+        APP.menu.ui.showing = false;
         hide('menuDiv');
         hide('menu_divChe');
     },
@@ -19,19 +19,19 @@ APP.ui.menu =
     {
         if (APP.mobileMode) 
         {
-            APP.ui.menu.hide();
+            APP.menu.ui.hide();
         }
     },
     toggle: function()
     {            
         APP.mobileMode = true;
-        if (APP.ui.menu.showing)
+        if (APP.menu.ui.showing)
         {          
-            APP.ui.menu.hide();
+            APP.menu.ui.hide();
         }
         else
         {
-            APP.ui.menu.show();
+            APP.menu.ui.show();
         }
     },
     setSelectedButton(button)

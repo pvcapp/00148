@@ -1,3 +1,11 @@
+const button = (options = {}) =>
+{
+    return div({...options, className: `button ${options.className || ''}`.trim()});
+}
+
+
+
+
 function form_renderField({type = 'text', id, value = '', placeholder = '', caption = ''})
 {
     let rdHTML = '<div class="form__field">';

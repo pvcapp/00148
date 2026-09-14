@@ -9,13 +9,6 @@ const row = (options = {}) =>
 }
 
 
-const button = (options = {}) =>
-{
-    return div({...options, className: `button ${options.className || ''}`.trim()});
-}
-
-
-
 function totalCard_render(tieuDe, so) 
 {
     return `
