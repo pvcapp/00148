@@ -1,6 +1,6 @@
 .card 
 {
-    background: var(--the);
+    background: var(--color-surface);
     border: 1px solid var(--border);
     border-radius: var(--border-radius-lg);
     padding: var(--padding-lg);
@@ -21,7 +21,7 @@
     font-size: 40px;
     font-weight: 800;
     margin-top: 8px;
-    color: var(--brand-primary-dark);
+    color: var(--color-primary-dark);
 }
 
 
@@ -38,6 +38,6 @@
 
 .text-sub 
 {
-    color: var(--brand-text-secondary);
+    color: var(--color-on-background-secondary);
     font-size: 12px;
 }

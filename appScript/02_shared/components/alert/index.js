@@ -22,7 +22,7 @@ function canhBao_render()
                     Ok
                 </div>  
                 <div class="thong-bao-popup__button" id="canhBaoPopup_buttonCancel"
-                style="color:var(--brand-text-secondary);width:100px;">
+                style="color:var(--color-on-background-secondary);width:100px;">
                     Bỏ qua
                 </div>
                 

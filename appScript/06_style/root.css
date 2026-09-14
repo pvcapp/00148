@@ -1,21 +1,50 @@
 :root 
 {
     /* #67c5b1 và #dfdf47 */
-    --brand-primary: #00a4de;
-    --brand-secondary: #5dc8ed;
-    --brand-primary-dark: #0088b9;
-    --brand-background-gradient: -webkit-linear-gradient(top left, white, #dffafb);
-    --brand-header-gradient: -webkit-linear-gradient(top left, var(--brand-secondary), var(--brand-primary-dark));
+    --brand: #67c5b1;
+    --brand2: #dfdf47;
+    --color-primary: #00a4de;
+    --color-on-primary: #fff;
+    --color-border-on-primary: #fff;
 
-    --brand-background: #f4fbfe;
-    --card-background: #ffffff;
+    --color-primary-light: #5dc8ed;
+    --color-on-primary-light: #16313d;
 
-    --brand-text-primary: #16313d;
-    --brand-text-secondary: #6c8793;
-    --brand-text-invert: #6c8793;
-    --brand-text-warning: orange;
+    --color-primary-dark: #0088b9;    
+    --color-on-primary-dark: #fff;
 
-    --text-xm: 12px;
+    --color-primary-gradient: -webkit-linear-gradient(top left, var(--color-primary-light), var(--color-primary-dark));
+    --color-on-primary-gradient: #fff;
+
+    --color-secondary: #ffc107;
+    --color-on-secondary: #fff;
+    
+    --color-success: #198754;
+    --color-on-success: #ffffff;
+
+    --color-warning: #ffc107;
+    --color-on-warning: #212529;
+
+    --color-danger: #dc3545;
+    --color-on-danger: #ffffff;
+
+    --color-background: #ffffff;
+    --color-on-background: #212529;
+    --color-on-background-secondary: #6c8793;
+    --color-on-background-mute: #9e9e9e;
+    --color-border-on-background: #9e9e9e;
+
+    --color-background-gradient: -webkit-linear-gradient(top left, white, #dffafb);
+    --color-on-background-gradient: #212529;
+    --color-on-background-gradient-secondary: #6c8793;
+    --color-on-background-gradient-mute: #9e9e9e;
+
+    --color-surface: #ffffff; /*Mặt nổi */
+    --color-on-surface: #212529;
+    --color-on-surface-secondary: #6c8793;
+    --color-on-surface-mute: #9e9e9e;
+
+    --text-xs: 12px;
     --text-sm: 14px;
     --text-md: 16px;
     --text-lg: 20px;
@@ -36,17 +65,6 @@
     
 
     --do-rong-toi-da: 1180px;
-
-    --nen: var(--brand-background);
-    --nen2: #f7fcfe;
-    --the: var(--card-background);
-    --chu: var(--brand-text-primary);
-    --text-sub: var(--brand-text-secondary);
-    --chinh: var(--brand-primary);
-    --chinh-2: var(--mau-phu);
-    --thanh-cong: var(--success-color);
-    --canh-bao: var(--alert-color);
-    --loi: var(--error-color);
     --header-height: 56px;
 
     --padding-sm: 6px;

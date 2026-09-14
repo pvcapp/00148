@@ -30,7 +30,7 @@
 .thong-bao-popup__div-noi-dung__caption
 {
     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0px 0px;
-    background-color: var(--brand-primary);
+    background-color: var(--color-primary);
     color: var(--surface);
     padding: var(--padding-md);
     display:grid;
@@ -60,7 +60,7 @@
 {
     padding: var(--padding-sm);
     border-radius: var(--border-radius-md);
-    border: 0.5px solid var(--brand-primary-dark);
+    border: 0.5px solid var(--color-primary-dark);
     text-align: center;
     font-size: var(--text-md);
 }

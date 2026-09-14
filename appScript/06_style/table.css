@@ -14,7 +14,7 @@
 
 .bang th 
 {
-    color: var(--text-sub);
+    color: var(--color-on-background-secondary);
     font-weight: 600;
 }
 
@@ -26,7 +26,7 @@
 
 .bang tbody tr:hover 
 {
-    background: var(--brand-background-gradient);
+    background: var(--color-primary-gradient);
     cursor: pointer;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .o label {
-    color: var(--text-sub);
+    color: var(--color-on-background-secondary);
     font-size: 0.9rem;
 }
 
@@ -47,8 +47,8 @@
 {
     width: 100%;
     border: 1px solid var(--border);
-    background: var(--nen2);
-    color: var(--chu);
+    background: var(--color-background2);
+    color: var(--color-on-background);
     border-radius: 12px;
     padding: 0.7rem 0.8rem;
     outline: none;
@@ -59,7 +59,7 @@
 .o select:focus,
 .o textarea:focus 
 {
-    border-color: var(--brand-primary);
+    border-color: var(--color-primary);
     box-shadow: 0 0 0 4px rgba(0, 164, 222, 0.08);
     background: #fff;
 }

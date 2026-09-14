@@ -14,8 +14,8 @@
 .toast-infor
 {
     color: #1F2937;
-    border: 1px solid var(--text-sub);
-    border-left: 4px solid var(--text-sub);
+    border: 1px solid var(--color-on-background-secondary);
+    border-left: 4px solid var(--color-on-background-secondary);
     background: #FFFFFF;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);    
 }

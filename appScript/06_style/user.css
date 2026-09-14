@@ -24,7 +24,7 @@
 {
     margin-top:60px;
     border-radius: var(--border-radius-lg);
-    background: var(--brand-secondary);
+    background: var(--color-primary-light);
     max-height:410px;
     animation-name: hideShow;
     animation-duration: 0.5s;
