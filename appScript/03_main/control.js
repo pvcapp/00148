@@ -32,7 +32,7 @@ APP.control.startup = async function()
         return;
     }
     
-    APP.user.login.hide();
+    APP.user.login.ui.hide();
     APP.user.token = token;
     APP.control.getStartupData();
 }
