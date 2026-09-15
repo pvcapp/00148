@@ -63,6 +63,7 @@ APP.user.login.ui =
                 <div style="height:20px;"></div>
             </div>
         `;
+
         if (parent)
         {
             parent.appendChild(loginContainer);
