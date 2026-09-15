@@ -49,81 +49,6 @@ body
 
 
 
-.header 
-{
-    border-bottom: 1px solid rgba(220, 236, 242, 0.9);
-    background: var(--color-primary);
-    color: white;
-    backdrop-filter: blur(18px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: var(--header-height);
-    padding: 0.7rem;
-    z-index: 10;
-}
-
-@media (max-width: 981px) 
-{
-    .header 
-    {
-        padding: 6px 0.7rem;
-    }
-}
-
-
-.header__nguoi-dung 
-{
-    color: var(--color-on-background-secondary);
-    font-size: 0.9rem;
-}
-
-@media (max-width: 981px) 
-{
-    .header__ten-ung-dung 
-    {
-        font-size: 17px;
-    }
-
-    .header__nguoi-dung 
-    {
-        max-width: 42%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-size: 0.7rem;
-    }
-}
-
-
-.header-content
-{
-    min-height: calc(var(--header-height) - 1.4rem);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header__uiCaption 
-{
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-@media only screen and (max-width:981px) 
-{
-    .header__uiCaption 
-    {
-        display: none;
-    }
-}
-
-
-.ui-header__under
-{
-    display: none;
-}
 
 
 .ui-body
@@ -157,22 +82,4 @@ body
     width:98%;
     padding:4px;
 }
-
-
-.noi-dung 
-{
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1.5rem;
-}
-
-@media (max-width: 981px) 
-{
-    .noi-dung 
-    {
-        padding: 0.9rem 0.6rem;
-    }
-}
-
-
 

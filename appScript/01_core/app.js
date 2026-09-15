@@ -1,10 +1,7 @@
 //Toàn bộ app phụ thuộc core
 const APP = 
 {
-    id: '00148',
-    publicUrl: 'https://pvcapp.github.io/00148',
-    showIcon: true,
-    mobileMode: window.innerWidth <= 981,
+    config: {},  
 
     ui: {},
     control: {},

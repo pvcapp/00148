@@ -1,6 +1,6 @@
 APP.menu.ui = 
 {
-    showing: !APP.mobileMode,
+    showing: !APP.config.mobileMode,
     show: function()
     {
         APP.menu.ui.showing = true;
@@ -17,14 +17,14 @@ APP.menu.ui =
     },
     hideIfMobile: function()
     {
-        if (APP.mobileMode) 
+        if (APP.config.mobileMode) 
         {
             APP.menu.ui.hide();
         }
     },
     toggle: function()
     {            
-        APP.mobileMode = true;
+        APP.config.mobileMode = true;
         if (APP.menu.ui.showing)
         {          
             APP.menu.ui.hide();

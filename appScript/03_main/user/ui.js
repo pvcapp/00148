@@ -17,7 +17,7 @@ APP.user.ui =
             $('#menuUser').style.display = "flex";
             show('userMenu_divChe');
             APP.user.ui.menu.showing = true;   
-            if (APP.mobileMode) APP.menu.ui.hide();             
+            if (APP.config.mobileMode) APP.menu.ui.hide();             
         },
         hide: function()
         {
