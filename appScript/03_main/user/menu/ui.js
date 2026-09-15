@@ -1,3 +1,10 @@
+APP.user.menu =
+{
+    ui: {},
+    control: {}
+};
+
+
 APP.user.menu.ui =
 {
     render: function(parentId = '')

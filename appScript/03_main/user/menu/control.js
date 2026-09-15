@@ -1,9 +1,3 @@
-APP.user.menu =
-{
-    ui: {},
-    control: {}
-};
-
 APP.user.menu.control =
 {
     init: function ()
