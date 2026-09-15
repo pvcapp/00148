@@ -1,5 +1,6 @@
 APP.control.startup = async function()
 {
+    APP.user.login.control.init();
     if (!window.google || !google.script || !google.script.run) 
     {
         canhBao('Hãy mở trang này từ Google Apps Script Web App trên trình duyệt web');

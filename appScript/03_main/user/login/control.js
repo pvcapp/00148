@@ -1,10 +1,22 @@
-$('#login_password').addEventListener('keydown', function(e)
-{
-    if (e.key === 'Enter') APP.user.login.control.submit();
-});
-
 APP.user.login.control = 
 {
+    init: function () 
+    {
+        APP.user.login.ui.render();
+        APP.user.login.control.bindEvents();
+    },
+    bindEvents: function () 
+    {
+        $('#login_password').addEventListener('keydown', function (e) 
+        {
+            if (e.key === 'Enter') APP.user.login.control.submit();
+        });
+
+        $('# login_submitButton').addEventListener('click', function (e) 
+        {
+            APP.user.login.control.submit();
+        });       
+    },
     submit: async function()
     {
         let cb;
@@ -59,3 +71,9 @@ APP.user.login.control =
         }
     }
 };
+
+
+$('#login_password').addEventListener('keydown', function(e)
+{
+    if (e.key === 'Enter') APP.user.login.control.submit();
+});
