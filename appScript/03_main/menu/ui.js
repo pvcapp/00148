@@ -7,7 +7,7 @@ APP.menu.ui =
         show('menu_divChe');
         show('menuDiv');
         
-        APP.user.ui.menu.hide();
+        APP.user.menu.ui.hide();
     },
     hide: function()
     {

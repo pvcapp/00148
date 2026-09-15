@@ -1,0 +1,35 @@
+.user__menu__divChe
+{
+    display: none;
+    background: rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+}
+
+.user__menu
+{
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    position: fixed;
+    z-index: 10;
+    top: 40px;
+    right: 6px;
+    min-width: 200px;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius-md);
+    padding: var(--padding-md);
+}
+
+.user__menu__button
+{
+    width: 98%;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--color-primary);
+}
