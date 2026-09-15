@@ -52,7 +52,11 @@ APP.user.login.ui =
                     </tr>
                     <tr>
                         <td style="padding-top:35px;text-align:center;">
-                            <div id="login_submitButton" style="background:var(--color-primary-gradient);color:white;padding:12px;width:200px;border-radius:5px;border:1px solid rgba(255,255,255,0.5);">Đăng nhập</div>
+                            <center>
+                                <div id="login_submitButton" style="background:var(--color-primary-gradient);color:(--color-on-primary-gradient);padding:12px;width:200px;border-radius:5px;border:1px solid rgba(255,255,255,0.5);">
+                                    Đăng nhập
+                                </div>
+                            </center>
                         </td>
                     </tr>
                 </table>
