@@ -71,9 +71,3 @@ APP.user.login.control =
         }
     }
 };
-
-
-$('#login_password').addEventListener('keydown', function(e)
-{
-    if (e.key === 'Enter') APP.user.login.control.submit();
-});
