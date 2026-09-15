@@ -3,7 +3,7 @@ function form_renderField({type = 'text', id, value = '', placeholder = '', capt
     let rdHTML = '<div class="form__field">';
         if (caption !== '') 
         {
-            rdHTML += <label>${caption}</label>;
+            rdHTML += `<label>${caption}</label>`;
         }
 
         switch (type)
