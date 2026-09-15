@@ -11,7 +11,7 @@ APP.control.startup = async function()
     if (!loginStatus)
     {
         console.log('APP startup: localStorage chưa có');
-        APP.user.ui.login.show();
+        APP.user.login.ui.show();
         return;
     }
     console.log('APP startup with localstorage: ' + loginStatus);
@@ -19,7 +19,7 @@ APP.control.startup = async function()
     if (!loginStatus.token)
     {
         console.log('APP startup: localStorage_token chưa có');
-        APP.user.ui.login.show();
+        APP.user.login.ui.show();
         return;
     }
 
@@ -27,7 +27,7 @@ APP.control.startup = async function()
     if (token == '')
     {
         console.log('APP startup: localStorage_token trống');
-        APP.user.ui.login.show();
+        APP.user.login.ui.show();
         return;
     }
     
@@ -61,7 +61,7 @@ APP.control.getStartupData = function()
         {
             xuLyLoi(error);
             console.log('getStartupData: lấy dữ liệu không thành công!');
-            APP.user.ui.login.show();
+            APP.user.login.ui.show();
         })
         .sv_appstartup_getData(APP.user.token);
 }

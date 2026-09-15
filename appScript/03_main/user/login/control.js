@@ -47,7 +47,7 @@ APP.user.login.control =
                     activeButton('user_changePassword_submitButton');
                     $('#login_submitButton').innerText = 'Đăng nhập';
                     activeButton('login_submitButton');
-                    APP.user.ui.login.hide();
+                    APP.user.login.ui.hide();
                 }
                 else
                 {

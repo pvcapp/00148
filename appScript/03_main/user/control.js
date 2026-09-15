@@ -16,7 +16,7 @@
                     {
                         localStorage.removeItem('a00148user');
                         $('#userMenu_hoVaTen').value = '';
-                        APP.user.ui.login.show();
+                        APP.user.login.ui.show();
                     }
                     else
                     {
@@ -32,7 +32,7 @@
             {
                 console.log('Client checkUser: localstorage not found!');
                 localStorage.setItem('a00148user', 'notOk');
-                APP.user.ui.login.show();
+                APP.user.login.ui.show();
             }
         },
         logout: function()
@@ -44,7 +44,7 @@
             APP.ui.hideAllTabs();
             APP.ui.hideAllForms();
             APP.user.data = {};
-            APP.user.ui.login.show();
+            APP.user.login.ui.show();
 
             localStorage.setItem('a00148user', '');
             $('#user_hoVaTen').innerText = '--';   

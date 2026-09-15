@@ -81,7 +81,7 @@ APP.ui =
         }
         else
         {
-            APP.user.ui.login.show();
+            APP.user.login.ui.show();
         }
     }
 };
