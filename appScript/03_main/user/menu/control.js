@@ -1,8 +1,14 @@
+APP.user.menu =
+{
+    ui: {},
+    control: {}
+};
+
 APP.user.menu.control =
 {
     init: function ()
     {
-        APP.user.menu.ui.render();
+        APP.user.menu.ui.render('headerContent');
         APP.user.menu.control.bindEvents();
     },
     bindEvents: function () 
