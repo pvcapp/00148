@@ -29,12 +29,6 @@ APP.user.menu.ui =
             parentId: 'userMenu'});
         div({id: 'userMenu_dangXuat', className: 'menu__button user__menu__button', text: 'Đăng xuất',
             parentId: 'userMenu'});
-
-            <div id="userMenu" class="user__menu">
-                <div style="margin-bottom:20px;" id="userMenu_dangXuat" onclick="APP.user.control.logout();" class="menu__button user__menu__button">
-                        Đăng xuất
-                </div>
-            </div>
     },
     showing: false,
     show: function()
