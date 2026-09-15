@@ -54,7 +54,7 @@ APP.user.login.control =
                     APP.user.token = user.token;
                     APP.user.data = user;
                     
-                    APP.getStartupData();
+                    APP.control.getStartupData();
                     $('#user_hoVaTen').innerText = user.hoVaTen;
                     activeButton('user_changePassword_submitButton');
                     $('#login_submitButton').innerText = 'Đăng nhập';
