@@ -41,6 +41,7 @@
 {
     animation-name: hideShow;
     animation-duration: 0.5s;
+    color: var(--color-on-primary);
 }
 
 .login__form
