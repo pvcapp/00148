@@ -6,7 +6,7 @@ APP.user.login =
 
 APP.user.login.ui = 
 {
-    render: function()
+    render: function(parent = null)
     {
         const loginContainer = div({id: 'loginContainer', className: 'login__container'});
         loginContainer.innerHTML = `
@@ -59,7 +59,14 @@ APP.user.login.ui =
                 <div style="height:20px;"></div>
             </div>
         `;
-        document.body.appendChild(loginContainer);
+        if (parent)
+        {
+            parent.appendChild(loginContainer);
+        }
+        else
+        {
+            document.body.appendChild(loginContainer);
+        }
     },
     show: function()
     {

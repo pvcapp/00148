@@ -1,7 +1,7 @@
 //Toàn bộ app phụ thuộc core
 const APP = 
 {
-    config: {},  
+    config: {},
 
     ui: {},
     control: {},
@@ -11,6 +11,7 @@ const APP =
     api: {},
     
     //Các module chính trong layout:
+    layout: {},
     user: {},  //Quản lý hồ sơ và phiên
     header: {}, 
     menu: {}, //Chứa menu đẩy từ module tới
