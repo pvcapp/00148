@@ -1,6 +1,11 @@
     APP.user.control = 
     {
-        init: null,
+        init: function()
+        {
+            APP.user.menu.control.init();
+            APP.user.login.control.init();
+            APP.user.changePassword.control.init();
+        },
         checkUser: async function()
         {
             inactiveButton('user_changePassword_submitButton');
