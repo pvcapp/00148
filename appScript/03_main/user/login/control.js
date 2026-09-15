@@ -12,7 +12,7 @@ APP.user.login.control =
             if (e.key === 'Enter') APP.user.login.control.submit();
         });
 
-        $('# login_submitButton').addEventListener('click', function (e) 
+        $('#login_submitButton').addEventListener('click', function (e) 
         {
             APP.user.login.control.submit();
         });       
