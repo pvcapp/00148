@@ -5,7 +5,7 @@ APP.user.login.control =
         APP.user.login.ui.render();
         APP.user.login.control.bindEvents();
     },
-    bindEvents: function () 
+    bindEvents: function ()
     {
         $('#login_password').addEventListener('keydown', function (e) 
         {

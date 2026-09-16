@@ -32,10 +32,8 @@ function canhBao_render()
                 </div>  
             </div>  
         </div>`;
-        return container;
+    document.body.appendChild(container);
 }
-
-document.body.appendChild(canhBao_render());
 
 function canhBao(noiDung = '', caption="Thông báo", hinhThucXacThuc ="ok")
 {

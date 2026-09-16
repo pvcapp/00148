@@ -3,7 +3,6 @@ function toast_render()
     let container = document.createElement('div');
     container.id = 'toast';
     container.className = 'toast__container';
-
         let el = '<div style="position: relative;">';
         if (APP.config.showIcon)
         {
@@ -14,13 +13,10 @@ function toast_render()
                 </div>
             </div>
         `;
-
     container.innerHTML = el;
-    return container;
+    document.body.appendChild(container);
+    container.addEventListener('click', function(){hideToast()});
 }
-
-document.body.appendChild(toast_render());
-document.getElementById('toast').addEventListener('click', function(){hideToast()});
 
 var hideToastTimeout = setTimeout(function(){}, 0);
 function toast(noiDung = "", thoiGian = 5000, status = 'infor')
