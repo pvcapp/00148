@@ -1,18 +1,53 @@
 APP.sidebar.ui = 
 {
+    render: function()
+    {
+        div({
+            id: 'main',
+            className: 'main',
+            parent: document.body
+        });
+
+        div({
+            id: 'sidebar_hamburger', 
+            className: 'sidebar__hamburger', 
+            parentId: 'header'
+        });        
+        
+        div({
+            id: 'sidebar_divChe',
+            className: 'sidebar__divChe',
+            parent: document.body,
+            onclick: el => {
+                APP.ui.sidebar.hide();
+            }
+        });
+
+        div({
+            id: 'sidebar', 
+            className: 'sidebar', 
+            parentId: 'main'
+        });
+
+        div({
+            id: 'sidebarGrid', 
+            className: 'sidebar__grid', 
+            parentId: 'sidebar'
+        });
+    },
     showing: !APP.config.mobileMode,
     show: function()
     {
         APP.sidebar.ui.showing = true;
         show('sidebar_divChe');
-        show('sidebarDiv');
+        show('sidebar');
         
-        APP.user.sidebar.ui.hide();
+        APP.user.menu.ui.hide();
     },
     hide: function()
     {
         APP.sidebar.ui.showing = false;
-        hide('sidebarDiv');
+        hide('sidebar');
         hide('sidebar_divChe');
     },
     hideIfMobile: function()

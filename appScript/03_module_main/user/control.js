@@ -2,7 +2,7 @@
     {
         init: function()
         {
-            APP.user.sidebar.control.init();
+            APP.user.menu.control.init();
             APP.user.login.control.init();
             APP.user.changePassword.control.init();
         },
@@ -43,7 +43,7 @@
         logout: function()
         {
             let token = APP.user.token;
-            APP.user.sidebar.ui.hide();
+            APP.user.menu.ui.hide();
             APP.sidebar.ui.clear();
 
             APP.ui.hideAllTabs();

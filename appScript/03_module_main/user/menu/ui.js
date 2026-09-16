@@ -1,11 +1,11 @@
-APP.user.sidebar =
+APP.user.menu =
 {
     ui: {},
     control: {}
 };
 
 
-APP.user.sidebar.ui =
+APP.user.menu.ui =
 {
     render: function(parentId = '')
     {
@@ -16,7 +16,7 @@ APP.user.sidebar.ui =
         });
         
         div({
-            id: 'userMenu_humberger',
+            id: 'userMenu_hamburger',
             html: `<img src="https://pvcapp.github.io/00148/img/user.svg" class="sidebar__icon-sidebar" style="height: 25px;cursor: pointer;">`,
             parentId: parentId
         });
@@ -35,24 +35,24 @@ APP.user.sidebar.ui =
     {
         show('userMenu', 'flex');
         show('userMenu_divChe');
-        APP.user.sidebar.ui.showing = true;   
+        APP.user.menu.ui.showing = true;   
         if (APP.config.mobileMode) APP.sidebar.ui.hide();             
     },
     hide: function()
     {
         hide('userMenu_divChe');
         hide('userMenu');
-        APP.user.sidebar.ui.showing = false;
+        APP.user.menu.ui.showing = false;
     },
     toggle: function()
     {
-        if (APP.user.sidebar.ui.showing)
+        if (APP.user.menu.ui.showing)
         {
-            APP.user.sidebar.ui.hide();
+            APP.user.menu.ui.hide();
         }
         else
         {
-            APP.user.sidebar.ui.show();
+            APP.user.menu.ui.show();
         }
     }
 };

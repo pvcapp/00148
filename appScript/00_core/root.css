@@ -3,7 +3,7 @@
     /* #67c5b1 và #dfdf47 */
     --brand: #67c5b1;
     --brand2: #dfdf47;
-    
+
     --color-primary: #00a4de;
     --color-on-primary: #fff;
     --color-border-on-primary: #fff;
@@ -77,9 +77,9 @@
     --header-height: 56px;
 
     --padding-sm: 6px;
-    --padding-md: 8px;
-    --padding-lg: 10px;
-    --padding-xl: 12px;
+    --padding-md: var(--space-2);
+    --padding-lg: var(--space-3);
+    --padding-xl: var(--space-4);
 }
 
 * {

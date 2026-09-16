@@ -2,6 +2,12 @@ APP.control =
 {
     init: function()
     {
+        if (!window.google || !google.script || !google.script.run) 
+        {
+            alert('Hãy mở trang này từ Google Apps Script Web App trên trình duyệt web');
+            return;
+        }
+
         APP.ui.render();
         APP.ui.setManHinh('user', 'login');
         APP.control.startup();
@@ -9,14 +15,7 @@ APP.control =
     startup: async function()
     {
         APP.user.control.init();
-        if (!window.google || !google.script || !google.script.run) 
-        {
-            canhBao('Hãy mở trang này từ Google Apps Script Web App trên trình duyệt web');
-            return;
-        }
-
-        let loginStatus = localStorage.getItem('a00148user');
-        
+        let loginStatus = localStorage.getItem('a00148user');        
         if (!loginStatus)
         {
             console.log('APP startup: localStorage chưa có');

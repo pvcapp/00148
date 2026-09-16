@@ -90,7 +90,7 @@ APP.user.changePassword.ui =
         $('#changePassword_container').style.display = 'flex';
         $('#changePass_newPassword1').value = '';
         $('#changePass_newPassword2').value = '';
-        APP.user.sidebar.ui.hide();
+        APP.user.menu.ui.hide();
     },
     hide: function()
     {

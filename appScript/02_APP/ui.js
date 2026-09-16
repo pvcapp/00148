@@ -3,25 +3,18 @@ APP.ui =
     render: function()
     {    
         //render modal dialogs
-        document.body.appendChild(APP.user.login.ui.createLoginModal());
-        document.body.appendChild(APP.user.changePassword.ui.createChangePasswordModal());
-        document.body.appendChild(APP.user.forgotPassword.ui.createForgotPasswordModal());
-        document.body.appendChild(APP.user.resetPassword.ui.createResetPasswordModal());
-        document.body.appendChild(APP.user.register.ui.createRegisterModal());
-        document.body.appendChild(APP.user.register.ui.createRegisterSuccessModal());
-        document.body.appendChild(APP.user.register.ui.createRegisterErrorModal());
-        document.body.appendChild(APP.user.register.ui.createRegisterConfirmModal());
-        document.body.appendChild(APP.user.register.ui.createRegisterConfirmSuccessModal());
-        document.body.appendChild(APP.user.register.ui.createRegisterConfirmErrorModal());
+        toast_render();
+        canhBao_render();
 
-
-
-        
         //Render layout: header, sidebar, view, footer
-        document.body.appendChild(APP.ui.createHeader());
-        document.body.appendChild(APP.ui.createSidebar());
-        document.body.appendChild(APP.ui.createView());
-        document.body.appendChild(APP.ui.createFooter());
+        APP.header.ui.render();
+        APP.sidebar.ui.render();
+        APP.view.ui.render();
+        APP.footer.ui.render();
+
+        //Render user menu
+        APP.user.menu.ui.render('header');
+    
     
         if (APP.state.manHinhHienTai.vaiTro == 'chuNha' || APP.state.manHinhHienTai.vaiTro == 'khachHang')
         {
