@@ -76,8 +76,8 @@
 .login__submitButton
 {
     cursor: pointer;
-    background:var(--color-primary-light-gradient);
-    color:var(--color-on-primary-light-gradient);
+    background:var(--color-background-gradient);
+    color:var(--color-on-background-gradient);
     padding:12px;
     width:200px;
     border-radius:5px;
@@ -86,8 +86,7 @@
 
 .login__submitButton:hover
 {
-    transition: all 0.3s ease-in-out;
-    background:var(--color-primary-dark-gradient);
-    color:var(--color-on-primary-light-gradient);
+    transform: translateY(-2px);
     border:2px solid rgba(255,255,255,0.5);
+    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.55);
 }
