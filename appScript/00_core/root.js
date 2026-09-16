@@ -2,7 +2,16 @@
 const APP = 
 {
     config: {},
-
+    layout:
+    {
+        header: {},
+        main:
+        {
+            sidebar: {},
+            view: {}
+        },
+        footer: {}
+    },
     ui: {},
     control: {},
 
