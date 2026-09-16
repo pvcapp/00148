@@ -1,4 +1,4 @@
-APP.khachHang.sidebar.ui =
+APP.features.khachHang.sidebar.ui =
 {
     render: function()
     {

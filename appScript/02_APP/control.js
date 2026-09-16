@@ -9,12 +9,11 @@ APP.control =
         }
 
         APP.ui.render();
-        APP.ui.setManHinh('user', 'login');
         APP.control.startup();
     },
     startup: async function()
     {
-        APP.user.control.init();
+        
         let loginStatus = localStorage.getItem('a00148user');        
         if (!loginStatus)
         {
@@ -55,12 +54,12 @@ APP.control =
                 if (APP.user.data.loaiTaiKhoan === 'khach')
                 {
                     APP.cache = duLieu;
-                    APP.khachHang.control.init();
+                    APP.features.khachHang.control.init();
                 } 
                 else 
                 {
                     APP.cache.tongQuan = duLieu.tongQuan;
-                    APP.chuNha.control.init();
+                    APP.features.chuNha.control.init();
                 }   
 
             })

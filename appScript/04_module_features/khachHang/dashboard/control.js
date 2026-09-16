@@ -1,6 +1,6 @@
 //Bao gồm: thông tin tổng quát về việc thuê phòng, trang thái hồ sơ (để bổ sung), trạng thái hợp đồng, nội quy 
 // và các thông tin tổng quát khác
-APP.khachHang.dashboard =
+APP.features.khachHang.dashboard =
 {
     ui:
     {
@@ -30,7 +30,7 @@ APP.khachHang.dashboard =
         },
         startup: function()
         {
-            APP.khachHang.dashboard.ui.init();
+            APP.features.khachHang.dashboard.ui.init();
             //Thông tin nhanh hồ sơ khách hàng:
             $('#tab_khachHang_dashboard_welcome').innerText = `Xin chào ${APP.user.data.hoVaTen}`;            
             

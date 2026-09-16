@@ -1,14 +1,14 @@
-APP.chuNha.control =
+APP.features.chuNha.control =
 {
     show: false,
     init: function()
     {
-        APP.chuNha.sidebar.init();
+        APP.features.chuNha.sidebar.init();
         APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
         $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan || {});
         setTimeout(function() 
         {
-            APP.chuNha.control.getData();
+            APP.features.chuNha.control.getData();
         }, 500);                    
     },
     getData: function()

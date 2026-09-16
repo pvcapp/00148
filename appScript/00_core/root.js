@@ -5,22 +5,25 @@ const APP =
     ui: {},
     control: {},
 
-    state: {},
+    state: {
+        manHinhHienTai:
+        {
+            vaiTro: 'no',
+            manHinh: 'home'
+        }
+    },
     cache: {},
     api: {},
     
     //Các module chính trong layout:
     user: {},  //Quản lý hồ sơ và phiên
     header: {},
+    actionbar: {},
     sidebar: {}, //Chứa sidebar đẩy từ module tới
     view: {}, //Chứa nôi dung đẩy từ module tới
     footer: {},
 
 
     //Các module/nhóm module (trong trường hợp SPA buộc phải gói nhiều vai trò trong 1 trang) ghép vào:
-    features: 
-    {
-        chuNha: {},
-        khachHang: {},
-    }
+    features: {}
 };

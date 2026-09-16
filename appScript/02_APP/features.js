@@ -1,0 +1,5 @@
+APP.features =
+{
+    chuNha: {},
+    khachHang: {}
+}

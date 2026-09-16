@@ -1,9 +1,8 @@
-APP.chuNha = 
+APP.features.chuNha = 
 {
     ui: {},
     control: {},
     
-    sidebar:{},
     dashboard: {},
     khuNha: {},
     phong: {},
@@ -13,7 +12,7 @@ APP.chuNha =
 
 
 
-APP.chuNha.ui = 
+APP.features.chuNha.ui = 
 {
     render: function()
     {

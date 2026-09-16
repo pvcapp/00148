@@ -1,4 +1,4 @@
-APP.khachHang =
+APP.features.khachHang =
 {
     ui:
     {       
@@ -37,8 +37,8 @@ APP.khachHang =
     {
         startup: function()
         {
-            APP.khachHang.sidebar.startup();
-            APP.khachHang.dashboard.startup();
+            APP.features.khachHang.sidebar.startup();
+            APP.features.khachHang.dashboard.startup();
         }
     },
     api:

@@ -8,13 +8,14 @@ APP.ui =
 
         //Render layout: header, sidebar, view, footer
         APP.header.ui.render();
+        APP.actionbar.ui.render();
+
         APP.sidebar.ui.render();
         APP.view.ui.render();
         APP.footer.ui.render();
 
         //Render user menu
-        APP.user.menu.ui.render('header');
-    
+        APP.user.control.init();
     
         if (APP.state.manHinhHienTai.vaiTro == 'chuNha' || APP.state.manHinhHienTai.vaiTro == 'khachHang')
         {
