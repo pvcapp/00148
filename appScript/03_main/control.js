@@ -50,12 +50,12 @@ APP.control.getStartupData = function()
             if (APP.user.data.loaiTaiKhoan === 'khach')
             {
                 APP.cache = duLieu;
-                APP.khachHang.control.startup();
+                APP.khachHang.control.init();
             } 
             else 
             {
                 APP.cache.tongQuan = duLieu.tongQuan;
-                APP.ui.chuNha.startup();                            
+                APP.chuNha.control.init();
             }   
 
         })

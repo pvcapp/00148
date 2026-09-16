@@ -1,18 +1,15 @@
-APP.ui.chuNha =
+APP.chuNha.control =
 {
     show: false,
-    startup: function()
+    init: function()
     {
-        APP.ui.chuNha.menu.startup();
+        APP.chuNha.menu.init();
         APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
         $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan || {});
         setTimeout(function() 
         {
-            APP.ui.chuNha.getData();
+            APP.chuNha.control.getData();
         }, 500);                    
-    },
-    home:
-    {
     },
     getData: function()
     {

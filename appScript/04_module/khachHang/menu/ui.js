@@ -1,10 +1,5 @@
-APP.khachHang.menu =
+APP.khachHang.menu.ui =
 {
-    startup: function()
-    {
-        APP.khachHang.menu.render();
-        APP.khachHang.menu.show();
-    },
     render: function()
     {
         const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'khachHang_dashboard';
