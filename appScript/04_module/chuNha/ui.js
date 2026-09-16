@@ -3,7 +3,7 @@ APP.chuNha =
     ui: {},
     control: {},
     
-    menu:{},
+    sidebar:{},
     dashboard: {},
     khuNha: {},
     phong: {},

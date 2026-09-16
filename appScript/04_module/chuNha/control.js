@@ -3,7 +3,7 @@ APP.chuNha.control =
     show: false,
     init: function()
     {
-        APP.chuNha.menu.init();
+        APP.chuNha.sidebar.init();
         APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
         $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan || {});
         setTimeout(function() 
@@ -48,7 +48,7 @@ APP.chuNha.control =
         startup: function()
         {
             chuNha_showDanhSachKhuNha(APP.cache.khuNha || []);
-            activeButton('menu_chuNha_khuNha');
+            activeButton('sidebar_chuNha_khuNha');
         }
     },
     quanLyPhong:
@@ -56,7 +56,7 @@ APP.chuNha.control =
         startup: function()
         {
             chuNha_showDanhSachPhong(APP.cache.phong || []);
-            activeButton('menu_chuNha_phong');
+            activeButton('sidebar_chuNha_phong');
         }
     },
     quanLyHopDong:
@@ -64,7 +64,7 @@ APP.chuNha.control =
         startup: function()
         {
             chuNha_showDanhSachHopDong(APP.cache.hopDong || []);
-            activeButton('menu_chuNha_hopDong');
+            activeButton('sidebar_chuNha_hopDong');
         }
     },   
     quanLyThuTien:
@@ -72,7 +72,7 @@ APP.chuNha.control =
         startup: function()
         {
             buildDanhSachThuTien(APP.cache.thuTien || []);
-            activeButton('menu_chuNha_thuTien');
+            activeButton('sidebar_chuNha_thuTien');
         }
     },
     setting:
@@ -80,7 +80,7 @@ APP.chuNha.control =
         startup: function()
         {
             chuNha_showSetting(APP.cache.setting);
-            activeButton('menu_chuNha_setting');
+            activeButton('sidebar_chuNha_setting');
         }
     }
 };

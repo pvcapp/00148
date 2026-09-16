@@ -37,7 +37,7 @@ APP.khachHang =
     {
         startup: function()
         {
-            APP.khachHang.menu.startup();
+            APP.khachHang.sidebar.startup();
             APP.khachHang.dashboard.startup();
         }
     },
@@ -50,7 +50,7 @@ APP.khachHang =
         startup: function()
         {
             chuNha_showDanhSachKhachHang(APP.cache.danhSachKhachHang || []);
-            activeButton('menu_khachHang_hopDong');
+            activeButton('sidebar_khachHang_hopDong');
         },
         render: function()
         {

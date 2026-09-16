@@ -74,7 +74,7 @@ APP.ui =
     {            
         if (APP.state.manHinhHienTai.vaiTro == 'chuNha' || APP.state.manHinhHienTai.vaiTro == 'khachHang')
         {
-            activeButton('menu_' + APP.state.manHinhHienTai.manHinh);
+            activeButton('sidebar_' + APP.state.manHinhHienTai.manHinh);
             APP.ui.hideAllForms();
             APP.ui.showTab(APP.state.manHinhHienTai.vaiTro, APP.state.manHinhHienTai.manHinh);
             return;

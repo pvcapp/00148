@@ -14,7 +14,7 @@ const APP =
     layout: {},
     user: {},  //Quản lý hồ sơ và phiên
     header: {}, 
-    menu: {}, //Chứa menu đẩy từ module tới
+    sidebar: {}, //Chứa sidebar đẩy từ module tới
     view: {}, //Chứa nôi dung đẩy từ module tới
     footer: {},
 

@@ -1,8 +1,8 @@
-APP.khachHang.menu.control =
+APP.khachHang.sidebar.control =
 {
     init: function()
     {
-        APP.khachHang.menu.ui.render();
-        APP.khachHang.menu.ui.show();
+        APP.khachHang.sidebar.ui.render();
+        APP.khachHang.sidebar.ui.show();
     }
 };

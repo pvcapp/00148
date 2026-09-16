@@ -6,6 +6,6 @@ APP.user =
     control: {},
     api: {},
     login: {},
-    menu: {},
+    sidebar: {},
     changePassword: {}
 };

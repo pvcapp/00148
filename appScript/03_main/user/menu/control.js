@@ -1,20 +1,20 @@
-APP.user.menu.control =
+APP.user.sidebar.control =
 {
     init: function ()
     {
-        APP.user.menu.ui.render('headerContent');
-        APP.user.menu.control.bindEvents();
+        APP.user.sidebar.ui.render('headerContent');
+        APP.user.sidebar.control.bindEvents();
     },
     bindEvents: function () 
     {
         $('#userMenu_divChe').addEventListener('click', function (e) 
         {
-            APP.user.menu.ui.hide();
+            APP.user.sidebar.ui.hide();
         });
 
         $('#userMenu_humberger').addEventListener('click', function (e) 
         {
-            APP.user.menu.ui.toggle();
+            APP.user.sidebar.ui.toggle();
         });
 
         $('#userMenu_changePassword').addEventListener('click', function (e) 

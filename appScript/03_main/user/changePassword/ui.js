@@ -63,13 +63,13 @@ APP.user.changePassword.ui =
                                     <tr>
                                         <td>
                                             <div id="user_changePassword_submitButton"
-                                                class="button menu__button" style="min-width:150px;">
+                                                class="button sidebar__button" style="min-width:150px;">
                                                 Đổi mật khẩu
                                             </div>
                                         </td>
                                         <td>
                                             <div id="user_changePassword_cancelButton"
-                                                class="button menu__button" style="width:90px;">
+                                                class="button sidebar__button" style="width:90px;">
                                                 Bỏ qua
                                             </div>
                                         </td>
@@ -90,7 +90,7 @@ APP.user.changePassword.ui =
         $('#changePassword_container').style.display = 'flex';
         $('#changePass_newPassword1').value = '';
         $('#changePass_newPassword2').value = '';
-        APP.user.menu.ui.hide();
+        APP.user.sidebar.ui.hide();
     },
     hide: function()
     {

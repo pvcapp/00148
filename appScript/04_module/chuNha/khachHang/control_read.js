@@ -9,14 +9,14 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                     <div class="card__caption">
                         DS khách hàng
                     </div>
-                    <select class="menu__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.ui.chuNha.quanLyKhachHang.danhSach.showDangThue=this.value; APP.ui.chuNha.quanLyKhachHang.danhSach.render();">
+                    <select class="sidebar__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.ui.chuNha.quanLyKhachHang.danhSach.showDangThue=this.value; APP.ui.chuNha.quanLyKhachHang.danhSach.render();">
                         <option value="0" selected>Khách hàng chưa thuê</option>
                         <option value="1">Khách hàng đã thuê</option>
                         <option value="2">Tất cả</option>
                     </select>
                 </div>
 
-                <div class="menu__button" style="width: 170px;font-size: 14px;" onclick="APP.ui.chuNha.quanLyKhachHang.addNew.show();">
+                <div class="sidebar__button" style="width: 170px;font-size: 14px;" onclick="APP.ui.chuNha.quanLyKhachHang.addNew.show();">
                     ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
                     Khách hàng mới
                 </div>
@@ -66,7 +66,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 if (dongXacMinh && dongXacMinh.xacMinh == '')
                 {
                     xacMinh = `
-                        <div class="menu__button" style="width: 170px;font-size: 14px;" 
+                        <div class="sidebar__button" style="width: 170px;font-size: 14px;" 
                             onclick="event.stopPropagation();APP.ui.chuNha.quanLyKhachHang.update.xacMinh.show('${dong.idKhachHang}');">                        
                             Xác minh
                         </div>
@@ -115,7 +115,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                                     if (dongXacMinh && dongXacMinh.xacMinh == '')
                                     {
                                         xacMinh = `
-                                            <div class="menu__button" style="width: 170px;font-size: 14px;" 
+                                            <div class="sidebar__button" style="width: 170px;font-size: 14px;" 
                                                 onclick="event.stopPropagation();chuNha_khachHang_xacMinh('${dong.userName}');">                        
                                                 Xác minh
                                             </div>
@@ -142,7 +142,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
             </div>
         `;
         $('#tab_chuNha_khachHang_danhSach_body').innerHTML = html;
-        activeButton('menu_chuNha_khachHang');
+        activeButton('sidebar_chuNha_khachHang');
     },
     show: function()
     {

@@ -1,14 +1,14 @@
-APP.ui.chuNha.menu = 
+APP.ui.chuNha.sidebar = 
 {
     startup: function()
     {
-        APP.ui.chuNha.menu.render();
-        APP.ui.chuNha.menu.show();
+        APP.ui.chuNha.sidebar.render();
+        APP.ui.chuNha.sidebar.show();
     },
     render: function()
     {
         const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'home';
-        const menu =
+        const sidebar =
         [
             { manHinh: 'chuNha_dashboard', ten: 'Home' },
             { manHinh: 'chuNha_khuNha', ten: 'Khu nhà' },
@@ -22,14 +22,14 @@ APP.ui.chuNha.menu =
             //{ manHinh: 'chuNha_huongDanSuDung', ten: 'Hướng dẫn sử dụng thiết bị' }       
         ];
 
-        $('#menuGrid').innerHTML = menu.map(function(item)
+        $('#sidebarGrid').innerHTML = sidebar.map(function(item)
         {
-            const active = item.manHinh === manHinhDangChon ? ' menu__button__selected' : ''; //active 1 lần đầu
+            const active = item.manHinh === manHinhDangChon ? ' sidebar__button__selected' : ''; //active 1 lần đầu
             return `
                 <div
-                    id="menu_${item.manHinh}"
-                    class="menu__button${active}"
-                    onclick="APP.ui.setManHinh('chuNha','${item.manHinh}'); APP.menu.ui.hideIfMobile(); APP.menu.ui.setSelectedButton(this);">
+                    id="sidebar_${item.manHinh}"
+                    class="sidebar__button${active}"
+                    onclick="APP.ui.setManHinh('chuNha','${item.manHinh}'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.ui.setSelectedButton(this);">
                     ${item.ten}
                 </div>
             `;
@@ -38,6 +38,6 @@ APP.ui.chuNha.menu =
     show: function()
     {
         show('buttonChoThuePhong');
-        APP.menu.ui.setSelectedButton($('#menu_chuNha_dashboard'));
+        APP.sidebar.ui.setSelectedButton($('#sidebar_chuNha_dashboard'));
     }
 };

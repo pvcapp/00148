@@ -1,10 +1,10 @@
-APP.khachHang.menu.ui =
+APP.khachHang.sidebar.ui =
 {
     render: function()
     {
         const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'khachHang_dashboard';
 
-        const menu =
+        const sidebar =
         [
             { manHinh: 'khachHang_dashboard', ten: 'Home' },
             { manHinh: 'khachHang_hoSo', ten: 'Hồ sơ' },
@@ -15,12 +15,12 @@ APP.khachHang.menu.ui =
             { manHinh: 'khachHang_vi', ten: 'Ví' }
         ];
 
-        $('#menuGrid').innerHTML = menu.map(function(item)
+        $('#sidebarGrid').innerHTML = sidebar.map(function(item)
         {
-            const selected = item.manHinh === manHinhDangChon ? ' menu__button__selected' : '';
+            const selected = item.manHinh === manHinhDangChon ? ' sidebar__button__selected' : '';
             return `
-                <div id="menu_${item.manHinh}" class="menu__button${selected}"
-                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.menu.ui.hideIfMobile(); APP.menu.ui.setSelectedButton(this);">
+                <div id="sidebar_${item.manHinh}" class="sidebar__button${selected}"
+                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.ui.setSelectedButton(this);">
                     ${item.ten}
                 </div>
             `;
@@ -29,6 +29,6 @@ APP.khachHang.menu.ui =
     show: function()
     {
         hide('buttonChoThuePhong');
-        APP.menu.ui.setSelectedButton($('#menu_khachHang_dashboard'));
+        APP.sidebar.ui.setSelectedButton($('#sidebar_khachHang_dashboard'));
     }
 };
