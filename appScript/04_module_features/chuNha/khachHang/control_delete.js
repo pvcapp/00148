@@ -1,4 +1,4 @@
-APP.ui.chuNha.quanLyKhachHang.delete = 
+APP.features.chuNha.quanLyKhachHang.delete = 
 {
     submit:async function(idKhachHang, hoVaTen)
     {
@@ -24,8 +24,8 @@ APP.ui.chuNha.quanLyKhachHang.delete =
                 {
                     khachHang.active = '0';
                 }
-                APP.ui.chuNha.quanLyKhachHang.danhSach.render();
-                APP.ui.chuNha.quanLyKhachHang.update.hide();
+                APP.features.chuNha.quanLyKhachHang.danhSach.render();
+                APP.features.chuNha.quanLyKhachHang.update.hide();
                 capNhatTongQuanTuCache();
             }
         })

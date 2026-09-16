@@ -1,10 +1,5 @@
-APP.ui.chuNha.sidebar = 
+APP.features.chuNha.sidebar.ui = 
 {
-    startup: function()
-    {
-        APP.ui.chuNha.sidebar.render();
-        APP.ui.chuNha.sidebar.show();
-    },
     render: function()
     {
         const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'home';

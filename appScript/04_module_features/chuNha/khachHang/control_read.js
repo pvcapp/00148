@@ -1,4 +1,4 @@
-APP.ui.chuNha.quanLyKhachHang.danhSach = 
+APP.features.chuNha.quanLyKhachHang.danhSach = 
 {
     showDangThue: 0,
     startup: function()
@@ -9,14 +9,14 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                     <div class="card__caption">
                         DS khách hàng
                     </div>
-                    <select class="sidebar__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.ui.chuNha.quanLyKhachHang.danhSach.showDangThue=this.value; APP.ui.chuNha.quanLyKhachHang.danhSach.render();">
+                    <select class="sidebar__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.features.chuNha.quanLyKhachHang.danhSach.showDangThue=this.value; APP.features.chuNha.quanLyKhachHang.danhSach.render();">
                         <option value="0" selected>Khách hàng chưa thuê</option>
                         <option value="1">Khách hàng đã thuê</option>
                         <option value="2">Tất cả</option>
                     </select>
                 </div>
 
-                <div class="sidebar__button" style="width: 170px;font-size: 14px;" onclick="APP.ui.chuNha.quanLyKhachHang.addNew.show();">
+                <div class="sidebar__button" style="width: 170px;font-size: 14px;" onclick="APP.features.chuNha.quanLyKhachHang.addNew.show();">
                     ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
                     Khách hàng mới
                 </div>
@@ -42,13 +42,13 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                     <tbody>
         `;
 
-        let dangThue = APP.ui.chuNha.quanLyKhachHang.danhSach.showDangThue;
+        let dangThue = APP.features.chuNha.quanLyKhachHang.danhSach.showDangThue;
         html += APP.cache.danhSachKhachHang
             .filter(function(dong) {
                 return String(dong.active) === '1';
             })
             .map(function(dong) {
-                let d = '<tr onclick="APP.ui.chuNha.quanLyKhachHang.update.show('
+                let d = '<tr onclick="APP.features.chuNha.quanLyKhachHang.update.show('
                     + "'" + dong.idKhachHang + "'" 
                     + ')">';
                 d += '<td>' + dong.hoVaTen + '</td>';
@@ -67,7 +67,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                 {
                     xacMinh = `
                         <div class="sidebar__button" style="width: 170px;font-size: 14px;" 
-                            onclick="event.stopPropagation();APP.ui.chuNha.quanLyKhachHang.update.xacMinh.show('${dong.idKhachHang}');">                        
+                            onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.update.xacMinh.show('${dong.idKhachHang}');">                        
                             Xác minh
                         </div>
                     `;
@@ -99,7 +99,7 @@ APP.ui.chuNha.quanLyKhachHang.danhSach =
                         .map(function(dong) {
                             let html2 = '';
                             html2 +=  `
-                                <div class="card" onclick="APP.ui.chuNha.quanLyKhachHang.update.show('${dong.idKhachHang}');">
+                                <div class="card" onclick="APP.features.chuNha.quanLyKhachHang.update.show('${dong.idKhachHang}');">
                                     <div class="card__caption">
                                         ${escapeHtml(dong.hoVaTen || '')}                                    
                                     </div>

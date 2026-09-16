@@ -1,5 +1,5 @@
 
-APP.ui.chuNha.quanLyKhachHang.update = 
+APP.features.chuNha.quanLyKhachHang.update = 
 {
     idKhachHang: '',
     loadData: function(duLieu)
@@ -65,8 +65,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
             return;
         }
 
-        APP.ui.chuNha.quanLyKhachHang.update.loadData(khachHang);
-        APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
+        APP.features.chuNha.quanLyKhachHang.update.loadData(khachHang);
+        APP.features.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
 
         $('#themMoiKhachHang_caption').innerText = 'CẬP NHẬT THÔNG TIN';
         show('chuNha_khachHang_updateButton');
@@ -87,14 +87,14 @@ APP.ui.chuNha.quanLyKhachHang.update =
     },
     submit: async function()
     {
-        const data = APP.ui.chuNha.quanLyKhachHang.update.readData();
+        const data = APP.features.chuNha.quanLyKhachHang.update.readData();
         if (!data.idKhachHang) 
         {
             canhBao('Lỗi kỹ thuật' , 'Không thấy id Khách hàng cần cập nhật');
             return;
         }
 
-        if (!APP.ui.chuNha.quanLyKhachHang.addNew.checkData(data)) return;
+        if (!APP.features.chuNha.quanLyKhachHang.addNew.checkData(data)) return;
 
         inactiveButton('chuNha_khachHang_updateButton');
         $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
@@ -114,10 +114,10 @@ APP.ui.chuNha.quanLyKhachHang.update =
                     APP.cache.danhSachKhachHang[viTri] = kh;
                 }
                 
-                APP.ui.chuNha.quanLyKhachHang.danhSach.render();
+                APP.features.chuNha.quanLyKhachHang.danhSach.render();
 
-                APP.ui.chuNha.quanLyKhachHang.update.hide();
-                APP.ui.chuNha.quanLyKhachHang.danhSach.show();
+                APP.features.chuNha.quanLyKhachHang.update.hide();
+                APP.features.chuNha.quanLyKhachHang.danhSach.show();
                 capNhatTongQuanTuCache();
                 toast('Đã cập nhật Khách hàng', 1500);
             })
@@ -127,16 +127,16 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
                 alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
             })
-            .sv_capNhatKhachHang(APP.ui.chuNha.quanLyKhachHang.update.idKhachHang, data, APP.user.token);
+            .sv_capNhatKhachHang(APP.features.chuNha.quanLyKhachHang.update.idKhachHang, data, APP.user.token);
     },
     reset: function()
     {
-        APP.ui.chuNha.quanLyKhachHang.update.show(APP.ui.chuNha.quanLyKhachHang.update.idKhachHang);
+        APP.features.chuNha.quanLyKhachHang.update.show(APP.features.chuNha.quanLyKhachHang.update.idKhachHang);
     },
     abort: function()
     {
-        APP.ui.chuNha.quanLyKhachHang.addNew.reset();
-        APP.ui.chuNha.quanLyKhachHang.update.hide();
+        APP.features.chuNha.quanLyKhachHang.addNew.reset();
+        APP.features.chuNha.quanLyKhachHang.update.hide();
     },
     xacMinh:
     {
@@ -155,7 +155,7 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 canhBao('show Bảng thông tin xác minhh bị lỗi: không thấy phiếu');
                 return;
             } 
-            APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = idKhachHang;
+            APP.features.chuNha.quanLyKhachHang.update.idKhachHang = idKhachHang;
 
             $('#formKhachHang_xacMinhThongTin_hoVaTen').innerText = 'Họ và tên: ' + phieuXacMinh.hoVaTen      ;
             $('#formKhachHang_xacMinhThongTin_dienThoai').innerText = 'Điện thoại: ' + phieuXacMinh.dienThoai      ;
@@ -193,8 +193,8 @@ APP.ui.chuNha.quanLyKhachHang.update =
                 return;
             }
 
-            APP.ui.chuNha.quanLyKhachHang.update.loadData(khachHang);
-            APP.ui.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
+            APP.features.chuNha.quanLyKhachHang.update.loadData(khachHang);
+            APP.features.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
 
             //Cập nhật tình trạng xác minh và render lại danh sách
             const idXoa = APP.cache.danhSachKhachHang_xacMinh.findIndex(
@@ -206,13 +206,13 @@ APP.ui.chuNha.quanLyKhachHang.update =
             }
 
             //update thông tin khách hàng            
-            APP.ui.chuNha.quanLyKhachHang.update.submit();
+            APP.features.chuNha.quanLyKhachHang.update.submit();
             //Xóa phiếu chờ xác minh
             google.script.run
                 .withSuccessHandler(function(kh)
                 {                
                     toast('Đã xác minh thông tin Khách hàng', 1500);
-                    APP.ui.chuNha.quanLyKhachHang.update.xacMinh.hide();
+                    APP.features.chuNha.quanLyKhachHang.update.xacMinh.hide();
                 })
                 .withFailureHandler(function(loi)
                 {
@@ -237,11 +237,11 @@ APP.ui.chuNha.quanLyKhachHang.update =
                         APP.cache.danhSachKhachHang_xacMinh[idPhieu].xacMinh = '0';
                     }
 
-                    APP.ui.chuNha.quanLyKhachHang.danhSach.render();
+                    APP.features.chuNha.quanLyKhachHang.danhSach.render();
 
-                    APP.ui.chuNha.quanLyKhachHang.update.hide();
-                    APP.ui.chuNha.quanLyKhachHang.danhSach.show();
-                    APP.ui.chuNha.quanLyKhachHang.update.xacMinh.hide();
+                    APP.features.chuNha.quanLyKhachHang.update.hide();
+                    APP.features.chuNha.quanLyKhachHang.danhSach.show();
+                    APP.features.chuNha.quanLyKhachHang.update.xacMinh.hide();
                 })
                 .withFailureHandler(function(loi)
                 {

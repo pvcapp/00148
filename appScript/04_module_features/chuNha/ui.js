@@ -14,6 +14,7 @@ APP.features.chuNha =
 
 APP.features.chuNha.ui = 
 {
+    show: false,
     render: function()
     {
 

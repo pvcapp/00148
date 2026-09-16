@@ -1,9 +1,8 @@
 APP.features.chuNha.control =
-{
-    show: false,
+{    
     init: function()
     {
-        APP.features.chuNha.sidebar.init();
+        APP.features.chuNha.sidebar.control.init();
         APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
         $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan || {});
         setTimeout(function() 
@@ -13,7 +12,7 @@ APP.features.chuNha.control =
     },
     getData: function()
     {
-        APP.ui.chuNha.quanLyKhachHang.danhSach.startup();
+        APP.features.chuNha.quanLyKhachHang.danhSach.startup();
         google.script.run
             .withSuccessHandler(function(ketQua)
             {
@@ -23,11 +22,11 @@ APP.features.chuNha.control =
                 APP.cache.danhSachKhachHang_xacMinh = ketQua.danhSachKhachHang_xacMinh || [];
                 APP.cache.setting = ketQua.setting || [];
 
-                APP.ui.chuNha.quanLyKhachHang.danhSach.render();
-                APP.ui.chuNha.quanLyKhuNha.startup();
-                APP.ui.chuNha.quanLyPhong.startup();
-                APP.ui.chuNha.quanLyHopDong.startup();
-                APP.ui.chuNha.setting.startup();
+                APP.features.chuNha.quanLyKhachHang.danhSach.render();
+                APP.features.chuNha.quanLyKhuNha.startup();
+                APP.features.chuNha.quanLyPhong.startup();
+                APP.features.chuNha.quanLyHopDong.startup();
+                APP.features.chuNha.setting.startup();
                 
             })
             .withFailureHandler(function(loi)

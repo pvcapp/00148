@@ -1,4 +1,4 @@
-APP.ui.chuNha.quanLyKhachHang.addNew = 
+APP.features.chuNha.quanLyKhachHang.addNew = 
 {
     startup: function()
     {
@@ -14,7 +14,7 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
     },
     show: function()
     {
-        APP.ui.chuNha.quanLyKhachHang.addNew.reset();
+        APP.features.chuNha.quanLyKhachHang.addNew.reset();
         $('#themMoiKhachHang_caption').innerText = 'THÊM KHÁCH HÀNG MỚI';        
         
         hide('chuNha_khachHang_updateButton');
@@ -31,7 +31,7 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
     },
     hide: function()
     {
-        APP.ui.chuNha.quanLyKhachHang.addNew.reset();
+        APP.features.chuNha.quanLyKhachHang.addNew.reset();
         hide('themMoiKhachHang_form');
         show('tab_chuNha_khachHang_danhSach');
     },
@@ -63,8 +63,8 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
     },
     submit: async function()
     {
-        const duLieu = APP.ui.chuNha.quanLyKhachHang.addNew.readData();
-        if (!APP.ui.chuNha.quanLyKhachHang.addNew.checkData(duLieu)) return;
+        const duLieu = APP.features.chuNha.quanLyKhachHang.addNew.readData();
+        if (!APP.features.chuNha.quanLyKhachHang.addNew.checkData(duLieu)) return;
 
         inactiveButton('chuNha_khachHang_saveButton');
         $('#chuNha_khachHang_saveButton').innerText = 'Đang thêm..';
@@ -79,8 +79,8 @@ APP.ui.chuNha.quanLyKhachHang.addNew =
                     toast('Thêm khách hàng thành công: ' + duLieu.hoVaTen);
                     APP.cache.danhSachKhachHang = APP.cache.danhSachKhachHang || [];
                     APP.cache.danhSachKhachHang.push(ketQua.khachHang);
-                    APP.ui.chuNha.quanLyKhachHang.danhSach.render();
-                    APP.ui.chuNha.quanLyKhachHang.addNew.hide();
+                    APP.features.chuNha.quanLyKhachHang.danhSach.render();
+                    APP.features.chuNha.quanLyKhachHang.addNew.hide();
                     capNhatTongQuanTuCache();
                     return;
                 } 

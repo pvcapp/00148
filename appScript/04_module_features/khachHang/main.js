@@ -37,7 +37,7 @@ APP.features.khachHang =
     {
         startup: function()
         {
-            APP.features.khachHang.sidebar.startup();
+            APP.features.khachHang.sidebar.ui.init();
             APP.features.khachHang.dashboard.startup();
         }
     },
