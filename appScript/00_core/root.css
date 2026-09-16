@@ -17,6 +17,9 @@
     --color-primary-gradient: -webkit-linear-gradient(top left, var(--color-primary-light), var(--color-primary-dark));
     --color-on-primary-gradient: #fff;
 
+    --color-primary-light-gradient: -webkit-linear-gradient(top left, var(--color-primary-light), var(--color-primary-dark));
+    --color-on-primary-light-gradient: #fff;
+
     --color-secondary: #ffc107;
     --color-on-secondary: #fff;
     

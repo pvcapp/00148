@@ -37,18 +37,6 @@
 }
 
 
-.login__error
-{
-    animation-name: hideShow;
-    animation-duration: 0.5s;
-    color: var(--color-on-primary);
-}
-
-.login__form
-{
-    animation-name: hideShow;
-    animation-duration: 0.5s;
-}
 
 .login__header 
 {
@@ -70,3 +58,36 @@
     .login__header 	{width:400px;}
 }   
 
+.login__error
+{
+    animation-name: hideShow;
+    animation-duration: 0.5s;
+    color: var(--color-on-primary);
+}
+
+.login__form
+{
+    animation-name: hideShow;
+    animation-duration: 0.5s;
+}
+
+
+
+.login__submitButton
+{
+    cursor: pointer;
+    background:var(--color-primary-light-gradient);
+    color:var(--color-on-primary-light-gradient);
+    padding:12px;
+    width:200px;
+    border-radius:5px;
+    border:1px solid rgba(255,255,255,0.5);
+}
+
+.login__submitButton:hover
+{
+    transition: all 0.3s ease-in-out;
+    background:var(--color-primary-dark-gradient);
+    color:var(--color-on-primary-light-gradient);
+    border:2px solid rgba(255,255,255,0.5);
+}

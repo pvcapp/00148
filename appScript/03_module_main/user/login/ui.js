@@ -53,7 +53,7 @@ APP.user.login.ui =
                     <tr>
                         <td style="padding-top:35px;text-align:center;">
                             <center>
-                                <div id="login_submitButton" style="background:var(--color-primary-gradient);color:var(--color-on-primary-gradient);padding:12px;width:200px;border-radius:5px;border:1px solid rgba(255,255,255,0.5);">
+                                <div id="login_submitButton" class="login__submitButton">
                                     Đăng nhập
                                 </div>
                             </center>

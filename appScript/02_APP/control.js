@@ -9,11 +9,9 @@ APP.control =
         }
 
         APP.ui.render();
-        APP.control.startup();
     },
     startup: async function()
-    {
-        
+    {        
         let loginStatus = localStorage.getItem('a00148user');        
         if (!loginStatus)
         {
