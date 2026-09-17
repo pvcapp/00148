@@ -71,10 +71,19 @@ body
     font-size: 13px;
 }
 
-.footer {
+
+.main {
     flex: 1;
     display: flex;
     min-height: 0;
+}
+
+@media (max-width: 981px) 
+{
+    .main 
+    {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
