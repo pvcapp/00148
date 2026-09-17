@@ -37,6 +37,7 @@ APP.control =
         }
         
         APP.user.login.ui.hide();
+        APP.ui.render();
         APP.user.token = token;
         APP.control.getStartupData();
     },
