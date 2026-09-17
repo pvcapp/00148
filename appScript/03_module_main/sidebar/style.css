@@ -45,9 +45,8 @@ sidebar
 .sidebar__grid
 {
     display: flex;     
-    flex-direction: column;   
-    flex-wrap: wrap;
-    gap: var(--space-2);
+    flex-direction: column;
+    gap: var(--space-1);
 }
 
 @media (max-width: 981px) 
