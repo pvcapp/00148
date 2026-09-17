@@ -2,7 +2,7 @@ APP.user.login.control =
 {
     init: function () 
     {
-        APP.user.login.ui.render();
+        APP.user.login.ui.init();
         APP.user.login.control.bindEvents();
     },
     bindEvents: function ()

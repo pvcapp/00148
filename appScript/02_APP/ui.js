@@ -19,7 +19,8 @@ APP.ui =
         //render modal dialogs
         toast_render();
         canhBao_render();
-
+        
+        APP.user.login.control.init();
         //Render layout: header, sidebar, view, footer
         APP.header.control.init();
         APP.actionbar.control.init();

@@ -1,12 +1,33 @@
 
 APP.user.login = 
 {
-    ui:{}, control: {}, api: {}
+    ui:{}, 
+    control: {}, 
+    state: {},
+    api: {}
+};
+
+APP.user.login.state =
+{
+    loginStatus: 'notOk',
+    message: 'Vui lòng đăng nhập để vào trang này',
+    doingLogin: false
 };
 
 APP.user.login.ui = 
 {
-    render: function(parent = null)
+    appName: 'Ứng dụng nhà cho thuê',
+    setMessage: function(message)
+    {
+        APP.user.login.state.message = message;
+        APP.user.login.ui.render();
+    },
+    setdoingLogin: function(doingLogin)
+    {
+        APP.user.login.state.doingLogin = doingLogin;
+        APP.user.login.ui.render();
+    },
+    init: function()
     {
         const loginContainer = div({id: 'loginContainer', className: 'login__container'});
         loginContainer.innerHTML = `
@@ -26,11 +47,11 @@ APP.user.login.ui =
                 </div>
 
                 <div class="login__error" style="text-align:center;">
-                    Ứng dụng nhà cho thuê
+                    ${APP.user.login.ui.appName}
                 </div>
 
                 <div class="login__error" id="loginError" style="text-align:center;">
-                    <br>Vui lòng đăng nhập để vào trang này
+                    <br>${APP.user.login.state.message}
                 </div>
 
                 <table style="width:100%;padding:8px;" border="0" id="loginForm" class="login__form">
@@ -63,14 +84,20 @@ APP.user.login.ui =
                 <div style="height:20px;"></div>
             </div>
         `;
-
-        if (parent)
+        document.body.appendChild(loginContainer);
+    },
+    render: function()
+    {
+        $('#loginError').innerHTML = APP.user.login.state.message;
+        $('#login_submitButton').innerText = APP.user.login.state.doingLogin ? 'Đang đăng nhập..' : 'Đăng nhập';
+        
+        if (APP.user.login.state.doingLogin)
         {
-            parent.appendChild(loginContainer);
+            inactiveButton('login_submitButton');
         }
         else
         {
-            document.body.appendChild(loginContainer);
+            activeButton('login_submitButton');
         }
     },
     show: function()
