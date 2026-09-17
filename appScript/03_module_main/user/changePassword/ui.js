@@ -7,7 +7,7 @@ APP.user.changePassword =
 
 APP.user.changePassword.ui = 
 {
-    render: function()
+    init: function()
     {
         div({id: 'user_changePassword_divChe', 
             className: 'user_changePassword_divChe', 

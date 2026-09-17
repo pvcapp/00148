@@ -2,7 +2,7 @@ APP.user.changePassword.control =
 {
     init: function()
     {
-        APP.user.changePassword.ui.render();
+        APP.user.changePassword.ui.init();
         APP.user.changePassword.control.bindEvents();
     },
     bindEvents: function () 
