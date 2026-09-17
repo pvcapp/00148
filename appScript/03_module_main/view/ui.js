@@ -1,6 +1,6 @@
 APP.view.ui = 
 {
-    render: function()
+    init: function()
     {
         div({
             id: 'view',

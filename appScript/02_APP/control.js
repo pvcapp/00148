@@ -8,7 +8,7 @@ APP.control =
             return;
         }
 
-        APP.ui.render();
+        APP.ui.init();
     },
     startup: async function()
     {        

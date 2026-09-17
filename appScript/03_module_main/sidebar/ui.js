@@ -1,6 +1,6 @@
 APP.sidebar.ui = 
 {
-    render: function()
+    init: function()
     {
         div({
             id: 'main',
@@ -34,6 +34,12 @@ APP.sidebar.ui =
             className: 'sidebar__grid', 
             parentId: 'sidebar'
         });
+    },
+    render: function()
+    {
+        const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'chuNha_dashboard';
+        const button = $(`#sidebar_${manHinhDangChon}`);
+        APP.sidebar.control.setSelectedButton(button);
     },
     showing: !APP.config.mobileMode,
     show: function()
@@ -69,20 +75,8 @@ APP.sidebar.ui =
             APP.sidebar.ui.show();
         }
     },
-    setSelectedButton(button)
-    {
-        document
-            .querySelectorAll('#sidebarGrid .sidebar__button')
-            .forEach(function(bt)
-            {
-                bt.classList.remove('sidebar__button__selected');
-            });
-
-        button.classList.add('sidebar__button__selected');
-    },
     clear: function()
     {
-        hide('buttonChoThuePhong');
         $('#sidebarGrid').innerHTML = '';
     }
 };

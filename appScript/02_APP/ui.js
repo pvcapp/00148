@@ -1,22 +1,7 @@
 APP.ui = 
 {
-    render: function()
-    {    
-        //render modal dialogs
-        toast_render();
-        canhBao_render();
-
-        //Render layout: header, sidebar, view, footer
-        APP.header.ui.render();
-        APP.actionbar.ui.render();
-
-        APP.sidebar.ui.render();
-        APP.view.ui.render();
-        APP.footer.ui.render();
-
-        //Render user menu
-        APP.user.control.init();
-    
+    render: function() //chỉ cập nhật state hiện tại của ui,chứ không xây ui từ đầu
+    {
         if (APP.state.manHinhHienTai.vaiTro == 'chuNha' || APP.state.manHinhHienTai.vaiTro == 'khachHang')
         {
             activeButton('sidebar_' + APP.state.manHinhHienTai.manHinh);
@@ -28,6 +13,20 @@ APP.ui =
         {
             APP.user.login.ui.show();
         }
+    },
+    init: function()
+    {    
+        //render modal dialogs
+        toast_render();
+        canhBao_render();
+
+        //Render layout: header, sidebar, view, footer
+        APP.header.control.init();
+        APP.actionbar.control.init();
+
+        APP.sidebar.control.init();
+        APP.view.control.init();
+        APP.footer.control.init();
     },
     setManHinh: function(vaiTro, manHinh)
     {

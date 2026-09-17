@@ -20,7 +20,7 @@ APP.features.khachHang.sidebar.ui =
             const selected = item.manHinh === manHinhDangChon ? ' sidebar__button__selected' : '';
             return `
                 <div id="sidebar_${item.manHinh}" class="sidebar__button${selected}"
-                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.ui.setSelectedButton(this);">
+                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.control.setSelectedButton(this);">
                     ${item.ten}
                 </div>
             `;
@@ -28,7 +28,6 @@ APP.features.khachHang.sidebar.ui =
     },
     show: function()
     {
-        hide('buttonChoThuePhong');
-        APP.sidebar.ui.setSelectedButton($('#sidebar_khachHang_dashboard'));
+        APP.sidebar.control.setSelectedButton($('#sidebar_khachHang_dashboard'));
     }
 };

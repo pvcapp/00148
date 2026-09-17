@@ -1,6 +1,6 @@
 APP.actionbar.ui =
 {
-    render: function()
+    init: function()
     {
         div({
             id: 'header_actionbar', 

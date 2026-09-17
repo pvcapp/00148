@@ -1,6 +1,6 @@
 APP.footer.ui =
 {
-    render: function()
+    init: function()
     {
         div({
             id: 'footer', 
