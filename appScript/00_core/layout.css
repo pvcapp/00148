@@ -48,10 +48,10 @@ body
 .header,
 .footer
 {
-    height: 60px;
+    height: 48px;
     flex-shrink: 0;
     background: var(--color-primary-gradient);
-    color: white;
+    color: var(--color-on-primary-gradient);
 
     display: flex;
     align-items: center;
