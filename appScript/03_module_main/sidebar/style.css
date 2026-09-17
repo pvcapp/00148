@@ -46,7 +46,7 @@ sidebar
 {
     display: flex;     
     flex-direction: column;
-    gap: var(--space-1);
+    gap: 4px;
 }
 
 @media (max-width: 981px) 
