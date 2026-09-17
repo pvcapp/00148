@@ -86,9 +86,15 @@
 
 .login__submitButton:hover
 {
-    transform: translateY(-2px);
     border:1px solid var(--color-primary);
-    box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.55);
+    background:var(--color-background-gradient);
+    color:var(--color-primary-dark);
+}
+
+.login__submitButton:active
+{
+    border:1px solid var(--color-primary);
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.75);
     background:var(--color-background-gradient);
     color:var(--color-primary-dark);
 }
