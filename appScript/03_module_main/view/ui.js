@@ -1,3 +1,9 @@
+APP.view =
+{
+    ui: {},
+    control: {}
+};
+
 APP.view.ui = 
 {
     init: function()

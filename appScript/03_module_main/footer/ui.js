@@ -1,3 +1,9 @@
+APP.footer =
+{
+    ui: {},
+    control: {}
+};
+
 APP.footer.ui =
 {
     init: function()

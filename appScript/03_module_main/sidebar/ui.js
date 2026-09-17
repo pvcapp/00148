@@ -1,3 +1,9 @@
+APP.sidebar =
+{
+    ui: {},
+    control: {}
+};
+
 APP.sidebar.ui = 
 {
     init: function()

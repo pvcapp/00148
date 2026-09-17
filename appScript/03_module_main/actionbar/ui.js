@@ -1,3 +1,9 @@
+APP.actionbar =
+{
+    ui: {},
+    control: {}
+};
+
 APP.actionbar.ui =
 {
     init: function()
