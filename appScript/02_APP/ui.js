@@ -28,7 +28,7 @@ APP.ui =
         APP.sidebar.control.init();
         APP.actionbar.control.init();
         APP.user.control.init();
-        
+
         APP.view.control.init();
         APP.footer.control.init();
     },
@@ -40,7 +40,7 @@ APP.ui =
             manHinh: manHinh
         };            
 
-        APP.ui.render();
+        //APP.ui.render();
         APP.ui.scrollTop();
     },
     hideAllForms: function()
