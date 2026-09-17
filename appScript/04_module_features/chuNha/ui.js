@@ -7,6 +7,7 @@ APP.features.chuNha =
     khuNha: {},
     phong: {},
     khachHang: {},
+    sidebar: {},
     setting: {}
 };
 
