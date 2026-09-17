@@ -7,11 +7,6 @@ APP.user.menu.control =
     },
     bindEvents: function () 
     {
-        $('#userMenu_divChe').addEventListener('click', function (e) 
-        {
-            APP.user.menu.ui.hide();
-        });
-
         $('#userMenu_hamburger').addEventListener('click', function (e) 
         {
             APP.user.menu.ui.toggle();

@@ -1,26 +1,16 @@
-.header 
+.header__uiCaption 
 {
-    border-bottom: 1px solid rgba(220, 236, 242, 0.9);
-    background: var(--color-primary);
-    color: white;
-    backdrop-filter: blur(18px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: var(--header-height);
-    padding: 0.7rem;
-    z-index: 10;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
-@media (max-width: 981px) 
+@media only screen and (max-width:981px) 
 {
-    .header 
+    .header__uiCaption 
     {
-        padding: 6px 0.7rem;
+        display: none;
     }
 }
-
 
 .header__nguoi-dung 
 {
@@ -46,30 +36,4 @@
 }
 
 
-.header-content
-{
-    min-height: calc(var(--header-height) - 1.4rem);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.header__uiCaption 
-{
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-@media only screen and (max-width:981px) 
-{
-    .header__uiCaption 
-    {
-        display: none;
-    }
-}
-
-
-.ui-header__under
-{
-    display: none;
-}

@@ -11,23 +11,26 @@ APP.user.menu.ui =
     {
         div({
             id: 'userMenu_divChe', 
-            className: 'user__sidebar__divChe', 
-            parentId: parentId
+            className: 'user__menu__divChe', 
+            parent: document.body,
+            onclick: el => {
+                APP.user.menu.ui.hide();
+            }
         });
         
         div({
             id: 'userMenu_hamburger',
-            html: `<img src="https://pvcapp.github.io/00148/img/user.svg" class="sidebar__icon-sidebar" style="height: 25px;cursor: pointer;">`,
+            html: `<img src="https://pvcapp.github.io/00148/img/user.svg" style="height: 25px;cursor: pointer;">`,
             parentId: parentId
         });
 
-        div({id: 'userMenu', className: 'user__sidebar', parentId: parentId});
-        div({id: 'user_hoVaTen', className: 'sidebar__button user__sidebar__button', 
+        div({id: 'userMenu', className: 'user__menu', parentId: parentId});
+        div({id: 'user_hoVaTen', className: 'sidebar__button user__menu__button', 
             html: '--', style: 'font-weight:bold; margin-top:10px;',
             parentId: 'userMenu'});
-        div({id: 'userMenu_changePassword', className: 'sidebar__button user__sidebar__button', text: 'Đổi mật khẩu',
+        div({id: 'userMenu_changePassword', className: 'sidebar__button user__menu__button', text: 'Đổi mật khẩu',
             parentId: 'userMenu'});
-        div({id: 'userMenu_dangXuat', className: 'sidebar__button user__sidebar__button', text: 'Đăng xuất',
+        div({id: 'userMenu_dangXuat', className: 'sidebar__button user__menu__button', text: 'Đăng xuất',
             parentId: 'userMenu'});
     },
     showing: false,
