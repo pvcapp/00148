@@ -23,11 +23,12 @@ APP.ui =
         
         
         //Render layout: header, sidebar, view, footer
-        APP.header.control.init();
-        APP.user.control.init();
-        APP.actionbar.control.init();
-
+        APP.header.control.init();  
+        
         APP.sidebar.control.init();
+        APP.actionbar.control.init();
+        APP.user.control.init();
+        
         APP.view.control.init();
         APP.footer.control.init();
     },
