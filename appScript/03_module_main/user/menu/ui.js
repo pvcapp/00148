@@ -7,7 +7,7 @@ APP.user.menu =
 
 APP.user.menu.ui =
 {
-    render: function(parentId = '')
+    init: function(parentId = '')
     {
         div({
             id: 'userMenu_divChe', 

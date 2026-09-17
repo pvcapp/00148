@@ -27,6 +27,13 @@ APP.user.login.ui =
         APP.user.login.state.doingLogin = doingLogin;
         APP.user.login.ui.render();
     },
+    reset: function()
+    {
+        APP.user.login.state.message = 'Vui lòng đăng nhập để vào trang này';
+        APP.user.login.state.doingLogin = false;
+        $('#login_password').value = '';
+        APP.user.login.ui.render();
+    },
     init: function()
     {
         const loginContainer = div({id: 'loginContainer', className: 'login__container'});
@@ -112,15 +119,13 @@ APP.user.login.ui =
             loaiTaiKhoan: ''
         };
 
-        $('#loginError').innerHTML = 'Vui lòng đăng nhập để vào trang này';
+        APP.user.login.ui.reset();
         $('#loginContainer').style.display = 'flex';
-        $('#login_password').value = '';
         localStorage.setItem('a00148user', JSON.stringify(emptyLoginStatus));
     },
     hide: function()
     {
         hide('loginContainer');
-        $('#login_password').value = '';
-        $('#loginError').innerHTML = 'Vui lòng đăng nhập để vào trang này';
+        APP.user.login.ui.reset();
     }    
 };

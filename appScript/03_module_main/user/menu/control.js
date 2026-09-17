@@ -2,7 +2,7 @@ APP.user.menu.control =
 {
     init: function ()
     {
-        APP.user.menu.ui.render('header');
+        APP.user.menu.ui.init('header');
         APP.user.menu.control.bindEvents();
     },
     bindEvents: function () 

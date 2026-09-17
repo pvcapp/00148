@@ -20,6 +20,7 @@ APP.ui =
         toast_render();
         canhBao_render();
         
+        APP.user.menu.ui.init();
         APP.user.login.control.init();
         //Render layout: header, sidebar, view, footer
         APP.header.control.init();

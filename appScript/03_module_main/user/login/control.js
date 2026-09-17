@@ -22,6 +22,7 @@ APP.user.login.control =
         let cb;
         $('#loginError').innerHTML = 'Đang kiểm tra thông tin <marquee style="width:8px;">......</marquee>';
         $('#login_submitButton').innerText = 'Đang đăng nhập..';
+        
         inactiveButton('login_submitButton');
         let userName = document.getElementById("login_userName").value;
         let pass = document.getElementById("login_password").value;
