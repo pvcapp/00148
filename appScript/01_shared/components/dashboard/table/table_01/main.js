@@ -3,7 +3,7 @@ const table_01_schema = {
     formula: '', initialValue: null, 
     show: 1, editable: 1, require: 0,  search: 1};
 
-const table_01 = (danhSachCotSchema = [], data = []) => 
+const table_01 = (columnList = [], data = []) => 
 {
     const table = document.createElement('table');
     table.className = 'table_01';
@@ -11,7 +11,7 @@ const table_01 = (danhSachCotSchema = [], data = []) =>
         const thead = document.createElement('thead');
         thead.className = 'table_01__header';
             const headRow = document.createElement('tr');
-            danhSachCotSchema.forEach(schema => {
+            columnList.forEach(schema => {
                 const th = document.createElement('th');
                 th.textContent = schema.caption || schema.name;
                 headRow.appendChild(th);
@@ -26,7 +26,7 @@ const table_01 = (danhSachCotSchema = [], data = []) =>
             const tr = document.createElement('tr');
             tr.className = 'table_01__row';
             /*
-            danhSachCotSchema.forEach(schema => {               
+            columnList.forEach(schema => {               
 
                 td.appendChild(control);
                 tr.appendChild(td);

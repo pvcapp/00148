@@ -4,7 +4,7 @@ APP.view.control =
     {
         APP.view.ui.init();
     },
-    renderTab: function(moduleName, type = '', header  = {caption : '', actionbar : null})
+    renderTab: function(moduleName, type = '', header  = {caption : '', actionbar : null}, data)
     {
         if (type =='') type = 'table';
         const tab = document.createElement('div');
@@ -40,7 +40,7 @@ APP.view.control =
             switch (type)
             {
                 case 'table':
-                    tab.appendChild(table());
+                    tab.appendChild(table(data, type='table_01'));
                     break;
                 default:
                     break;

@@ -1,13 +1,13 @@
-const table = (schema, data, type='table_01') =>
+const table = (data, type='table_01') =>
 {
     let table = null;
     switch(type)
     {
         case 'table_01':
-            table = table_01(schema, data);
+            table = table_01(data.columnList, data.data);
             break;
         default:
-            table = table_01(schema, data);
+            table = table_01(data.columnList, data.data);
             break;
     }
     container.appendChild(table);
