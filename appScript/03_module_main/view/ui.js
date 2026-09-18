@@ -13,17 +13,11 @@ APP.view.ui =
             className: 'view',
             parentId: 'main'
         });
-
-        div({
-            id: 'view__actionbar', 
-            className: 'view__actionbar',
-            parentId: 'view'
-        });
-
-        div({
-            id: 'view__content', 
-            className: 'view__content',
-            parentId: 'view'
-        });
+    },
+    showTab: function(moduleName, type)
+    {
+        const allTab = document.querySelectorAll('.tab_container');
+        //hide all .view_content_container
+        show(viewId);
     }
 };

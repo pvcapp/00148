@@ -3,7 +3,7 @@ APP.features.chuNha.control =
     init: function()
     {
         APP.features.chuNha.sidebar.control.init();
-        APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
+        //APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
         $('#view').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan || {});
         setTimeout(function()
         {

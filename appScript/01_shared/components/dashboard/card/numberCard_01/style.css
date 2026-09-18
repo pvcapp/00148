@@ -1,0 +1,36 @@
+/*
+CAPTION
+
+LARGER NUMBER
+Sub caption
+*/
+.numberCard_01
+{
+    width: 100%;
+    border-radius: 4px;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-elevation-1dp);
+    padding: 12px;
+}
+
+.numberCard_01__caption
+{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin-bottom: 4px;
+}
+
+.numberCard_01__sub-caption
+{
+    font-size: 12px;
+    color: var(--color-on-background-secondary);
+    margin-bottom: 8px;
+}
+
+.numberCard_01__number
+{
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+}

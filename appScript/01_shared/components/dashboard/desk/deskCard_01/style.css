@@ -1,0 +1,44 @@
+/*
+    Caption --------------------- Number
+    subCaption
+    detail
+    Action bar
+*/
+.desk__card_01
+{
+    width: 100%;
+    border-radius: 4px;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-elevation-1dp);
+    padding: 12px;
+}
+
+.desk__card_01__caption
+{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin-bottom: 4px;
+}
+
+.desk__card_01__sub-caption
+{
+    font-size: 12px;
+    color: var(--color-on-background-secondary);
+    margin-bottom: 8px;
+}
+
+.desk__card_01__detail
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.desk__card_01__action-bar
+{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin-top: 8px;
+}

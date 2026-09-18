@@ -1,0 +1,25 @@
+.card__container 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.card 
+{
+    background: var(--color-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--padding-lg);
+    box-shadow: var(--shadow);
+}
+
+
+@media (max-width: 981px) 
+{
+    .card 
+    {
+        padding: 0.9rem;
+        overflow-x: auto;
+    }
+}

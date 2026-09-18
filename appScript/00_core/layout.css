@@ -101,6 +101,28 @@ body
     }
 }
 
+.view__header
+{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 20px;
+}
+
+.view__header__caption
+{
+    font-weight: 700;
+}
+
+@media (max-width: 981px) 
+{
+    .view__header__caption
+    {
+        display: none;
+    }
+}
+
 .view {
     flex: 1;
     min-width: 0;

@@ -18,13 +18,3 @@ function totalCard_render(tieuDe, so)
         </div>
     `;
 }
-
-
-//Table: các cột, các cột hiển thị, sort, ...
-//captionList: [{name: 'stt', show: 1, displayAs: 'STT'}, {name: 'hoVaTen', show: 1, displayAs: 'Họ và tên'}]
-function renderView_card(viewId, viewCaption, 
-    data = {captionList: [], data:[]}, sort = {column: '', direction: 'ASC'}, 
-    header = {primaryColumn: '', secondaryColumn: '', sumaryColumn: ''})
-{
-    
-}

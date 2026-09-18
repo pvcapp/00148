@@ -1,0 +1,35 @@
+/* 
+    Caption: '',
+    subCaption: '',
+    detail: ['', '','']
+*/
+.detailCard_01
+{
+    width: 100%;
+    border-radius: 4px;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-elevation-1dp);
+    padding: 12px;
+}
+
+.detailCard_01__caption
+{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-on-background);
+    margin-bottom: 4px;
+}
+
+.detailCard_01__sub-caption
+{
+    font-size: 12px;
+    color: var(--color-on-background-secondary);
+    margin-bottom: 8px;
+}
+
+.detailCard_01__detail
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
