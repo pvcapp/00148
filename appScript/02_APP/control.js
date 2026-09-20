@@ -48,7 +48,7 @@ APP.control =
             .withSuccessHandler(function(duLieu)
             {                      
                 APP.user.data = duLieu.user;
-                console.log(JSON.stringify(user));
+                console.log(JSON.stringify(duLieu.user));
                 $('#user_hoVaTen').innerText = APP.user.data.hoVaTen;
                 if (APP.user.data.loaiTaiKhoan === 'khach')
                 {
