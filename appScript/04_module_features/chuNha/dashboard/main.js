@@ -1,7 +1,9 @@
 APP.features.chuNha.dashboard = 
 {
+    
     render: function()
     {
+        console.log('APP.features.chuNha.dashboard.render: ' + JSON.stringify(APP.cache.tongQuan.map));
         const card_container_data = APP.cache.tongQuan.map(item => ({
             data: item,
             type: 'numberCard_01'
