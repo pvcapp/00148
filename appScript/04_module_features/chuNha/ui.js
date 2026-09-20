@@ -6,7 +6,7 @@ APP.features.chuNha =
     dashboard: {},
     khuNha: {},
     phong: {},
-    khachHang: {},
+    quanLyKhachHang: {},
     sidebar: {},
     setting: {}
 };

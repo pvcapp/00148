@@ -15,7 +15,7 @@ const card_container = (data, id ='') =>  //data: [{data: {}, type: 'detailCard_
 {
     let container = document.createElement('div');
     container.className = 'card__container';
-    if (id) container.id = id;    
+    if (id) container.id = id;
     data.forEach((cardData) => {
         let cardElement = card(cardData);
         container.appendChild(cardElement);
