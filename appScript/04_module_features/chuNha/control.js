@@ -4,7 +4,7 @@ APP.features.chuNha.control =
     {
         APP.features.chuNha.sidebar.control.init();
         //APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
-        $('#view').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan || {});
+        APP.features.chuNha.dashboard.render();
         setTimeout(function()
         {
             APP.features.chuNha.control.getData();

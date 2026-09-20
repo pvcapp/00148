@@ -12,7 +12,7 @@ APP.control =
     },
     startup: async function()
     {        
-        let loginStatus = localStorage.getItem('a00148user');        
+        let loginStatus = localStorage.getItem('a00148user');
         if (!loginStatus)
         {
             console.log('APP startup: localStorage chưa có');
@@ -48,7 +48,7 @@ APP.control =
             .withSuccessHandler(function(duLieu)
             {                      
                 APP.user.data = duLieu.user;
-                APP.user.data = duLieu.user;
+                console.log(JSON.stringify(user));
                 $('#user_hoVaTen').innerText = APP.user.data.hoVaTen;
                 if (APP.user.data.loaiTaiKhoan === 'khach')
                 {

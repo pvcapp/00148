@@ -42,6 +42,8 @@ APP.view.control =
                 case 'table':
                     tab.appendChild(table(data, type='table_01'));
                     break;
+                case 'dashboard':
+                    break;
                 default:
                     break;
             }

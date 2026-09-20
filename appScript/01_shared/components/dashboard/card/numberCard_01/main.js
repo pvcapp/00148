@@ -1,5 +1,10 @@
 const numberCard_01 = ({caption, subCaption, value}) =>
 {
+    /*
+        CAPTION
+        subcaption
+        NUMBER
+    */
     const card = document.createElement('div');
     card.className = 'card';
         const captionDiv = document.createElement('div');
