@@ -15,15 +15,8 @@ APP.ui =
         APP.sidebar.ui.hideIfMobile();
         APP.sidebar.control.setSelectedButton('sidebar_' + APP.state.manHinhHienTai.module);
 
-        if (!APP.view.ui.hasTab(state.vaiTro, state.module, state.type || 'list'))
-        {
-            const element = APP.features[state.vaiTro][state.module].control.init(state.type);
-            APP.view.ui.addTab(state.vaiTro, state.module, state.type || 'list', element);
-        }
-
         APP.view.ui.showTab(state.vaiTro, state.module, state.type || 'list');
         APP.ui.scrollTop();
-
     },
     init: function()
     {    
