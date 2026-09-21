@@ -4,7 +4,7 @@ function phong_edit_capNhatDanhSachKhu()
 
     select.innerHTML = `
         <option value="">-- Chọn khu nhà --</option>
-        ${(APP.cache.khuNha || []).map(function(khuNha)
+        ${(APP.cache.danhSachKhuNha || []).map(function(khuNha)
         {
             const idKhuNha = khuNha.idKhuNha || '';
             const tenKhuNha = khuNha.tenKhuNha;
@@ -15,7 +15,7 @@ function phong_edit_capNhatDanhSachKhu()
 
 function chuNha_editPhong(idPhong)
 {
-    const phong = (APP.cache.phong || []).find(function(dong)
+    const phong = (APP.cache.danhSachPhong || []).find(function(dong)
     {
         return String(dong.idPhong) === String(idPhong);
     });
@@ -84,17 +84,17 @@ function phong_edit_luu()
             activeButton('chuNha_updatePhong_saveButton');
             $('#chuNha_updatePhong_saveButton').innerText = 'Lưu thay đổi';
 
-            const viTri = (APP.cache.phong || []).findIndex(function(dong)
+            const viTri = (APP.cache.danhSachPhong || []).findIndex(function(dong)
             {
                 return String(dong.idPhong) === String(idPhong);
             });
 
             if (viTri !== -1)
             {
-                APP.cache.phong[viTri] = phong;
+                APP.cache.danhSachPhong[viTri] = phong;
             }
 
-            chuNha_showDanhSachPhong(APP.cache.phong || []);
+            chuNha_showDanhSachPhong(APP.cache.danhSachPhong || []);
             phong_edit_boQua();
             capNhatTongQuanTuCache();
             toast('Đã cập nhật phòng');

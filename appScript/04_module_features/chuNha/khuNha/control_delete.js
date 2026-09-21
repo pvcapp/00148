@@ -15,7 +15,7 @@ async function xoaKhuNha(idKhuNha, tenKhuNha)
         if (ketQua && ketQua.thanhCong) 
         {
             toast('Đã xóa khu nhà!');
-            const khuNha = APP.cache.khuNha.find(
+            const khuNha = APP.cache.danhSachKhuNha.find(
                 khu => String(khu.idKhuNha) === String(idKhuNha)
             );
 
@@ -23,7 +23,7 @@ async function xoaKhuNha(idKhuNha, tenKhuNha)
             {
                 khuNha.active = '0';
             }
-            chuNha_showDanhSachKhuNha(APP.cache.khuNha);
+            chuNha_showDanhSachKhuNha(APP.cache.danhSachKhuNha);
             capNhatTongQuanTuCache();
         }
     })

@@ -12,7 +12,7 @@ async function chuNha_xoaPhong(idPhong)
                 return;
             }
 
-            const phong = (APP.cache.phong || []).find(function(dong)
+            const phong = (APP.cache.danhSachPhong || []).find(function(dong)
             {
                 return String(dong.idPhong) === String(idPhong);
             });
@@ -22,7 +22,7 @@ async function chuNha_xoaPhong(idPhong)
                 phong.active = '0';
             }
 
-            chuNha_showDanhSachPhong(APP.cache.phong || []);
+            chuNha_showDanhSachPhong(APP.cache.danhSachPhong || []);
             capNhatTongQuanTuCache();
             toast('Đã xóa phòng');
         })

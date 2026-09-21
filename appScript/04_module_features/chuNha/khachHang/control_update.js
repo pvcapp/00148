@@ -114,10 +114,10 @@ APP.features.chuNha.quanLyKhachHang.update =
                     APP.cache.danhSachKhachHang[viTri] = kh;
                 }
                 
-                APP.features.chuNha.quanLyKhachHang.danhSach.render();
+                APP.features.chuNha.quanLyKhachHang.list.render();
 
                 APP.features.chuNha.quanLyKhachHang.update.hide();
-                APP.features.chuNha.quanLyKhachHang.danhSach.show();
+                APP.features.chuNha.quanLyKhachHang.list.show();
                 capNhatTongQuanTuCache();
                 toast('Đã cập nhật Khách hàng', 1500);
             })
@@ -237,10 +237,10 @@ APP.features.chuNha.quanLyKhachHang.update =
                         APP.cache.danhSachKhachHang_xacMinh[idPhieu].xacMinh = '0';
                     }
 
-                    APP.features.chuNha.quanLyKhachHang.danhSach.render();
+                    APP.features.chuNha.quanLyKhachHang.list.render();
 
                     APP.features.chuNha.quanLyKhachHang.update.hide();
-                    APP.features.chuNha.quanLyKhachHang.danhSach.show();
+                    APP.features.chuNha.quanLyKhachHang.list.show();
                     APP.features.chuNha.quanLyKhachHang.update.xacMinh.hide();
                 })
                 .withFailureHandler(function(loi)

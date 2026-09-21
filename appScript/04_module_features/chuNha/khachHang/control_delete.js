@@ -24,7 +24,7 @@ APP.features.chuNha.quanLyKhachHang.delete =
                 {
                     khachHang.active = '0';
                 }
-                APP.features.chuNha.quanLyKhachHang.danhSach.render();
+                APP.features.chuNha.quanLyKhachHang.list.render();
                 APP.features.chuNha.quanLyKhachHang.update.hide();
                 capNhatTongQuanTuCache();
             }

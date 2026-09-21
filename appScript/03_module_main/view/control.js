@@ -4,7 +4,7 @@ APP.view.control =
     {
         APP.view.ui.init();
     },
-    renderTab: function(moduleName, type = '', header  = {caption : '', actionbar : null}, data)
+    renderTab: function(moduleName, type = '', header  = {caption : '', actionbar : null}, data) //Chưa dùng
     {
         if (type =='') type = 'table';
         const tab = document.createElement('div');

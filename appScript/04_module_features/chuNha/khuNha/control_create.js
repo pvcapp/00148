@@ -46,9 +46,9 @@ function themMoiKhuNha_them()
 
             if (ketQua)
             {
-                APP.cache.khuNha = APP.cache.khuNha || [];
-                APP.cache.khuNha.push(ketQua);
-                chuNha_showDanhSachKhuNha(APP.cache.khuNha);
+                APP.cache.danhSachKhuNha = APP.cache.danhSachKhuNha || [];
+                APP.cache.danhSachKhuNha.push(ketQua);
+                chuNha_showDanhSachKhuNha(APP.cache.danhSachKhuNha);
                 themMoiKhuNha_boQua();
                 capNhatTongQuanTuCache();
                 toast('Thêm khu nhà thành công..');

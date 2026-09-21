@@ -12,17 +12,18 @@ APP.features.chuNha.control =
     },
     getData: function()
     {
-        //APP.features.chuNha.quanLyKhachHang.danhSach.startup();
+        //APP.features.chuNha.quanLyKhachHang.list.startup();
         google.script.run
             .withSuccessHandler(function(ketQua)
             {
-                APP.cache.khuNha = ketQua.khuNha || [];
-                APP.cache.phong = ketQua.phong || [];
+                APP.cache.danhSachKhuNha = ketQua.khuNha || [];
+                APP.cache.danhSachPhong = ketQua.phong || [];
                 APP.cache.danhSachKhachHang = ketQua.danhSachKhachHang || [];
                 APP.cache.danhSachKhachHang_xacMinh = ketQua.danhSachKhachHang_xacMinh || [];
                 APP.cache.setting = ketQua.setting || [];
+                APP.cache.danhSachHopDong = ketQua.hopDong || [];
 
-                APP.features.chuNha.quanLyKhachHang.danhSach.render();
+                APP.features.chuNha.quanLyKhachHang.list.render();
                 APP.features.chuNha.quanLyKhuNha.startup();
                 APP.features.chuNha.quanLyPhong.startup();
                 APP.features.chuNha.quanLyHopDong.startup();
@@ -46,7 +47,7 @@ APP.features.chuNha.control =
     {
         startup: function()
         {
-            chuNha_showDanhSachKhuNha(APP.cache.khuNha || []);
+            chuNha_showDanhSachKhuNha(APP.cache.danhSachKhuNha || []);
             activeButton('sidebar_chuNha_khuNha');
         }
     },
@@ -54,7 +55,7 @@ APP.features.chuNha.control =
     {
         startup: function()
         {
-            chuNha_showDanhSachPhong(APP.cache.phong || []);
+            chuNha_showDanhSachPhong(APP.cache.danhSachPhong || []);
             activeButton('sidebar_chuNha_phong');
         }
     },
@@ -62,7 +63,7 @@ APP.features.chuNha.control =
     {
         startup: function()
         {
-            chuNha_showDanhSachHopDong(APP.cache.hopDong || []);
+            chuNha_showDanhSachHopDong(APP.cache.danhSachHopDong || []);
             activeButton('sidebar_chuNha_hopDong');
         }
     },   

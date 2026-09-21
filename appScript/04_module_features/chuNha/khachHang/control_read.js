@@ -1,4 +1,4 @@
-APP.features.chuNha.quanLyKhachHang.danhSach = 
+APP.features.chuNha.quanLyKhachHang.list = 
 {
     showDangThue: 0,
     startup: function()
@@ -9,7 +9,7 @@ APP.features.chuNha.quanLyKhachHang.danhSach =
                     <div class="card__caption">
                         DS khách hàng
                     </div>
-                    <select class="sidebar__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.features.chuNha.quanLyKhachHang.danhSach.showDangThue=this.value; APP.features.chuNha.quanLyKhachHang.danhSach.render();">
+                    <select class="sidebar__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.features.chuNha.quanLyKhachHang.list.showDangThue=this.value; APP.features.chuNha.quanLyKhachHang.list.render();">
                         <option value="0" selected>Khách hàng chưa thuê</option>
                         <option value="1">Khách hàng đã thuê</option>
                         <option value="2">Tất cả</option>
@@ -42,7 +42,7 @@ APP.features.chuNha.quanLyKhachHang.danhSach =
                     <tbody>
         `;
 
-        let dangThue = APP.features.chuNha.quanLyKhachHang.danhSach.showDangThue;
+        let dangThue = APP.features.chuNha.quanLyKhachHang.list.showDangThue;
         html += APP.cache.danhSachKhachHang
             .filter(function(dong) {
                 return String(dong.active) === '1';
