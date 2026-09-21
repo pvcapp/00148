@@ -1,4 +1,13 @@
 APP.features.chuNha.dashboard = {ui: {}, control: {}};
+
+APP.features.chuNha.dashboard.control = 
+{ 
+    init: function()
+    {
+        APP.features.chuNha.dashboard.ui.init();
+    }    
+}
+
 APP.features.chuNha.dashboard.ui = 
 {   
     init: function()
