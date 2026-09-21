@@ -4,7 +4,7 @@ APP.sidebar.control =
     {
         APP.sidebar.ui.init();
     },
-    setSelectedButton(button)
+    setSelectedButton(buttonId)
     {
         document
             .querySelectorAll('#sidebarGrid .sidebar__button')
@@ -13,6 +13,6 @@ APP.sidebar.control =
                 bt.classList.remove('sidebar__button__selected');
             });
 
-        button.classList.add('sidebar__button__selected');
+        $('#' + buttonId).classList.add('sidebar__button__selected');
     }
 }
