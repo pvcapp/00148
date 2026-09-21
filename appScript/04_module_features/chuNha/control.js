@@ -12,7 +12,7 @@ APP.features.chuNha.control =
     },
     getData: function()
     {
-        APP.features.chuNha.quanLyKhachHang.danhSach.startup();
+        //APP.features.chuNha.quanLyKhachHang.danhSach.startup();
         google.script.run
             .withSuccessHandler(function(ketQua)
             {
