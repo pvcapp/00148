@@ -49,7 +49,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                         <tbody>
             `;
 
-            let dangThue = APP.features.chuNha.quanLyKhachHang.list.showDangThue;
+            let dangThue = APP.features.chuNha.quanLyKhachHang.ui.list.showDangThue;
             html += APP.cache.danhSachKhachHang
                 .filter(function(dong) {
                     return String(dong.active) === '1';
