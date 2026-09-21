@@ -2,24 +2,24 @@ APP.features.khachHang =
 {
     ui:
     {       
-        taiDuLieuManHinh: function(manHinh)
+        taiDuLieuManHinh: function(module)
         {
-            if (APP.state.dangTai[ manHinh])
+            if (APP.state.dangTai[ module])
             {
                 return;
             }
 
-            APP.state.dangTai[manHinh] = true;
+            APP.state.dangTai[module] = true;
 
             google.script.run
                 .withSuccessHandler(function(duLieu)
                 {
-                    APP.state.dangTai[manHinh] = false;
+                    APP.state.dangTai[module] = false;
                     Object.assign(APP.cache, duLieu || {});
 
                     if (
                         APP.state.manHinhHienTai.vaiTro === 'khachHang' &&
-                        APP.state.manHinhHienTai.manHinh === manHinh
+                        APP.state.manHinhHienTai.module === module
                     )
                     {
                         APP.ui.render();
@@ -27,10 +27,10 @@ APP.features.khachHang =
                 })
                 .withFailureHandler(function(loi)
                 {
-                    APP.state.dangTai[manHinh] = false;
+                    APP.state.dangTai[module] = false;
                     alert('Có lỗi khi tải dữ liệu:\n' + loi.message);
                 })
-                .sv_khachHang_layDuLieuManHinh(manHinh, APP.user.token);
+                .sv_khachHang_layDuLieuManHinh(module, APP.user.token);
         }
     },
     control:
@@ -54,7 +54,7 @@ APP.features.khachHang =
         },
         render: function()
         {
-            if (APP.state.manHinhHienTai.manHinh === 'khachHang_hopDong') 
+            if (APP.state.manHinhHienTai.module === 'khachHang_hopDong') 
             {
                 APP.ui.showTab('tab_khachHang_hopDong');
             }

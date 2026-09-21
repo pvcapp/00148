@@ -12,7 +12,8 @@ APP.sidebar.control =
             {
                 bt.classList.remove('sidebar__button__selected');
             });
-
+        
+        activeButton(buttonId);
         $('#' + buttonId).classList.add('sidebar__button__selected');
     }
 }

@@ -1,4 +1,4 @@
-function canhBao_render()
+function canhBao_init()
 {
     let container = document.createElement('div');
     container.className = 'thong-bao-popup__container';

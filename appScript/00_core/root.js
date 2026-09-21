@@ -6,10 +6,10 @@ const APP =
     control: {},
 
     state: {
-        manHinhHienTai:
+        moduleHienTai:
         {
             vaiTro: 'no',
-            manHinh: 'home',
+            module: 'home',
             type: 'list'
         }
     },

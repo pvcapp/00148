@@ -2,25 +2,25 @@ APP.features.khachHang.sidebar.ui =
 {
     render: function()
     {
-        const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'khachHang_dashboard';
+        const moduleDangChon = APP.state.manHinhHienTai.module || 'khachHang_dashboard';
 
         const sidebar =
         [
-            { manHinh: 'khachHang_dashboard', ten: 'Home' },
-            { manHinh: 'khachHang_hoSo', ten: 'Hồ sơ' },
-            { manHinh: 'khachHang_hopDong', ten: 'Hợp đồng' },
-            { manHinh: 'khachHang_dienNuoc', ten: 'Điện nước' },
-            { manHinh: 'khachHang_thanhToan', ten: 'Thanh toán' },            
-            { manHinh: 'khachHang_tamTru', ten: 'Thủ tục tạm trú' },
-            { manHinh: 'khachHang_vi', ten: 'Ví' }
+            { module: 'khachHang_dashboard', ten: 'Home' },
+            { module: 'khachHang_hoSo', ten: 'Hồ sơ' },
+            { module: 'khachHang_hopDong', ten: 'Hợp đồng' },
+            { module: 'khachHang_dienNuoc', ten: 'Điện nước' },
+            { module: 'khachHang_thanhToan', ten: 'Thanh toán' },            
+            { module: 'khachHang_tamTru', ten: 'Thủ tục tạm trú' },
+            { module: 'khachHang_vi', ten: 'Ví' }
         ];
 
         $('#sidebarGrid').innerHTML = sidebar.map(function(item)
         {
-            const selected = item.manHinh === manHinhDangChon ? ' sidebar__button__selected' : '';
+            const selected = item.module === moduleDangChon ? ' sidebar__button__selected' : '';
             return `
-                <div id="sidebar_${item.manHinh}" class="sidebar__button${selected}"
-                    onclick="APP.ui.setManHinh('khachHang', '${item.manHinh}'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.control.setSelectedButton(this);">
+                <div id="sidebar_${item.module}" class="sidebar__button${selected}"
+                    onclick="APP.ui.setManHinh('khachHang', '${item.module}'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.control.setSelectedButton(this);">
                     ${item.ten}
                 </div>
             `;

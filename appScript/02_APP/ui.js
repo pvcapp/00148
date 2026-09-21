@@ -1,28 +1,34 @@
 APP.ui = 
 {
-    render: function() //chỉ cập nhật state hiện tại của ui,chứ không xây ui từ đầu
+    render: function()
     {
-        if (APP.state.manHinhHienTai.vaiTro == 'chuNha' || APP.state.manHinhHienTai.vaiTro == 'khachHang')
+        const state = APP.state.manHinhHienTai;
+        if (!state) return;
+
+        if (state.vaiTro != 'chuNha' && state.vaiTro != 'khachHang')
         {
-            activeButton('sidebar_' + APP.state.manHinhHienTai.manHinh);
-            APP.sidebar.ui.hideIfMobile();
-            APP.sidebar.control.setSelectedButton('sidebar_' + APP.state.manHinhHienTai.manHinh);
-            APP.ui.hideAllForms();
-            APP.ui.showTab(APP.state.manHinhHienTai.vaiTro, APP.state.manHinhHienTai.manHinh);
+            console.log('APP.ui.render: Vai trò người dùng không xác định!');
+            APP.user.login.ui.show();
             return;
         }
-        else
+
+        APP.sidebar.ui.hideIfMobile();
+        APP.sidebar.control.setSelectedButton('sidebar_' + APP.state.manHinhHienTai.module);
+
+        if (!APP.view.ui.hasTab(state.vaiTro, state.module, state.type || 'list'))
         {
-            APP.user.login.ui.show();
+            APP.view.ui.addTab(state.vaiTro, state.module, state.type || 'list');
         }
+
+        APP.view.ui.showTab(state.vaiTro, state.module, state.type || 'list');
+        APP.ui.scrollTop();
+
     },
     init: function()
     {    
         //render modal dialogs
-        toast_render();
-        canhBao_render();
-        
-        
+        toast_init();
+        canhBao_init();
         
         //Render layout: header, sidebar, view, footer
         APP.header.control.init();  
@@ -34,12 +40,12 @@ APP.ui =
         APP.view.control.init();
         APP.footer.control.init();
     },
-    setManHinh: function(vaiTro, manHinh, type)
+    setManHinh: function(vaiTro, module, type)
     {
         APP.state.manHinhHienTai =
         {
             vaiTro: vaiTro,
-            manHinh: manHinh,
+            module: module,
             type: type
         };            
 
@@ -88,10 +94,10 @@ APP.ui =
                 tab.style.display = 'none';
             });
     },
-    showTab: function(vaiTro, manHinh)
+    showTab: function(vaiTro, module)
     {
         APP.ui.hideAllTabs();
-        let tabId = 'tab_' + manHinh;
+        let tabId = 'tab_' + module;
         let danhSachId = tabId + '_danhSach';
         if ($('#' + tabId))
         {

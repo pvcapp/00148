@@ -43,8 +43,8 @@ APP.sidebar.ui =
     },
     render: function()
     {
-        const manHinhDangChon = APP.state.manHinhHienTai.manHinh || 'chuNha_dashboard';
-        const button = $(`#sidebar_${manHinhDangChon}`);
+        const moduleDangChon = APP.state.manHinhHienTai.module || 'chuNha_dashboard';
+        const button = $(`#sidebar_${moduleDangChon}`);
         APP.sidebar.control.setSelectedButton(button);
     },
     showing: !APP.config.mobileMode,

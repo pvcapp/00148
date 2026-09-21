@@ -1,4 +1,4 @@
-function toast_render()
+function toast_init()
 {
     let container = document.createElement('div');
     container.id = 'toast';
