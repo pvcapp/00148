@@ -27,7 +27,7 @@ APP.features.chuNha.quanLyPhong.ui =
         {
             $('#chuNha_quanLyPhong_list_main').innerHTML = 
             `<div class="card">
-                <table class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}" id="chuNha_danhSachKhuNha_table">
+                <table class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}" id="chuNha_danhSachPhong_table">
                     <thead class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}_header">
                         <tr>
                             <th>Phòng</th>
