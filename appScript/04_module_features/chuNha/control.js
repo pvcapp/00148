@@ -4,7 +4,7 @@ APP.features.chuNha.control =
     {
         APP.features.chuNha.sidebar.control.init();
         APP.features.chuNha.dashboard.control.init();
-        APP.view.ui.show('chuaNha', 'dashboard', 'dashboard');
+        APP.view.ui.showTab('chuaNha', 'dashboard', 'dashboard');
         setTimeout(function()
         {
             APP.features.chuNha.control.getData();
