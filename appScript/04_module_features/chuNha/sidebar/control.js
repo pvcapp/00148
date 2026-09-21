@@ -24,7 +24,7 @@ APP.features.chuNha.sidebar.control =
                 <div
                     id="sidebar_${item.manHinh}"
                     class="sidebar__button${active}"
-                    onclick="APP.ui.setManHinh('chuNha','${item.manHinh}'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.control.setSelectedButton(this);">
+                    onclick="APP.ui.setManHinh('chuNha','${item.manHinh}', 'list'); APP.sidebar.ui.hideIfMobile(); APP.sidebar.control.setSelectedButton(this);">
                     ${item.ten}
                 </div>
             `;

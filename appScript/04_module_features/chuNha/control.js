@@ -3,7 +3,6 @@ APP.features.chuNha.control =
     init: function()
     {
         APP.features.chuNha.sidebar.control.init();
-        //APP.ui.setManHinh('chuNha', 'chuNha_dashboard');
         APP.features.chuNha.dashboard.render();
         setTimeout(function()
         {

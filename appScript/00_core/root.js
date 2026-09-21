@@ -9,7 +9,8 @@ const APP =
         manHinhHienTai:
         {
             vaiTro: 'no',
-            manHinh: 'home'
+            manHinh: 'home',
+            type: 'list'
         }
     },
     cache: {},

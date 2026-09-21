@@ -32,15 +32,16 @@ APP.ui =
         APP.view.control.init();
         APP.footer.control.init();
     },
-    setManHinh: function(vaiTro, manHinh)
+    setManHinh: function(vaiTro, manHinh, type)
     {
         APP.state.manHinhHienTai =
         {
             vaiTro: vaiTro,
-            manHinh: manHinh
+            manHinh: manHinh,
+            type: type
         };            
 
-        //APP.ui.render();
+        APP.ui.render();
         APP.ui.scrollTop();
     },
     hideAllForms: function()
