@@ -15,6 +15,11 @@ view :
     padding: 0px 4px;
 }
 
+.view__tab
+{
+    display: none;
+}
+
 .tab_container
 {
     width: 100%;
