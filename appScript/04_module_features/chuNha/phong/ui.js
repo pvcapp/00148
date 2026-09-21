@@ -50,9 +50,9 @@ APP.features.chuNha.quanLyPhong.ui =
             let stt =0;
             let trangThaiArray = {'dangHoatDong': 'Đang hoạt động', 'tamDung': 'Tạm dừng hoạt động'};
             
-            for(let i=0; i<danhSach.length; i++)
+            for(let i=0; i<APP.cache.danhSachPhong.data.length; i++)
             {  
-                let dong = danhSach[i];
+                let dong = APP.cache.danhSachPhong.data[i];
                 if (dong.active == '1')
                 {
                     stt ++;                
