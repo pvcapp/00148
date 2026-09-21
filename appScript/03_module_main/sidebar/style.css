@@ -94,7 +94,8 @@
 .sidebar__button:hover {
     background: var(--color-primary-light);
     color: white;
-    box-shadow: 0 0 4px 8px rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.2);
 }
 
 .sidebar__button__selected
