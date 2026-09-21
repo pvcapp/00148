@@ -27,7 +27,7 @@ APP.features.chuNha.control =
                 APP.cache.danhSachHopDong = ketQua.hopDong || [];
 
                 APP.features.chuNha.quanLyKhachHang.ui.list.render();
-                APP.features.chuNha.quanLyKhuNha.startup();
+                APP.features.chuNha.quanLyKhuNha.ui.list.init();
                 APP.features.chuNha.quanLyPhong.startup();
                 APP.features.chuNha.quanLyHopDong.startup();
                 APP.features.chuNha.setting.startup();

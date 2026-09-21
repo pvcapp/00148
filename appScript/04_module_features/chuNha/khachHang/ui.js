@@ -25,11 +25,14 @@ APP.features.chuNha.quanLyKhachHang.ui =
                 <div class="sidebar__button" style="width: 170px;font-size: 14px;" onclick="APP.features.chuNha.quanLyKhachHang.addNew.show();">
                     ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
                     Khách hàng mới
-                </div>
-                <div id="chuNha_quanLyKhachHang_list_main" class="tab__main">
-                    ${loadingBar()}
                 </div>`;
             APP.view.ui.addTab('chuNha', 'quanLyKhachHang', 'list', tabHeader);
+            
+            const tab_main = document.createElement('div');
+            tab_main.id = 'chuNha_quanLyKhachHang_list_main';
+            tab_main.className = 'tab__main';
+            tab_main.appendChild(loadingBar());
+            APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'list', tab_main);
         },
         render: function()
         {
@@ -81,7 +84,6 @@ APP.features.chuNha.quanLyKhachHang.ui =
                     d += '<td>' + thue + '</td>';
                     
                     let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                    console.log(JSON.stringify(APP.cache.danhSachKhachHang_xacMinh));
                     let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
                         return dxm.idKhachHang == dong.idKhachHang
                     });

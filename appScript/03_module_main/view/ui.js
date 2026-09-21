@@ -28,6 +28,18 @@ APP.view.ui =
         tab.appendChild(el);
         $('#view').appendChild(tab);
     },
+    addElementToTab: function(vaiTro, module, type, el)
+    {
+        let id  = vaiTro + '_' + module + '_' + type + '_tab';
+        if ($('#' + id))
+        {
+            $('#' + id).appendChild(el);
+        }
+        else
+        {
+            APP.view.ui.addTab(vaiTro, module, type, el);
+        }
+    },
     hasTab: function(vaiTro, module, type)
     {
         const id = vaiTro + '_' + module + '_' + type + '_tab';
