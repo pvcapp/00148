@@ -62,7 +62,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                     d += '<td>' + dong.dienThoai + '</td>';
                     
                     
-                    let hopDong = APP.cache.danhSachHopDong.find(function(hd)
+                    let hopDong = APP.cache.danhSachHopDong.data.find(function(hd)
                     {
                         return hd.khachHang_idKhachHang == dong.idKhachHang;
                     });
@@ -130,7 +130,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                                         ${escapeHtml(dong.dienChi || '')}<br>
                                         ${escapeHtml(dong.email || '')}<br>`;
 
-                                        let hopDong = APP.cache.danhSachHopDong.find(function(hd)
+                                        let hopDong = APP.cache.danhSachHopDong.data.find(function(hd)
                                         {
                                             return hd.khachHang_idKhachHang == dong.idKhachHang;
                                         });
