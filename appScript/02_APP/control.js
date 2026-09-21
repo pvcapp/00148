@@ -57,6 +57,7 @@ APP.control =
                 } 
                 else 
                 {
+                    console(JSON.stringify(duLieu.tongQuan));
                     APP.cache.tongQuan = duLieu.tongQuan;
                     APP.features.chuNha.control.init();
                 }   

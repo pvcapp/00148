@@ -1,6 +1,5 @@
 APP.features.chuNha.dashboard = 
-{
-    
+{    
     render: function()
     {
         const card_container_data = APP.cache.tongQuan.map(item => ({
