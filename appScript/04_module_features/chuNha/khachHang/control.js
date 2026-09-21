@@ -1,21 +1,19 @@
-APP.features.chuNha.quanLyKhachHang = 
+APP.features.chuNha.quanLyKhachHang.control =
 {
-    control: 
+    list:
     {
-        list: 
+        init: function()
         {
-            init: function()
-            {
-                APP.features.chuNha.quanLyKhachHang.ui.list.init();
-            }
-        },
-        detail: 
-        {
-
-        },
-        form: 
-        {
-            
+            APP.features.chuNha.quanLyKhachHang.ui.list.init();
         }
+    },
+    detail: 
+    {
+
+    },
+    form: 
+    {
+        
     }
+    
 };
