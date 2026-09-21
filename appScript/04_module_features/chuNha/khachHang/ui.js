@@ -49,8 +49,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                         <tbody>
             `;
 
-            let dangThue = APP.features.chuNha.quanLyKhachHang.ui.list.showDangThue;
-            html += APP.cache.danhSachKhachHang
+            html += APP.cache.danhSachKhachHang.data
                 .filter(function(dong) {
                     return String(dong.active) === '1';
                 })
@@ -116,7 +115,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
 
 
                     <div style="display: flex; flex-direction:column; gap:10px" class="hide-on-pc">
-                            ${APP.cache.danhSachKhachHang
+                            ${APP.cache.danhSachKhachHang.data
                             .filter(function(dong) {
                                 return String(dong.active) === '1';
                             })
