@@ -82,7 +82,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                     
                     let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
                     console.log(JSON.stringify(APP.cache.danhSachKhachHang_xacMinh));
-                    let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.find(function(dxm){
+                    let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
                         return dxm.idKhachHang == dong.idKhachHang
                     });
 
@@ -147,7 +147,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                                         html2 += 'Trạng thái: ' + thue;
 
                                         let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                                        let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.find(function(dxm){
+                                        let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
                                             return dxm.idKhachHang == dong.idKhachHang
                                         });
                                         
@@ -181,7 +181,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                 </div>
             `;
             $('#chuNha_quanLyKhachHang_list_main').innerHTML = html;
-            activeButton('sidebar_chuNha_khachHang');
+            activeButton('sidebar_chuNha_quanLyKhachHang');
         }
     },
     detail:
