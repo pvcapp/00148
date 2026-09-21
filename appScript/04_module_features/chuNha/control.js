@@ -5,6 +5,9 @@ APP.features.chuNha.control =
         APP.features.chuNha.sidebar.control.init();
         APP.features.chuNha.dashboard.control.init();
         APP.view.ui.showTab('chuaNha', 'dashboard', 'dashboard');
+
+
+        APP.features.chuNha.quanLyKhachHang.control.list.init();
         setTimeout(function()
         {
             APP.features.chuNha.control.getData();
@@ -23,7 +26,7 @@ APP.features.chuNha.control =
                 APP.cache.setting = ketQua.setting || [];
                 APP.cache.danhSachHopDong = ketQua.hopDong || [];
 
-                APP.features.chuNha.quanLyKhachHang.list.render();
+                APP.features.chuNha.quanLyKhachHang.ui.list.render();
                 APP.features.chuNha.quanLyKhuNha.startup();
                 APP.features.chuNha.quanLyPhong.startup();
                 APP.features.chuNha.quanLyHopDong.startup();
