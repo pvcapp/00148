@@ -30,7 +30,7 @@ APP.features.chuNha.quanLyKhuNha.ui =
         },
         render: function()
         {
-            let html = 
+            $('#chuNha_quanLyKhuNha_list_main').innerHTML = 
             `<div class="card">
                 <table class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}" id="chuNha_danhSachKhuNha_table">
                     <thead class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}_header">
