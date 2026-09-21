@@ -1,15 +1,14 @@
-APP.features.chuNha.dashboard = 
-{    
-    render: function()
+APP.features.chuNha.dashboard = {ui: {}, control: {}};
+APP.features.chuNha.dashboard.ui = 
+{   
+    init: function()
     {
         const card_container_data = APP.cache.tongQuan.map(item => ({
             data: item,
             type: 'numberCard_01'
         }));
         const darhboard_part1 = card_container(card_container_data, id ='chuNha_dashboard_tab_container');
-        //Sau này dùng chung APP.view.control.renderTab(); cho dashboard và các loại khác. Id đặt theo chuẩn để show hide
-        //$('#view').appendChild(darhboard_part1);
-        APP.view.addTab(darhboard_part1);
+        APP.view.ui.addTab('chuaNha', 'dashboard', 'dashboard', darhboard_part1);
     }
 };
 

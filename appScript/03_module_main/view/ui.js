@@ -15,10 +15,16 @@ APP.view.ui =
         });
     },
     addTab: function(vaiTro, module, type, el)
-    {
+    {        
+        let id  = vaiTro + '_' + module + '_' + type + '_tab';
+        if ($('#' + id))
+        {
+            console.log('APP.view.ui.addTab: tab id: ' + id + ' đã tồn tại. Không nên ghi đè');
+            return;
+        }
         const tab = document.createElement('div');
-        tab.id  = 
         tab.className = 'view__tab';
+        tab.id = id;
         tab.appendChild(el);
         $('#view').appendChild(tab);
     },

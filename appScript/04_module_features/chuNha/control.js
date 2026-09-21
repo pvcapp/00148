@@ -3,7 +3,8 @@ APP.features.chuNha.control =
     init: function()
     {
         APP.features.chuNha.sidebar.control.init();
-        APP.features.chuNha.dashboard.render();
+        APP.features.chuNha.dashboard.init();
+        APP.view.ui.show('chuaNha', 'dashboard', 'dashboard');
         setTimeout(function()
         {
             APP.features.chuNha.control.getData();
