@@ -8,6 +8,8 @@ APP.features.chuNha.control =
 
 
         APP.features.chuNha.quanLyKhachHang.control.list.init();
+        APP.features.chuNha.quanLyKhuNha.control.list.init();
+        APP.features.chuNha.quanLyPhong.control.list.init();
         setTimeout(function()
         {
             APP.features.chuNha.control.getData();
@@ -27,8 +29,8 @@ APP.features.chuNha.control =
                 APP.cache.danhSachHopDong = ketQua.hopDong || [];
 
                 APP.features.chuNha.quanLyKhachHang.ui.list.render();
-                APP.features.chuNha.quanLyKhuNha.ui.list.init();
-                APP.features.chuNha.quanLyPhong.ui.list.init();
+                APP.features.chuNha.quanLyKhuNha.ui.list.render();
+                APP.features.chuNha.quanLyPhong.ui.list.render();
                 APP.features.chuNha.quanLyHopDong.startup();
                 APP.features.chuNha.setting.startup();
                 
