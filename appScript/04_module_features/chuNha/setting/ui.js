@@ -30,7 +30,7 @@ APP.features.chuNha.setting.ui =
                 type: 'numberCard_01'
             }));
             const settingHTML = card_container(card_container_data);
-            APP.view.ui.addTab('chuaNha', 'setting', 'list', settingHTML);
+            APP.view.ui.addTab('chuaNha', 'setting', 'list', settingHTML,1);
         }
     },
     detail: 

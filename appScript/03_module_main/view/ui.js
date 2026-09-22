@@ -13,29 +13,27 @@ APP.view.ui =
             className: 'view',
             parentId: 'main'
         });
+        
+        APP.view.ui.addTab('home', 'startupScreen', 'loading', loadingBar());
     },
-    addTab: function(vaiTro, module, type, el)
+    addTab: function(vaiTro, module, type, el, override = 0)
     {        
         let id  = vaiTro + '_' + module + '_' + type + '_tab';
         if ($('#' + id))
         {
-            console.log('APP.view.ui.addTab: tab id: ' + id + ' đã tồn tại. Không nên ghi đè');
+            console.log('APP.view.ui.addTab: tab id: ' + id + ' đã tồn tại. Chế dộ ghi đè: ' + override);            
+            if (override == 0) return;
+            $('#' + id).innerHTML = '';
+            tab.appendChild(el);
             return;
         }
+
         const tab = document.createElement('div');
         tab.className = 'view__tab';
         tab.classList.add('hide');
         tab.id = id;
         tab.appendChild(el);
         $('#view').appendChild(tab);
-        if ($('#' + id))
-        {
-            console.log('APP.view.ui.addTab: tab id: ' + id );
-        }
-        else
-        {
-            console.log('APP.view.ui.addTab: chưa thành công: tab id: ' + id );
-        }     
     },
     addElementToTab: function(vaiTro, module, type, el)
     {

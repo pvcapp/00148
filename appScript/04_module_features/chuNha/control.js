@@ -3,7 +3,7 @@ APP.features.chuNha.control =
     init: function()
     {
         APP.features.chuNha.sidebar.control.init();
-        APP.features.chuNha.dashboard.control.init();        
+        APP.features.chuNha.dashboard.control.init();
         APP.features.chuNha.quanLyKhachHang.control.list.init();
         APP.features.chuNha.quanLyKhuNha.control.list.init();
         APP.features.chuNha.quanLyPhong.control.list.init();
