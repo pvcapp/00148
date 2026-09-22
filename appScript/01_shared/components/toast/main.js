@@ -19,7 +19,7 @@ function toast_init()
 }
 
 var hideToastTimeout = setTimeout(function(){}, 0);
-function toast(noiDung = "", thoiGian = 5000, status = 'infor')
+function toast(noiDung = "", thoiGian = 3000, status = 'infor')
 {
     let t = $('#toast');
     t.className = 'toast__container';
