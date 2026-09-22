@@ -20,6 +20,7 @@ APP.features.chuNha.setting.ui =
         },
         render: function()
         {            
+            console.log('chu nha.settig.rendering..');
             const card_container_data = APP.cache.setting.data.map(item => ({
                 data: 
                 {
@@ -30,8 +31,10 @@ APP.features.chuNha.setting.ui =
                 type: 'numberCard_01'
             }));
 
+            
             const settingHTML = card_container(card_container_data);
-            let tab_main = $('#chuNha_setting_list_main');
+            const tab_main = $('#chuNha_setting_list_main');
+            console.log(JSON.stringify(tab_main.innerHTML));
             tab_main.innerHTML = '';
             tab_main.appendChild(settingHTML);
         }
