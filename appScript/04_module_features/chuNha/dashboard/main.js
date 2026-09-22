@@ -22,7 +22,6 @@ APP.features.chuNha.dashboard.ui =
         }));
 
         const darhboard_part1 = card_container(card_container_data, id ='');
-        $('#chuNha_dashboard_list_main').innerHTML = darhboard_part1;
         APP.view.ui.addTab('chuNha', 'dashboard', 'list', darhboard_part1);
         activeButton('sidebar_chuNha_dashboard');
     }
