@@ -37,6 +37,7 @@ APP.features.chuNha.setting.ui =
             console.log(JSON.stringify(tab_main.innerHTML));
             tab_main.innerHTML = '';
             tab_main.appendChild(settingHTML);
+            console.log('mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm' + JSON.stringify(tab_main.innerHTML));
         }
     },
     detail: 
