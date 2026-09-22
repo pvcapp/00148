@@ -13,7 +13,7 @@ APP.ui =
         }
 
         APP.sidebar.ui.hideIfMobile();
-        APP.sidebar.control.setSelectedButton('sidebar_' + APP.state.manHinhHienTai.module);
+        APP.sidebar.control.setSelectedButton('sidebar_' + state.vaiTro + '_' + state.module);
 
         APP.view.ui.showTab(state.vaiTro, state.module, state.type || 'list');
         APP.ui.scrollTop();
