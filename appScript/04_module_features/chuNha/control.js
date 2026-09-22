@@ -9,7 +9,7 @@ APP.features.chuNha.control =
         APP.features.chuNha.quanLyPhong.control.list.init();
         //hopDong
         APP.features.chuNha.setting.control.list.init();
-        APP.ui.setManHinh('chuNha', 'dashboard', 'list');
+        APP.ui.setManHinh('chuNha', 'dashboard', 'dashboard');
 
         setTimeout(function()
         {
