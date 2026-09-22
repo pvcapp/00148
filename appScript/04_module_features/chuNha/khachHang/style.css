@@ -1,0 +1,61 @@
+.formKhachHang 
+{
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 0.6rem;
+}
+
+.formKhachHang .form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formKhachHang .form__field label {
+    font-weight: 500;
+}
+
+.formKhachHang .form__field input,
+.formKhachHang .form__field select,
+.formKhachHang .form__field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.formKhachHang .form__field textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.formKhachHang__cuoi {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+
+    .formKhachHang {
+        grid-template-columns: 1fr;
+    }
+
+    .formKhachHang__cuoi {
+        grid-column: auto;
+    }
+}
+
+
+
+.xac-minh-khach-hang__popup
+{
+    display:none2; 
+    position:fixed; z-index:101; top:0; left:0; 
+    width:100vw; height:100vh; 
+    background:rgba(0,0,0,0.2); 
+    padding:100p 10px 100px 10px;
+}
