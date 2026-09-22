@@ -6,7 +6,7 @@ const APP =
     control: {},
 
     state: {
-        moduleHienTai:
+        manHinhHienTai:
         {
             vaiTro: 'no',
             module: 'home',
