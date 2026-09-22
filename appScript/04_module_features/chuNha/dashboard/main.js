@@ -18,7 +18,7 @@ APP.features.chuNha.dashboard.ui =
             type: 'numberCard_01'
         }));
         const darhboard_part1 = card_container(card_container_data, id ='chuNha_dashboard_tab_container');
-        APP.view.ui.addTab('chuaNha', 'dashboard', 'dashboard', darhboard_part1);
+        APP.view.ui.addTab('chuNha', 'dashboard', 'dashboard', darhboard_part1);
     }
 };
 
