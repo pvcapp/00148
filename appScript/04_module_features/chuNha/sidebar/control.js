@@ -5,13 +5,13 @@ APP.features.chuNha.sidebar.control =
         const moduleDangChon = 'list';
         const sidebar =
         [
-            { module: 'list', ten: 'Home' },
-            { module: 'khuNha', ten: 'Khu nhà' },
-            { module: 'phong', ten: 'Phòng' },
+            { module: 'dashboard', ten: 'Home' },
+            { module: 'quanLyKhuNha', ten: 'Khu nhà' },
+            { module: 'quanLyPhong', ten: 'Phòng' },
             
             { module: 'quanLyKhachHang', ten: 'Khách hàng' },
-            { module: 'hopDong', ten: 'Phòng cho thuê'},
-            { module: 'thanhToan', ten: 'Thanh toán' },
+            { module: 'quanLyHopDong', ten: 'Phòng cho thuê'},
+            { module: 'quanLyThanhToan', ten: 'Thanh toán' },
             { module: 'setting', ten: 'Setting' }
             //{ module: 'noiQuy', ten: 'Nội quy' },   
             //{ module: 'huongDanSuDung', ten: 'Hướng dẫn sử dụng thiết bị' }       
