@@ -33,7 +33,7 @@ APP.features.chuNha.quanLyKhuNha.ui =
             $('#chuNha_quanLyKhuNha_list_main').innerHTML = 
             `<div class="card">
                 <table class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}" id="chuNha_danhSachKhuNha_table">
-                    <thead class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}_header">
+                    <thead class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}__header">
                         <tr>
                             <th>STT</th>
                             <th>Tên khu nhà</th>
