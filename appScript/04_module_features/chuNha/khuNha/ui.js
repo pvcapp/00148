@@ -64,7 +64,7 @@ APP.features.chuNha.quanLyKhuNha.ui =
                             <td>${escapeHtml(dong.diaChi || '')}</td>
                             <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
                             <td>
-                                <div class="deleteButton"
+                                <div class="deleteButton imageButton"
                                     onclick="event.stopPropagation(); xoaKhuNha('${escapeHtml(dong.idKhuNha)}', '${escapeHtml(dong.tenKhuNha || '')}');">
                                     ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px', 'margin-right:6px;', '0.6').render()}
                                 </div>
