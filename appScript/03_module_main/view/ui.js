@@ -58,7 +58,7 @@ APP.view.ui =
         const tab = $('#' + tabId);
         if (!tab) 
         {
-            console.log(tabId);
+            console.log('APP.view.ui: Màn hình này chưa có hoặc chưa sẵn sàng: ' + tabId);
             toast('APP.view.ui: Màn hình này chưa có hoặc chưa sẵn sàng');
             return;
         }
