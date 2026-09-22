@@ -31,7 +31,7 @@ APP.features.chuNha.control =
                 APP.features.chuNha.quanLyKhachHang.ui.list.render();
                 APP.features.chuNha.quanLyKhuNha.ui.list.render();
                 APP.features.chuNha.quanLyPhong.ui.list.render();
-                APP.features.chuNha.quanLyHopDong.startup();
+                //APP.features.chuNha.quanLyHopDong.startup();
                 APP.features.chuNha.setting.startup();
                 
             })
