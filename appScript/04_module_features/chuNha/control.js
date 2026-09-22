@@ -3,14 +3,14 @@ APP.features.chuNha.control =
     init: function()
     {
         APP.features.chuNha.sidebar.control.init();
-        APP.features.chuNha.dashboard.control.init();
-        APP.view.ui.showTab('chuaNha', 'dashboard', 'dashboard');
-
+        APP.features.chuNha.dashboard.control.init();        
         APP.features.chuNha.quanLyKhachHang.control.list.init();
         APP.features.chuNha.quanLyKhuNha.control.list.init();
         APP.features.chuNha.quanLyPhong.control.list.init();
         //hopDong
         APP.features.chuNha.setting.control.list.init();
+        setManHinh('chuNha', 'dashboard', 'list');
+
         setTimeout(function()
         {
             APP.features.chuNha.control.getData();

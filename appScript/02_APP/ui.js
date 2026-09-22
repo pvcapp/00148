@@ -1,5 +1,21 @@
 APP.ui = 
 {
+    init: function()
+    {    
+        //render modal dialogs
+        toast_init();
+        canhBao_init();
+        
+        //Render layout: header, sidebar, view, footer
+        APP.header.control.init();  
+        
+        APP.sidebar.control.init();
+        APP.actionbar.control.init();
+        APP.user.control.init();
+
+        APP.view.control.init();
+        APP.footer.control.init();
+    },
     render: function()
     {
         const state = APP.state.manHinhHienTai;
@@ -17,22 +33,6 @@ APP.ui =
 
         APP.view.ui.showTab(state.vaiTro, state.module, state.type || 'list');
         APP.ui.scrollTop();
-    },
-    init: function()
-    {    
-        //render modal dialogs
-        toast_init();
-        canhBao_init();
-        
-        //Render layout: header, sidebar, view, footer
-        APP.header.control.init();  
-        
-        APP.sidebar.control.init();
-        APP.actionbar.control.init();
-        APP.user.control.init();
-
-        APP.view.control.init();
-        APP.footer.control.init();
     },
     setManHinh: function(vaiTro, module, type)
     {
@@ -87,18 +87,5 @@ APP.ui =
             {
                 tab.style.display = 'none';
             });
-    },
-    showTab: function(vaiTro, module)
-    {
-        APP.ui.hideAllTabs();
-        let tabId = 'tab_' + module;
-        let danhSachId = tabId + '_danhSach';
-        if ($('#' + tabId))
-        {
-            show(tabId);
-            show(danhSachId);
-            return;
-        }
-        APP.ui.hienThiDangPhatTrien('Màn hình');
     }
 };

@@ -38,7 +38,6 @@ APP.control =
         let vaiTro = loginStatus.loaiTaiKhoan;
         
         APP.user.login.ui.hide();
-        APP.ui.setManHinh(vaiTro, 'dashboard', 'list');
         APP.user.token = token;
         APP.control.getStartupData();
     },
