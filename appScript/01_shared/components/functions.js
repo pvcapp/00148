@@ -111,6 +111,7 @@ const boDau = (str) =>
 
 const activeButton = (buttonId) =>
 {
+    console.log('Active button with id: ' + buttonId);
     $('#' + buttonId).classList.remove('button__inactive');
 }
 
