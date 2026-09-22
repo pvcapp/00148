@@ -6,10 +6,11 @@ APP.features.chuNha.control =
         APP.features.chuNha.dashboard.control.init();
         APP.view.ui.showTab('chuaNha', 'dashboard', 'dashboard');
 
-
         APP.features.chuNha.quanLyKhachHang.control.list.init();
         APP.features.chuNha.quanLyKhuNha.control.list.init();
         APP.features.chuNha.quanLyPhong.control.list.init();
+        //hopDong
+        APP.features.chuNha.setting.control.list.init();
         setTimeout(function()
         {
             APP.features.chuNha.control.getData();
@@ -32,7 +33,7 @@ APP.features.chuNha.control =
                 APP.features.chuNha.quanLyKhuNha.ui.list.render();
                 APP.features.chuNha.quanLyPhong.ui.list.render();
                 //APP.features.chuNha.quanLyHopDong.startup();
-                APP.features.chuNha.setting.startup();
+                APP.features.chuNha.setting.ui.list.render();
                 
             })
             .withFailureHandler(function(loi)

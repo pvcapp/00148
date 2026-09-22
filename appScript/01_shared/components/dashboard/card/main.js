@@ -11,7 +11,7 @@ const card = ({data , type = 'detailCard_01'}) =>
     }
 }
 
-const card_container = (data, id ='') =>  //data: [{data: {}, type: 'detailCard_01'}, {data: {}, type: 'numberCard_01'}]
+const card_container = (data, id ='') =>  //data: [{data: {capTion, subcaption, value}, type: 'detailCard_01'}, {data: {}, type: 'numberCard_01'}]
 {
     let container = document.createElement('div');
     container.className = 'card__container';
