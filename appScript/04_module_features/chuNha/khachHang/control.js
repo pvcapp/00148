@@ -11,6 +11,10 @@ APP.features.chuNha.quanLyKhachHang.control =
     detail:
     {
         idKhachHang: '',
+        init: function()
+        {
+            APP.features.chuNha.quanLyKhachHang.ui.detail.xacMinh.init();
+        },
         xacMinh: 
         {
             show: function (idKhachHang)
