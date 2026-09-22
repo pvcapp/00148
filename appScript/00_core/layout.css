@@ -130,7 +130,7 @@ body
     padding: 20px;
 }
 
-.view__content
+.view__tab
 {
     animation: view-slide-in 250ms ease-out;
 }
