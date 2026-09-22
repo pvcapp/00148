@@ -27,6 +27,14 @@ APP.view.ui =
         tab.id = id;
         tab.appendChild(el);
         $('#view').appendChild(tab);
+        if ($('#' + id))
+        {
+            console.log('APP.view.ui.addTab: tab id: ' + id );
+        }
+        else
+        {
+            console.log('APP.view.ui.addTab: chưa thành công: tab id: ' + id );
+        }     
     },
     addElementToTab: function(vaiTro, module, type, el)
     {
@@ -56,7 +64,7 @@ APP.view.ui =
         });
 
         const tab = $('#' + tabId);
-        if (!tab) 
+        if (!tab)
         {
             console.log('APP.view.ui: Màn hình này chưa có hoặc chưa sẵn sàng: ' + tabId);
             toast('APP.view.ui: Màn hình này chưa có hoặc chưa sẵn sàng');
