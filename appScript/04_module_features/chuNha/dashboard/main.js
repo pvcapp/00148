@@ -12,16 +12,6 @@ APP.features.chuNha.dashboard.ui =
 {   
     init: function()
     {
-        const tabHeader = document.createElement('div');
-        tabHeader.className = 'tab__header';
-        tabHeader.innerHTML = `<span class="card__caption">HOME</span>`;
-        APP.view.ui.addTab('chuNha', 'dashboard', 'list', tabHeader);    
-
-        const tab_main = document.createElement('div');
-        tab_main.id = 'chuNha_dashboard_list_main';
-        tab_main.className = 'tab__main';
-        tab_main.appendChild(loadingBar());
-        APP.view.ui.addElementToTab('chuNha', 'setting', 'list', tab_main);   
         APP.features.chuNha.dashboard.ui.render();
     },
     render: function()
@@ -31,8 +21,9 @@ APP.features.chuNha.dashboard.ui =
             type: 'numberCard_01'
         }));
 
-        const darhboard_part1 = card_container(card_container_data, id ='chuNha_dashboard_tab_container');
+        const darhboard_part1 = card_container(card_container_data, id ='');
         $('#chuNha_dashboard_list_main').innerHTML = darhboard_part1;
+        APP.view.ui.addTab('chuNha', 'dashboard', 'list', darhboard_part1);
         activeButton('sidebar_chuNha_dashboard');
     }
 };
