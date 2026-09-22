@@ -24,6 +24,7 @@ APP.view.ui =
         }
         const tab = document.createElement('div');
         tab.className = 'view__tab';
+        tab.classList.add('hide');
         tab.id = id;
         tab.appendChild(el);
         $('#view').appendChild(tab);
@@ -71,5 +72,6 @@ APP.view.ui =
             return;
         }
         tab.style.display = '';
+        tab.classList.remove('hide');
     }
 };

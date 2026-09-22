@@ -12,7 +12,6 @@ APP.features.chuNha.dashboard.ui =
 {   
     init: function()
     {
-        console.log('chu nha dashboard init: ');
         const card_container_data = APP.cache.tongQuan.map(item => ({
             data: item,
             type: 'numberCard_01'
