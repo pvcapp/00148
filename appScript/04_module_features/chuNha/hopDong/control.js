@@ -1,4 +1,4 @@
-APP.features.chuNha.hopDong = 
+APP.features.chuNha.quanLyHopDong = 
 {
     control:
     {

@@ -4,10 +4,10 @@ APP.features.chuNha =
     control: {},
     
     dashboard: {},
-    khuNha: {},
-    phong: {},
+    quanLyKhuNha: {},
+    quanLyPhong: {},
     quanLyKhachHang: {},
-    hopDong: {},
+    quanLyHopDong: {},
     sidebar: {},
     setting: {}
 };
