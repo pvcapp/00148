@@ -56,8 +56,12 @@ APP.view.ui =
         });
 
         const tab = $('#' + tabId);
-        if (!tab) {toast('APP.view.ui: Màn hình này chưa có hoặc chưa sẵn sàng');
-            return;}
+        if (!tab) 
+        {
+            console.log(tabId);
+            toast('APP.view.ui: Màn hình này chưa có hoặc chưa sẵn sàng');
+            return;
+        }
         tab.style.display = '';
     }
 };
