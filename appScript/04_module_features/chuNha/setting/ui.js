@@ -20,13 +20,12 @@ APP.features.chuNha.setting.ui =
         },
         render: function()
         {            
-            console.log('chu nha.settig.rendering..');
             const card_container_data = APP.cache.setting.data.map(item => ({
                 data: 
                 {
                     caption: item.tenCauHinh,
                     subCaption: item.moTa,
-                    value: item.giaTri
+                    value: formatNumber(item.giaTri)
                 },
                 type: 'numberCard_01'
             }));
@@ -34,10 +33,8 @@ APP.features.chuNha.setting.ui =
             
             const settingHTML = card_container(card_container_data);
             const tab_main = $('#chuNha_setting_list_main');
-            console.log(JSON.stringify(tab_main.innerHTML));
             tab_main.innerHTML = '';
             tab_main.appendChild(settingHTML);
-            console.log('mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm' + JSON.stringify(tab_main.innerHTML));
         }
     },
     detail: 
