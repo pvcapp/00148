@@ -190,7 +190,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
         style: 'detail_01',
         init: function()
         {
-            
+               
         },
         xacMinh:
         {
