@@ -135,7 +135,6 @@ textarea {
 }
 .imageButton:active 
 {
-    transform: scale(1.1);
     transform: translateY(0px);
 }
 
