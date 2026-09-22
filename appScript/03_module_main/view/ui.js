@@ -15,16 +15,22 @@ APP.view.ui =
         });
         
         APP.view.ui.addTab('home', 'startupScreen', 'loading', loadingBar());
+        APP.view.ui.showLoading();
+    },
+    showLoading: function()
+    {
+        APP.view.ui.showTab('home', 'startupScreen', 'loading');
     },
     addTab: function(vaiTro, module, type, el, override = 0)
-    {        
+    {
         let id  = vaiTro + '_' + module + '_' + type + '_tab';
         if ($('#' + id))
         {
             console.log('APP.view.ui.addTab: tab id: ' + id + ' đã tồn tại. Chế dộ ghi đè: ' + override);            
             if (override == 0) return;
-            $('#' + id).innerHTML = '';
-            tab.appendChild(el);
+            var existingTab = $('#' + id);
+            existingTab.innerHTML = '';
+            existingTab.appendChild(el);
             return;
         }
 
