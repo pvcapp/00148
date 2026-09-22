@@ -91,7 +91,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
                     {
                         xacMinh = `
                             <div class="sidebar__button" style="width: 170px;font-size: 14px;" 
-                                onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.update.xacMinh.show('${dong.idKhachHang}');">                        
+                                onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.control.detail.xacMinh.show('${dong.idKhachHang}');">                        
                                 Xác minh
                             </div>
                         `;
@@ -190,7 +190,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
         style: 'detail_01',
         init: function()
         {
-               
+
         },
         xacMinh:
         {
