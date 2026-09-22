@@ -30,8 +30,7 @@ APP.features.chuNha.quanLyKhuNha.ui =
         },
         render: function()
         {
-            $('#chuNha_quanLyKhuNha_list_main').innerHTML = 
-            `<div class="card">
+            $('#chuNha_quanLyKhuNha_list_main').innerHTML = `
                 <table class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}" id="chuNha_danhSachKhuNha_table">
                     <thead class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}__header">
                         <tr>
@@ -39,13 +38,13 @@ APP.features.chuNha.quanLyKhuNha.ui =
                             <th>Tên khu nhà</th>
                             <th>Địa chỉ</th>
                             <th>Trạng thái</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         
                     </tbody>
-                </table>
-            </div>`;
+                </table>`;
             
 
             let dataHtml = '';

@@ -26,9 +26,8 @@ APP.features.chuNha.quanLyPhong.ui =
         render: function()
         {
             $('#chuNha_quanLyPhong_list_main').innerHTML = 
-            `<div class="card">
-                <table class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}" id="chuNha_danhSachPhong_table">
-                    <thead class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}_header">
+            `<table class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}" id="chuNha_danhSachPhong_table">
+                    <thead class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}__header">
                         <tr>
                             <th>Phòng</th>
                             <th>Khu nhà</th>
@@ -68,7 +67,8 @@ APP.features.chuNha.quanLyPhong.ui =
 
                     
                     dataHtml += `
-                        <tr onclick="chuNha_editPhong('${escapeHtml(dong.idPhong)}')">
+                        <tr class="${APP.features.chuNha.quanLyPhong.ui.list.tableStyle}__row"
+                            onclick="chuNha_editPhong('${escapeHtml(dong.idPhong)}')">
                             <td>${escapeHtml(dong.tenPhong || '')}</td>
                             <td>${escapeHtml(tenKhuNha || '')}</td>
                             <td>${escapeHtml(dong.tang || '')}</td>
