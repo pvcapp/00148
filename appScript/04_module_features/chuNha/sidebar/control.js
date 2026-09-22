@@ -2,10 +2,10 @@ APP.features.chuNha.sidebar.control =
 {
     init: function()
     {
-        const moduleDangChon = 'dashboard';
+        const moduleDangChon = 'list';
         const sidebar =
         [
-            { module: 'dashboard', ten: 'Home' },
+            { module: 'list', ten: 'Home' },
             { module: 'khuNha', ten: 'Khu nhà' },
             { module: 'phong', ten: 'Phòng' },
             
