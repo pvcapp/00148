@@ -15,7 +15,7 @@ APP.features.chuNha.setting.ui =
             const tab_main = document.createElement('div');
             tab_main.id = 'chuNha_setting_list_main';
             tab_main.className = 'tab__main';
-            tab_main.appendChild(loadingBar());
+                tab_main.appendChild(loadingBar());
             APP.view.ui.addElementToTab('chuNha', 'setting', 'list', tab_main);     
         },
         render: function()
@@ -29,8 +29,11 @@ APP.features.chuNha.setting.ui =
                 },
                 type: 'numberCard_01'
             }));
+
             const settingHTML = card_container(card_container_data);
-            APP.view.ui.addTab('chuaNha', 'setting', 'list', settingHTML,1);
+            let tab_main = $('#chuNha_setting_list_main');
+            tab_main.innerHTML = '';
+            tab_main.appendChild(settingHTML);
         }
     },
     detail: 
