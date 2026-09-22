@@ -198,9 +198,10 @@ APP.features.chuNha.quanLyKhachHang.ui =
             {
                 const popup = div({
                     id: 'formKhachHang_xacMinhThongTin_popup',
-                    className: 'hide xac-minh-khach-hang__popup',
+                    className: 'xac-minh-khach-hang__popup',
                     parent: document.body
                 });
+                popup.classList.add('hide');
 
                 popup.innerHTML = `
                     <center>        
