@@ -245,7 +245,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
             render: function()
             {
                 let idKhachHang = APP.features.chuNha.quanLyKhachHang.ui.detail.idKhachHang;
-                let phieuXacMinh = APP.cache.danhSachKhachHang_xacMinh.find(
+                let phieuXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(
                     function(kh)
                     {
                         return kh.idKhachHang == idKhachHang;
