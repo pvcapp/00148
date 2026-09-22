@@ -15,6 +15,7 @@ APP.features.chuNha.quanLyKhachHang.control =
         {
             show: function (idKhachHang)
             {
+                console.log('control detail.xacminh.show. idKhachHang: ' + idKhachHang);
                 APP.features.chuNha.quanLyKhachHang.control.detail.idKhachHang = idKhachHang;
                 APP.features.chuNha.quanLyKhachHang.ui.detail.xacMinh.render();
                 show('formKhachHang_xacMinhThongTin_popup');
