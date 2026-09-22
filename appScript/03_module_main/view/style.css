@@ -17,7 +17,7 @@ view :
 
 .view__tab
 {
-    
+    width:auto;
 }
 
 .tab_container
