@@ -53,9 +53,8 @@
 
 .xac-minh-khach-hang__popup
 {
-    display:none2; 
     position:fixed; z-index:101; top:0; left:0; 
     width:100vw; height:100vh; 
     background:rgba(0,0,0,0.2); 
-    padding:100p 10px 100px 10px;
+    padding:100px 10px 100px 10px;
 }
