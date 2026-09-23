@@ -14,12 +14,13 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                     <option value="1">Khách hàng đã thuê</option>
                     <option value="2">Tất cả</option>
                 </select>
-            </div>
-
-            <div class="button" style="width: 170px;font-size: 14px;" onclick="APP.features.chuNha.quanLyKhachHang.addNew.show();">
-                ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
-                Khách hàng mới
             </div>`;
+        tabHeader.appendChild(button({
+            text: 'Khách hàng mới',
+            type: 'button_01',
+            iconSrc: 'https://pvcapp.github.io/00148/img/new.svg',
+            onclick: () => APP.features.chuNha.quanLyKhachHang.addNew.show()
+            }));
         APP.view.ui.addTab('chuNha', 'quanLyKhachHang', 'list', tabHeader);
         
         const tab_main = document.createElement('div');
