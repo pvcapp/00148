@@ -34,5 +34,10 @@ APP.features.chuNha.quanLyKhachHang.ui =
     init: function()
     {
         
+    },
+    render: function()
+    {
+        //Chỉ render list:
+        APP.features.chuNha.quanLyKhachHang.detail.ui.render();
     }
 };
