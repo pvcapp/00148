@@ -33,8 +33,8 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
     render: function()
     {
         let html = `
-                <table class="${APP.features.chuNha.quanLyKhachHang.ui.list.tableStyle} hide-on-mobile">
-                    <thead class="${APP.features.chuNha.quanLyKhachHang.ui.list.tableStyle}__header">
+                <table class="${APP.features.chuNha.quanLyKhachHang.list.style.tableStyle} hide-on-mobile">
+                    <thead class="${APP.features.chuNha.quanLyKhachHang.list.style.tableStyle}__header">
                         <tr>
                             <th>Họ tên</th>
                             <th>Email</th>
@@ -52,7 +52,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 return String(dong.active) === '1';
             })
             .map(function(dong) {
-                let d = '<tr class="' + APP.features.chuNha.quanLyKhachHang.ui.list.tableStyle + '__row" onclick="APP.features.chuNha.quanLyKhachHang.update.show('
+                let d = '<tr class="' + APP.features.chuNha.quanLyKhachHang.list.style.tableStyle + '__row" onclick="APP.features.chuNha.quanLyKhachHang.update.show('
                     + "'" + dong.idKhachHang + "'" 
                     + ')">';
                 d += '<td>' + dong.hoVaTen + '</td>';

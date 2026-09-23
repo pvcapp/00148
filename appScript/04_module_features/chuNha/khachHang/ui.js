@@ -38,6 +38,6 @@ APP.features.chuNha.quanLyKhachHang.ui =
     render: function()
     {
         //Chỉ render list:
-        APP.features.chuNha.quanLyKhachHang.detail.ui.render();
+        APP.features.chuNha.quanLyKhachHang.list.ui.render();
     }
 };
