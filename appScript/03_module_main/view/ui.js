@@ -14,7 +14,7 @@ APP.view.ui =
             parentId: 'main'
         });
         
-        APP.view.ui.addTab('home', 'startupScreen', 'loading', loadingBar());
+        //APP.view.ui.addTab('home', 'startupScreen', 'loading', loadingBar());
         APP.view.ui.showLoading();
     },
     showLoading: function()
@@ -77,5 +77,9 @@ APP.view.ui =
         }
         tab.style.display = '';
         tab.classList.remove('hide');
+    },
+    clear: function()
+    {
+        $('#view').innerHTML = '';
     }
 };

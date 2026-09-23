@@ -45,6 +45,7 @@
             let token = APP.user.token;
             APP.user.menu.ui.hide();
             APP.sidebar.ui.clear();
+            APP.view.ui.clear();
 
             APP.ui.hideAllTabs();
             APP.ui.hideAllForms();
