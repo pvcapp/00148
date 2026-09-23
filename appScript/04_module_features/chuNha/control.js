@@ -4,7 +4,7 @@ APP.features.chuNha.control =
     {
         APP.features.chuNha.sidebar.control.init();
         APP.features.chuNha.dashboard.control.init();
-        APP.features.chuNha.quanLyKhachHang.control.list.init();
+        APP.features.chuNha.quanLyKhachHang.list.control.init();
         APP.features.chuNha.quanLyKhuNha.control.list.init();
         APP.features.chuNha.quanLyPhong.control.list.init();
         //hopDong
@@ -41,52 +41,5 @@ APP.features.chuNha.control =
                 alert('Có lỗi khi tải dữ liệu cần thiết cho giao diện chủ nhà:\n' + loi.message);
             })
             .sv_chuNha_getData(APP.user.token);
-    },
-    quanLyKhachHang:
-    {
-        danhSach:{},
-        addNew:{},
-        update:{},
-        delete: {}
-    },
-    quanLyKhuNha:
-    {
-        startup: function()
-        {
-            chuNha_showDanhSachKhuNha(APP.cache.danhSachKhuNha || []);
-            activeButton('sidebar_chuNha_khuNha');
-        }
-    },
-    quanLyPhong:
-    {
-        startup: function()
-        {
-            chuNha_showDanhSachPhong(APP.cache.danhSachPhong || []);
-            activeButton('sidebar_chuNha_phong');
-        }
-    },
-    quanLyHopDong:
-    {
-        startup: function()
-        {
-            chuNha_showDanhSachHopDong(APP.cache.danhSachHopDong || []);
-            activeButton('sidebar_chuNha_hopDong');
-        }
-    },   
-    quanLyThuTien:
-    {
-        startup: function()
-        {
-            buildDanhSachThuTien(APP.cache.thuTien || []);
-            activeButton('sidebar_chuNha_thuTien');
-        }
-    },
-    setting:
-    {
-        startup: function()
-        {
-            chuNha_showSetting(APP.cache.setting);
-            activeButton('sidebar_chuNha_setting');
-        }
     }
 };
