@@ -12,7 +12,7 @@ APP.features.chuNha.quanLyKhachHang =
         },
         update: function()
         {
-
+            
         }
     }
 };

@@ -19,7 +19,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
             text: 'Khách hàng mới',
             type: 'button_01',
             iconSrc: 'https://pvcapp.github.io/00148/img/new.svg',
-            onclick: () => APP.features.chuNha.quanLyKhachHang.addNew.show()
+            onclick: () => APP.features.chuNha.quanLyKhachHang.form.control.showAddNew()
             }));
         APP.view.ui.addTab('chuNha', 'quanLyKhachHang', 'list', tabHeader);
         

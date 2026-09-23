@@ -22,3 +22,6 @@ function form_renderField({type = 'text', id, value = '', placeholder = '', capt
     rdHTML += '</div>';
     return rdHTML;
 }
+
+
+

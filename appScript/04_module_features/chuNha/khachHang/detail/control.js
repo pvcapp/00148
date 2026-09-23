@@ -19,7 +19,7 @@ APP.features.chuNha.quanLyKhachHang.detail.control =
         {
             hide('formKhachHang_xacMinhThongTin_popup');
         },
-        ok: function() 
+        ok: async function() 
         {
             let idKhachHang = APP.features.chuNha.quanLyKhachHang.control.detail.idKhachHang;
             const khachHang = APP.cache.danhSachKhachHang_xacMinh.data.find(function(khach) 
@@ -54,18 +54,16 @@ APP.features.chuNha.quanLyKhachHang.detail.control =
             //update thông tin khách hàng            
             APP.features.chuNha.quanLyKhachHang.update.submit();
             //Xóa phiếu chờ xác minh
-            google.script.run
-                .withSuccessHandler(function(kh)
-                {                
-                    toast('Đã xác minh thông tin Khách hàng', 1500);
-                    APP.features.chuNha.quanLyKhachHang.update.xacMinh.hide();
-                })
-                .withFailureHandler(function(loi)
-                {
-                    alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
-                })
-                .sv_capNhatKhachHang_xacMinh_xoaDong(idKhachHang, APP.user.token);
-            
+            try
+            {
+                await APP.features.chuNha.quanLyKhachHang.detail.api.xacMinh.xoaPhieu(idKhachHang);
+                toast('Đã xác minh thông tin Khách hàng', 1500);
+                APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.hide();
+            }
+            catch (er)
+            {
+                canhBao('Có lỗi khi cập nhật Khách hàng:\n' + er.message);
+            }
         },
         notOk: function() 
         {

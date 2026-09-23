@@ -9,18 +9,17 @@ APP.features.chuNha.quanLyKhachHang =
             cardStyle: 'detailCard_01'
         },
         ui: {},
-        control: {},
-        api: {}
+        control: {}
     },
     detail:
     {
         style: 'detail_01',
         ui: {},
-        control: {},
-        api: {}
+        control: {}
     },
     form:
     {
+        mode: 'new',
         style: 'form_01',
         ui: {},
         control: {},

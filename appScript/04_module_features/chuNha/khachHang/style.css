@@ -31,7 +31,7 @@
     resize: vertical;
 }
 
-.formKhachHang__cuoi {
+.form__footer {
     grid-column: 1 / -1;
     display: flex;
     gap: 0.6rem;
@@ -44,7 +44,7 @@
         grid-template-columns: 1fr;
     }
 
-    .formKhachHang__cuoi {
+    .form__footer {
         grid-column: auto;
     }
 }
