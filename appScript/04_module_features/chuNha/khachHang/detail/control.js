@@ -3,7 +3,8 @@ APP.features.chuNha.quanLyKhachHang.detail.control =
     idKhachHang: '',
     init: function()
     {
-        APP.features.chuNha.quanLyKhachHang.ui.detail.xacMinh.init();
+        APP.features.chuNha.quanLyKhachHang.detail.ui.init();
+        
     },
     xacMinh:
     {

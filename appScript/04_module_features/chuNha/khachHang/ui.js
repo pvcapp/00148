@@ -33,8 +33,6 @@ APP.features.chuNha.quanLyKhachHang.ui =
 {
     init: function()
     {
-        APP.features.chuNha.quanLyKhachHang.list.ui.init();
-        APP.features.chuNha.quanLyKhachHang.detail.ui.init();
-        //APP.features.chuNha.quanLyKhachHang.form.ui.init();
+        
     }
 };
