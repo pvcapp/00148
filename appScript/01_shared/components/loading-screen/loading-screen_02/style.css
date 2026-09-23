@@ -23,7 +23,7 @@
             135deg,
             var(--color-primary) 0%,
             var(--color-primary-dark) 48%,
-            var(--color-light) 100%
+            var(--color-primary-light) 100%
         );
 
     
