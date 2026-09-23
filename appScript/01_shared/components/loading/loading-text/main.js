@@ -1,5 +1,6 @@
 const loadingText = ({id = '', text = '', type='loadingText_01'} = {}) => 
 {
+    if (text == '') text = 'Đang xử lý';
     switch (type)
     {
         case 'loadingText_01':
