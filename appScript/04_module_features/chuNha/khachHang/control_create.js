@@ -6,16 +6,16 @@ APP.features.chuNha.quanLyKhachHang.addNew =
     },
     reset: function()
     {
-        const danhSachInput = document.querySelectorAll('#themMoiKhachHang_form input:not([readonly]), ' + '#themMoiKhachHang_form textarea');
+        const danhSachInput = document.querySelectorAll('#formKhachHang_input_form input:not([readonly]), ' + '#formKhachHang_input_form textarea');
         danhSachInput.forEach(function(input) {
             input.value = '';
         });
-        $('#themMoiKhachHang_gioiTinh').value = '';
+        $('#formKhachHang_input_gioiTinh').value = '';
     },
     show: function()
     {
         APP.features.chuNha.quanLyKhachHang.addNew.reset();
-        $('#themMoiKhachHang_caption').innerText = 'THÊM KHÁCH HÀNG MỚI';        
+        $('#formKhachHang_input_caption').innerText = 'THÊM KHÁCH HÀNG MỚI';        
         
         hide('chuNha_khachHang_updateButton');
         hide('chuNha_khachHang_update_reset');
@@ -27,37 +27,37 @@ APP.features.chuNha.quanLyKhachHang.addNew =
         
         
         hide('tab_chuNha_khachHang_danhSach'); 
-        show('themMoiKhachHang_form', 'grid');
+        show('formKhachHang_input_form', 'grid');
     },
     hide: function()
     {
         APP.features.chuNha.quanLyKhachHang.addNew.reset();
-        hide('themMoiKhachHang_form');
+        hide('formKhachHang_input_form');
         show('tab_chuNha_khachHang_danhSach');
     },
     readData: function()
     {
         return {
-            idKhachHang: $('#themMoiKhachHang_idKhachHang').value || '',
-            hoVaTen: $('#themMoiKhachHang_hoVaTen').value || '',
-            soCCCD: $('#themMoiKhachHang_soCCCD').value || '',
+            idKhachHang: $('#formKhachHang_input_idKhachHang').value || '',
+            hoVaTen: $('#formKhachHang_input_hoVaTen').value || '',
+            soCCCD: $('#formKhachHang_input_soCCCD').value || '',
 
-            ngaySinh: $('#themMoiKhachHang_ngaySinh').value || '',
-            thangSinh: $('#themMoiKhachHang_thangSinh').value || '',
-            namSinh: $('#themMoiKhachHang_namSinh').value || '',
+            ngaySinh: $('#formKhachHang_input_ngaySinh').value || '',
+            thangSinh: $('#formKhachHang_input_thangSinh').value || '',
+            namSinh: $('#formKhachHang_input_namSinh').value || '',
 
-            gioiTinh: $('#themMoiKhachHang_gioiTinh').value || '',
-            dienThoai: $('#themMoiKhachHang_dienThoai').value || '',
-            email: $('#themMoiKhachHang_email').value || '',
+            gioiTinh: $('#formKhachHang_input_gioiTinh').value || '',
+            dienThoai: $('#formKhachHang_input_dienThoai').value || '',
+            email: $('#formKhachHang_input_email').value || '',
 
-            diaChiThuongTru: $('#themMoiKhachHang_diaChiThuongTru').value || '',
-            ngheNghiep: $('#themMoiKhachHang_ngheNghiep').value || '',
+            diaChiThuongTru: $('#formKhachHang_input_diaChiThuongTru').value || '',
+            ngheNghiep: $('#formKhachHang_input_ngheNghiep').value || '',
 
-            anhKhach: $('#themMoiKhachHang_anhKhach').value || '',
-            anhCCCDMatTruoc: $('#themMoiKhachHang_anhCCCDMatTruoc').value || '',
-            anhCCCDMatSau: $('#themMoiKhachHang_anhCCCDMatSau').value || '',  
+            anhKhach: $('#formKhachHang_input_anhKhach').value || '',
+            anhCCCDMatTruoc: $('#formKhachHang_input_anhCCCDMatTruoc').value || '',
+            anhCCCDMatSau: $('#formKhachHang_input_anhCCCDMatSau').value || '',  
 
-            ghiChu: $('#themMoiKhachHang_ghiChu').value || '',
+            ghiChu: $('#formKhachHang_input_ghiChu').value || '',
             active: '1'
         };
     },

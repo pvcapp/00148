@@ -50,7 +50,7 @@ APP.ui =
     hideAllForms: function()
     {
         [
-            'themMoiKhachHang_form',
+            'formKhachHang_input_form',
             'khuNha_edit_form',
             'themMoiKhuNha_form',
             'themMoiPhong_form',

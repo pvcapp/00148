@@ -26,7 +26,7 @@ const button = ({
                 onclick,
                 onColor
             });
-
+        case 'onlyIconButton':
         case 'onlyIconButton_01':
             return onlyIconButton_01({
                 id,

@@ -23,7 +23,10 @@ APP.features.chuNha.quanLyKhachHang =
     {
         mode: 'new',
         style: 'form_01',
+        idKhachHang: '',
         ui: {},
+            thongTinCoBan: {},
+            thongTinChiTiet: {},
         control: {},
         api: {}
     }

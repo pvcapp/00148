@@ -4,51 +4,51 @@ APP.features.chuNha.quanLyKhachHang.update =
     idKhachHang: '',
     loadData: function(duLieu)
     {
-        $('#themMoiKhachHang_idKhachHang').value = duLieu.idKhachHang || '';
-        $('#themMoiKhachHang_hoVaTen').value = duLieu.hoVaTen || '';
-        $('#themMoiKhachHang_soCCCD').value = duLieu.soCCCD || '';
+        $('#formKhachHang_input_idKhachHang').value = duLieu.idKhachHang || '';
+        $('#formKhachHang_input_hoVaTen').value = duLieu.hoVaTen || '';
+        $('#formKhachHang_input_soCCCD').value = duLieu.soCCCD || '';
 
-        $('#themMoiKhachHang_ngaySinh').value = duLieu.ngaySinh || '';
-        $('#themMoiKhachHang_thangSinh').value = duLieu.thangSinh || '';
-        $('#themMoiKhachHang_namSinh').value = duLieu.namSinh || '';
+        $('#formKhachHang_input_ngaySinh').value = duLieu.ngaySinh || '';
+        $('#formKhachHang_input_thangSinh').value = duLieu.thangSinh || '';
+        $('#formKhachHang_input_namSinh').value = duLieu.namSinh || '';
     
-        $('#themMoiKhachHang_gioiTinh').value = duLieu.gioiTinh || '';
-        $('#themMoiKhachHang_dienThoai').value = duLieu.dienThoai || '';
-        $('#themMoiKhachHang_email').value = duLieu.email || '';
+        $('#formKhachHang_input_gioiTinh').value = duLieu.gioiTinh || '';
+        $('#formKhachHang_input_dienThoai').value = duLieu.dienThoai || '';
+        $('#formKhachHang_input_email').value = duLieu.email || '';
 
-        $('#themMoiKhachHang_diaChiThuongTru').value = duLieu.diaChiThuongTru || '';
-        $('#themMoiKhachHang_ngheNghiep').value = duLieu.ngheNghiep || '';
+        $('#formKhachHang_input_diaChiThuongTru').value = duLieu.diaChiThuongTru || '';
+        $('#formKhachHang_input_ngheNghiep').value = duLieu.ngheNghiep || '';
 
-        $('#themMoiKhachHang_anhKhach').value = duLieu.anhKhach || '';
-        $('#themMoiKhachHang_anhCCCDMatTruoc').value = duLieu.anhCCCDMatTruoc || '';
-        $('#themMoiKhachHang_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
+        $('#formKhachHang_input_anhKhach').value = duLieu.anhKhach || '';
+        $('#formKhachHang_input_anhCCCDMatTruoc').value = duLieu.anhCCCDMatTruoc || '';
+        $('#formKhachHang_input_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
 
-        $('#themMoiKhachHang_ghiChu').value = duLieu.ghiChu || '';
-        $('#themMoiKhachHang_active').value = '1';
+        $('#formKhachHang_input_ghiChu').value = duLieu.ghiChu || '';
+        $('#formKhachHang_input_active').value = '1';
     },
     readData: function()
     {
         return {
-            idKhachHang: $('#themMoiKhachHang_idKhachHang').value || '',
-            hoVaTen: $('#themMoiKhachHang_hoVaTen').value || '',
-            soCCCD: $('#themMoiKhachHang_soCCCD').value || '',
+            idKhachHang: $('#formKhachHang_input_idKhachHang').value || '',
+            hoVaTen: $('#formKhachHang_input_hoVaTen').value || '',
+            soCCCD: $('#formKhachHang_input_soCCCD').value || '',
 
-            ngaySinh: $('#themMoiKhachHang_ngaySinh').value || '',
-            thangSinh: $('#themMoiKhachHang_thangSinh').value || '',
-            namSinh: $('#themMoiKhachHang_namSinh').value || '',
+            ngaySinh: $('#formKhachHang_input_ngaySinh').value || '',
+            thangSinh: $('#formKhachHang_input_thangSinh').value || '',
+            namSinh: $('#formKhachHang_input_namSinh').value || '',
 
-            gioiTinh: $('#themMoiKhachHang_gioiTinh').value || '',
-            dienThoai: $('#themMoiKhachHang_dienThoai').value || '',
-            email: $('#themMoiKhachHang_email').value || '',
+            gioiTinh: $('#formKhachHang_input_gioiTinh').value || '',
+            dienThoai: $('#formKhachHang_input_dienThoai').value || '',
+            email: $('#formKhachHang_input_email').value || '',
 
-            diaChiThuongTru: $('#themMoiKhachHang_diaChiThuongTru').value || '',
-            ngheNghiep: $('#themMoiKhachHang_ngheNghiep').value || '',
+            diaChiThuongTru: $('#formKhachHang_input_diaChiThuongTru').value || '',
+            ngheNghiep: $('#formKhachHang_input_ngheNghiep').value || '',
 
-            anhKhach: $('#themMoiKhachHang_anhKhach').value || '',
-            anhCCCDMatTruoc: $('#themMoiKhachHang_anhCCCDMatTruoc').value || '',
-            anhCCCDMatSau: $('#themMoiKhachHang_anhCCCDMatSau').value || '',  
+            anhKhach: $('#formKhachHang_input_anhKhach').value || '',
+            anhCCCDMatTruoc: $('#formKhachHang_input_anhCCCDMatTruoc').value || '',
+            anhCCCDMatSau: $('#formKhachHang_input_anhCCCDMatSau').value || '',  
 
-            ghiChu: $('#themMoiKhachHang_ghiChu').value || '',
+            ghiChu: $('#formKhachHang_input_ghiChu').value || '',
             active: '1'
         };
     },
@@ -68,7 +68,7 @@ APP.features.chuNha.quanLyKhachHang.update =
         APP.features.chuNha.quanLyKhachHang.update.loadData(khachHang);
         APP.features.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
 
-        $('#themMoiKhachHang_caption').innerText = 'CẬP NHẬT THÔNG TIN';
+        $('#formKhachHang_input_caption').innerText = 'CẬP NHẬT THÔNG TIN';
         show('chuNha_khachHang_updateButton');
         show('chuNha_khachHang_update_reset');
 
@@ -78,12 +78,12 @@ APP.features.chuNha.quanLyKhachHang.update =
         show('formKhachHang_deleteButton');        
 
         hide('tab_chuNha_khachHang_danhSach'); 
-        show('themMoiKhachHang_form', 'grid');
+        show('formKhachHang_input_form', 'grid');
     },
     hide: function()
     {
         show('tab_chuNha_khachHang_danhSach'); 
-        hide('themMoiKhachHang_form', 'grid');
+        hide('formKhachHang_input_form', 'grid');
     },
     submit: async function()
     {

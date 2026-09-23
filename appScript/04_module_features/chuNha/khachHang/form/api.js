@@ -1,18 +1,15 @@
-APP.features.chuNha.quanLyKhachHang = 
+APP.features.chuNha.quanLyKhachHang.form.api = 
 {
-    api: 
+    get: function ()
     {
-        get: function ()
-        {
 
-        },
-        create: function()
-        {
+    },
+    create: function()
+    {
 
-        },
-        update: function()
-        {
+    },
+    update: function()
+    {
 
-        }
-    }
+    }    
 };

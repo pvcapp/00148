@@ -28,7 +28,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui =
         popup.innerHTML = `
             <center>        
                 <div class="card" style="max-width: 400px;background: white;margin-top: 24px;;">
-                    <div class="card__caption" id="themMoiKhachHang_caption" style="grid-column:span 2;">
+                    <div class="card__caption" id="formKhachHang_input_caption" style="grid-column:span 2;">
                         KHÁCH HÀNG ĐÃ GỬI YÊU CẦU CẬP NHẬT THÔNG TIN MỚI:
                     </div>
                     <div class="card" style="max-width:400px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;text-align: left;">
