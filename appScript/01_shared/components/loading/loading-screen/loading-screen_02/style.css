@@ -59,16 +59,46 @@
 
     border-radius: 50%;
 
-    border: 10px solid rgba(255, 255, 255, 0.28);
+    background:
+        conic-gradient(
+            from -90deg,
 
-    border-top-color: white;
-    border-right-color: rgba(255, 255, 255, 0.9);
+            transparent 0deg,
+
+            rgba(255,255,255,0.08) 10deg,
+            rgba(255,255,255,0.35) 22deg,
+            rgba(255,255,255,0.75) 34deg,
+            white 45deg,
+
+            white 115deg,
+
+            rgba(255,255,255,0.75) 126deg,
+            rgba(255,255,255,0.35) 138deg,
+            rgba(255,255,255,0.08) 150deg,
+
+            transparent 162deg,
+            transparent 360deg
+        );
+
+    -webkit-mask:
+        radial-gradient(
+            circle,
+            transparent 0 40px,
+            #000 41px 100%
+        );
+
+    mask:
+        radial-gradient(
+            circle,
+            transparent 0 40px,
+            #000 41px 100%
+        );
 
     animation: spin 1.1s linear infinite;
 
     filter:
         drop-shadow(
-            0 5px 12px rgba(40, 50, 120, 0.15)
+            0 0 6px rgba(255,255,255,0.25)
         );
 }
 
@@ -145,7 +175,7 @@
 
     animation:
         loadingCirclePulse
-        1.8s ease-in-out infinite;
+        2.4s ease-in-out infinite;
 }
 
 
