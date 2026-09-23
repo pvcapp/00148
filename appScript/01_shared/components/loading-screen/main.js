@@ -12,7 +12,8 @@ const loadingScreen = (id = '', type='02') =>
     };
 }
 
-const loadingScreen_init = (id= '') =>
+const loadingScreen_init = (id= 'app_loadingScreen') =>
 {
     document.body.appendChild(loadingScreen(id));
+    hide(id);
 }

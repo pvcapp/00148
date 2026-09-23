@@ -3,11 +3,11 @@ APP.ui =
     init: function()
     {    
         //render modal dialogs
-        loadingScreen_init();
         toast_init();
         canhBao_init();
         
         //Render layout: header, sidebar, view, footer
+        APP.loadingScreen.init();
         APP.header.control.init();  
         
         APP.sidebar.control.init();

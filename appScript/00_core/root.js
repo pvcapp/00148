@@ -18,6 +18,7 @@ const APP =
     api: {},
     
     //Các module chính trong layout:
+    loadingScreen: {},
     user: {},  //Quản lý hồ sơ và phiên
     header: {},
     actionbar: {},
