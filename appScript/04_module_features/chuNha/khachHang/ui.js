@@ -14,8 +14,10 @@ APP.features.chuNha.quanLyKhachHang =
     detail:
     {
         style: 'detail_01',
+        idKhachHang: '',
         ui: {},
-        control: {}
+        control: {},
+        xacMinh: {ui: {}, control: {}}
     },
     form:
     {

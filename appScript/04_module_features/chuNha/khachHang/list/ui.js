@@ -29,7 +29,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
         tab_main.appendChild(loadingBar());
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'list', tab_main);
 
-        APP.features.chuNha.quanLyKhachHang.detail.ui.xacMinh.init();
+        APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.init();
     },
     render: function()
     {
@@ -88,7 +88,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 {
                     xacMinh = `
                         <div class="sidebar__button" style="width: 170px;font-size: 14px;" 
-                            onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.control.xacMinh.show('${dong.idKhachHang}');">                        
+                            onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.show('${dong.idKhachHang}');">                        
                             Xác minh
                         </div>
                     `;
@@ -153,7 +153,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                                 {
                                     xacMinh = `
                                         <div class="button button__selected" style="width: 170px;font-size: 14px;" 
-                                            onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.control.xacMinh.show('${dong.idKhachHang}');">                        
+                                            onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.show('${dong.idKhachHang}');">                        
                                             Xác minh
                                         </div>
                                     `;
@@ -179,5 +179,9 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
         `;
         $('#chuNha_quanLyKhachHang_list_main').innerHTML = html;
         activeButton('sidebar_chuNha_quanLyKhachHang');
+    },
+    show: function()
+    {
+        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'list');
     }
 };
