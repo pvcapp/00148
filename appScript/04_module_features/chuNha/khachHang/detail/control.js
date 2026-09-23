@@ -12,7 +12,7 @@ APP.features.chuNha.quanLyKhachHang.detail.control =
         {
             console.log('control detail.xacminh.show. idKhachHang: ' + idKhachHang);
             APP.features.chuNha.quanLyKhachHang.control.detail.idKhachHang = idKhachHang;
-            APP.features.chuNha.quanLyKhachHang.ui.detail.xacMinh.render();
+            APP.features.chuNha.quanLyKhachHang.detail.ui.xacMinh.render();
             show('formKhachHang_xacMinhThongTin_popup');
         },
         hide: function ()
