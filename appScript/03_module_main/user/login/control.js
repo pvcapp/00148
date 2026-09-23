@@ -20,7 +20,7 @@ APP.user.login.control =
     submit: async function()
     {
         let cb;
-        $('#loginError').innerHTML = 'Đang kiểm tra thông tin <marquee style="width:8px;">......</marquee>';
+        $('#loginError').innerHTML = loadingText();
         $('#login_submitButton').innerText = 'Đang đăng nhập..';
         
         inactiveButton('login_submitButton');
