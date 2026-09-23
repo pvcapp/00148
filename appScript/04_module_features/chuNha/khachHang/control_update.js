@@ -143,7 +143,7 @@ APP.features.chuNha.quanLyKhachHang.update =
         show: function (idKhachHang)
         {
             //Load thong tin can xac minh:
-            let phieuXacMinh = APP.cache.danhSachKhachHang_xacMinh.find(
+            let phieuXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(
                 function(kh)
                 {
                     return kh.idKhachHang == idKhachHang;
@@ -176,12 +176,12 @@ APP.features.chuNha.quanLyKhachHang.update =
         },
         ok: function(idKhachHang) 
         {
-            const khachHang = APP.cache.danhSachKhachHang_xacMinh.find(function(khach) 
+            const khachHang = APP.cache.danhSachKhachHang_xacMinh.data.find(function(khach) 
             {
                 return String(khach.idKhachHang) === String(idKhachHang);
             });
 
-            APP.cache.danhSachKhachHang_xacMinh.forEach(e => {
+            APP.cache.danhSachKhachHang_xacMinh.data.forEach(e => {
                 console.log(idKhachHang);
                 console.log(e.idKhachHang);
                 console.log('String(khach.idKhachHang) === String(idKhachHang): ' + String(e.idKhachHang) === String(idKhachHang));
@@ -197,7 +197,7 @@ APP.features.chuNha.quanLyKhachHang.update =
             APP.features.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
 
             //Cập nhật tình trạng xác minh và render lại danh sách
-            const idXoa = APP.cache.danhSachKhachHang_xacMinh.findIndex(
+            const idXoa = APP.cache.danhSachKhachHang_xacMinh.data.findIndex(
                 khach => String(khach.idKhachHang) === String(idKhachHang)
             );
             if (idXoa !== -1) 
@@ -228,7 +228,7 @@ APP.features.chuNha.quanLyKhachHang.update =
                 .withSuccessHandler(function(kh)
                 {                
                     toast('Đã Từ chối thông tin Khách hàng', 1500);
-                    const idPhieu = APP.cache.danhSachKhachHang_xacMinh.findIndex(
+                    const idPhieu = APP.cache.danhSachKhachHang_xacMinh.data.findIndex(
                         khach => String(khach.idKhachHang) === String(idKhachHang)
                     );
 
