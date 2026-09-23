@@ -6,7 +6,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
         tabHeader.className = 'tab__header';
         tabHeader.innerHTML = `
             <div style="display: flex; flex-wrap: nowrap;">
-                <div class="card__caption">
+                <div class="card__caption hide-on-mobile" style="width:120px;">
                     DS khách hàng
                 </div>
                 <select class="sidebar__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.features.chuNha.quanLyKhachHang.ui.list.showDangThue=this.value; APP.features.chuNha.quanLyKhachHang.ui.list.render();">
