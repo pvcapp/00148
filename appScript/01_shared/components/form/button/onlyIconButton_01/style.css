@@ -1,0 +1,17 @@
+.onlyIconButton_01
+{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.onlyIconButton_01:hover
+{
+    transform: translateY(-1px);
+    opacity: 1;
+}
+
+.onlyIconButton_01:active 
+{
+    transform: translateY(0px);
+    transform: scale(0.97);
+}

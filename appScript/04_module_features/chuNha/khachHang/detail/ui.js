@@ -43,7 +43,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
                         </div>
 
 
-                        <div class="formKhachHang__cuoi">                
+                        <div class="formKhachHang__cuoi" style="margin-top:12px;">                
                             <div id="chuNha_khachHang_updateButton" class="button"
                                 onclick="APP.features.chuNha.quanLyKhachHang.control.detail.xacMinh.ok();">
                                 Chấp nhận
