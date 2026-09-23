@@ -22,9 +22,3 @@ function form_renderField({type = 'text', id, value = '', placeholder = '', capt
     rdHTML += '</div>';
     return rdHTML;
 }
-
-
-const button = (options = {}) =>
-{
-    return div({...options, className: `button ${options.className || ''}`.trim()});
-}
