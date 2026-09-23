@@ -13,6 +13,14 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
 };
 
 
+/*
+tabHeader.appendChild(button({
+                type: 'iconOnlyButton',
+                iconSrc: 'https://pvcapp.github.io/00148/img/recycle.svg',
+                onclick: () => APP.chuNha.quanLyKhachHang.control.delete(APP.chuNha.quanLyKhachHang.form.idKhachHang, $('#formKhachHang_input_hoVaTen').value)
+                }));
+                */
+
 
 
 APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui =

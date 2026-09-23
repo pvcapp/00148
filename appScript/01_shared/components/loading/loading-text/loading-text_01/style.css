@@ -1,0 +1,24 @@
+.loading-text_01 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 15px;
+}
+
+.loading-text_01__spinner {
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: loading-text_01__spin 0.7s linear infinite;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+@keyframes loading-text_01__spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

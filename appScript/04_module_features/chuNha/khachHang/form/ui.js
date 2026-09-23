@@ -15,24 +15,20 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan =
         tabHeader.className = 'tab__header';
         tabHeader.innerHTML = `
             <div style="display: flex; flex-wrap: nowrap;">
-                <div id="formKhachHang_caption" class="card__caption hide-on-mobile" style="width:200px;">
-                    ${APP.features.chuNha.quanLyKhachHang.form == 'new' ? 'Thêm khách hàng mới' : 'Cập nhật thông tin'}
+                <div id="chuNha_quanLyKhachHang_form_thongTinCoBan_caption" class="card__caption hide-on-mobile" style="width:200px;">
+                    Thêm khách hàng mới
                 </div>
-            </div>`;
-        tabHeader.appendChild(button({
-            type: 'iconOnlyButton'
-            iconSrc: 'https://pvcapp.github.io/00148/img/recycle.svg',
-            onclick: () => APP.chuNha.quanLyKhachHang.control.delete(APP.chuNha.quanLyKhachHang.form.idKhachHang, $('#formKhachHang_input_hoVaTen').value)
-            }));
+            </div>`;            
         APP.view.ui.addTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan', tabHeader);
         
         const tab_main = document.createElement('div');
-        tab_main.id = 'chuNha_quanLyKhachHang_list_main';
+        tab_main.id = 'chuNha_quanLyKhachHang_form_thongTinCoBan_main';
         tab_main.className = 'tab__main';
-        tab_main.appendChild(loadingBar());
-        APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'list', tab_main);
-        
-        <div class="card" style="max-width:400px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;">
+         
+        /* formField({id='formKhachHang_input_hoVaTen',caption = 'Họ và tên') */
+
+        tab_main.innerHTML = `
+        <div class="card" style="max-width:450px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;">
             <div class="form__field hide">
                 <label for="formKhachHang_input_idKhachHang">
                     Mã khách hàng
@@ -60,6 +56,19 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan =
                 </label>
                 <input type="text" id="formKhachHang_input_soCCCD" placeholder="" inputmode="numeric" maxlength="12" required>
             </div>
-        </div>
+
+            <div class="form__footer">
+                <div id="chuNha_khachHang_saveButton" class="button sidebar__button" onclick="APP.ui.chuNha.quanLyKhachHang.addNew.submit()">
+                    Thêm khách hàng
+                </div>
+
+                <div class="sidebar__button button" onclick="APP.ui.chuNha.quanLyKhachHang.update.abort();">
+                    Bỏ qua
+                </div>
+            </div>
+
+        </div>`;
+
+        APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'list', tab_main);
     }
 };

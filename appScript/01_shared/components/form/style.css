@@ -116,3 +116,55 @@ textarea {
 }
 
 
+
+.form 
+{
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 0.6rem;
+}
+
+.form .form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form .form__field label {
+    font-weight: 500;
+}
+
+.form .form__field input,
+.form .form__field select,
+.form .form__field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form .form__field textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form__footer {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .form__footer {
+        grid-column: auto;
+    }
+}
+
