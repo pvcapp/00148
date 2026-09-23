@@ -109,6 +109,7 @@ APP.user.login.ui =
     },
     show: function()
     {
+        APP.loadingScreen.hide();
         var emptyLoginStatus =
         {
             loginStatus: 'notOk',

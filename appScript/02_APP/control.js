@@ -44,9 +44,11 @@ APP.control =
     getStartupData: function()
     {
         console.log('getStartupData...');
+        APP.loadingScreen.show();
         google.script.run
             .withSuccessHandler(function(duLieu)
-            {                      
+            {      
+                APP.loadingScreen.hide();                
                 APP.user.data = duLieu.user;
                 console.log(JSON.stringify(duLieu.user));
                 $('#user_hoVaTen').innerText = APP.user.data.hoVaTen;
