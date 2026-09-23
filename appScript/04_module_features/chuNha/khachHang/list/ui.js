@@ -16,7 +16,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 </select>
             </div>
 
-            <div class="sidebar__button" style="width: 170px;font-size: 14px;" onclick="APP.features.chuNha.quanLyKhachHang.addNew.show();">
+            <div class="button" style="width: 170px;font-size: 14px;" onclick="APP.features.chuNha.quanLyKhachHang.addNew.show();">
                 ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
                 Khách hàng mới
             </div>`;
