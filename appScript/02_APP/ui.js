@@ -3,6 +3,7 @@ APP.ui =
     init: function()
     {    
         //render modal dialogs
+        loadingScreen_init();
         toast_init();
         canhBao_init();
         

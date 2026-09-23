@@ -4,7 +4,7 @@ APP.features.chuNha.control =
     {
         APP.features.chuNha.sidebar.control.init();
         APP.features.chuNha.dashboard.control.init();
-        APP.features.chuNha.quanLyKhachHang.list.control.init();
+        APP.features.chuNha.quanLyKhachHang.control.init();
         APP.features.chuNha.quanLyKhuNha.control.list.init();
         APP.features.chuNha.quanLyPhong.control.list.init();
         //hopDong
@@ -29,7 +29,7 @@ APP.features.chuNha.control =
                 APP.cache.setting = ketQua.setting || [];
                 APP.cache.danhSachHopDong = ketQua.hopDong || [];
 
-                APP.features.chuNha.quanLyKhachHang.ui.list.render();
+                APP.features.chuNha.quanLyKhachHang.ui.render();
                 APP.features.chuNha.quanLyKhuNha.ui.list.render();
                 APP.features.chuNha.quanLyPhong.ui.list.render();
                 //APP.features.chuNha.quanLyHopDong.startup();
