@@ -45,15 +45,17 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
 
                         <div class="formKhachHang__cuoi" style="margin-top:12px;">                
                             <div id="chuNha_khachHang_updateButton" class="button"
-                                onclick="APP.features.chuNha.quanLyKhachHang.control.detail.xacMinh.ok();">
+                                onclick="APP.features.chuNha.quanLyKhachHang.detail.control.xacMinh.ok();">
                                 Chấp nhận
                             </div>  
 
-                            <div class="button" id="chuNha_khachHang_update_reset" onclick="APP.features.chuNha.quanLyKhachHang.control.detail.xacMinh.notOk();">
+                            <div class="button" id="chuNha_khachHang_update_reset" 
+                                onclick="APP.features.chuNha.quanLyKhachHang.detail.control.xacMinh.notOk();">
                                 Không chấp nhận
                             </div>
 
-                            <div class="button" onclick="APP.features.chuNha.quanLyKhachHang.control.detail.xacMinh.hide();">
+                            <div class="button" 
+                                onclick="APP.features.chuNha.quanLyKhachHang.detail.control.xacMinh.hide();">
                                 Bỏ qua
                             </div>
                         </div>
