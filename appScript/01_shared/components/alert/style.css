@@ -43,7 +43,7 @@
     place-items:center;
     color: var(--brand-text-primary);
     padding: var(--padding-lg);
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
 }
 
 @keyframes thong-bao-popup-startup

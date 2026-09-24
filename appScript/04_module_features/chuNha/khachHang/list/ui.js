@@ -5,7 +5,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
         const tabHeader = document.createElement('div');
         tabHeader.className = 'tab__header';
         tabHeader.innerHTML = `
-            <div style="display: flex; flex-wrap: nowrap;">
+            <div style="display: flex; flex-wrap: nowrap;margin-bottom:8px;">
                 <div class="card__caption hide-on-mobile" style="width:200px;">
                     DS khách hàng
                 </div>

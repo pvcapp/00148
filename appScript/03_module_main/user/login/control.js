@@ -66,8 +66,7 @@ APP.user.login.control =
                 else
                 {
                     canhBao(user.message, 'Đăng nhập ứng dụng');
-                    $('#login_submitButton').innerText = 'Đăng nhập';
-                    activeButton('login_submitButton');
+                    APP.user.login.ui.reset();
                 }
             }).sv_user_doLogin(JSON.stringify(loginInfor));
         }
