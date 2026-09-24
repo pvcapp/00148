@@ -7,9 +7,9 @@ const formField_01 = ({ type = 'text',
     let className = 'form__field_01'; 
         if (hidden) className += ' hide';
     const container = div({className: className});
-        const cap = ``;
+        let cap = ``;
             if (caption !== '') cap = `<label for="${id}">${caption}</label>`;
-        const ip = ``;
+        let ip = ``;
             switch (type) 
             { 
                 case 'text': 
