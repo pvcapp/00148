@@ -37,7 +37,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
 {
     init: function()
     {
-        
+        //Chỉ build những cấu trúc chung của module quanLyKhachHang
     },
     render: function()
     {
