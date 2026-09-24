@@ -47,22 +47,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui =
             caption: 'Số CCCD', 
             required: true}));
         
-        <div class="form__footer" style="margin-top:12px;">                
-                        <div id="chuNha_khachHang_updateButton" class="button"
-                            onclick="APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.ok();">
-                            Chấp nhận
-                        </div>  
-
-                        <div class="button" id="chuNha_khachHang_update_reset" 
-                            onclick="APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.notOk();">
-                            Không chấp nhận
-                        </div>
-
-                        <div class="button" 
-                            onclick="APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.hide();">
-                            Bỏ qua
-                        </div>
-                    </div>
+        
         const footer = div({className: 'form__footer', parent: formKhachHang_card1});
 
         footer.appendChild(button({
