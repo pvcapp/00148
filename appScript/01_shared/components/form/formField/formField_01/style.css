@@ -10,7 +10,9 @@
     font-weight: 500;
 }
 
-.form__field_01 input select textarea
+.form__field_01 input,
+.form__field_01 select,
+.form__field_01 textarea
 {
     width: 100%;
     box-sizing: border-box;
