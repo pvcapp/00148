@@ -30,7 +30,6 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui =
         tab_main.id = 'chuNha_quanLyKhachHang_form_thongTinCoBan_main';
         tab_main.className = 'tab__main';
         
-        /* formField({id='formKhachHang_input_hoVaTen',caption = 'Họ và tên') */
         const formKhachHang_card1 = div({className: 'card', parent: tab_main,
             style: 'max-width:450px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;'});
 

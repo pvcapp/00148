@@ -5,25 +5,28 @@ const formField_01 = ({ type = 'text',
     inputmode = '', maxlength = '' })  =>
 { 
     let className = 'form__field_01'; 
-    if (hidden) className += ' hide'; 
-    let rdHTML = `<div class="${className}">`; 
-    if (caption !== '') rdHTML += `<label for="${id}">${caption}</label>`; 
-    switch (type) 
-    { 
-        case 'text': 
-        case 'number': 
-        case 'email':
-        case 'tel': 
-            rdHTML += `<input type="${type}" id="${id}" value="${value}" placeholder="${placeholder}" ${required ? 'required' : ''} ${readonly ? 'readonly' : ''} ${inputmode ? `inputmode="${inputmode}"` : ''} ${maxlength ? `maxlength="${maxlength}"` : ''}>`; 
-            break; 
-        case 'textarea': 
-            rdHTML += `<textarea id="${id}" placeholder="${placeholder}" ${required ? 'required' : ''}>${value}</textarea>`; 
-            break; 
-        case 'hidden': 
-            return `<input type="hidden" id="${id}" value="${value}">`; 
-        default: 
-            rdHTML += `<input type="text" id="${id}" value="${value}" placeholder="${placeholder}">`; 
-    } 
-    rdHTML += '</div>';            
-    return rdHTML; 
+        if (hidden) className += ' hide';
+    const container = div({className: className});
+        const cap = ``;
+            if (caption !== '') cap = `<label for="${id}">${caption}</label>`;
+        const ip = ``;
+            switch (type) 
+            { 
+                case 'text': 
+                case 'number': 
+                case 'email':
+                case 'tel':
+                    ip = `<input type="${type}" id="${id}" value="${value}" placeholder="${placeholder}" ${required ? 'required' : ''} ${readonly ? 'readonly' : ''} ${inputmode ? `inputmode="${inputmode}"` : ''} ${maxlength ? `maxlength="${maxlength}"` : ''}>`; 
+                    break; 
+                case 'textarea':
+                    ip = `<textarea id="${id}" placeholder="${placeholder}" ${required ? 'required' : ''}>${value}</textarea>`; 
+                    break; 
+                case 'hidden':
+                    ip = `<input type="hidden" id="${id}" value="${value}">`;
+                    break;
+                default:
+                    ip = `<input type="text" id="${id}" value="${value}" placeholder="${placeholder}">`; 
+            };
+    container.innerHTML = cap + ip;         
+    return container; 
 }
