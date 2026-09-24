@@ -9,7 +9,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 <div class="card__caption hide-on-mobile" style="width:200px;">
                     DS khách hàng
                 </div>
-                <select class="sidebar__button" style="margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.features.chuNha.quanLyKhachHang.ui.list.showDangThue=this.value; APP.features.chuNha.quanLyKhachHang.ui.list.render();">
+                <select class="sidebar__button" style="display:none; margin-left:12px;" id="chuNha_khachHang_filterButton" onchange="APP.features.chuNha.quanLyKhachHang.ui.list.showDangThue=this.value; APP.features.chuNha.quanLyKhachHang.ui.list.render();">
                     <option value="0" selected>Khách hàng chưa thuê</option>
                     <option value="1">Khách hàng đã thuê</option>
                     <option value="2">Tất cả</option>
