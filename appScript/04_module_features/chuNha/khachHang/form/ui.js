@@ -53,12 +53,12 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui =
         footer.appendChild(button({
             id: 'chuNha_khachHang_saveButton', 
             text: 'Thêm khách hàng', 
-            onclick: () => APP.ui.chuNha.quanLyKhachHang.form.thongTinCoBan.control.submit()
+            onclick: () => APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.submit()
         }));
 
         footer.appendChild(button({
             text: 'Bỏ qua', 
-            onclick: () => APP.ui.chuNha.quanLyKhachHang.form.thongTinCoBan.control.abort()
+            onclick: () => APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.abort()
         }));
                     
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan', tab_main);
