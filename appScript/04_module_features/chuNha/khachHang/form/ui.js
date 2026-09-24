@@ -2,13 +2,18 @@ APP.features.chuNha.quanLyKhachHang.form.ui =
 {   
     init: function()
     {
-        
+        APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui.init();
     }
 };
 
-
 APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan = 
-{   
+{ 
+    ui: {},
+    control:{}
+};
+
+APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui =
+{
     init: function()
     {
         const tabHeader = document.createElement('div');
@@ -24,51 +29,42 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan =
         const tab_main = document.createElement('div');
         tab_main.id = 'chuNha_quanLyKhachHang_form_thongTinCoBan_main';
         tab_main.className = 'tab__main';
-         
+        
         /* formField({id='formKhachHang_input_hoVaTen',caption = 'Họ và tên') */
+        const formKhachHang_card1 = div({className: 'card', parent: tab_main,
+            style: 'max-width:450px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;'});
 
-        tab_main.innerHTML = `
-        <div class="card" style="max-width:450px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;">
-            <div class="form__field hide">
-                <label for="formKhachHang_input_idKhachHang">
-                    Mã khách hàng
-                </label>
-                <input type="text" id="formKhachHang_input_idKhachHang" placeholder="" readonly>
-            </div>
+        formKhachHang_card1.appendChild(formField({
+            id: 'formKhachHang_input_hoVaTen', 
+            caption: 'Họ và tên', 
+            required: true}));
+        formKhachHang_card1.appendChild(formField({
+            id: 'formKhachHang_input_dienThoai', 
+            caption: 'Số điện thoại', 
+            required: true, 
+            type: 'tel' }));
+        formKhachHang_card1.appendChild(formField({
+            id: 'formKhachHang_input_soCCCD', 
+            caption: 'Số CCCD', 
+            required: true}));
 
-            <div class="form__field">
-                <label for="formKhachHang_input_hoVaTen">
-                    Họ và tên
-                </label>
-                <input type="text" id="formKhachHang_input_hoVaTen" placeholder="" required>
-            </div>
+        formKhachHang_card1.appendChild(button({
+            id: 'chuNha_khachHang_saveButton', 
+            text: 'Thêm khách hàng', 
+            onclick: () => APP.ui.chuNha.quanLyKhachHang.form.thongTinCoBan.control.submit()
+        }));
 
-            <div class="form__field">
-                <label for="formKhachHang_input_dienThoai">
-                    Số điện thoại
-                </label>
-                <input type="tel" id="formKhachHang_input_dienThoai" placeholder="" inputmode="numeric" maxlength="10" required>
-            </div>
-
-            <div class="form__field">
-                <label for="formKhachHang_input_soCCCD">
-                    Số CCCD
-                </label>
-                <input type="text" id="formKhachHang_input_soCCCD" placeholder="" inputmode="numeric" maxlength="12" required>
-            </div>
-
-            <div class="form__footer">
-                <div id="chuNha_khachHang_saveButton" class="button sidebar__button" onclick="APP.ui.chuNha.quanLyKhachHang.addNew.submit()">
-                    Thêm khách hàng
-                </div>
-
-                <div class="sidebar__button button" onclick="APP.ui.chuNha.quanLyKhachHang.update.abort();">
-                    Bỏ qua
-                </div>
-            </div>
-
-        </div>`;
-
-        APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'list', tab_main);
+        formKhachHang_card1.appendChild(button({
+            text: 'Bỏ qua', 
+            onclick: () => APP.ui.chuNha.quanLyKhachHang.form.thongTinCoBan.control.abort()
+        }));
+                    
+        APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan', tab_main);
+    },
+    show: function()
+    {
+        APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
+        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan');
     }
 };
+

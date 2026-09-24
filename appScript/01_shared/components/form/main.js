@@ -1,27 +1,15 @@
-function form_renderField({type = 'text', id, value = '', placeholder = '', caption = ''})
+const resetForm = (id) =>
 {
-    let rdHTML = '<div class="form__field">';
-        if (caption !== '') 
+    const form = $('#' + id);
+    form.querySelectorAll('input, textarea, select').forEach(function(el)
+    {
+        if (el.type === 'checkbox' || el.type === 'radio')
         {
-            rdHTML += `<label>${caption}</label>`;
+            el.checked = false;
         }
-
-        switch (type)
+        else
         {
-            case 'text':
-            case 'number':
-                rdHTML += `<input type="${type}" id="${id}" value="${value}" placeholder="${placeholder}">`;
-                break;
-            case 'textarea':
-                rdHTML += `<textarea id="${id}" placeholder="${placeholder}">${value}</textarea>`;
-                break;
-            default:
-                rdHTML += `<input type="text" id="${id}" value="${value}" placeholder="${placeholder}">`;
-
+            el.value = '';
         }
-    rdHTML += '</div>';
-    return rdHTML;
-}
-
-
-
+    });
+};

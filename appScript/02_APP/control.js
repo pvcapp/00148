@@ -19,7 +19,7 @@ APP.control =
             APP.user.login.ui.show();
             return;
         }
-        console.log('APP startup with localstorage: ' + loginStatus);
+        //console.log('APP startup with localstorage: ' + loginStatus);
         loginStatus = JSON.parse(loginStatus);
         if (!loginStatus.token)
         {
@@ -43,14 +43,14 @@ APP.control =
     },
     getStartupData: function()
     {
-        console.log('getStartupData...');
+        //console.log('getStartupData...');
         APP.loadingScreen.show();
         google.script.run
             .withSuccessHandler(function(duLieu)
             {      
                 APP.loadingScreen.hide();                
                 APP.user.data = duLieu.user;
-                console.log(JSON.stringify(duLieu.user));
+                //console.log(JSON.stringify(duLieu.user));
                 $('#user_hoVaTen').innerText = APP.user.data.hoVaTen;
                 if (APP.user.data.loaiTaiKhoan === 'khach')
                 {

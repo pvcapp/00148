@@ -4,6 +4,7 @@ const APP =
     config: {},
     ui: {},
     control: {},
+    api: {},
 
     state: {
         manHinhHienTai:
@@ -15,7 +16,8 @@ const APP =
     },
     cache: {},
     data: {}, //meta data column raw + virtual column (meta data cho render view). module1Name: {}, module2Name: {}
-    api: {},
+    
+    shared: {},
     
     //Các module chính trong layout:
     loadingScreen: {},

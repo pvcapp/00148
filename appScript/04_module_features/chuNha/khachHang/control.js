@@ -6,7 +6,7 @@ APP.features.chuNha.quanLyKhachHang.control =
         
         APP.features.chuNha.quanLyKhachHang.list.control.init();
         APP.features.chuNha.quanLyKhachHang.detail.control.init();
-        //APP.features.chuNha.quanLyKhachHang.form.control.init();
+        APP.features.chuNha.quanLyKhachHang.form.control.init();
     },
     delete: async function(idKhachHang, hoVaTen)
     {

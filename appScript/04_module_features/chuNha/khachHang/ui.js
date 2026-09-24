@@ -37,7 +37,7 @@ APP.features.chuNha.quanLyKhachHang.ui =
 {
     init: function()
     {
-        
+        APP.features.chuNha.quanLyKhachHang.form.ui.init();
     },
     render: function()
     {
