@@ -2,7 +2,7 @@ APP.features.chuNha.quanLyKhachHang.form.control =
 {    
     init: function()
     {
-            APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.init();
+        APP.features.chuNha.quanLyKhachHang.form.ui.init();
     },
     showAddNew: function()
     {
