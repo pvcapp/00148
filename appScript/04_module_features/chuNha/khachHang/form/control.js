@@ -37,7 +37,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control =
     },
     reset: function()
     {
-        resetForm('chuNha_quanLyKhachHang_form_thongTinCoBan_tab');
+        resetForm('chuNha_quanLyKhachHang_form_thongTinChiTiet_tab');
     },
     kiemTraTonTai: async function(field)
     {
@@ -146,6 +146,9 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
     reset: function()
     {
         resetForm('chuNha_quanLyKhachHang_form_thongTinChiTiet_tab');
+        $('#formKhachHang_input_hoVaTen_text').innerText = '';
+        $('#formKhachHang_input_dienThoai_text').innerText = '';
+        $('#formKhachHang_input_soCCCD_text').innerText = '';
     },
     kiemTraTonTai: async function(field)
     {
