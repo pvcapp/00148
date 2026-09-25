@@ -108,8 +108,8 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control =
             return;
         }
 
-        //render thongTinChiTiet với thông tin vừa nhập:
-        
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.render();
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.show();        
     },
     abort: function()
     {
@@ -216,9 +216,8 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
         {
             return;
         }
+
         
-        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.render();
-        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.show();
     },
     abort: function()
     {
