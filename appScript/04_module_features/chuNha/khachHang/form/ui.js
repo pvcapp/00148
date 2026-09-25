@@ -100,10 +100,34 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
             style: 'max-width:450px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;'});
 
         formKhachHang_card1.innerHTML = `
-            - Họ và tên: <span id="formKhachHang_input_hoVaTen_text"></span><br>
-            - Số điện thoại: <span id="formKhachHang_input_dienThoai_text"></span><br>
-            - Số CCCD: <span id="formKhachHang_input_soCCCD_text"></span><br>
-        `;
+        <table>
+            <tr>
+                <td>
+                    - Họ và tên:
+                </td>
+                <td>
+                    <span id="formKhachHang_input_hoVaTen_text"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    - Số điện thoại:
+                </td>
+                <td>
+                    <span id="formKhachHang_input_dienThoai_text"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    - Số CCCD:
+                </td>
+                <td>
+                    <span id="formKhachHang_input_soCCCD_text"></span>
+                </td>
+            </tr>
+        </table>`;
         
         formKhachHang_card1.innerHTML += 
             `<input type="hidden" id="formKhachHang_input_idKhachHang">
