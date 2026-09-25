@@ -3,6 +3,7 @@ APP.features.chuNha.quanLyKhachHang.form.ui =
     init: function()
     {
         APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui.init();
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.init();
     }
 };
 
@@ -228,7 +229,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
     },
     render: function()
     {
-        
+
     },
     show: function()
     {
