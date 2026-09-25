@@ -47,7 +47,7 @@ APP.control =
         APP.loadingScreen.show();
         google.script.run
             .withSuccessHandler(function(duLieu)
-            {      
+            {
                 APP.loadingScreen.hide();                
                 APP.user.data = duLieu.user;
                 //console.log(JSON.stringify(duLieu.user));
@@ -56,13 +56,12 @@ APP.control =
                 {
                     APP.cache = duLieu;
                     APP.features.khachHang.control.init();
-                } 
-                else 
+                }
+                else
                 {
                     APP.cache.tongQuan = duLieu.tongQuan;
                     APP.features.chuNha.control.init();
-                }   
-
+                }
             })
             .withFailureHandler(function(error)
             {
