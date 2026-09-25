@@ -229,12 +229,15 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
     },
     render: function()
     {
+        $('#formKhachHang_input_hoVaTen_text').innerText = $('#formKhachHang_input_hoVaTen').value;
+        $('#formKhachHang_input_dienThoai_text').innerText = $('#formKhachHang_input_dienThoai').value;
+        $('#formKhachHang_input_soCCCD_text').innerText = $('#formKhachHang_input_soCCCD').value;
 
+        
     },
     show: function()
     {
-        APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
-        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan');
+        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet');
     }
 };
 

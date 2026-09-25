@@ -215,7 +215,10 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
         if (!APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.dataInputOk())
         {
             return;
-        }        
+        }
+        
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.render();
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.show();
     },
     abort: function()
     {
