@@ -108,13 +108,13 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control =
             return;
         }
 
-        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.render();
-        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.show();        
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.render();
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.show();    
     },
     abort: function()
     {
-        APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
-        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'list');
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
+        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet');
     }
 };
 

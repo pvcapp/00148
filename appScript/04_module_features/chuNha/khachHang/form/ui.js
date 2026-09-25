@@ -138,7 +138,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                 </table>            
             </div>
             
-            <div class="form__field">
+            <div class="form__field_01">
                 <label for="formKhachHang_input_gioiTinh">
                     Giới tính
                 </label>
@@ -150,7 +150,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                 </select>
             </div>
 
-            <div class="form__field">
+            <div class="form__field_01">
                 <label for="formKhachHang_input_email">
                     Email
                 </label>
@@ -161,42 +161,42 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
         const formKhachHang_card2 = div({className: 'card', parent: tab_main,
             style: 'max-width:450px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;'});
         formKhachHang_card2.innerHTML = `
-            <div class="form__field">
+            <div class="form__field_01">
                 <label for="formKhachHang_input_diaChiThuongTru">
                     Địa chỉ thường trú
                 </label>
                 <input type="text" id="formKhachHang_input_diaChiThuongTru" placeholder="">
             </div>
 
-            <div class="form__field" style="display: none;">
+            <div class="form__field_01" style="display: none;">
                 <label for="formKhachHang_input_ngheNghiep">
                     Nghề nghiệp
                 </label>
-                <input class="form__field" style="display: none;" type="text" id="formKhachHang_input_ngheNghiep" placeholder="">
+                <input class="form__field_01" style="display: none;" type="text" id="formKhachHang_input_ngheNghiep" placeholder="">
             </div>
 
-            <div class="form__field" style="display: none;">
+            <div class="form__field_01" style="display: none;">
                 <label for="formKhachHang_input_anhKhach">
                     Ảnh khách hàng
                 </label>
                 <input type="text" id="formKhachHang_input_anhKhach" placeholder="">
             </div>
 
-            <div class="form__field" style="display: none;">
+            <div class="form__field_01" style="display: none;">
                 <label for="formKhachHang_input_anhCCCDMatTruoc">
                     Ảnh CCCD mặt trước
                 </label>
                 <input type="text" id="formKhachHang_input_anhCCCDMatTruoc" placeholder="">
             </div>
 
-            <div class="form__field" style="display: none;">
+            <div class="form__field_01" style="display: none;">
                 <label for="formKhachHang_input_anhCCCDMatSau">
                     Ảnh CCCD mặt sau
                 </label>
                 <input type="text" id="formKhachHang_input_anhCCCDMatSau" placeholder="">
             </div>
 
-            <div class="form__field">
+            <div class="form__field_01">
                 <label for="formKhachHang_input_ghiChu">
                     Ghi chú
                 </label>
