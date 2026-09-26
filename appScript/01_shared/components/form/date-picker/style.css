@@ -1,0 +1,114 @@
+.PVC_Fns_CN_Div_Container
+{
+	position:fixed;
+	z-index:1001;
+	top:60px;
+	left:0px;
+	width:100%;
+	text-align:center;
+
+}
+
+
+.PVC_Fns_CN_Div
+{
+	top:100px;
+	left:50px;
+	width:250px;
+}
+
+@media only screen and (min-width:400px)
+{
+	.PVC_Fns_CN_Div{width:290px;}
+}
+
+@media only screen and (max-width:399px)
+{
+	.PVC_Fns_CN_Div{width:250px;}
+}
+
+.PVC_Fns_CN_Ngay_Div
+{
+	padding:5px;
+}
+
+.PVC_Fns_CN_Ngay_Div_Active
+{
+	background:rgba(0,0,0,0.03);
+	color:rgba(0,0,0,0.75);
+}
+
+.PVC_Fns_CN_Ngay_Div_Active:hover
+{
+	background:rgba(0,0,0,0.5);
+	color:rgba(255,255,255,0.85);
+}
+
+.PVC_Fns_CN_Ngay_Div_Active:active
+{
+	background:white;
+	color: var(--primary);
+}
+
+.PVC_Fns_CN_Ngay_Div_Selected
+{
+	background: -webkit-linear-gradient(top left, var(--primary), var(--secondary));
+	/* border:1px solid rgba(0,0,0,0.5); */
+	border-radius:3px;
+	color:white;
+}
+
+.PVC_Fns_CN_Ngay_Div_Selected:hover
+{
+	background:rgba(0,0,0,0.1);
+	color: var(--primary);
+}
+
+.PVC_Fns_CN_Ngay_Div_Selected:active
+{
+	background:white;
+	color:var(--primary);
+}
+
+.PVC_Fns_CN_Table
+{
+width:100%;
+}
+
+.PVC_Fns_CN_Thang_Div
+{
+	background: -webkit-linear-gradient(top left, var(--primary), var(--secondary));
+	border-radius:5px;
+	padding:2px;
+	
+}
+
+.PVC_Fns_CN_Thang_NoiDung
+{
+	color:rgba(0,0,0,0.8);
+	font-weight:bold;
+}
+
+.PVC_Fns_CN_Thang_NextBack
+{
+	border-radius:5px;
+	padding:2px;
+}
+
+.PVC_Fns_CN_Thang_NextBack:hover
+{
+	background: rgba(255,255,255,0.2);
+	border:1px solid rgba(0,0,0,0.2);
+}
+
+.PVC_Fns_CN_Thang_NextBack:active
+{
+	background: rgba(255,255,255,0.65);
+	border:1px solid rgba(0,0,0,0.2);
+}
+
+.PVC_Fns_CN_Thu_Div
+{
+	width:14%;
+	color:rgba(0,0,0,1);
+}

@@ -2,7 +2,7 @@ const formField = ({ style= 'formField_01', type = 'text',
     id='', value = '', placeholder = '', 
     caption = '', 
     required = false, readonly = false, hidden = false, 
-    inputmode = '', maxlength = '' } = {}) =>
+    inputmode = '', maxlength = '', options = {} } = {}) =>
 {
     switch (style)
     {
@@ -11,12 +11,12 @@ const formField = ({ style= 'formField_01', type = 'text',
             id, value, placeholder, 
             caption, 
             required, readonly, hidden, 
-            inputmode, maxlength});
+            inputmode, maxlength, options});
         default:
             return formField_01({ type,
             id, value, placeholder, 
             caption, 
             required, readonly, hidden, 
-            inputmode, maxlength});
+            inputmode, maxlength, options});
     };
 };
