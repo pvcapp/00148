@@ -49,27 +49,27 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
                 Thông tin cơ bản
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Họ và tên</div>
                 <div id="formKhachHang_detail_hoVaTen" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Số điện thoại</div>
                 <div id="formKhachHang_detail_dienThoai" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Số CCCD</div>
                 <div id="formKhachHang_detail_soCCCD" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Giới tính</div>
                 <div id="formKhachHang_detail_gioiTinh" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Ngày sinh</div>
                 <div id="formKhachHang_detail_ngaySinh" class="detail__value"></div>
             </div>
@@ -96,17 +96,17 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
                 Thông tin liên hệ
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Email</div>
                 <div id="formKhachHang_detail_email" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Địa chỉ thường trú</div>
                 <div id="formKhachHang_detail_diaChiThuongTru" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Nghề nghiệp</div>
                 <div id="formKhachHang_detail_ngheNghiep" class="detail__value"></div>
             </div>
@@ -194,17 +194,17 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
                 Thông tin khác
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Xác minh</div>
                 <div id="formKhachHang_detail_xacMinh" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Trạng thái</div>
                 <div id="formKhachHang_detail_active" class="detail__value"></div>
             </div>
 
-            <div class="detail__row">
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
                 <div class="detail__label">Ghi chú</div>
                 <div id="formKhachHang_detail_ghiChu" class="detail__value"></div>
             </div>
