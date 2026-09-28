@@ -125,11 +125,3 @@ const div = ({id = '', className = '', text = '', html = '', parent = null, pare
         }); 
     */
 }
-
-
-
-
-const renderList = (type = 'view',structure, data) =>
-{
-
-}
