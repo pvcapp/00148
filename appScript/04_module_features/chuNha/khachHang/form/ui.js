@@ -64,6 +64,29 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui =
                     
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan', tab_main);
     },
+    render: function()
+    {
+        const idKhachHang = APP.features.chuNha.quanLyKhachHang.form.idKhachHang;
+        if (idKhachHang == '')
+        {
+            resetForm('chuNha_quanLyKhachHang_form_thongTinCoBan_tab');
+        }
+        else
+        {
+            const kh = APP.cache.danhSachKhachHang.data.find(
+                khach => khach.idKhachHang == idKhachHang
+            );
+
+            if (!kh)
+            {
+                console.log('Form khách hàng - thông tin cơ bản: Không tìm thấy khách hàng có ID "' + idKhachHang + '"');
+                return false;
+            }
+            $('#formKhachHang_input_hoVaTen').value = kh.hoVaTen;
+            $('#formKhachHang_input_dienThoai').value = kh.dienThoai;
+            $('#formKhachHang_input_soCCCD').value = kh.soCCCD;
+        }
+    },
     show: function()
     {
         APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
@@ -170,7 +193,6 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                     <option value="">-- Chọn giới tính --</option>
                     <option value="Nam">Nam</option>
                     <option value="Nu">Nữ</option>
-                    <option value="Khac">Khác</option>
                 </select>
             </div>
 
@@ -251,17 +273,31 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                     
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet', tab_main);
     },
-    render: function()
+    render: function(idKhachHang = '')
     {
         $('#formKhachHang_input_hoVaTen_text').innerText = $('#formKhachHang_input_hoVaTen').value;
         $('#formKhachHang_input_dienThoai_text').innerText = $('#formKhachHang_input_dienThoai').value;
         $('#formKhachHang_input_soCCCD_text').innerText = $('#formKhachHang_input_soCCCD').value;
 
-        
+        if (idKhachHang == '')
+        {
+            resetForm('chuNha_quanLyKhachHang_form_thongTinChiTiet_tab');
+        }
+        else
+        {
+            APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.loadData(idKhachHang);
+        }
     },
     show: function()
     {
         APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet');
+    },
+    clear: function()
+    {
+        resetForm('chuNha_quanLyKhachHang_form_thongTinChiTiet_tab');
+        $('#formKhachHang_input_hoVaTen_text').innerText = '';
+        $('#formKhachHang_input_dienThoai_text').innerText = '';
+        $('#formKhachHang_input_soCCCD_text').innerText = '';
     }
 };
 

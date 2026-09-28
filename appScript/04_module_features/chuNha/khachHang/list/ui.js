@@ -53,7 +53,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 return String(dong.active) === '1';
             })
             .map(function(dong) {
-                let d = '<tr class="' + APP.features.chuNha.quanLyKhachHang.list.style.tableStyle + '__row" onclick="APP.features.chuNha.quanLyKhachHang.update.show('
+                let d = '<tr class="' + APP.features.chuNha.quanLyKhachHang.list.style.tableStyle + '__row" onclick="APP.features.chuNha.quanLyKhachHang.list.show('
                     + "'" + dong.idKhachHang + "'" 
                     + ')">';
                 d += '<td>' + dong.hoVaTen + '</td>';

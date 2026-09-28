@@ -5,6 +5,12 @@ APP.features.chuNha.quanLyKhachHang.detail.control =
     {
         APP.features.chuNha.quanLyKhachHang.detail.ui.init();
         
+    },
+    show: function(idKhachHang)
+    {
+        APP.features.chuNha.quanLyKhachHang.detail.idKhachHang = idKhachHang;
+        APP.features.chuNha.quanLyKhachHang.detail.ui.render();
+        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'detail'); 
     }
 };
 

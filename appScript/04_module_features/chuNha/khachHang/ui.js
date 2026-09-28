@@ -21,7 +21,7 @@ APP.features.chuNha.quanLyKhachHang =
     },
     form:
     {
-        mode: 'new',
+        mode: 'addNew',
         style: 'form_01',
         idKhachHang: '',
         ui: {},

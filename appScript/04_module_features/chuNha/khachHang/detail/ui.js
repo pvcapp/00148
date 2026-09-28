@@ -3,12 +3,297 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
     style: 'detail_01',
     init: function()
     {
+        // =========================================================
+        // TAB HEADER
+        // =========================================================
+        const tabHeader = document.createElement('div');
+        tabHeader.className = 'tab__header';
+        tabHeader.innerHTML = `
+            <div style="display:flex; flex-wrap:nowrap; align-items:center;">
+                <div id="chuNha_quanLyKhachHang_detail_caption"
+                    class="card__caption hide-on-mobile" style="width:200px;">
+                    Thông tin khách hàng
+                </div>
+            </div>`;
+
+        APP.view.ui.addTab(
+            'chuNha',
+            'quanLyKhachHang',
+            'detail',
+            tabHeader
+        );
+
+
+        // =========================================================
+        // TAB MAIN
+        // =========================================================
+
+        const tabMain = document.createElement('div');
+        tabMain.id = 'chuNha_quanLyKhachHang_detail_main';        
+        tabMain.className = 'tab__main';
+
+        const cardThongTinCoBan = div({
+            className: 'card',
+            parent: tabMain,
+            style: `
+                max-width:650px;
+                padding:var(--padding-xl);
+                display:flex;
+                gap:12px;
+                flex-direction:column;
+            `
+        });
+
+        cardThongTinCoBan.innerHTML = `
+            <div class="card__caption">
+                Thông tin cơ bản
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Họ và tên</div>
+                <div id="formKhachHang_detail_hoVaTen" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Số điện thoại</div>
+                <div id="formKhachHang_detail_dienThoai" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Số CCCD</div>
+                <div id="formKhachHang_detail_soCCCD" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Giới tính</div>
+                <div id="formKhachHang_detail_gioiTinh" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Ngày sinh</div>
+                <div id="formKhachHang_detail_ngaySinh" class="detail__value"></div>
+            </div>
+        `;
+
+
+        // =========================================================
+        // THÔNG TIN LIÊN HỆ
+        // =========================================================
+        const cardLienHe = div({
+            className: 'card',
+            parent: tabMain,
+            style: `
+                max-width:650px;
+                padding:var(--padding-xl);
+                display:flex;
+                gap:12px;
+                flex-direction:column;
+            `
+        });
+
+        cardLienHe.innerHTML = `
+            <div class="card__caption">
+                Thông tin liên hệ
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Email</div>
+                <div id="formKhachHang_detail_email" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Địa chỉ thường trú</div>
+                <div id="formKhachHang_detail_diaChiThuongTru" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Nghề nghiệp</div>
+                <div id="formKhachHang_detail_ngheNghiep" class="detail__value"></div>
+            </div>
+        `;
+
+
+        // =========================================================
+        // HÌNH ẢNH / GIẤY TỜ
+        // =========================================================
+
+        const cardGiayTo = div({
+            className: 'card',
+            parent: tabMain,
+            style: `
+                max-width:650px;
+                padding:var(--padding-xl);
+                display:flex;
+                gap:16px;
+                flex-direction:column;
+            `
+        });
+
+        cardGiayTo.innerHTML = `
+            <div class="card__caption">
+                Hình ảnh / giấy tờ
+            </div>
+
+            <div class="detail__imageGroup">
+
+                <div class="detail__imageItem">
+                    <div class="detail__label">
+                        Ảnh khách hàng
+                    </div>
+
+                    <img
+                        id="formKhachHang_input_anhKhach"
+                        class="detail__image"
+                    >
+                </div>
+
+                <div class="detail__imageItem">
+                    <div class="detail__label">
+                        CCCD mặt trước
+                    </div>
+
+                    <img
+                        id="formKhachHang_input_anhCCCDMatTruoc"
+                        class="detail__image"
+                    >
+                </div>
+
+                <div class="detail__imageItem">
+                    <div class="detail__label">
+                        CCCD mặt sau
+                    </div>
+
+                    <img
+                        id="formKhachHang_input_anhCCCDMatSau"
+                        class="detail__image"
+                    >
+                </div>
+
+            </div>
+        `;
+
+
+        // =========================================================
+        // THÔNG TIN KHÁC
+        // =========================================================
+
+        const cardThongTinKhac = div({
+            className: 'card',
+            parent: tabMain,
+            style: `
+                max-width:650px;
+                padding:var(--padding-xl);
+                display:flex;
+                gap:12px;
+                flex-direction:column;
+            `
+        });
+
+        cardThongTinKhac.innerHTML = `
+            <div class="card__caption">
+                Thông tin khác
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Xác minh</div>
+                <div id="formKhachHang_detail_xacMinh" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Trạng thái</div>
+                <div id="formKhachHang_detail_active" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row">
+                <div class="detail__label">Ghi chú</div>
+                <div id="formKhachHang_detail_ghiChu" class="detail__value"></div>
+            </div>
+        `;
+
+
+        // =========================================================
+        // FOOTER / ACTION
+        // =========================================================
+
+        const footer = div({
+            className: 'form__footer',
+            parent: tabMain
+        });
+
+        footer.appendChild(
+            button({
+                id: 'chuNha_khachHang_editButton',
+                text: 'Chỉnh sửa',
+                onclick: () =>
+                    APP.features.chuNha.quanLyKhachHang.detail.control.edit()
+            })
+        );
+
+        footer.appendChild(
+            button({
+                text: 'Quay lại',
+                onclick: () =>
+                    APP.view.ui.showTab(
+                        'chuNha',
+                        'quanLyKhachHang',
+                        'list'
+                    )
+            })
+        );
+
+
+        // =========================================================
+        // ADD TO VIEW
+        // =========================================================
+
+        APP.view.ui.addElementToTab(
+            'chuNha',
+            'quanLyKhachHang',
+            'detail',
+            tabMain
+        );
+    
+
         
         APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.init();
     },
     render: function()
     {
-        
+        const idKhachHang = APP.features.chuNha.quanLyKhachHang.detail.idKhachHang;
+        const khachHang = (APP.cache.danhSachKhachHang.data || []).find(function(khach)
+        {
+            return String(khach.idKhachHang) === String(idKhachHang);
+        });
+
+        if (!khachHang)
+        {
+            toast('Không tìm thấy khách hàng');
+            return;
+        }
+
+        $('#formKhachHang_detail_hoVaTen').textContent = khachHang.hoVaTen || '';
+        $('#formKhachHang_detail_dienThoai').textContent = khachHang.dienThoai || '';
+        $('#formKhachHang_detail_soCCCD').textContent = khachHang.soCCCD || '';
+        $('#formKhachHang_detail_gioiTinh').textContent = khachHang.gioiTinh || '';
+        $('#formKhachHang_detail_ngaySinh').textContent = [
+            khachHang.ngaySinh,
+            khachHang.thangSinh,
+            khachHang.namSinh
+        ].filter(function(value)
+        {
+            return value !== undefined && value !== null && value !== '';
+        }).join('/');
+
+        $('#formKhachHang_detail_email').textContent = khachHang.email || '';
+        $('#formKhachHang_detail_diaChiThuongTru').textContent = khachHang.diaChiThuongTru || '';
+        $('#formKhachHang_detail_ngheNghiep').textContent = khachHang.ngheNghiep || '';
+        $('#formKhachHang_detail_xacMinh').textContent = khachHang.xacMinh || '';
+        $('#formKhachHang_detail_active').textContent = khachHang.active || '';
+        $('#formKhachHang_detail_ghiChu').textContent = khachHang.ghiChu || '';
+
+        $('#formKhachHang_input_anhKhach').src = khachHang.anhKhach || '';
+        $('#formKhachHang_input_anhCCCDMatTruoc').src = khachHang.anhCCCDMatTruoc || '';
+        $('#formKhachHang_input_anhCCCDMatSau').src = khachHang.anhCCCDMatSau || '';
     }
 };
 
@@ -34,7 +319,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui =
         });
         popup.classList.add('hide');
         popup.innerHTML = `
-            <center>        
+            <center>
                 <div class="card" style="max-width: 400px;background: white;margin-top: 24px;;">
                     <div class="card__caption" id="formKhachHang_input_caption" style="grid-column:span 2;">
                         KHÁCH HÀNG ĐÃ GỬI YÊU CẦU CẬP NHẬT THÔNG TIN MỚI:

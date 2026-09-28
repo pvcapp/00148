@@ -6,7 +6,15 @@ APP.features.chuNha.quanLyKhachHang.form.api =
     },
     create: function()
     {
+        const data = APP.features.chuNha.quanLyKhachHang.form.ui.getData();
 
+        return new Promise((resolve, reject) =>
+        {
+            google.script.run
+                .withSuccessHandler(resolve)
+                .withFailureHandler(reject)
+                .sv_chuNha_addNewKhachHang(data);
+        });
     },
     update: function()
     {
