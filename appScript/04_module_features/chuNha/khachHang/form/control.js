@@ -103,7 +103,8 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control =
     },
     submit: async function()
     {
-        if (!APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.dataInputOk())
+        const checkInput = await APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.dataInputOk();
+        if (!checkInput)
         {
             return;
         }
