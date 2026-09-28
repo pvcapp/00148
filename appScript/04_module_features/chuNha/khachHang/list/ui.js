@@ -53,7 +53,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 return String(dong.active) === '1';
             })
             .map(function(dong) {
-                let d = '<tr class="' + APP.features.chuNha.quanLyKhachHang.list.style.tableStyle + '__row" onclick="APP.features.chuNha.quanLyKhachHang.list.show('
+                let d = '<tr class="' + APP.features.chuNha.quanLyKhachHang.list.style.tableStyle + '__row" onclick="APP.features.chuNha.quanLyKhachHang.detail.control.show('
                     + "'" + dong.idKhachHang + "'" 
                     + ')">';
                 d += '<td>' + dong.hoVaTen + '</td>';
@@ -120,7 +120,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                     .map(function(dong) {
                         let html2 = '';
                         html2 +=  `
-                            <div class="card" onclick="APP.features.chuNha.quanLyKhachHang.update.show('${dong.idKhachHang}');">
+                            <div class="card" onclick="APP.features.chuNha.quanLyKhachHang.detail.control.show('${dong.idKhachHang}');">
                                 <div class="card__caption">
                                     ${escapeHtml(dong.hoVaTen || '')}                                    
                                 </div>
