@@ -109,12 +109,12 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control =
         }
 
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.render();
-        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.show();    
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.show();
     },
     abort: function()
     {
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
-        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet');
+        APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'list');
     }
 };
 
