@@ -17,6 +17,9 @@ APP.features.chuNha.quanLyKhachHang.form.control =
     {
         return {
             idKhachHang: APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.idKhachHang,
+            hoVaTen: $('#formKhachHang_input_hoVaTen').value,
+            soCCCD: $('#formKhachHang_input_soCCCD').value,
+            dienThoai: $('#formKhachHang_input_dienThoai').value,
             gioiTinh: $('#formKhachHang_input_gioiTinh').value,
             ngaySinh: $('#formKhachHang_input_ngaySinh').value,
             thangSinh: $('#formKhachHang_input_thangSinh').value,
