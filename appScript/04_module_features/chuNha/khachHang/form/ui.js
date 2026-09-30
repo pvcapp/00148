@@ -201,12 +201,8 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                     Email
                 </label>
                 <input type="email" id="formKhachHang_input_email" placeholder="">
-            </div>`;
-
-
-        const formKhachHang_card2 = div({className: 'card', parent: tab_main,
-            style: 'max-width:450px; padding:var(--padding-xl); display:flex; gap:12px; flex-direction:column;'});
-        formKhachHang_card2.innerHTML = `
+            </div>
+            
             <div class="form__field_01">
                 <label for="formKhachHang_input_diaChiThuongTru">
                     Địa chỉ thường trú
