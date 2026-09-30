@@ -29,7 +29,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
     },
     ok: async function() 
     {
-        let idKhachHang = APP.features.chuNha.quanLyKhachHang.control.detail.idKhachHang;
+        let idKhachHang = APP.features.chuNha.quanLyKhachHang.detail.idKhachHang;
         const khachHang = APP.cache.danhSachKhachHang_xacMinh.data.find(function(khach) 
         {
             return String(khach.idKhachHang) === String(idKhachHang);
@@ -75,7 +75,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
     },
     notOk: async function() 
     {
-        let idKhachHang = APP.features.chuNha.quanLyKhachHang.control.detail.idKhachHang;
+        let idKhachHang = APP.features.chuNha.quanLyKhachHang.detail.idKhachHang;
         toast('Đang từ chối duyệt..');
                 
         try
