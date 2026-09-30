@@ -202,7 +202,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                 </label>
                 <input type="email" id="formKhachHang_input_email" placeholder="">
             </div>
-            
+
             <div class="form__field_01">
                 <label for="formKhachHang_input_diaChiThuongTru">
                     Địa chỉ thường trú
@@ -248,7 +248,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
             <input type="hidden" id="formKhachHang_input_active">`;
 
 
-        const footer = div({className: 'form__footer', parent: formKhachHang_card2});
+        const footer = div({className: 'form__footer', parent: formKhachHang_card1});
 
         footer.appendChild(button({
             id: 'formKhachHang_thongTinChiTiet_saveButton', 
