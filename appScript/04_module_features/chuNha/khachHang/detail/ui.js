@@ -3,9 +3,6 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
     style: 'detail_01',
     init: function()
     {
-        // =========================================================
-        // TAB HEADER
-        // =========================================================
         const tabHeader = document.createElement('div');
         tabHeader.className = 'tab__header';
         tabHeader.innerHTML = `
@@ -16,17 +13,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
                 </div>
             </div>`;
 
-        APP.view.ui.addTab(
-            'chuNha',
-            'quanLyKhachHang',
-            'detail',
-            tabHeader
-        );
-
-
-        // =========================================================
-        // TAB MAIN
-        // =========================================================
+        APP.view.ui.addTab('chuNha','quanLyKhachHang','detail',tabHeader);
 
         const tabMain = document.createElement('div');
         tabMain.id = 'chuNha_quanLyKhachHang_detail_main';        
@@ -50,35 +37,31 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Họ và tên</div>
+                <div class="detail__label">Họ và tên: </div>
                 <div id="formKhachHang_detail_hoVaTen" class="detail__value"></div>
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Số điện thoại</div>
+                <div class="detail__label">Số điện thoại: </div>
                 <div id="formKhachHang_detail_dienThoai" class="detail__value"></div>
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Số CCCD</div>
+                <div class="detail__label">Số CCCD: </div>
                 <div id="formKhachHang_detail_soCCCD" class="detail__value"></div>
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Giới tính</div>
+                <div class="detail__label">Giới tính: </div>
                 <div id="formKhachHang_detail_gioiTinh" class="detail__value"></div>
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Ngày sinh</div>
+                <div class="detail__label">Ngày sinh: </div>
                 <div id="formKhachHang_detail_ngaySinh" class="detail__value"></div>
             </div>
         `;
 
-
-        // =========================================================
-        // THÔNG TIN LIÊN HỆ
-        // =========================================================
         const cardLienHe = div({
             className: 'card',
             parent: tabMain,
@@ -97,25 +80,21 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Email</div>
+                <div class="detail__label">Email: </div>
                 <div id="formKhachHang_detail_email" class="detail__value"></div>
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Địa chỉ thường trú</div>
+                <div class="detail__label">Địa chỉ thường trú: </div>
                 <div id="formKhachHang_detail_diaChiThuongTru" class="detail__value"></div>
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Nghề nghiệp</div>
+                <div class="detail__label">Nghề nghiệp: </div>
                 <div id="formKhachHang_detail_ngheNghiep" class="detail__value"></div>
             </div>
         `;
 
-
-        // =========================================================
-        // HÌNH ẢNH / GIẤY TỜ
-        // =========================================================
 
         const cardGiayTo = div({
             className: 'card',
@@ -173,10 +152,6 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
         `;
 
 
-        // =========================================================
-        // THÔNG TIN KHÁC
-        // =========================================================
-
         const cardThongTinKhac = div({
             className: 'card',
             parent: tabMain,
@@ -211,10 +186,6 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
         `;
 
 
-        // =========================================================
-        // FOOTER / ACTION
-        // =========================================================
-
         const footer = div({
             className: 'form__footer',
             parent: tabMain
@@ -224,37 +195,18 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             button({
                 id: 'chuNha_khachHang_editButton',
                 text: 'Chỉnh sửa',
-                onclick: () =>
-                    APP.features.chuNha.quanLyKhachHang.detail.control.edit()
+                onclick: () => APP.features.chuNha.quanLyKhachHang.detail.control.edit()
             })
         );
 
         footer.appendChild(
             button({
                 text: 'Quay lại',
-                onclick: () =>
-                    APP.view.ui.showTab(
-                        'chuNha',
-                        'quanLyKhachHang',
-                        'list'
-                    )
+                onclick: () => APP.view.ui.showTab('chuNha','quanLyKhachHang','list')
             })
         );
 
-
-        // =========================================================
-        // ADD TO VIEW
-        // =========================================================
-
-        APP.view.ui.addElementToTab(
-            'chuNha',
-            'quanLyKhachHang',
-            'detail',
-            tabMain
-        );
-    
-
-        
+        APP.view.ui.addElementToTab('chuNha','quanLyKhachHang','detail',tabMain);
         APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.init();
     },
     render: function()

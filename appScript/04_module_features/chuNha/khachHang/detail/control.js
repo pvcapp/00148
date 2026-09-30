@@ -11,6 +11,12 @@ APP.features.chuNha.quanLyKhachHang.detail.control =
         APP.features.chuNha.quanLyKhachHang.detail.idKhachHang = idKhachHang;
         APP.features.chuNha.quanLyKhachHang.detail.ui.render();
         APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'detail'); 
+    },
+    edit: function()
+    {
+        const idKhachHang = APP.features.chuNha.quanLyKhachHang.detail.idKhachHang;
+        APP.features.chuNha.quanLyKhachHang.form.render('edit', idKhachHang);
+        APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.show();
     }
 };
 
@@ -35,12 +41,6 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             return String(khach.idKhachHang) === String(idKhachHang);
         });
 
-        APP.cache.danhSachKhachHang_xacMinh.data.forEach(e => {
-            console.log(idKhachHang);
-            console.log(e.idKhachHang);
-            console.log('String(khach.idKhachHang) === String(idKhachHang): ' + String(e.idKhachHang) === String(idKhachHang));
-        });
-
         if (!khachHang)
         {
             toast('Không tìm thấy phiếu yêu cầu xác minh');
@@ -60,7 +60,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         }
 
         //update thông tin khách hàng            
-        APP.features.chuNha.quanLyKhachHang.update.submit();
+        //APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.submit();
         //Xóa phiếu chờ xác minh
         try
         {
@@ -80,7 +80,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
                 
         try
         {
-            await APP.features.chuNha.quanLyKhachHang.api.update.xacMinhNotOk(idKhachHang);
+            await APP.features.chuNha.quanLyKhachHang.detail.api.xacMinh.xacMinhNotOk(idKhachHang);
             toast('Đã Từ chối thông tin Khách hàng', 1500);
             // Cập nhật cache
             const index = APP.cache.danhSachKhachHang_xacMinh.data.findIndex(

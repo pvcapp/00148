@@ -4,6 +4,41 @@ APP.features.chuNha.quanLyKhachHang.form.ui =
     {
         APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui.init();
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.init();
+    },
+    render: function(mode = 'addNew', idKhachHang = '')
+    {
+        APP.features.chuNha.quanLyKhachHang.form.mode = mode;
+        if (mode == 'addNew')
+        {
+            APP.features.chuNha.quanLyKhachHang.form.idKhachHang = '';
+            APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
+            APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
+        }
+        else
+        {
+            APP.features.chuNha.quanLyKhachHang.form.idKhachHang = idKhachHang;
+            const kh = APP.cache.danhSachKhachHang.data.find(
+                khach => khach.idKhachHang == idKhachHang
+            );
+
+            if (!kh)
+            {
+                console.log('Load data: Không tìm thấy khách hàng có ID "' + idKhachHang + '"');
+                return false;
+            }
+            $('#formKhachHang_input_hoVaTen').value = kh.hoVaTen ?? '';
+            $('#formKhachHang_input_dienThoai').value = kh.dienThoai ?? '';
+            $('#formKhachHang_input_soCCCD').value = kh.soCCCD ?? '';
+
+            $('#formKhachHang_input_gioiTinh').value = kh.gioiTinh ?? '';
+            $('#formKhachHang_input_email').value = kh.email ?? '';
+            $('#formKhachHang_input_diaChiThuongTru').value = kh.diaChiThuongTru ?? '';
+            $('#formKhachHang_input_ngheNghiep').value = kh.ngheNghiep ?? '';
+
+            $('#formKhachHang_input_ghiChu').value = kh.ghiChu ?? '';
+            $('#formKhachHang_input_xacMinh').value = kh.xacMinh ?? '';
+            $('#formKhachHang_input_active').value = kh.active ?? '';
+        }
     }
 };
 
@@ -64,32 +99,8 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.ui =
                     
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan', tab_main);
     },
-    render: function()
-    {
-        const idKhachHang = APP.features.chuNha.quanLyKhachHang.form.idKhachHang;
-        if (idKhachHang == '')
-        {
-            resetForm('chuNha_quanLyKhachHang_form_thongTinCoBan_tab');
-        }
-        else
-        {
-            const kh = APP.cache.danhSachKhachHang.data.find(
-                khach => khach.idKhachHang == idKhachHang
-            );
-
-            if (!kh)
-            {
-                console.log('Form khách hàng - thông tin cơ bản: Không tìm thấy khách hàng có ID "' + idKhachHang + '"');
-                return false;
-            }
-            $('#formKhachHang_input_hoVaTen').value = kh.hoVaTen;
-            $('#formKhachHang_input_dienThoai').value = kh.dienThoai;
-            $('#formKhachHang_input_soCCCD').value = kh.soCCCD;
-        }
-    },
     show: function()
-    {
-        APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
+    {        
         APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinCoBan');
     }
 };
@@ -257,32 +268,9 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                     
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet', tab_main);
     },
-    render: function()
-    {
-        const idKhachHang = APP.features.chuNha.quanLyKhachHang.form.idKhachHang;
-        $('#formKhachHang_input_hoVaTen_text').innerText = $('#formKhachHang_input_hoVaTen').value;
-        $('#formKhachHang_input_dienThoai_text').innerText = $('#formKhachHang_input_dienThoai').value;
-        $('#formKhachHang_input_soCCCD_text').innerText = $('#formKhachHang_input_soCCCD').value;
-
-        if (idKhachHang == '')
-        {
-            resetForm('chuNha_quanLyKhachHang_form_thongTinChiTiet_tab');
-        }
-        else
-        {
-            APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.loadData(idKhachHang);
-        }
-    },
     show: function()
     {
         APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet');
-    },
-    clear: function()
-    {
-        resetForm('chuNha_quanLyKhachHang_form_thongTinChiTiet_tab');
-        $('#formKhachHang_input_hoVaTen_text').innerText = '';
-        $('#formKhachHang_input_dienThoai_text').innerText = '';
-        $('#formKhachHang_input_soCCCD_text').innerText = '';
     }
 };
 
