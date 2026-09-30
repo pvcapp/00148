@@ -5,7 +5,7 @@ APP.features.chuNha.dashboard.control =
     init: function()
     {
         APP.features.chuNha.dashboard.ui.init();
-    }    
+    }
 }
 
 APP.features.chuNha.dashboard.ui = 
@@ -16,6 +16,7 @@ APP.features.chuNha.dashboard.ui =
     },
     render: function()
     {
+        APP.view.ui.removeTab('chuNha', 'dashboard', 'list');
         const card_container_data = APP.cache.tongQuan.map(item => ({
             data: item,
             type: 'numberCard_01'
@@ -34,7 +35,7 @@ function capNhatTongQuanTuCache()
         .withSuccessHandler(function(tongQuan)
         {
             APP.cache.tongQuan = tongQuan || {};
-            $('#tab_chuNha_dashboard_danhSach').innerHTML = chuNha_buildDashboard(APP.cache.tongQuan);                
+            APP.features.chuNha.dashboard.ui.render();              
         })
         .withFailureHandler(function(loi)
         {

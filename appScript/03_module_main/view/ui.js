@@ -78,6 +78,19 @@ APP.view.ui =
         tab.style.display = '';
         tab.classList.remove('hide');
     },
+    removeTab: function(vaiTro, module, type)
+    {
+        const tabId = vaiTro + '_' + module + '_' + type + '_tab';
+        const tab = $('#' + tabId);
+        if (!tab) 
+        {
+            return;
+        }
+        else
+        {
+            tab.remove();
+        }
+    },
     clear: function()
     {
         $('#view').innerHTML = '';

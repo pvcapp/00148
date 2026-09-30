@@ -279,12 +279,13 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
                 $('#chuNha_khachHang_saveButton').innerText = 'Thêm khách hàng';
                 if (khachHangMoi && khachHangMoi.thanhCong) 
                 {
-                    toast('Thêm khách hàng thành công: ' + duLieu.hoVaTen);
+                    toast('Thêm khách hàng thành công: ' + khachHangMoi.data.hoVaTen);
                     APP.cache.danhSachKhachHang.data.push(khachHangMoi.data);
+                    APP.cache.tongQuan = khachHangMoi.cache;
+                    APP.features.chuNha.dashboard.ui.render();
                     APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
                     APP.features.chuNha.quanLyKhachHang.list.ui.render();
                     APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'list');
-                    capNhatTongQuanTuCache();
                     return;
                 }           
             }
