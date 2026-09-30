@@ -130,8 +130,8 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control =
         {
             return;
         }
-        const idKhachHang = APP.features.chuNha.quanLyKhachHang.form.idKhachHang;
-        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.render(idKhachHang);
+        
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.render();
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.show();
     },
     abort: function()

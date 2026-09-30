@@ -247,7 +247,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
         footer.appendChild(button({
             id: 'formKhachHang_thongTinChiTiet_reset', 
             text: 'Làm mới', 
-            onclick: () => APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.submit()
+            onclick: () => APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.render()
         }));
 
         footer.appendChild(button({
@@ -257,8 +257,9 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                     
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhachHang', 'form_thongTinChiTiet', tab_main);
     },
-    render: function(idKhachHang = '')
+    render: function()
     {
+        const idKhachHang = APP.features.chuNha.quanLyKhachHang.form.idKhachHang;
         $('#formKhachHang_input_hoVaTen_text').innerText = $('#formKhachHang_input_hoVaTen').value;
         $('#formKhachHang_input_dienThoai_text').innerText = $('#formKhachHang_input_dienThoai').value;
         $('#formKhachHang_input_soCCCD_text').innerText = $('#formKhachHang_input_soCCCD').value;
