@@ -130,7 +130,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control =
         {
             return;
         }
-        
+
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.render();
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.show();
     },
@@ -269,9 +269,13 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
         {
             try
             {
-                const result = await APP.features.chuNha.quanLyKhachHang.form.api.create();
+                const khachHangMoi = await APP.features.chuNha.quanLyKhachHang.form.api.create();
 
                 // xử lý sau khi thêm thành công
+                APP.cache.danhSachKhachHang.push(khachHangMoi.data);
+                APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
+                APP.features.chuNha.quanLyKhachHang.list.ui.render();
+                APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'list');
                 console.log(result);                
             }
             catch (error)
