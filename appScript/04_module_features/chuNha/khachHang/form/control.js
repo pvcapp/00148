@@ -269,14 +269,24 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
         {
             try
             {
+                inactiveButton('chuNha_khachHang_saveButton');
+                $('#chuNha_khachHang_saveButton').innerText = 'Đang thêm..';
+                toast('Đang thêm khách hàng..');
+
                 const khachHangMoi = await APP.features.chuNha.quanLyKhachHang.form.api.create();
 
-                // xử lý sau khi thêm thành công
-                APP.cache.danhSachKhachHang.push(khachHangMoi.data);
-                APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
-                APP.features.chuNha.quanLyKhachHang.list.ui.render();
-                APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'list');
-                console.log(result);                
+                activeButton('chuNha_khachHang_saveButton');
+                $('#chuNha_khachHang_saveButton').innerText = 'Thêm khách hàng';
+                if (khachHangMoi && khachHangMoi.thanhCong) 
+                {
+                    toast('Thêm khách hàng thành công: ' + duLieu.hoVaTen);
+                    APP.cache.danhSachKhachHang.data.push(khachHangMoi.data);
+                    APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
+                    APP.features.chuNha.quanLyKhachHang.list.ui.render();
+                    APP.view.ui.showTab('chuNha', 'quanLyKhachHang', 'list');
+                    capNhatTongQuanTuCache();
+                    return;
+                }           
             }
             catch (error)
             {
