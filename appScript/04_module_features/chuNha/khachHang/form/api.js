@@ -7,17 +7,16 @@ APP.features.chuNha.quanLyKhachHang.form.api =
     create: function()
     {
         const data = APP.features.chuNha.quanLyKhachHang.form.control.getData();
-
         return new Promise((resolve, reject) =>
         {
             google.script.run
                 .withSuccessHandler(resolve)
                 .withFailureHandler(reject)
-                .sv_chuNha_addNewKhachHang(data, APP.user.token);
+                .sv_chuNha_quanLyKhachHang_addNew(data, APP.user.token);
         });
     },
     update: function()
     {
 
-    }    
+    }
 };
