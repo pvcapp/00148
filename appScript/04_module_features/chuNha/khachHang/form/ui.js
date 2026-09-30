@@ -162,7 +162,6 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                     <option value="">-- Chọn giới tính --</option>
                     <option value="Nam">Nam</option>
                     <option value="Nu">Nữ</option>
-                    <option value="Khac">Khác</option>
                 </select>
             </div>
 
@@ -185,17 +184,6 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
                 </table>            
             </div>
             
-            <div class="form__field_01">
-                <label for="formKhachHang_input_gioiTinh">
-                    Giới tính
-                </label>
-                <select id="formKhachHang_input_gioiTinh">
-                    <option value="">-- Chọn giới tính --</option>
-                    <option value="Nam">Nam</option>
-                    <option value="Nu">Nữ</option>
-                </select>
-            </div>
-
             <div class="form__field_01">
                 <label for="formKhachHang_input_email">
                     Email

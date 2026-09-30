@@ -12,6 +12,25 @@ APP.features.chuNha.quanLyKhachHang.form.control =
     showAddNew_detail: function()
     {
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.show();
+    },
+    getData: function()
+    {
+        return {
+            idKhachHang: APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.idKhachHang,
+            gioiTinh: $('#formKhachHang_input_gioiTinh').value,
+            ngaySinh: $('#formKhachHang_input_ngaySinh').value,
+            thangSinh: $('#formKhachHang_input_thangSinh').value,
+            namSinh: $('#formKhachHang_input_namSinh').value,
+            email: $('#formKhachHang_input_email').value,
+            diaChiThuongTru: $('#formKhachHang_input_diaChiThuongTru').value,
+            ngheNghiep: $('#formKhachHang_input_ngheNghiep').value,
+            anhKhach: $('#formKhachHang_input_anhKhach').value,
+            anhCCCDMatTruoc: $('#formKhachHang_input_anhCCCDMatTruoc').value,
+            anhCCCDMatSau: $('#formKhachHang_input_anhCCCDMatSau').value,
+            ghiChu: $('#formKhachHang_input_ghiChu').value,
+            xacMinh: $('#formKhachHang_input_xacMinh').value,
+            active: $('#formKhachHang_input_active').value
+        };
     }
 };
 
