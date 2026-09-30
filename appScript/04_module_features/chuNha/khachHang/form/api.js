@@ -6,7 +6,9 @@ APP.features.chuNha.quanLyKhachHang.form.api =
     },
     create: function()
     {
+        
         const data = APP.features.chuNha.quanLyKhachHang.form.control.getData();
+        console.log(JSON.stringify(data));
         return new Promise((resolve, reject) =>
         {
             google.script.run
