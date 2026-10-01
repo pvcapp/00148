@@ -35,32 +35,6 @@ APP.features.chuNha.quanLyKhachHang.addNew =
         hide('formKhachHang_input_form');
         show('tab_chuNha_khachHang_danhSach');
     },
-    readData: function()
-    {
-        return {
-            idKhachHang: $('#formKhachHang_input_idKhachHang').value || '',
-            hoVaTen: $('#formKhachHang_input_hoVaTen').value || '',
-            soCCCD: $('#formKhachHang_input_soCCCD').value || '',
-
-            ngaySinh: $('#formKhachHang_input_ngaySinh').value || '',
-            thangSinh: $('#formKhachHang_input_thangSinh').value || '',
-            namSinh: $('#formKhachHang_input_namSinh').value || '',
-
-            gioiTinh: $('#formKhachHang_input_gioiTinh').value || '',
-            dienThoai: $('#formKhachHang_input_dienThoai').value || '',
-            email: $('#formKhachHang_input_email').value || '',
-
-            diaChiThuongTru: $('#formKhachHang_input_diaChiThuongTru').value || '',
-            ngheNghiep: $('#formKhachHang_input_ngheNghiep').value || '',
-
-            anhKhach: $('#formKhachHang_input_anhKhach').value || '',
-            anhCCCDMatTruoc: $('#formKhachHang_input_anhCCCDMatTruoc').value || '',
-            anhCCCDMatSau: $('#formKhachHang_input_anhCCCDMatSau').value || '',  
-
-            ghiChu: $('#formKhachHang_input_ghiChu').value || '',
-            active: '1'
-        };
-    },
     submit: async function()
     {
         const duLieu = APP.features.chuNha.quanLyKhachHang.addNew.readData();
@@ -99,35 +73,5 @@ APP.features.chuNha.quanLyKhachHang.addNew =
                 alert('Không thành công!', 'Có lỗi khi thêm khách hàng:\n' + loi.message);
             })
             .sv_themKhachHang(duLieu, APP.user.token);
-    },
-    checkData: function(duLieu)
-    {
-        if (!duLieu.hoVaTen) {
-            toast('Vui lòng nhập họ và tên');
-            return false;
-        }
-
-        if (!/^\d{12}$/.test(duLieu.soCCCD)) {
-            toast('Số CCCD phải gồm đúng 12 chữ số');
-            return false;
-        }
-
-        if (
-            duLieu.dienThoai &&
-            !/^(0|\+84)\d{9}$/.test(duLieu.dienThoai)
-        ) {
-            toast('Số điện thoại không hợp lệ');
-            return false;
-        }
-
-        if (
-            duLieu.email &&
-            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(duLieu.email)
-        ) {
-            toast('Email không hợp lệ');
-            return false;
-        }
-
-        return true;
     }
 }

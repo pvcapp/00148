@@ -2,56 +2,6 @@
 APP.features.chuNha.quanLyKhachHang.update = 
 {
     idKhachHang: '',
-    loadData: function(duLieu)
-    {
-        $('#formKhachHang_input_idKhachHang').value = duLieu.idKhachHang || '';
-        $('#formKhachHang_input_hoVaTen').value = duLieu.hoVaTen || '';
-        $('#formKhachHang_input_soCCCD').value = duLieu.soCCCD || '';
-
-        $('#formKhachHang_input_ngaySinh').value = duLieu.ngaySinh || '';
-        $('#formKhachHang_input_thangSinh').value = duLieu.thangSinh || '';
-        $('#formKhachHang_input_namSinh').value = duLieu.namSinh || '';
-    
-        $('#formKhachHang_input_gioiTinh').value = duLieu.gioiTinh || '';
-        $('#formKhachHang_input_dienThoai').value = duLieu.dienThoai || '';
-        $('#formKhachHang_input_email').value = duLieu.email || '';
-
-        $('#formKhachHang_input_diaChiThuongTru').value = duLieu.diaChiThuongTru || '';
-        $('#formKhachHang_input_ngheNghiep').value = duLieu.ngheNghiep || '';
-
-        $('#formKhachHang_input_anhKhach').value = duLieu.anhKhach || '';
-        $('#formKhachHang_input_anhCCCDMatTruoc').value = duLieu.anhCCCDMatTruoc || '';
-        $('#formKhachHang_input_anhCCCDMatSau').value = duLieu.anhCCCDMatSau || '';
-
-        $('#formKhachHang_input_ghiChu').value = duLieu.ghiChu || '';
-        $('#formKhachHang_input_active').value = '1';
-    },
-    readData: function()
-    {
-        return {
-            idKhachHang: $('#formKhachHang_input_idKhachHang').value || '',
-            hoVaTen: $('#formKhachHang_input_hoVaTen').value || '',
-            soCCCD: $('#formKhachHang_input_soCCCD').value || '',
-
-            ngaySinh: $('#formKhachHang_input_ngaySinh').value || '',
-            thangSinh: $('#formKhachHang_input_thangSinh').value || '',
-            namSinh: $('#formKhachHang_input_namSinh').value || '',
-
-            gioiTinh: $('#formKhachHang_input_gioiTinh').value || '',
-            dienThoai: $('#formKhachHang_input_dienThoai').value || '',
-            email: $('#formKhachHang_input_email').value || '',
-
-            diaChiThuongTru: $('#formKhachHang_input_diaChiThuongTru').value || '',
-            ngheNghiep: $('#formKhachHang_input_ngheNghiep').value || '',
-
-            anhKhach: $('#formKhachHang_input_anhKhach').value || '',
-            anhCCCDMatTruoc: $('#formKhachHang_input_anhCCCDMatTruoc').value || '',
-            anhCCCDMatSau: $('#formKhachHang_input_anhCCCDMatSau').value || '',  
-
-            ghiChu: $('#formKhachHang_input_ghiChu').value || '',
-            active: '1'
-        };
-    },
     submit: async function()
     {
         const data = APP.features.chuNha.quanLyKhachHang.update.readData();

@@ -35,6 +35,37 @@ APP.features.chuNha.quanLyKhachHang.form.control =
             active: $('#formKhachHang_input_active').value
         };
     },
+    checkData: function()
+    {
+        duLieu = APP.features.chuNha.quanLyKhachHang.form.control.getData();
+        if (!duLieu.hoVaTen) {
+            toast('Vui lòng nhập họ và tên');
+            return false;
+        }
+
+        if (!/^\d{12}$/.test(duLieu.soCCCD)) {
+            toast('Số CCCD phải gồm đúng 12 chữ số');
+            return false;
+        }
+
+        if (
+            duLieu.dienThoai &&
+            !/^(0|\+84)\d{9}$/.test(duLieu.dienThoai)
+        ) {
+            toast('Số điện thoại không hợp lệ');
+            return false;
+        }
+
+        if (
+            duLieu.email &&
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(duLieu.email)
+        ) {
+            toast('Email không hợp lệ');
+            return false;
+        }
+
+        return true;
+    },
     reset: function()
     {        
         APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
@@ -288,10 +319,8 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
         {
             try
             {
-                const result = await APP.features.chuNha.quanLyKhachHang.form.api.update();
-
+                await APP.features.chuNha.quanLyKhachHang.form.api.update();
                 // xử lý sau khi thêm thành công
-                console.log(result);
             }
             catch (error)
             {

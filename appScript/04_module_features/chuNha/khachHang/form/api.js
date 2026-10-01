@@ -26,8 +26,7 @@ APP.features.chuNha.quanLyKhachHang.form.api =
             return;
         }
 
-        if (!APP.features.chuNha.quanLyKhachHang.addNew.checkData(data)) return;
-
+        if (!APP.features.chuNha.quanLyKhachHang.form.control.checkData()) return;
         inactiveButton('chuNha_khachHang_updateButton');
         $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
         toast('Đang cập nhật thông tin..');
