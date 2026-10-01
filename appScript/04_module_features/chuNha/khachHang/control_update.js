@@ -52,39 +52,6 @@ APP.features.chuNha.quanLyKhachHang.update =
             active: '1'
         };
     },
-    show: function(idKhachHang)
-    {
-        const khachHang = APP.cache.danhSachKhachHang.find(function(khach) 
-        {
-            return String(khach.idKhachHang) === String(idKhachHang);
-        });
-
-        if (!khachHang)
-        {
-            toast('Không tìm thấy khách hàng');
-            return;
-        }
-
-        APP.features.chuNha.quanLyKhachHang.update.loadData(khachHang);
-        APP.features.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
-
-        $('#formKhachHang_input_caption').innerText = 'CẬP NHẬT THÔNG TIN';
-        show('chuNha_khachHang_updateButton');
-        show('chuNha_khachHang_update_reset');
-
-        hide('chuNha_khachHang_saveButton');
-        hide('chuNha_khachHang_addNew_reset');
-    
-        show('formKhachHang_deleteButton');        
-
-        hide('tab_chuNha_khachHang_danhSach'); 
-        show('formKhachHang_input_form', 'grid');
-    },
-    hide: function()
-    {
-        show('tab_chuNha_khachHang_danhSach'); 
-        hide('formKhachHang_input_form', 'grid');
-    },
     submit: async function()
     {
         const data = APP.features.chuNha.quanLyKhachHang.update.readData();

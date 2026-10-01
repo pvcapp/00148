@@ -58,9 +58,9 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             APP.cache.danhSachKhachHang_xacMinh.data.splice(idXoa, 1);
         }
 
-        //update thông tin khách hàng            
-        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.submit();
-        //Xóa phiếu chờ xác minh
+        //update thông tin khách hàng      
+        APP.features.chuNha.quanLyKhachHang.form.control.submit();
+         //Xóa phiếu chờ xác minh
         try
         {
             await APP.features.chuNha.quanLyKhachHang.detail.api.xacMinh.xoaPhieu(idKhachHang);

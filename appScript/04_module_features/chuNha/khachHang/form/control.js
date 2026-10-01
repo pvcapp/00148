@@ -39,6 +39,10 @@ APP.features.chuNha.quanLyKhachHang.form.control =
     {        
         APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
         APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
+    },
+    submit: async function()
+    {
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.submit();
     }
 };
 
@@ -218,32 +222,6 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
                 }
             }
         }*/
-    },
-    loadData: function()
-    {
-        const idKhachHang = APP.features.chuNha.quanLyKhachHang.form.idKhachHang;
-        const kh = APP.cache.danhSachKhachHang.data.find(
-            khach => khach.idKhachHang == idKhachHang
-        );
-
-        if (!kh)
-        {
-            console.log('Load data: Không tìm thấy khách hàng có ID "' + idKhachHang + '"');
-            return false;
-        }
-
-        $('#formKhachHang_input_gioiTinh').value = kh.gioiTinh ?? '';
-        $('#formKhachHang_input_email').value = kh.email ?? '';
-        $('#formKhachHang_input_diaChiThuongTru').value = kh.diaChiThuongTru ?? '';
-        $('#formKhachHang_input_ngheNghiep').value = kh.ngheNghiep ?? '';
-
-        $('#formKhachHang_input_ghiChu').value = kh.ghiChu ?? '';
-        $('#formKhachHang_input_xacMinh').value = kh.xacMinh ?? '';
-        $('#formKhachHang_input_active').value = kh.active ?? '';
-
-        // ảnh xử lý riêng nếu cần
-
-        return true;
     },
     dataInputOk: async function()
     {
