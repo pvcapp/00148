@@ -15,7 +15,7 @@ APP.features.chuNha.quanLyKhachHang.detail.control =
     edit: function()
     {
         const idKhachHang = APP.features.chuNha.quanLyKhachHang.detail.idKhachHang;
-        APP.features.chuNha.quanLyKhachHang.form.render('edit', idKhachHang);
+        APP.features.chuNha.quanLyKhachHang.form.ui.render('edit', idKhachHang);
         APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.show();
     }
 };
