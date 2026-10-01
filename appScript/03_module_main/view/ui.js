@@ -13,9 +13,8 @@ APP.view.ui =
             className: 'view',
             parentId: 'main'
         });
-        
-        //APP.view.ui.addTab('home', 'startupScreen', 'loading', loadingBar());
-        APP.view.ui.showLoading();
+        ``
+        //APP.view.ui.showLoading();
     },
     showLoading: function()
     {
