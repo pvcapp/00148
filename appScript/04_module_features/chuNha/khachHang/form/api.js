@@ -34,7 +34,7 @@ APP.features.chuNha.quanLyKhachHang.form.api =
         google.script.run
             .withSuccessHandler(function(kh)
             {
-                
+                return kh;
             })
             .withFailureHandler(function(loi)
             {

@@ -319,7 +319,7 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
         {
             try
             {
-                await APP.features.chuNha.quanLyKhachHang.form.api.update();
+                let kh = await APP.features.chuNha.quanLyKhachHang.form.api.update();
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
                 const viTri = (APP.cache.danhSachKhachHang.data || []).findIndex(function(khach)
