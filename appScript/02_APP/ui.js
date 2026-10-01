@@ -55,7 +55,6 @@ APP.ui =
             'khuNha_edit_form',
             'themMoiKhuNha_form',
             'themMoiPhong_form',
-            'phong_edit_form',
             'hopDong_form'
         ].forEach(function(id)
         {

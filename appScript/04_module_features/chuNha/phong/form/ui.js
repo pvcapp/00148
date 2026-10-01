@@ -98,7 +98,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
         `;
 
             /*
-        const select = $('#phong_edit_idKhuNha');
+        const select = $('#themMoiPhong_idKhuNha');
 
         select.innerHTML = `
             <option value="">-- Chọn khu nhà --</option>
@@ -132,15 +132,15 @@ APP.features.chuNha.quanLyPhong.form.ui =
             }
             APP.features.chuNha.quanLyPhong.form.idPhong = idPhong;
             APP.features.chuNha.quanLyPhong.form.ui.renderKhuNhaOptions();
-            $('#phong_edit_idKhuNha').value = phong.idKhuNha || '';
-            $('#phong_edit_tang').value = phong.tang || '';
+            $('#themMoiPhong_idKhuNha').value = phong.idKhuNha || '';
+            $('#themMoiPhong_tang').value = phong.tang || '';
 
-            $('#phong_edit_tenPhong').value = phong.tenPhong || '';    
-            $('#phong_edit_dienTich').value = phong.dienTich || '';
-            $('#phong_edit_giaNiemYet').value = phong.giaNiemYet || '';
-            $('#phong_edit_tienDatCoc').value = phong.tienDatCoc || '';
-            $('#phong_edit_trangThai').value = phong.trangThai || 'dangHoatDong';
-            $('#phong_edit_moTa').value = phong.moTa || '';
+            $('#themMoiPhong_tenPhong').value = phong.tenPhong || '';    
+            $('#themMoiPhong_dienTich').value = phong.dienTich || '';
+            $('#themMoiPhong_giaNiemYet').value = phong.giaNiemYet || '';
+            $('#themMoiPhong_tienDatCoc').value = phong.tienDatCoc || '';
+            $('#themMoiPhong_trangThai').value = phong.trangThai || 'dangHoatDong';
+            $('#themMoiPhong_moTa').value = phong.moTa || '';
         }
     },
     show: function()
