@@ -27,7 +27,7 @@ APP.features.chuNha.quanLyKhachHang.form.ui =
                 khach => khach.idKhachHang == idKhachHang
             );
 
-            if (!kh)
+            if (!kh) 
             {
                 console.log('Load data: Không tìm thấy khách hàng có ID "' + idKhachHang + '"');
                 return false;
