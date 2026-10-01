@@ -80,7 +80,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
                 
         try
         {
-            await APP.features.chuNha.quanLyKhachHang.detail.api.xacMinh.xacMinhNotOk(idKhachHang);
+            await APP.features.chuNha.quanLyKhachHang.detail.api.xacMinh.notOk(idKhachHang);
             toast('Đã Từ chối thông tin Khách hàng', 1500);
             // Cập nhật cache
             const index = APP.cache.danhSachKhachHang_xacMinh.data.findIndex(
