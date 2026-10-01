@@ -48,16 +48,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                     <tbody>
         `;
 
-        console.log(
-    APP.cache.danhSachKhachHang.data
-        .map(function(dong, index) {
-            return dong ? null : index;
-        })
-        .filter(function(index) {
-            return index !== null;
-        })
-);
-
+ 
         html += APP.cache.danhSachKhachHang.data
             .filter(function(dong) {
                 return String(dong.active) === '1';
