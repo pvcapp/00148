@@ -102,7 +102,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             style: `
                 max-width:650px;
                 padding:var(--padding-xl);
-                display:flex;
+                display: none;
                 gap:16px;
                 flex-direction:column;
             `
