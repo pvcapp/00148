@@ -63,7 +63,7 @@ APP.features.chuNha.quanLyPhong.list.ui =
                 
                 dataHtml += `
                     <tr class="${APP.features.chuNha.quanLyPhong.list.style.tableStyle}__row"
-                        onclick="chuNha_editPhong('${escapeHtml(dong.idPhong)}')">
+                        onclick="APP.features.chuNha.quanLyPhong.form.ui.render('edit', '${escapeHtml(dong.idPhong)}')">
                         <td>${escapeHtml(dong.tenPhong || '')}</td>
                         <td>${escapeHtml(tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.tang || '')}</td>
@@ -71,7 +71,7 @@ APP.features.chuNha.quanLyPhong.list.ui =
                         <td>${formatMoney(dong.giaNiemYet)}</td>                                   
                         <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
                         <td>
-                            <div class="deleteButton imageButton" onclick="event.stopPropagation();chuNha_xoaPhong('${escapeHtml(dong.idPhong)}')">
+                            <div class="deleteButton imageButton" onclick="event.stopPropagation();APP.features.chuNha.quanLyPhong.form.control.delete('${escapeHtml(dong.idPhong)}')">
                                 ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px', 'margin-right:6px;', '0.6').render()}
                             </div>
                         </td>
@@ -85,3 +85,7 @@ APP.features.chuNha.quanLyPhong.list.ui =
         tbody.innerHTML = dataHtml;
     }
 };
+
+
+
+

@@ -14,19 +14,16 @@ APP.features.chuNha.quanLyPhong =
     detail:
     {
         style: 'detail_01',
-        idKhachHang: '',
+        idPhong: '',
         ui: {},
-        control: {},
-        xacMinh: {ui: {}, control: {}}
+        control: {}
     },
     form:
     {
         mode: 'addNew',
         style: 'form_01',
-        idKhachHang: '',
+        idPhong: '',
         ui: {},
-            thongTinCoBan: {},
-            thongTinChiTiet: {},
         control: {},
         api: {}
     }
@@ -37,6 +34,11 @@ APP.features.chuNha.quanLyPhong.ui =
 {
     init: function()
     {
-        
+        APP.features.chuNha.quanLyPhong.list.ui.init();
+        APP.features.chuNha.quanLyPhong.form.ui.init();
+    },
+    render: function()
+    {
+        //render list
     }
 };

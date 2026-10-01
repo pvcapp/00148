@@ -4,5 +4,4 @@ APP.features.chuNha.quanLyPhong.list.control =
     {
         APP.features.chuNha.quanLyPhong.list.ui.init();
     }    
-    
 };
