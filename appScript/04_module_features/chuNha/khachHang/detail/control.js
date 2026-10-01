@@ -47,8 +47,8 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             return;
         }
 
-        APP.features.chuNha.quanLyKhachHang.update.loadData(khachHang);
-        APP.features.chuNha.quanLyKhachHang.update.idKhachHang = khachHang.idKhachHang;
+        APP.features.chuNha.quanLyKhachHang.form.render('edit', idKhachHang);
+        APP.features.chuNha.quanLyKhachHang.form.idKhachHang = khachHang.idKhachHang;
 
         //Cập nhật tình trạng xác minh và render lại danh sách
         const idXoa = APP.cache.danhSachKhachHang_xacMinh.data.findIndex(
