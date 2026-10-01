@@ -63,7 +63,7 @@ APP.features.chuNha.quanLyPhong.list.ui =
                 
                 dataHtml += `
                     <tr class="${APP.features.chuNha.quanLyPhong.list.style.tableStyle}__row"
-                        onclick="APP.features.chuNha.quanLyPhong.form.ui.render('edit', '${escapeHtml(dong.idPhong)}')">
+                        onclick="APP.features.chuNha.quanLyPhong.form.control.show('edit', '${escapeHtml(dong.idPhong)}')">
                         <td>${escapeHtml(dong.tenPhong || '')}</td>
                         <td>${escapeHtml(tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.tang || '')}</td>

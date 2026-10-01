@@ -29,6 +29,12 @@ APP.features.chuNha.quanLyPhong.form.control =
         $('#themMoiPhong_trangThai').value = 'Trong';
         $('#themMoiPhong_moTa').value = '';
     },
+    show: function(mode = 'addNew', idPhong = '')
+    {
+        APP.features.chuNha.quanLyPhong.form.mode = mode;
+        APP.features.chuNha.quanLyPhong.form.ui.render(mode, idPhong);
+        APP.view.ui.showTab('chuNha', 'quanLyPhong', 'form');
+    },
     submit: async function()
     {
         const data = APP.features.chuNha.quanLyPhong.form.control.getData();
@@ -61,35 +67,6 @@ APP.features.chuNha.quanLyPhong.form.control =
             const idPhong = APP.features.chuNha.quanLyPhong.form.idPhong;
             APP.features.chuNha.quanLyPhong.form.control.update(idPhong, data);
         }
-
-        inactiveButton('khachHang_newPhong_saveButton');
-        $('#khachHang_newPhong_saveButton').innerText = 'Đang thêm..';
-
-        google.script.run
-            .withSuccessHandler(function(ketQua)
-            {
-                activeButton('khachHang_newPhong_saveButton');
-                $('#khachHang_newPhong_saveButton').innerText = 'Thêm phòng';
-
-                if (ketQua)
-                {
-                    APP.cache.danhSachPhong.data.push(ketQua);
-                    APP.features.chuNha.quanLyPhong.list.ui.render();
-                    APP.features.chuNha.quanLyPhong.form.control.reset();
-                    //cap nhat tong quan
-                    toast('Thêm phòng thành công');
-                    return;
-                }
-
-                toast('Không thể thêm phòng');
-            })
-            .withFailureHandler(function(loi)
-            {
-                activeButton('khachHang_newPhong_saveButton');
-                $('#khachHang_newPhong_saveButton').innerText = 'Thêm phòng';
-                alert('Có lỗi khi thêm phòng:\n' + loi.message);
-            })
-            .sv_themPhong(data, APP.user.token);
     },
     addNew: async function(data)
     {
