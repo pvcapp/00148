@@ -48,18 +48,18 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         }
         
         
-        const viTri = (APP.cache.danhSachKhachHang || []).findIndex(function(khach)
+        const viTri = (APP.cache.danhSachKhachHang.data || []).findIndex(function(khach)
         {
             return String(khach.idKhachHang) === String(idKhachHang);
         });
 
         if (viTri !== -1)
         {
-            APP.cache.danhSachKhachHang[viTri] = {
-                ...APP.cache.danhSachKhachHang[viTri],
+            APP.cache.danhSachKhachHang.data[viTri] = {
+                ...APP.cache.danhSachKhachHang.data[viTri],
                 ...khachHang,
-                dangThue: APP.cache.danhSachKhachHang[viTri].dangThue,
-                active: APP.cache.danhSachKhachHang[viTri].active
+                dangThue: APP.cache.danhSachKhachHang.data[viTri].dangThue,
+                active: APP.cache.danhSachKhachHang.data[viTri].active
             };
         }
 

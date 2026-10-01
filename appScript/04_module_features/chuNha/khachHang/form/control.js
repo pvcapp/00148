@@ -322,14 +322,14 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
                 await APP.features.chuNha.quanLyKhachHang.form.api.update();
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
-                const viTri = (APP.cache.danhSachKhachHang || []).findIndex(function(khach)
+                const viTri = (APP.cache.danhSachKhachHang.data || []).findIndex(function(khach)
                 {
                     return String(khach.idKhachHang) === String(APP.features.chuNha.quanLyKhachHang.form.idKhachHang);
                 });
 
                 if (viTri !== -1)
                 {
-                    APP.cache.danhSachKhachHang[viTri] = kh;
+                    APP.cache.danhSachKhachHang.data[viTri] = kh;
                 }
                 
                 APP.features.chuNha.quanLyKhachHang.list.ui.render();
