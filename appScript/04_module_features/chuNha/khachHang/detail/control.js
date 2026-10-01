@@ -55,7 +55,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         );
         if (idXoa !== -1) 
         {
-            APP.cache.danhSachKhachHang_xacMinh.splice(idXoa, 1);
+            APP.cache.danhSachKhachHang_xacMinh.data.splice(idXoa, 1);
         }
 
         //update thông tin khách hàng            
