@@ -20,6 +20,7 @@ APP.features.chuNha.quanLyKhachHang.form.api =
     update: async function()
     {
         const data = APP.features.chuNha.quanLyKhachHang.form.control.getData();
+        console.log(JSON.stringify(data));
         if (!data.idKhachHang)
         {
             canhBao('Không thấy id Khách hàng cần cập nhật', 'Lỗi kỹ thuật');
