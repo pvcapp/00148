@@ -5,6 +5,7 @@ APP.ui =
         //render modal dialogs
         toast_init();
         canhBao_init();
+        datePicker_init();
         
         //Render layout: header, sidebar, view, footer
         APP.loadingScreen.init();
