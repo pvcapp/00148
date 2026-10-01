@@ -11,6 +11,8 @@ APP.features.chuNha.quanLyKhachHang.form.ui =
         if (mode == 'addNew')
         {
             $('#chuNha_quanLyKhachHang_form_thongTinCoBan_caption').innerText = 'Thêm khách hàng mới';
+            $('#chuNha_khachHang_saveButton').innerText = 'Thêm khách hàng';
+            $('#formKhachHang_thongTinChiTiet_saveButton').innerText = 'Thêm khách hàng';
             APP.features.chuNha.quanLyKhachHang.form.idKhachHang = '';
             APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
             APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
@@ -18,6 +20,8 @@ APP.features.chuNha.quanLyKhachHang.form.ui =
         else
         {
             $('#chuNha_quanLyKhachHang_form_thongTinCoBan_caption').innerText = 'Cập nhật thông tin khách hàng';
+            $('#chuNha_khachHang_saveButton').innerText = 'Tiếp tục';
+            $('#formKhachHang_thongTinChiTiet_saveButton').innerText = 'Lưu thay đổi';
             APP.features.chuNha.quanLyKhachHang.form.idKhachHang = idKhachHang;
             const kh = APP.cache.danhSachKhachHang.data.find(
                 khach => khach.idKhachHang == idKhachHang
