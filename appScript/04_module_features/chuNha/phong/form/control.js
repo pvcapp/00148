@@ -86,34 +86,21 @@ APP.features.chuNha.quanLyPhong.form.control =
     {
         let cb = await canhBao('Bạn có chắc chắn muốn xóa phòng?', 'Xác nhận xóa phòng', 'okCancel');
         if (!cb) return;
+        toast('Đang xóa phòng...');
+        let xoa = await APP.features.chuNha.quanLyPhong.form.api.delete(idPhong);
+        
+        const phong = (APP.cache.danhSachPhong.data || []).find(function(dong)
+        {
+            return String(dong.idPhong) === String(idPhong);
+        });
 
-        google.script.run
-            .withSuccessHandler(function(ketQua)
-            {
-                if (!ketQua || !ketQua.thanhCong)
-                {
-                    toast(ketQua && ketQua.thongBao ? ketQua.thongBao : 'Không thể xóa phòng');
-                    return;
-                }
-
-                const phong = (APP.cache.danhSachPhong.data || []).find(function(dong)
-                {
-                    return String(dong.idPhong) === String(idPhong);
-                });
-
-                if (phong)
-                {
-                    phong.active = '0';
-                }
-                APP.features.chuNha.quanLyPhong.list.ui.render();
-                //capNhatTongQuanTuCache();
-                toast('Đã xóa phòng');
-            })
-            .withFailureHandler(function(loi)
-            {
-                alert('Có lỗi khi xóa phòng:\n' + loi.message);
-            })
-            .xoaPhong(idPhong, APP.user.token);
+        if (phong)
+        {
+            phong.active = '0';
+        }
+        APP.features.chuNha.quanLyPhong.list.ui.render();
+        //capNhatTongQuanTuCache();
+        toast('Đã xóa phòng');
     },
     abort: function()
     {
