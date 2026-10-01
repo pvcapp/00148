@@ -317,9 +317,22 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
         }
         else
         {
+            const data = APP.features.chuNha.quanLyKhachHang.form.control.getData();
+            //console.log(JSON.stringify(data));
+            if (!data.idKhachHang)
+            {
+                canhBao('Không thấy id Khách hàng cần cập nhật', 'Lỗi kỹ thuật');
+                return;
+            }
+
+            if (!APP.features.chuNha.quanLyKhachHang.form.control.checkData()) return;
+            inactiveButton('chuNha_khachHang_updateButton');
+            $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
+            toast('Đang cập nhật thông tin..');
+
             try
             {
-                let kh = await APP.features.chuNha.quanLyKhachHang.form.api.update();
+                let kh = await APP.features.chuNha.quanLyKhachHang.form.api.update(data);
                 activeButton('chuNha_khachHang_updateButton');
                 $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
                 const viTri = (APP.cache.danhSachKhachHang.data || []).findIndex(function(khach)

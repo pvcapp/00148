@@ -17,31 +17,34 @@ APP.features.chuNha.quanLyKhachHang.form.api =
                 .sv_chuNha_quanLyKhachHang_addNew(data, APP.user.token);
         });
     },
-    update: async function()
+    update: async function(data)
     {
-        const data = APP.features.chuNha.quanLyKhachHang.form.control.getData();
-        console.log(JSON.stringify(data));
-        if (!data.idKhachHang)
+        try
         {
-            canhBao('Không thấy id Khách hàng cần cập nhật', 'Lỗi kỹ thuật');
-            return;
-        }
+            const kh = await new Promise((resolve, reject) =>
+            {
+                google.script.run
+                    .withSuccessHandler(resolve)
+                    .withFailureHandler(reject)
+                    .sv_capNhatKhachHang(
+                        APP.features.chuNha.quanLyKhachHang.form.idKhachHang,
+                        data,
+                        APP.user.token
+                    );
+            });
 
-        if (!APP.features.chuNha.quanLyKhachHang.form.control.checkData()) return;
-        inactiveButton('chuNha_khachHang_updateButton');
-        $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
-        toast('Đang cập nhật thông tin..');
-        google.script.run
-            .withSuccessHandler(function(kh)
-            {
-                return kh;
-            })
-            .withFailureHandler(function(loi)
-            {
-                activeButton('chuNha_khachHang_updateButton');
-                $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
-                alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
-            })
-            .sv_capNhatKhachHang(APP.features.chuNha.quanLyKhachHang.form.idKhachHang, data, APP.user.token);
+            console.log('Khách hàng sau khi cập nhật:', kh);
+
+            return kh;
+        }
+        catch (loi)
+        {
+            alert('Có lỗi khi cập nhật Khách hàng:\n' + loi.message);
+        }
+        finally
+        {
+            activeButton('chuNha_khachHang_updateButton');
+            $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
+        }
     }
 };

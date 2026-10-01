@@ -52,7 +52,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             return String(khach.idKhachHang) === String(idKhachHang);
         });
 
-        /*
+        
         let khachHangMoi = {
             ...khachHang,
             xacMinh: '1',
@@ -62,7 +62,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         if (viTri !== -1)
         {
             APP.cache.danhSachKhachHang.data[viTri] = khachHangMoi;            
-        }*/
+        }
 
         APP.features.chuNha.quanLyKhachHang.form.ui.render('edit', idKhachHang);
 
