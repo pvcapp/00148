@@ -80,7 +80,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
         {
             return;
         }
-        const danhSachKhuNha = APP.cache && APP.cache.danhSachKhuNha ? APP.cache.danhSachKhuNha : [];
+        const danhSachKhuNha = APP.cache && APP.cache.danhSachKhuNha ? APP.cache.danhSachKhuNha.data : [];
 
         select.innerHTML = `
             <option value="">-- Chọn khu nhà --</option>

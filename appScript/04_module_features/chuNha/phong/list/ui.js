@@ -83,6 +83,10 @@ APP.features.chuNha.quanLyPhong.list.ui =
 
         const tbody = document.querySelector('#chuNha_danhSachPhong_table tbody');
         tbody.innerHTML = dataHtml;
+    },
+    show: function()
+    {
+        APP.view.ui.showTab('chuNha', 'quanLyPhong', 'list');
     }
 };
 

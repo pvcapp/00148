@@ -31,7 +31,7 @@ APP.features.chuNha.quanLyPhong.form.control =
     },
     submit: async function()
     {
-        const duLieu = APP.features.chuNha.quanLyPhong.form.ui.getData();
+        const duLieu = APP.features.chuNha.quanLyPhong.form.control.getData();
         //Kiểm tra phòng tồn tại chưa: tên phòng và khu nhà đã có:    
 
         if (!duLieu.idKhuNha)
@@ -46,7 +46,7 @@ APP.features.chuNha.quanLyPhong.form.control =
             return;
         }
 
-        const phongTonTai = APP.cache.danhSachPhong && APP.cache.danhSachPhong.find(p => p.tenPhong === duLieu.tenPhong && p.idKhuNha === duLieu.idKhuNha);
+        const phongTonTai = APP.cache.danhSachPhong.data && APP.cache.danhSachPhong.data.find(p => p.tenPhong === duLieu.tenPhong && p.idKhuNha === duLieu.idKhuNha);
         if (phongTonTai) 
         {
             toast('Phòng đã tồn tại trong khu nhà này');
@@ -64,11 +64,10 @@ APP.features.chuNha.quanLyPhong.form.control =
 
                 if (ketQua)
                 {
-                    APP.cache.danhSachPhong = APP.cache.danhSachPhong || [];
-                    APP.cache.danhSachPhong.push(ketQua);
-                    chuNha_showDanhSachPhong(APP.cache.danhSachPhong);
-                    themMoiPhong_boQua();
-                    capNhatTongQuanTuCache();
+                    APP.cache.danhSachPhong.data.push(ketQua);
+                    APP.features.chuNha.quanLyPhong.list.ui.render();
+                    APP.features.chuNha.quanLyPhong.form.control.reset();
+                    //cap nhat tong quan
                     toast('Thêm phòng thành công');
                     return;
                 }
@@ -106,9 +105,8 @@ APP.features.chuNha.quanLyPhong.form.control =
                 {
                     phong.active = '0';
                 }
-
-                chuNha_showDanhSachPhong(APP.cache.danhSachPhong || []);
-                capNhatTongQuanTuCache();
+                APP.features.chuNha.quanLyPhong.list.ui.render();
+                //capNhatTongQuanTuCache();
                 toast('Đã xóa phòng');
             })
             .withFailureHandler(function(loi)
@@ -119,8 +117,7 @@ APP.features.chuNha.quanLyPhong.form.control =
     },
     abort: function()
     {
-        themMoiPhong_lamMoi();
-        hide('themMoiPhong_form');
-        show('tab_chuNha_phong_danhSach');
+        APP.features.chuNha.quanLyPhong.form.control.reset();
+        APP.features.chuNha.quanLyPhong.list.ui.show();
     }
 };
