@@ -51,7 +51,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
         let ds = '';
         for (let i =0; i< APP.cache.danhSachKhachHang.data.length; i++)
         {
-            console.log('APP.cache.danhSachKhachHang.data[' + i + ']:' + JSON.stringify(APP.cache.danhSachKhachHang.data[i]));
+            //console.log('APP.cache.danhSachKhachHang.data[' + i + ']:' + JSON.stringify(APP.cache.danhSachKhachHang.data[i]));
             let dong = APP.cache.danhSachKhachHang.data[i];
             if (String(dong.active) == '1')
             {
