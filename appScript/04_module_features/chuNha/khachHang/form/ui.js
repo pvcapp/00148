@@ -10,12 +10,14 @@ APP.features.chuNha.quanLyKhachHang.form.ui =
         APP.features.chuNha.quanLyKhachHang.form.mode = mode;
         if (mode == 'addNew')
         {
+            $('#chuNha_quanLyKhachHang_form_thongTinCoBan_caption').innerText = 'Thêm khách hàng mới';
             APP.features.chuNha.quanLyKhachHang.form.idKhachHang = '';
             APP.features.chuNha.quanLyKhachHang.form.thongTinCoBan.control.reset();
             APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.reset();
         }
         else
         {
+            $('#chuNha_quanLyKhachHang_form_thongTinCoBan_caption').innerText = 'Cập nhật thông tin khách hàng';
             APP.features.chuNha.quanLyKhachHang.form.idKhachHang = idKhachHang;
             const kh = APP.cache.danhSachKhachHang.data.find(
                 khach => khach.idKhachHang == idKhachHang

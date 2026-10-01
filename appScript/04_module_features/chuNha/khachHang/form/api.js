@@ -22,7 +22,7 @@ APP.features.chuNha.quanLyKhachHang.form.api =
         const data = APP.features.chuNha.quanLyKhachHang.form.control.getData();
         if (!data.idKhachHang)
         {
-            canhBao('Lỗi kỹ thuật' , 'Không thấy id Khách hàng cần cập nhật');
+            canhBao('Không thấy id Khách hàng cần cập nhật', 'Lỗi kỹ thuật');
             return;
         }
 
