@@ -52,8 +52,13 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             return String(khach.idKhachHang) === String(idKhachHang);
         });
 
+        
         if (viTri !== -1)
         {
+            console.log('viTri:', viTri);
+            console.log('khachHang:', khachHang);
+            console.log('data trước:', JSON.stringify(APP.cache.danhSachKhachHang.data));
+
             APP.cache.danhSachKhachHang.data[viTri] = {
                 ...APP.cache.danhSachKhachHang.data[viTri],
                 ...khachHang,
