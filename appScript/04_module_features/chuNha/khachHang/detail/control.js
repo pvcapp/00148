@@ -46,6 +46,22 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             toast('Không tìm thấy phiếu yêu cầu xác minh');
             return;
         }
+        
+        
+        const viTri = (APP.cache.danhSachKhachHang || []).findIndex(function(khach)
+        {
+            return String(khach.idKhachHang) === String(idKhachHang);
+        });
+
+        if (viTri !== -1)
+        {
+            APP.cache.danhSachKhachHang[viTri] = {
+                ...APP.cache.danhSachKhachHang[viTri],
+                ...khachHang,
+                dangThue: APP.cache.danhSachKhachHang[viTri].dangThue,
+                active: APP.cache.danhSachKhachHang[viTri].active
+            };
+        }
 
         APP.features.chuNha.quanLyKhachHang.form.ui.render('edit', idKhachHang);
 

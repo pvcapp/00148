@@ -320,7 +320,22 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
             try
             {
                 await APP.features.chuNha.quanLyKhachHang.form.api.update();
-                // xử lý sau khi thêm thành công
+                activeButton('chuNha_khachHang_updateButton');
+                $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
+                const viTri = (APP.cache.danhSachKhachHang || []).findIndex(function(khach)
+                {
+                    return String(khach.idKhachHang) === String(APP.features.chuNha.quanLyKhachHang.form.idKhachHang);
+                });
+
+                if (viTri !== -1)
+                {
+                    APP.cache.danhSachKhachHang[viTri] = kh;
+                }
+                
+                APP.features.chuNha.quanLyKhachHang.list.ui.render();
+                APP.features.chuNha.quanLyKhachHang.list.ui.show();
+                capNhatTongQuanTuCache();
+                toast('Đã cập nhật Khách hàng', 1500);
             }
             catch (error)
             {

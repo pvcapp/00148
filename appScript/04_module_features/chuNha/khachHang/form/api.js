@@ -34,22 +34,7 @@ APP.features.chuNha.quanLyKhachHang.form.api =
         google.script.run
             .withSuccessHandler(function(kh)
             {
-                activeButton('chuNha_khachHang_updateButton');
-                $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
-                const viTri = (APP.cache.danhSachKhachHang || []).findIndex(function(khach)
-                {
-                    return String(khach.idKhachHang) === String(data.idKhachHang);
-                });
-
-                if (viTri !== -1)
-                {
-                    APP.cache.danhSachKhachHang[viTri] = kh;
-                }
                 
-                APP.features.chuNha.quanLyKhachHang.list.ui.render();
-                APP.features.chuNha.quanLyKhachHang.list.ui.show();
-                capNhatTongQuanTuCache();
-                toast('Đã cập nhật Khách hàng', 1500);
             })
             .withFailureHandler(function(loi)
             {
