@@ -27,11 +27,11 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
     {
         APP.features.chuNha.quanLyKhachHang.detail.idKhachHang = idKhachHang;
         APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.render();
-        show('formKhachHang_xacMinhThongTin_popup');
+        APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.show();
     },
     hide: function ()
     {
-        hide('formKhachHang_xacMinhThongTin_popup');
+        APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.hide();
     },
     ok: async function() 
     {
@@ -66,7 +66,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         {
             await APP.features.chuNha.quanLyKhachHang.detail.api.xacMinh.xoaPhieu(idKhachHang);
             toast('Đã xác minh thông tin Khách hàng', 1500);
-            APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.hide();
+            APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.hide();
         }
         catch (er)
         {
@@ -95,7 +95,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             // Cập nhật danh sách
             APP.features.chuNha.quanLyKhachHang.list.ui.render();
             APP.features.chuNha.quanLyKhachHang.list.ui.show();
-            APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui.hide();            
+            APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.hide();            
         }
         catch (loi)
         {

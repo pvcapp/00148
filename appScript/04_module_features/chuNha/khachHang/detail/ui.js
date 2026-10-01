@@ -246,6 +246,14 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
         $('#formKhachHang_input_anhKhach').src = khachHang.anhKhach || '';
         $('#formKhachHang_input_anhCCCDMatTruoc').src = khachHang.anhCCCDMatTruoc || '';
         $('#formKhachHang_input_anhCCCDMatSau').src = khachHang.anhCCCDMatSau || '';
+    },
+    show: function()
+    {
+        show('formKhachHang_xacMinhThongTin_popup');
+    },
+    hide: function()
+    {
+        hide('formKhachHang_xacMinhThongTin_popup');
     }
 };
 
