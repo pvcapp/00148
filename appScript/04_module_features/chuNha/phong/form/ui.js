@@ -130,9 +130,8 @@ APP.features.chuNha.quanLyPhong.form.ui =
                 toast('Không tìm thấy phòng');
                 return;
             }
-
+            APP.features.chuNha.quanLyPhong.form.idPhong = idPhong;
             APP.features.chuNha.quanLyPhong.form.ui.renderKhuNhaOptions();
-            $('#phong_edit_idPhong').value = phong.idPhong || '';
             $('#phong_edit_idKhuNha').value = phong.idKhuNha || '';
             $('#phong_edit_tang').value = phong.tang || '';
 
