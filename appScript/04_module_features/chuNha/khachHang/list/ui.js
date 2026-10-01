@@ -48,12 +48,13 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                     <tbody>
         `;
 
- 
-        html += APP.cache.danhSachKhachHang.data
-            .filter(function(dong) {
-                return String(dong.active) === '1';
-            })
-            .map(function(dong) {
+        let ds = '';
+        for (let i =0; i< APP.cache.danhSachKhachHang.data.length; i++)
+        {
+            console.log('APP.cache.danhSachKhachHang.data[i]:', JSON.stringify(APP.cache.danhSachKhachHang.data[i]));
+            let dong = APP.cache.danhSachKhachHang.data[i];
+            if (String(dong.active) == '1')
+            {
                 let d = '<tr class="' + APP.features.chuNha.quanLyKhachHang.list.style.tableStyle + '__row" onclick="APP.features.chuNha.quanLyKhachHang.detail.control.show('
                     + "'" + dong.idKhachHang + "'" 
                     + ')">';
@@ -104,79 +105,80 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                     d += '</div>';
                 d += '</td>';
                 d += '</tr>';
-                return d;
-            })
-            .join('');
-            
-            
+
+                ds += d;
+            }
+        }
+
+        html += ds;
         html += `</tbody>
                 </table>
 
 
             <div style="display: flex; flex-direction:column; gap:10px" class="hide-on-pc">
-                    ${APP.cache.danhSachKhachHang.data
-                    .filter(function(dong) {
-                        return String(dong.active) === '1';
-                    })
-                    .map(function(dong) {
-                        let html2 = '';
-                        html2 +=  `
-                            <div class="card" onclick="APP.features.chuNha.quanLyKhachHang.detail.control.show('${dong.idKhachHang}');">
-                                <div class="card__caption">
-                                    ${escapeHtml(dong.hoVaTen || '')}                                    
-                                </div>
-                                ${escapeHtml(dong.dienThoai || '')}<br>
-                                ${escapeHtml(dong.dienChi || '')}<br>
-                                ${escapeHtml(dong.email || '')}<br>`;
-
-                                let hopDong = APP.cache.danhSachHopDong.data.find(function(hd)
-                                {
-                                    return hd.khachHang_idKhachHang == dong.idKhachHang;
-                                });
-
-                                let thue = '';
-                                if (hopDong)
-                                {
-                                    thue = hopDongActive(hopDong) ? 'Đang thuê' : 'Chưa thuê';
-                                }
-                                else
-                                {
-                                    thue = 'Chưa thuê';
-                                }
-                                html2 += 'Trạng thái: ' + thue;
-
-                                let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                                let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
-                                    return dxm.idKhachHang == dong.idKhachHang
-                                });
-                                
-                                if (dongXacMinh && dongXacMinh.xacMinh == '')
-                                {
-                                    xacMinh = `
-                                        <div class="button button__selected" style="width: 170px;font-size: 14px;" 
-                                            onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.show('${dong.idKhachHang}');">                        
-                                            Xác minh
-                                        </div>
-                                    `;
-                                }
-                                html2 += '<td>' + xacMinh + '</td>';
-
-                                html2 += `
-                                <center>
-                                    <div class="button button__selected" style="width:160px;display: flex; flex-wrap: nowrap;"
-                                        onclick="chuNha_danhSachKhachHang_choThue();">         
-                                        ${new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render()}                           
-                                        Cho thuê    
-                                    </div>
-                                </center>
+                ${APP.cache.danhSachKhachHang.data
+                .filter(function(dong) {
+                    return String(dong.active) === '1';
+                })
+                .map(function(dong) {
+                    let html2 = '';
+                    html2 +=  `
+                        <div class="card" onclick="APP.features.chuNha.quanLyKhachHang.detail.control.show('${dong.idKhachHang}');">
+                            <div class="card__caption">
+                                ${escapeHtml(dong.hoVaTen || '')}                                    
                             </div>
-                        `;
-                        return html2;
+                            ${escapeHtml(dong.dienThoai || '')}<br>
+                            ${escapeHtml(dong.dienChi || '')}<br>
+                            ${escapeHtml(dong.email || '')}<br>`;
 
-                    })
-                    .join('')
-                    }
-                </div>
+                            let hopDong = APP.cache.danhSachHopDong.data.find(function(hd)
+                            {
+                                return hd.khachHang_idKhachHang == dong.idKhachHang;
+                            });
+
+                            let thue = '';
+                            if (hopDong)
+                            {
+                                thue = hopDongActive(hopDong) ? 'Đang thuê' : 'Chưa thuê';
+                            }
+                            else
+                            {
+                                thue = 'Chưa thuê';
+                            }
+                            html2 += 'Trạng thái: ' + thue;
+
+                            let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
+                            let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
+                                return dxm.idKhachHang == dong.idKhachHang
+                            });
+                            
+                            if (dongXacMinh && dongXacMinh.xacMinh == '')
+                            {
+                                xacMinh = `
+                                    <div class="button button__selected" style="width: 170px;font-size: 14px;" 
+                                        onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.show('${dong.idKhachHang}');">                        
+                                        Xác minh
+                                    </div>
+                                `;
+                            }
+                            html2 += '<td>' + xacMinh + '</td>';
+
+                            html2 += `
+                            <center>
+                                <div class="button button__selected" style="width:160px;display: flex; flex-wrap: nowrap;"
+                                    onclick="chuNha_danhSachKhachHang_choThue();">         
+                                    ${new PVCImage('https://pvcapp.github.io/00148/img/rent_white.svg', '16px', 'auto', 'margin-right:10px;').render()}                           
+                                    Cho thuê    
+                                </div>
+                            </center>
+                        </div>
+                    `;
+                    return html2;
+
+                })
+                .join('')
+                }
+            </div>
         `;
         $('#chuNha_quanLyKhachHang_list_main').innerHTML = html;
         activeButton('sidebar_chuNha_quanLyKhachHang');
