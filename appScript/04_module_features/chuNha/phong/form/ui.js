@@ -96,6 +96,19 @@ APP.features.chuNha.quanLyPhong.form.ui =
                 `;
             }).join('')}
         `;
+
+            /*
+        const select = $('#phong_edit_idKhuNha');
+
+        select.innerHTML = `
+            <option value="">-- Chọn khu nhà --</option>
+            ${(APP.cache.danhSachKhuNha || []).map(function(khuNha)
+            {
+                const idKhuNha = khuNha.idKhuNha || '';
+                const tenKhuNha = khuNha.tenKhuNha;
+                return `<option value="${escapeHtml(idKhuNha)}">${escapeHtml(tenKhuNha)}</option>`;
+            }).join('')}
+        `;*/
     },
     render: function(mode = 'addNew', idPhong = '')
     {

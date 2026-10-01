@@ -1,63 +1,4 @@
-function themMoiPhong_capNhatDanhSachKhu()
-{
-    const select = $('#themMoiPhong_idKhuNha');
 
-    if (!select)
-    {
-        return;
-    }
-
-    const danhSachKhuNha = APP.cache && APP.cache.danhSachKhuNha ? APP.cache.danhSachKhuNha : [];
-
-    select.innerHTML = `
-        <option value="">-- Chọn khu nhà --</option>
-        ${danhSachKhuNha.map(function(khuNha)
-        {
-            const idKhuNha = khuNha.idKhuNha || '';
-            const tenKhuNha = khuNha.tenKhuNha;
-
-            return `
-                <option value="${escapeHtml(idKhuNha)}">
-                    ${escapeHtml(tenKhuNha)}
-                </option>
-            `;
-        }).join('')}
-    `;
-}
-
-function themMoiPhong_layDuLieu()
-{
-    return {
-        idKhuNha: $('#themMoiPhong_idKhuNha').value,
-        tenPhong: $('#themMoiPhong_tenPhong').value.trim(),
-        tang: $('#themMoiPhong_tang').value.trim(),
-        dienTich: $('#themMoiPhong_dienTich').value,
-        giaNiemYet: $('#themMoiPhong_giaNiemYet').value || 0,
-        tienDatCoc: $('#themMoiPhong_tienDatCoc').value || 0,
-        trangThai: $('#themMoiPhong_trangThai').value,
-        moTa: $('#themMoiPhong_moTa').value.trim()
-    };
-}
-
-function themMoiPhong_lamMoi()
-{
-    themMoiPhong_capNhatDanhSachKhu();
-    $('#themMoiPhong_idKhuNha').value = '';
-    $('#themMoiPhong_tenPhong').value = '';
-    $('#themMoiPhong_tang').value = '';
-    $('#themMoiPhong_dienTich').value = '';
-    $('#themMoiPhong_giaNiemYet').value = '';
-    $('#themMoiPhong_tienDatCoc').value = '';
-    $('#themMoiPhong_trangThai').value = 'Trong';
-    $('#themMoiPhong_moTa').value = '';
-}
-
-function themMoiPhong_boQua()
-{
-    themMoiPhong_lamMoi();
-    hide('themMoiPhong_form');
-    show('tab_chuNha_phong_danhSach');
-}
 
 function themMoiPhong_them()
 {
@@ -82,8 +23,7 @@ function themMoiPhong_them()
         toast('Phòng đã tồn tại trong khu nhà này');
         return;
     }
-
-    inactiveButton('khachHang_newPhong_saveButton');
+   inactiveButton('khachHang_newPhong_saveButton');
     $('#khachHang_newPhong_saveButton').innerText = 'Đang thêm..';
 
     google.script.run
