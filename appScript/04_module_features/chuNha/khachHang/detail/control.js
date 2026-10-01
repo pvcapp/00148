@@ -52,17 +52,15 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             return String(khach.idKhachHang) === String(idKhachHang);
         });
 
+        let khachHangMoi = {
+            ...khachHang,
+            xacMinh: '1',
+            active: '1'
+        };
         
         if (viTri !== -1)
         {
-
-            APP.cache.danhSachKhachHang.data[viTri] = {};
-            APP.cache.danhSachKhachHang.data[viTri] = {
-                ...APP.cache.danhSachKhachHang.data[viTri],
-                ...khachHang,
-                dangThue: APP.cache.danhSachKhachHang.data[viTri].dangThue,
-                active: APP.cache.danhSachKhachHang.data[viTri].active
-            };
+            APP.cache.danhSachKhachHang.data[viTri] = khachHangMoi;            
         }
 
         APP.features.chuNha.quanLyKhachHang.form.ui.render('edit', idKhachHang);
