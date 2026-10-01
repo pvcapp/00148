@@ -46,8 +46,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
             toast('Không tìm thấy phiếu yêu cầu xác minh');
             return;
         }
-        
-        
+                
         const viTri = (APP.cache.danhSachKhachHang.data || []).findIndex(function(khach)
         {
             return String(khach.idKhachHang) === String(idKhachHang);
@@ -75,7 +74,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         }
 
         //update thông tin khách hàng      
-        APP.features.chuNha.quanLyKhachHang.form.control.submit();
+        await APP.features.chuNha.quanLyKhachHang.form.control.submit();
          //Xóa phiếu chờ xác minh
         try
         {
