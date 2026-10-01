@@ -48,7 +48,6 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         }
 
         APP.features.chuNha.quanLyKhachHang.form.render('edit', idKhachHang);
-        APP.features.chuNha.quanLyKhachHang.form.idKhachHang = khachHang.idKhachHang;
 
         //Cập nhật tình trạng xác minh và render lại danh sách
         const idXoa = APP.cache.danhSachKhachHang_xacMinh.data.findIndex(
@@ -60,7 +59,7 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control =
         }
 
         //update thông tin khách hàng            
-        //APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.submit();
+        APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.submit();
         //Xóa phiếu chờ xác minh
         try
         {
