@@ -326,15 +326,15 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control =
             }
 
             if (!APP.features.chuNha.quanLyKhachHang.form.control.checkData()) return;
-            inactiveButton('chuNha_khachHang_updateButton');
-            $('#chuNha_khachHang_updateButton').innerText = 'Đang lưu..';
+            inactiveButton('chuNha_khachHang_saveButton');
+            $('#chuNha_khachHang_saveButton').innerText = 'Đang lưu..';
             toast('Đang cập nhật thông tin..');
 
             try
             {
                 let kh = await APP.features.chuNha.quanLyKhachHang.form.api.update(data);
-                activeButton('chuNha_khachHang_updateButton');
-                $('#chuNha_khachHang_updateButton').innerText = 'Lưu thay đổi';
+                activeButton('chuNha_khachHang_saveButton');
+                $('#chuNha_khachHang_saveButton').innerText = 'Lưu thay đổi';
                 const viTri = (APP.cache.danhSachKhachHang.data || []).findIndex(function(khach)
                 {
                     return String(khach.idKhachHang) === String(APP.features.chuNha.quanLyKhachHang.form.idKhachHang);
