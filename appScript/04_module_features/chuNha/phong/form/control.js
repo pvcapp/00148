@@ -96,7 +96,7 @@ APP.features.chuNha.quanLyPhong.form.control =
                     return;
                 }
 
-                const phong = (APP.cache.danhSachPhong || []).find(function(dong)
+                const phong = (APP.cache.danhSachPhong.data || []).find(function(dong)
                 {
                     return String(dong.idPhong) === String(idPhong);
                 });
