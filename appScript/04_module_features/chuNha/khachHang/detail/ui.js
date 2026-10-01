@@ -246,14 +246,6 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
         $('#formKhachHang_input_anhKhach').src = khachHang.anhKhach || '';
         $('#formKhachHang_input_anhCCCDMatTruoc').src = khachHang.anhCCCDMatTruoc || '';
         $('#formKhachHang_input_anhCCCDMatSau').src = khachHang.anhCCCDMatSau || '';
-    },
-    show: function()
-    {
-        show('formKhachHang_xacMinhThongTin_popup');
-    },
-    hide: function()
-    {
-        hide('formKhachHang_xacMinhThongTin_popup');
     }
 };
 
@@ -346,5 +338,13 @@ APP.features.chuNha.quanLyKhachHang.detail.xacMinh.ui =
         $('#formKhachHang_xacMinhThongTin_diaChiThuongTru').innerText = 'Địa chỉ: ' + phieuXacMinh.diaChiThuongTru;
         $('#formKhachHang_xacMinhThongTin_ngheNghiep').innerText = 'Nghề nghiệp: ' + phieuXacMinh.ngheNghiep;     
         $('#formKhachHang_xacMinhThongTin_ghiChu').innerText = 'Ghi chú: ' + phieuXacMinh.ghiChu;
+    },
+    show: function()
+    {
+        show('formKhachHang_xacMinhThongTin_popup');
+    },
+    hide: function()
+    {
+        hide('formKhachHang_xacMinhThongTin_popup');
     }
 };
