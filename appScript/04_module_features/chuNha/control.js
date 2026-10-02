@@ -5,7 +5,7 @@ APP.features.chuNha.control =
         APP.features.chuNha.sidebar.control.init();
         APP.features.chuNha.dashboard.control.init();
         APP.features.chuNha.quanLyKhachHang.control.init();
-        APP.features.chuNha.quanLyKhuNha.control.list.init();
+        APP.features.chuNha.quanLyKhuNha.control.init();
         APP.features.chuNha.quanLyPhong.control.init();
         //hopDong
         APP.features.chuNha.setting.control.list.init();

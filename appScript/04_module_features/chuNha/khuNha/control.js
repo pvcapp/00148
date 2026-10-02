@@ -1,19 +1,8 @@
 APP.features.chuNha.quanLyKhuNha.control =
 {
-    list:
+    init: function()
     {
-        init: function()
-        {
-            APP.features.chuNha.quanLyKhuNha.ui.list.init();
-        }
-    },
-    detail: 
-    {
-
-    },
-    form: 
-    {
-        
+        APP.features.chuNha.quanLyKhuNha.ui.init();
     }
-    
+
 };

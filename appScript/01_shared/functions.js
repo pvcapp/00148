@@ -9,7 +9,7 @@ function formatMoney(so)
     }
     else
     {
-        return 'noNumber';
+        return '-';
     }        
 }
 

@@ -7,14 +7,14 @@ APP.features.chuNha.quanLyPhong.form.control =
     getData: function()
     {
         return {
-            idKhuNha: $('#themMoiPhong_idKhuNha').value,
-            tenPhong: $('#themMoiPhong_tenPhong').value.trim(),
-            tang: $('#themMoiPhong_tang').value.trim(),
-            dienTich: $('#themMoiPhong_dienTich').value,
-            giaNiemYet: $('#themMoiPhong_giaNiemYet').value || 0,
-            tienDatCoc: $('#themMoiPhong_tienDatCoc').value || 0,
-            trangThai: $('#themMoiPhong_trangThai').value,
-            moTa: $('#themMoiPhong_moTa').value.trim()
+            idKhuNha: $('#chuNha_quanLyPhong_form_idKhuNha').value,
+            tenPhong: $('#chuNha_quanLyPhong_form_tenPhong').value.trim(),
+            tang: $('#chuNha_quanLyPhong_form_tang').value.trim(),
+            dienTich: $('#chuNha_quanLyPhong_form_dienTich').value,
+            giaNiemYet: $('#chuNha_quanLyPhong_form_giaNiemYet').value || 0,
+            tienDatCoc: $('#chuNha_quanLyPhong_form_tienDatCoc').value || 0,
+            trangThai: $('#chuNha_quanLyPhong_form_trangThai').value,
+            moTa: $('#chuNha_quanLyPhong_form_moTa').value.trim()
         };
     },
     refresh: function()
@@ -24,14 +24,14 @@ APP.features.chuNha.quanLyPhong.form.control =
     reset: function()
     {
         APP.features.chuNha.quanLyPhong.form.ui.renderKhuNhaOptions();
-        $('#themMoiPhong_idKhuNha').value = '';
-        $('#themMoiPhong_tenPhong').value = '';
-        $('#themMoiPhong_tang').value = '';
-        $('#themMoiPhong_dienTich').value = '';
-        $('#themMoiPhong_giaNiemYet').value = '';
-        $('#themMoiPhong_tienDatCoc').value = '';
-        $('#themMoiPhong_trangThai').value = 'Trong';
-        $('#themMoiPhong_moTa').value = '';
+        $('#chuNha_quanLyPhong_form_idKhuNha').value = '';
+        $('#chuNha_quanLyPhong_form_tenPhong').value = '';
+        $('#chuNha_quanLyPhong_form_tang').value = '';
+        $('#chuNha_quanLyPhong_form_dienTich').value = '';
+        $('#chuNha_quanLyPhong_form_giaNiemYet').value = '';
+        $('#chuNha_quanLyPhong_form_tienDatCoc').value = '';
+        $('#chuNha_quanLyPhong_form_trangThai').value = 'Trong';
+        $('#chuNha_quanLyPhong_form_moTa').value = '';
     },
     show: function(mode = 'addNew', idPhong = '')
     {

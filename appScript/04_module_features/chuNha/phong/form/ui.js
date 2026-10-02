@@ -13,48 +13,48 @@ APP.features.chuNha.quanLyPhong.form.ui =
         tab_main.innerHTML = `
             <div class="card form__grid" style="background: rgba(255,255,255,0.3)">
                 <div class="form__field_01">
-                    <label for="themMoiPhong_idKhuNha">Khu nhà</label>
-                    <select id="themMoiPhong_idKhuNha"></select>
+                    <label for="chuNha_quanLyPhong_form_idKhuNha">Khu nhà</label>
+                    <select id="chuNha_quanLyPhong_form_idKhuNha"></select>
                 </div>        
 
                 <div class="form__field_01">
-                    <label for="themMoiPhong_tang">Tầng</label>
-                    <input type="text" id="themMoiPhong_tang">
+                    <label for="chuNha_quanLyPhong_form_tang">Tầng</label>
+                    <input type="text" id="chuNha_quanLyPhong_form_tang">
                 </div>
             </div>
 
             <div class="card form__grid" style="margin-top: 12px;">
                 <div class="form__field_01">
-                    <label for="themMoiPhong_tenPhong">Tên phòng</label>
-                    <input type="text" id="themMoiPhong_tenPhong" required>
+                    <label for="chuNha_quanLyPhong_form_tenPhong">Tên phòng</label>
+                    <input type="text" id="chuNha_quanLyPhong_form_tenPhong" required>
                 </div>
 
                 <div class="form__field_01">
-                    <label for="themMoiPhong_dienTich">Diện tích</label>
-                    <input type="number" id="themMoiPhong_dienTich" min="0" step="0.1">
+                    <label for="chuNha_quanLyPhong_form_dienTich">Diện tích</label>
+                    <input type="number" id="chuNha_quanLyPhong_form_dienTich" min="0" step="0.1">
                 </div>
 
                 <div class="form__field_01">
-                    <label for="themMoiPhong_giaNiemYet">Giá phòng</label>
-                    <input type="number" id="themMoiPhong_giaNiemYet" min="0" step="1000">
+                    <label for="chuNha_quanLyPhong_form_giaNiemYet">Giá phòng</label>
+                    <input type="number" id="chuNha_quanLyPhong_form_giaNiemYet" min="0" step="1000">
                 </div>
 
                 <div class="form__field_01">
-                    <label for="themMoiPhong_tienDatCoc">Tiền cọc mặc định</label>
-                    <input type="number" id="themMoiPhong_tienDatCoc" min="0" step="1000">
+                    <label for="chuNha_quanLyPhong_form_tienDatCoc">Tiền cọc mặc định</label>
+                    <input type="number" id="chuNha_quanLyPhong_form_tienDatCoc" min="0" step="1000">
                 </div>
 
                 <div class="form__field_01">
-                    <label for="themMoiPhong_trangThai">Trạng thái</label>
-                    <select id="themMoiPhong_trangThai">
+                    <label for="chuNha_quanLyPhong_form_trangThai">Trạng thái</label>
+                    <select id="chuNha_quanLyPhong_form_trangThai">
                         <option value="dangHoatDong">Đang hoạt động</option>
                         <option value="tamDung">Tạm dừng hoạt động</option>                
                     </select>
                 </div>
 
                 <div class="form__field_01">
-                    <label for="themMoiPhong_moTa">Mô tả</label>
-                    <input type="text" id="themMoiPhong_moTa">
+                    <label for="chuNha_quanLyPhong_form_moTa">Mô tả</label>
+                    <input type="text" id="chuNha_quanLyPhong_form_moTa">
                 </div>
             </div>
 
@@ -75,7 +75,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
     },
     renderKhuNhaOptions: function()
     {
-        const select = $('#themMoiPhong_idKhuNha');
+        const select = $('#chuNha_quanLyPhong_form_idKhuNha');
         if (!select)
         {
             return;
@@ -98,7 +98,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
         `;
 
             /*
-        const select = $('#themMoiPhong_idKhuNha');
+        const select = $('#chuNha_quanLyPhong_form_idKhuNha');
 
         select.innerHTML = `
             <option value="">-- Chọn khu nhà --</option>
@@ -132,15 +132,15 @@ APP.features.chuNha.quanLyPhong.form.ui =
             }
             APP.features.chuNha.quanLyPhong.form.idPhong = idPhong;
             APP.features.chuNha.quanLyPhong.form.ui.renderKhuNhaOptions();
-            $('#themMoiPhong_idKhuNha').value = phong.idKhuNha || '';
-            $('#themMoiPhong_tang').value = phong.tang || '';
+            $('#chuNha_quanLyPhong_form_idKhuNha').value = phong.idKhuNha || '';
+            $('#chuNha_quanLyPhong_form_tang').value = phong.tang || '';
 
-            $('#themMoiPhong_tenPhong').value = phong.tenPhong || '';    
-            $('#themMoiPhong_dienTich').value = phong.dienTich || '';
-            $('#themMoiPhong_giaNiemYet').value = phong.giaNiemYet || '';
-            $('#themMoiPhong_tienDatCoc').value = phong.tienDatCoc || '';
-            $('#themMoiPhong_trangThai').value = phong.trangThai || 'dangHoatDong';
-            $('#themMoiPhong_moTa').value = phong.moTa || '';
+            $('#chuNha_quanLyPhong_form_tenPhong').value = phong.tenPhong || '';    
+            $('#chuNha_quanLyPhong_form_dienTich').value = phong.dienTich || '';
+            $('#chuNha_quanLyPhong_form_giaNiemYet').value = phong.giaNiemYet || '';
+            $('#chuNha_quanLyPhong_form_tienDatCoc').value = phong.tienDatCoc || '';
+            $('#chuNha_quanLyPhong_form_trangThai').value = phong.trangThai || 'dangHoatDong';
+            $('#chuNha_quanLyPhong_form_moTa').value = phong.moTa || '';
         }
     },
     show: function()
