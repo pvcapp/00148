@@ -59,7 +59,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
             </div>
 
             <div class="form__footer" style="flex-direction:row;margin_top:12px;margin-bottom:100px;gap: 12px;">                
-                <div class="button_01" id="khachHang_newPhong_saveButton"
+                <div class="button_01" id="chuNha_quanLyKhachHang_form_saveButton"
                     onclick="APP.features.chuNha.quanLyPhong.form.control.submit()">
                     Thêm phòng
                 </div>
@@ -115,11 +115,11 @@ APP.features.chuNha.quanLyPhong.form.ui =
         if (mode =='addNew')
         {
             APP.features.chuNha.quanLyPhong.form.control.reset();
-            $('#khachHang_newPhong_saveButton').innerText = 'Thêm phòng';
+            $('#chuNha_quanLyKhachHang_form_saveButton').innerText = 'Thêm phòng';
         }
         else
         {
-            $('#khachHang_newPhong_saveButton').innerText = 'Cập nhật phòng';
+            $('#chuNha_quanLyKhachHang_form_saveButton').innerText = 'Cập nhật phòng';
             const phong = (APP.cache.danhSachPhong.data || []).find(function(dong)
             {
                 return String(dong.idPhong) === String(idPhong);

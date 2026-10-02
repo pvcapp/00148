@@ -73,8 +73,8 @@ APP.features.chuNha.quanLyPhong.form.control =
 
         try
         {
-            disableButton('khachHang_newPhong_saveButton');
-            $('#khachHang_newPhong_saveButton').innerText = 'Đang thêm..';
+            inactiveButton('chuNha_quanLyKhachHang_form_saveButton');
+            $('#chuNha_quanLyKhachHang_form_saveButton').innerText = 'Đang thêm..';
             const ketQua = await APP.features.chuNha.quanLyPhong.form.api.create(data);
             if (!ketQua)
             {
@@ -93,16 +93,16 @@ APP.features.chuNha.quanLyPhong.form.control =
         }
         finally
         {
-            activeButton('khachHang_newPhong_saveButton');
-            $('#khachHang_newPhong_saveButton').innerText = 'Thêm phòng';
+            activeButton('chuNha_quanLyKhachHang_form_saveButton');
+            $('#chuNha_quanLyKhachHang_form_saveButton').innerText = 'Thêm phòng';
         }
     },
     update: async function(idPhong, data)
     {
         try
         {
-            disableButton('khachHang_newPhong_saveButton');
-            $('#khachHang_newPhong_saveButton').innerText = 'Đang cập nhật..';
+            inactiveButton('chuNha_quanLyKhachHang_form_saveButton');
+            $('#chuNha_quanLyKhachHang_form_saveButton').innerText = 'Đang cập nhật..';
             const ketQua = await APP.features.chuNha.quanLyPhong.form.api.update(idPhong, data);
             if (!ketQua)
             {
@@ -130,8 +130,8 @@ APP.features.chuNha.quanLyPhong.form.control =
         }
         finally
         {
-            activeButton('khachHang_newPhong_saveButton');
-            $('#khachHang_newPhong_saveButton').innerText = 'Cập nhật phòng';
+            activeButton('chuNha_quanLyKhachHang_form_saveButton');
+            $('#chuNha_quanLyKhachHang_form_saveButton').innerText = 'Cập nhật phòng';
         }
     },
     delete: async function(idPhong)
