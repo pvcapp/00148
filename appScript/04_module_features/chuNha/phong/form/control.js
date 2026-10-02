@@ -121,6 +121,7 @@ APP.features.chuNha.quanLyPhong.form.control =
             }
 
             APP.features.chuNha.quanLyPhong.list.ui.render();
+            APP.features.chuNha.quanLyPhong.list.ui.show();
             this.reset();
             toast('Cập nhật phòng thành công');
         }
