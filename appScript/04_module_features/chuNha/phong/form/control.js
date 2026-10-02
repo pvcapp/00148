@@ -84,6 +84,7 @@ APP.features.chuNha.quanLyPhong.form.control =
 
             APP.cache.danhSachPhong.data.push(ketQua);
             APP.features.chuNha.quanLyPhong.list.ui.render();
+            APP.features.chuNha.quanLyPhong.list.ui.show();
             this.reset();
             toast('Thêm phòng thành công');
         }
