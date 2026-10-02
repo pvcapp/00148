@@ -63,7 +63,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
                     onclick="APP.features.chuNha.quanLyPhong.form.control.submit()">
                     Thêm phòng
                 </div>
-                <div class="button_01" onclick="APP.features.chuNha.quanLyPhong.form.control.reset()">
+                <div class="button_01" onclick="APP.features.chuNha.quanLyPhong.form.control.refresh()">
                     Làm mới
                 </div>
                 <div class="button_01" onclick="APP.features.chuNha.quanLyPhong.form.control.abort()">

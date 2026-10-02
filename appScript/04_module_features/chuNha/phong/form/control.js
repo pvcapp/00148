@@ -17,6 +17,10 @@ APP.features.chuNha.quanLyPhong.form.control =
             moTa: $('#themMoiPhong_moTa').value.trim()
         };
     },
+    refresh: function()
+    {
+        APP.features.chuNha.quanLyPhong.form.ui.render(APP.features.chuNha.quanLyPhong.form.mode, APP.features.chuNha.quanLyPhong.form.idPhong);
+    },
     reset: function()
     {
         APP.features.chuNha.quanLyPhong.form.ui.renderKhuNhaOptions();
