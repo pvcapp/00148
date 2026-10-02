@@ -11,7 +11,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
         tab_main.id = 'chuNha_quanLyPhong_form_main';
         tab_main.className = 'tab__main';
         tab_main.innerHTML = `
-            <div class="card form-phong__card" style="background: rgba(255,255,255,0.3)">
+            <div class="card form__grid" style="background: rgba(255,255,255,0.3)">
                 <div class="form__field_01">
                     <label for="themMoiPhong_idKhuNha">Khu nhà</label>
                     <select id="themMoiPhong_idKhuNha"></select>
@@ -23,7 +23,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
                 </div>
             </div>
 
-            <div class="card form-phong__card" style="margin-top: 12px;">
+            <div class="card form__grid" style="margin-top: 12px;">
                 <div class="form__field_01">
                     <label for="themMoiPhong_tenPhong">Tên phòng</label>
                     <input type="text" id="themMoiPhong_tenPhong" required>
@@ -58,7 +58,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
                 </div>
             </div>
 
-            <div class="tab__footer">
+            <div class="form__footer">                
                 <div class="sidebar__button sidebar__button__selected" id="khachHang_newPhong_saveButton"
                     onclick="APP.features.chuNha.quanLyPhong.form.control.submit()">
                     Thêm phòng
