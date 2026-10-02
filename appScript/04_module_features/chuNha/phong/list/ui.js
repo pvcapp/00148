@@ -6,7 +6,7 @@ APP.features.chuNha.quanLyPhong.list.ui =
         tabHeader.className = 'tab__header';
         tabHeader.innerHTML = `
             <span class="card__caption">Danh sách phòng</span>
-            <div class="sidebar__button" style="width: 160px;" onclick="themMoiPhong_lamMoi();hide('tab_chuNha_phong_danhSach');show('themMoiPhong_form', 'grid');">
+            <div class="sidebar__button" style="width: 160px;" onclick="APP.features.chuNha.quanLyPhong.form.control.show('addNew')">
                 ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
                 Phòng mới
             </div>`;
