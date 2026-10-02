@@ -58,15 +58,15 @@ APP.features.chuNha.quanLyPhong.form.ui =
                 </div>
             </div>
 
-            <div class="form__footer">                
-                <div class="sidebar__button sidebar__button__selected" id="khachHang_newPhong_saveButton"
+            <div class="form__footer" style="flex-direction:row;">                
+                <div class="button_01" id="khachHang_newPhong_saveButton"
                     onclick="APP.features.chuNha.quanLyPhong.form.control.submit()">
                     Thêm phòng
                 </div>
-                <div class="button sidebar__button " onclick="APP.features.chuNha.quanLyPhong.form.control.reset()">
+                <div class="button_01" onclick="APP.features.chuNha.quanLyPhong.form.control.reset()">
                     Làm mới
                 </div>
-                <div class="sidebar__button" onclick="APP.features.chuNha.quanLyPhong.form.control.abort()">
+                <div class="button_01" onclick="APP.features.chuNha.quanLyPhong.form.control.abort()">
                     Bỏ qua
                 </div>
             </div>
