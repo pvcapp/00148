@@ -50,19 +50,13 @@ APP.features.chuNha.quanLyPhong.form.control =
             return;
         }
 
-        const phongTonTai = APP.cache.danhSachPhong.data && APP.cache.danhSachPhong.data.find(p => p.tenPhong === data.tenPhong && p.idKhuNha === data.idKhuNha);
-        if (phongTonTai) 
-        {
-            toast('Phòng đã tồn tại trong khu nhà này');
-            return;
-        }
-
-
         if (APP.features.chuNha.quanLyPhong.form.mode == 'addNew')
         {
             APP.features.chuNha.quanLyPhong.form.control.addNew(data);
         }
-        else if (APP.features.chuNha.quanLyPhong.form.mode == 'update')
+        else if (APP.features.chuNha.quanLyPhong.form.mode == 'update' || 
+            APP.features.chuNha.quanLyPhong.form.mode == 'edit'
+        )
         {
             const idPhong = APP.features.chuNha.quanLyPhong.form.idPhong;
             APP.features.chuNha.quanLyPhong.form.control.update(idPhong, data);
@@ -70,6 +64,13 @@ APP.features.chuNha.quanLyPhong.form.control =
     },
     addNew: async function(data)
     {
+        const phongTonTai = APP.cache.danhSachPhong.data && APP.cache.danhSachPhong.data.find(p => p.tenPhong === data.tenPhong && p.idKhuNha === data.idKhuNha);
+        if (phongTonTai) 
+        {
+            toast('Phòng đã tồn tại trong khu nhà này');
+            return;
+        }
+
         try
         {
             disableButton('khachHang_newPhong_saveButton');
