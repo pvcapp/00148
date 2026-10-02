@@ -58,7 +58,7 @@ APP.features.chuNha.quanLyPhong.form.ui =
                 </div>
             </div>
 
-            <div class="form__footer" style="flex-direction:row;margin_top:12px;margin-bottom:100px;gap: 12px;">                
+            <div class="form__footer" style="flex-direction:row;margin-top:12px;margin-bottom:100px;gap: 12px;">                
                 <div class="button_01" id="chuNha_quanLyKhachHang_form_saveButton"
                     onclick="APP.features.chuNha.quanLyPhong.form.control.submit()">
                     Thêm phòng
