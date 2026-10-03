@@ -57,7 +57,7 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
         resetButton.className = 'button_01';
         resetButton.innerText = 'Làm mới';
         resetButton.onclick = function() {
-            APP.features.chuNha.quanLyKhuNha.form.control.reset();
+            APP.features.chuNha.quanLyKhuNha.form.control.refresh();
         };
         tabFooter.appendChild(resetButton);
 

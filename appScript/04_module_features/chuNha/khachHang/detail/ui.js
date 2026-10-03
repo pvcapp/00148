@@ -17,7 +17,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
 
         const tabMain = document.createElement('div');
         tabMain.id = 'chuNha_quanLyKhachHang_detail_main';        
-        tabMain.className = 'tab__main';
+        tabMain.className = 'card__container';
 
         const cardThongTinCoBan = div({
             className: 'card',
