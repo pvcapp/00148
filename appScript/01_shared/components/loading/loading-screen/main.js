@@ -6,9 +6,9 @@ const loadingScreen = (noiDung= '', id = '', type='02') =>
         case '01':
             return loadingScreen_01({id: id});
         case '02':
-            return loadingScreen_02(id);
+            return loadingScreen_02(noiDung, id);
         default:
-            return loadingScreen_02(id);
+            return loadingScreen_02(noiDung, id);
     };
 }
 
