@@ -30,8 +30,8 @@ APP.features.chuNha.control =
                 APP.cache.danhSachHopDong = ketQua.hopDong || [];
 
                 APP.features.chuNha.quanLyKhachHang.ui.render();
-                APP.features.chuNha.quanLyKhuNha.ui.list.render();
-                APP.features.chuNha.quanLyPhong.list.ui.render();
+                APP.features.chuNha.quanLyKhuNha.ui.render();
+                APP.features.chuNha.quanLyPhong.ui.render();
                 //APP.features.chuNha.quanLyHopDong.startup();
                 APP.features.chuNha.setting.ui.list.render();
                 

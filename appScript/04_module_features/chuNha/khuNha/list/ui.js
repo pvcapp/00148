@@ -26,8 +26,8 @@ APP.features.chuNha.quanLyKhuNha.list.ui =
     render: function()
     {
         $('#chuNha_quanLyKhuNha_list_main').innerHTML = `
-            <table class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}" id="chuNha_danhSachKhuNha_table">
-                <thead class="${APP.features.chuNha.quanLyKhuNha.ui.list.tableStyle}__header">
+            <table class="${APP.features.chuNha.quanLyKhuNha.list.tableStyle}" id="chuNha_danhSachKhuNha_table">
+                <thead class="${APP.features.chuNha.quanLyKhuNha.list.tableStyle}__header">
                     <tr>
                         <th>STT</th>
                         <th>Tên khu nhà</th>
