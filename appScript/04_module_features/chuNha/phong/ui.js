@@ -39,6 +39,7 @@ APP.features.chuNha.quanLyPhong.ui =
     },
     render: function()
     {
+        APP.features.chuNha.quanLyPhong.list.ui.render();
         //render list
     }
 };
