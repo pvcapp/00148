@@ -23,7 +23,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             className: 'card',
             parent: tabMain,
             style: `
-                max-width:650px;
+                max-width:480px;
                 padding:var(--padding-xl);
                 display:flex;
                 gap:12px;
@@ -66,7 +66,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             className: 'card',
             parent: tabMain,
             style: `
-                max-width:650px;
+                max-width:480px;
                 padding:var(--padding-xl);
                 display:flex;
                 gap:12px;
@@ -100,7 +100,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             className: 'card',
             parent: tabMain,
             style: `
-                max-width:650px;
+                max-width:480px;
                 padding:var(--padding-xl);
                 display: none;
                 gap:16px;
@@ -156,7 +156,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             className: 'card',
             parent: tabMain,
             style: `
-                max-width:650px;
+                max-width:480px;
                 padding:var(--padding-xl);
                 display:flex;
                 gap:12px;
