@@ -151,6 +151,33 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             </div>
         `;
 
+        const cardThongTinThuePhong = div({
+            className: 'card',
+            parent: tabMain,
+            style: `
+                max-width:480px;
+                padding:var(--padding-xl);
+                display:flex;
+                gap:12px;
+                flex-direction:column;
+            `
+        });
+
+        cardThongTinKhac.innerHTML = `
+            <div class="card__caption">
+                Thông tin thuê phòng
+            </div>
+
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
+                <div class="detail__label">Trạng thái thuê phòng: </div>
+                <div id="chuNha_quanLyKhachHang_detail_trangThaiThue" class="detail__value"></div>
+            </div>
+
+            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
+                <div class="detail__label">Chi tiết phòng thuê: </div>
+                <div id="chuNha_quanLyKhachHang_detail_chiTietPhongThue" class="detail__value"></div>
+            </div>
+        `;
 
         const cardThongTinKhac = div({
             className: 'card',
@@ -234,6 +261,8 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
         $('#formKhachHang_detail_email').textContent = khachHang.email || '';
         $('#formKhachHang_detail_diaChiThuongTru').textContent = khachHang.diaChiThuongTru || '';
         $('#formKhachHang_detail_ngheNghiep').textContent = khachHang.ngheNghiep || '';
+
+        $("#chuNha_quanLyKhachHang_detail_trangThaiThue").textContent = APP.features.chuNha.quanLyKhachHang.control.dangThue(idKhachHang) ? 'Đang thuê' : 'chưa thuê';
 
         $('#formKhachHang_detail_xacMinh').textContent = APP.features.chuNha.quanLyKhachHang.control.canXacMinh(idKhachHang) ? 'Cần xác minh' : 'Đã xác minh';
         $('#formKhachHang_detail_ghiChu').textContent = khachHang.ghiChu || '';
