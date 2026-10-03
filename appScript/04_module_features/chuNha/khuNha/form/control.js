@@ -64,7 +64,7 @@ APP.features.chuNha.quanLyKhuNha.form.control =
         }
         catch (loi)
         {
-            alert('Có lỗi khi thêm khu nhà:\n' + loi.message);
+            await canhBao('Có lỗi khi thêm khu nhà:\n' + loi.message, 'Lỗi khi thêm khu nhà', 'ok');
         }
         finally
         {
@@ -101,7 +101,7 @@ APP.features.chuNha.quanLyKhuNha.form.control =
         }
         catch (loi)
         {
-            alert('Có lỗi khi cập nhật khu nhà:\n' + loi.message);
+            await canhBao('Có lỗi khi cập nhật khu nhà:\n' + loi.message, 'Lỗi khi cập nhật khu nhà', 'ok');
         }
         finally
         {
@@ -111,7 +111,7 @@ APP.features.chuNha.quanLyKhuNha.form.control =
     },
     delete: async function(idKhuNha, tenKhuNha)
     {
-        const confirmDelete = confirm(`Bạn có chắc chắn muốn xóa khu nhà "${tenKhuNha}" không?`);
+        const confirmDelete = await canhBao(`Bạn có chắc chắn muốn xóa khu nhà "${tenKhuNha}" không?`, 'Xác nhận xóa khu nhà', 'okCancel');
         if (!confirmDelete) return;
 
         try
@@ -130,7 +130,7 @@ APP.features.chuNha.quanLyKhuNha.form.control =
         }
         catch (loi)
         {
-            alert('Có lỗi khi xóa khu nhà:\n' + loi.message);
+            await canhBao('Có lỗi khi xóa khu nhà:\n' + loi.message, 'Lỗi khi xóa khu nhà', 'ok');
         }
     },
     reset: function()

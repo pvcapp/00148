@@ -86,9 +86,9 @@ function khuNha_edit_luu()
                 if (ketQua)
                 {
                     toast('Cập nhật khu nhà thành công');                    
-                    if (ketQua.data && APP.cache && Array.isArray(APP.cache.danhSachKhuNha))
+                    if (ketQua.data && APP.cache && APP.cache.danhSachKhuNha && Array.isArray(APP.cache.danhSachKhuNha.data))
                     {
-                        const viTri = APP.cache.danhSachKhuNha.findIndex(
+                        const viTri = APP.cache.danhSachKhuNha.data.findIndex(
                             function(dong)
                             {
                                 return String(dong.idKhuNha) === String(ketQua.data.idKhuNha);
@@ -97,11 +97,11 @@ function khuNha_edit_luu()
 
                         if (viTri !== -1)
                         {
-                            APP.cache.danhSachKhuNha[viTri] = ketQua.data;
+                            APP.cache.danhSachKhuNha.data[viTri] = ketQua.data;
                         }
                     }
-                    chuNha_showDanhSachKhuNha(APP.cache.danhSachKhuNha);
-                    khuNha_edit_boQua();
+                    APP.features.chuNha.quanLyKhuNha.list.control.refresh();
+                    APP.features.chuNha.quanLyKhuNha.list.ui.show();
                 }
                 else
                 {
