@@ -39,8 +39,7 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
                 </select>
             </div>
         `;
-        APP.view.ui.addElementToTab('chuNha', 'quanLyKhuNha', 'form', tabMain);
-        
+               
         
         let tabFooter = document.createElement('div');
         tabFooter.className = 'form__footer';
@@ -69,8 +68,8 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
             APP.features.chuNha.quanLyKhuNha.form.control.abort();
         };
         tabFooter.appendChild(abortButton);
-
-        APP.view.ui.addElementToTab('chuNha', 'quanLyKhuNha', 'form', tabFooter);
+        tabMain.appendChild(tabFooter);
+        APP.view.ui.addElementToTab('chuNha', 'quanLyKhuNha', 'form', tabMain);
     },
     render: function(mode = 'addNew', idKhuNha = '')
     {
