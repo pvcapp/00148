@@ -10,34 +10,33 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
         let tabMain = document.createElement('div');
         tabMain.id = 'chuNha_quanLyKhuNha_form_main';
         tabMain.className = 'tab__main';
-        tabMain.innerHTML = `<div style="max-width:450px;">
+        tabMain.innerHTML = `
             <div class="form__field_01" style="display: none;">
                 <label for="chuNha_quanLyKhuNha_form_idKhuNha">Id khu Nhà</label>
                 <input type="text" id="chuNha_quanLyKhuNha_form_idKhuNha">
             </div>
 
-            <div class="form__field_01">
+            <div class="form__field_01" style="max-width:450px;">
                 <label for="chuNha_quanLyKhuNha_form_tenKhuNha">Tên khu nhà</label>
                 <input type="text" id="chuNha_quanLyKhuNha_form_tenKhuNha" required>
             </div>
 
-            <div class="form__field_01">
+            <div class="form__field_01" style="max-width:450px;">
                 <label for="chuNha_quanLyKhuNha_form_diaChi">Địa chỉ</label>
                 <input type="text" id="chuNha_quanLyKhuNha_form_diaChi">
             </div>
 
-            <div class="form__field_01">
+            <div class="form__field_01" style="max-width:450px;">
                 <label for="chuNha_quanLyKhuNha_form_moTa">Mô tả</label>
                 <input type="text" id="chuNha_quanLyKhuNha_form_moTa">
             </div>
 
-            <div class="form__field_01">
+            <div class="form__field_01" style="max-width:450px;">
                 <label for="chuNha_quanLyKhuNha_form_trangThai">Trạng thái</label>
                 <select id="chuNha_quanLyKhuNha_form_trangThai">
                     <option value="dangHoatDong">Đang hoạt động</option>
                     <option value="tamDung">Ngừng hoạt động</option>
                 </select>
-            </div>
             </div>
         `;
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhuNha', 'form', tabMain);
