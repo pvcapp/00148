@@ -11,7 +11,7 @@ APP.features.chuNha.quanLyKhuNha.list.ui =
                 </div>
             </div>
 
-            <div class="sidebar__button" style="width: 160px;" onclick="themMoiKhuNha_lamMoi();hide('tab_chuNha_khuNha_danhSach');show('themMoiKhuNha_form', 'grid');">
+            <div class="sidebar__button" style="width: 160px;" onclick="APP.features.chuNha.quanLyKhuNha.form.control.show('addNew')">
                 ${new PVCImage("https://pvcapp.github.io/00148/img/new.svg", 'auto', '16px', 'margin-right:6px;').render()}
                 Khu nhà mới
             </div>`;
@@ -45,15 +45,18 @@ APP.features.chuNha.quanLyKhuNha.list.ui =
         let dataHtml = '';
         let trangThaiArray = {'dangHoatDong': 'Hoạt động', 'tamDung': 'Ngừng hoạt động'};
         let stt =0;
-        for (let i =0; i< APP.cache.danhSachKhuNha.data.length; i++)
+        const danhSachKhuNha = APP.cache.danhSachKhuNha && Array.isArray(APP.cache.danhSachKhuNha.data)
+            ? APP.cache.danhSachKhuNha.data
+            : [];
+        for (let i =0; i< danhSachKhuNha.length; i++)
         {            
-            let dong = APP.cache.danhSachKhuNha.data[i];
+            let dong = danhSachKhuNha[i];
             if (dong.active == '1')
             {
                 stt++;
                 dataHtml += `
                     <tr class="${APP.features.chuNha.quanLyKhuNha.list.tableStyle}__row"
-                        onclick="khuNha_edit('${escapeHtml(dong.idKhuNha)}')">
+                        onclick="APP.features.chuNha.quanLyKhuNha.form.control.show('edit', '${escapeHtml(dong.idKhuNha)}')">
                         <td>${stt}</td>
                         <td>${escapeHtml(dong.tenKhuNha || '')}</td>
                         <td>${escapeHtml(dong.diaChi || '')}</td>
@@ -71,5 +74,9 @@ APP.features.chuNha.quanLyKhuNha.list.ui =
 
         const tbody = document.querySelector('#chuNha_danhSachKhuNha_table tbody');
         tbody.innerHTML = dataHtml;
+    },
+    show: function()
+    {
+        APP.view.ui.showTab('chuNha', 'quanLyKhuNha', 'list');
     }
 };

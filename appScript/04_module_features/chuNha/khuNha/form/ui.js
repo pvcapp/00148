@@ -87,7 +87,10 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
         {
             $('#chuNha_quanLyKhuNha_form_caption').innerText = 'CẬP NHẬT KHU NHÀ';
             $('#chuNha_quanLyKhuNha_form_saveButton').innerText = 'Cập nhật khu nhà';
-            const khuNha = APP.cache.danhSachKhuNha.data.find(k => k.idKhuNha === idKhuNha);
+            const danhSachKhuNha = APP.cache.danhSachKhuNha && Array.isArray(APP.cache.danhSachKhuNha.data)
+                ? APP.cache.danhSachKhuNha.data
+                : [];
+            const khuNha = danhSachKhuNha.find(k => String(k.idKhuNha) === String(idKhuNha));
             if (khuNha)
             {
                 $('#chuNha_quanLyKhuNha_form_idKhuNha').value = khuNha.idKhuNha || '';
@@ -95,6 +98,10 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
                 $('#chuNha_quanLyKhuNha_form_diaChi').value = khuNha.diaChi || '';
                 $('#chuNha_quanLyKhuNha_form_moTa').value = khuNha.moTa || '';
                 $('#chuNha_quanLyKhuNha_form_trangThai').value = khuNha.trangThai || 'dangHoatDong';
+            }
+            else
+            {
+                toast('Không tìm thấy khu nhà');
             }
         }
     },

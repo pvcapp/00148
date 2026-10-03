@@ -22,8 +22,10 @@ APP.features.chuNha.control =
         google.script.run
             .withSuccessHandler(function(ketQua)
             {
-                APP.cache.danhSachKhuNha = ketQua.khuNha || [];
-                APP.cache.danhSachPhong = ketQua.phong || [];
+                const khuNha = ketQua.khuNha || [];
+                const phong = ketQua.phong || [];
+                APP.cache.danhSachKhuNha = {data: Array.isArray(khuNha) ? khuNha : (Array.isArray(khuNha.data) ? khuNha.data : [])};
+                APP.cache.danhSachPhong = {data: Array.isArray(phong) ? phong : (Array.isArray(phong.data) ? phong.data : [])};
                 APP.cache.danhSachKhachHang = ketQua.danhSachKhachHang || [];
                 APP.cache.danhSachKhachHang_xacMinh = ketQua.danhSachKhachHang_xacMinh || [];
                 APP.cache.setting = ketQua.setting || [];

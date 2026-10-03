@@ -35,47 +35,78 @@ APP.features.chuNha.quanLyKhuNha.form.control =
 
         if (APP.features.chuNha.quanLyKhuNha.form.mode == 'addNew')
         {
-            APP.features.chuNha.quanLyKhuNha.form.control.addNew(data);
+            await APP.features.chuNha.quanLyKhuNha.form.control.addNew(data);
         }
-        else if (APP.features.chuNha.quanLyKhuNha.form.mode == 'update')
+        else if (APP.features.chuNha.quanLyKhuNha.form.mode == 'update' || APP.features.chuNha.quanLyKhuNha.form.mode == 'edit')
         {
-            APP.features.chuNha.quanLyKhuNha.form.control.update(data);
+            await APP.features.chuNha.quanLyKhuNha.form.control.update(data);
         }
     },
     addNew: async function(data)
     {
-        inactiveButton('chuNha_quanLyKhuNha_form_saveButton');
-        $('#chuNha_quanLyKhuNha_form_saveButton').innerText = 'Đang thêm..';
-        const ketQua = await APP.features.chuNha.quanLyKhuNha.api.addNew(data);
-        if (ketQua && ketQua.success)
+        const saveButton = $('#chuNha_quanLyKhuNha_form_saveButton');
+        try
+        {
+            inactiveButton('chuNha_quanLyKhuNha_form_saveButton');
+            saveButton.innerText = 'Đang thêm..';
+            const ketQua = await APP.features.chuNha.quanLyKhuNha.form.api.create(data);
+            const khuNhaMoi = ketQua && (ketQua.data || ketQua.khuNha || ketQua);
+            if (!khuNhaMoi || !khuNhaMoi.idKhuNha || ketQua.success === false || ketQua.thanhCong === false)
+            {
+                toast((ketQua && (ketQua.thongBao || ketQua.message)) || 'Không thể thêm khu nhà');
+                return;
+            }
+
+            APP.cache.danhSachKhuNha.data.push(khuNhaMoi);
+            APP.features.chuNha.quanLyKhuNha.list.control.refresh();
+            APP.features.chuNha.quanLyKhuNha.form.control.abort();
+            toast('Thêm mới khu nhà thành công');
+        }
+        catch (loi)
+        {
+            alert('Có lỗi khi thêm khu nhà:\n' + loi.message);
+        }
+        finally
         {
             activeButton('chuNha_quanLyKhuNha_form_saveButton');
-            $('#chuNha_quanLyKhuNha_form_saveButton').innerText = 'Thêm khu nhà';            
-            
-            APP.cache.danhSachKhuNha.data.push(ketQua);
-            APP.features.chuNha.quanLyKhuNha.list.ui.render();
-            APP.features.chuNha.quanLyKhuNha.list.ui.show();            
-            toast('Thêm mới khu nhà thành công');
+            saveButton.innerText = 'Thêm khu nhà';
         }
     },
     update: async function(data)
     {
-        inactiveButton('chuNha_quanLyKhuNha_form_saveButton');
-        $('#chuNha_quanLyKhuNha_form_saveButton').innerText = 'Đang cập nhật..';
-        const ketQua = await APP.features.chuNha.quanLyKhuNha.api.update(data);
-        if (ketQua && ketQua.success)
+        const saveButton = $('#chuNha_quanLyKhuNha_form_saveButton');
+        try
         {
-            activeButton('chuNha_quanLyKhuNha_form_saveButton');
-            $('#chuNha_quanLyKhuNha_form_saveButton').innerText = 'Cập nhật khu nhà';
-            
-            const index = APP.cache.danhSachKhuNha.data.findIndex(k => k.idKhuNha === data.idKhuNha);
+            inactiveButton('chuNha_quanLyKhuNha_form_saveButton');
+            saveButton.innerText = 'Đang cập nhật..';
+            const ketQua = await APP.features.chuNha.quanLyKhuNha.form.api.update(data);
+            if (!ketQua || ketQua.success === false || ketQua.thanhCong === false)
+            {
+                toast((ketQua && (ketQua.thongBao || ketQua.message)) || 'Không thể cập nhật khu nhà');
+                return;
+            }
+
+            const khuNhaCapNhat = ketQua.data || ketQua.khuNha || ketQua;
+            const danhSachKhuNha = APP.cache.danhSachKhuNha.data;
+            const index = danhSachKhuNha.findIndex(k => String(k.idKhuNha) === String(data.idKhuNha));
             if (index !== -1)
             {
-                APP.cache.danhSachKhuNha.data[index] = ketQua;
+                danhSachKhuNha[index] = khuNhaCapNhat.idKhuNha
+                    ? khuNhaCapNhat
+                    : Object.assign({}, danhSachKhuNha[index], data);
             }
-            APP.features.chuNha.quanLyKhuNha.list.ui.render();
-            APP.features.chuNha.quanLyKhuNha.list.ui.show();
+            APP.features.chuNha.quanLyKhuNha.list.control.refresh();
+            APP.features.chuNha.quanLyKhuNha.form.control.abort();
             toast('Cập nhật thông tin khu nhà thành công');
+        }
+        catch (loi)
+        {
+            alert('Có lỗi khi cập nhật khu nhà:\n' + loi.message);
+        }
+        finally
+        {
+            activeButton('chuNha_quanLyKhuNha_form_saveButton');
+            saveButton.innerText = 'Cập nhật khu nhà';
         }
     },
     delete: async function(idKhuNha, tenKhuNha)
@@ -83,11 +114,23 @@ APP.features.chuNha.quanLyKhuNha.form.control =
         const confirmDelete = confirm(`Bạn có chắc chắn muốn xóa khu nhà "${tenKhuNha}" không?`);
         if (!confirmDelete) return;
 
-        const ketQua = await APP.features.chuNha.quanLyKhuNha.api.delete(idKhuNha);
-        if (ketQua && ketQua.success)
+        try
         {
+            const ketQua = await APP.features.chuNha.quanLyKhuNha.form.api.delete(idKhuNha, tenKhuNha);
+            if (!ketQua || ketQua.success === false || ketQua.thanhCong === false)
+            {
+                toast((ketQua && (ketQua.thongBao || ketQua.message)) || 'Không thể xóa khu nhà');
+                return;
+            }
+
+            const khuNha = APP.cache.danhSachKhuNha.data.find(k => String(k.idKhuNha) === String(idKhuNha));
+            if (khuNha) khuNha.active = '0';
             toast('Xóa khu nhà thành công');
             APP.features.chuNha.quanLyKhuNha.list.control.refresh();
+        }
+        catch (loi)
+        {
+            alert('Có lỗi khi xóa khu nhà:\n' + loi.message);
         }
     },
     reset: function()
