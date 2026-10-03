@@ -65,7 +65,7 @@ APP.features.chuNha.dashboard.list.ui =
     render: function()
     {
         APP.view.ui.removeTab('chuNha', 'dashboard', 'list');
-        if (!APP.cache.serverCache) {}
+        if (!APP.cache.serverCache || Object.keys(APP.cache.serverCache).length === 0) {}
         else
         {
             for (let i = 0; i < APP.features.chuNha.dashboard.data.length; i++)

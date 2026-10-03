@@ -1,3 +1,4 @@
+APP.features.chuNha = APP.features.chuNha || {};
 APP.features.chuNha = 
 {
     ui: {},

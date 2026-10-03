@@ -1,5 +1,0 @@
-APP.features =
-{
-    chuNha: {},
-    khachHang: {}
-}

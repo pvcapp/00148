@@ -1,9 +1,9 @@
 APP.cache =
 {
-    danhSachKhachHang: [],
-    khuNha: [],
-    phong: [],
-    hopDong: [],
-    thuTien: [],
-    tongQuan: {}
+    danhSachKhachHang: {},
+    khuNha: {},
+    phong: {},
+    hopDong: {},
+    thuTien: {},
+    serverCache: {}
 };

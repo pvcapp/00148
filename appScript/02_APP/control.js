@@ -59,7 +59,7 @@ APP.control =
                 }
                 else
                 {
-                    APP.cache.tongQuan = duLieu.tongQuan;
+                    APP.cache.serverCache = duLieu.serverCache;
                     APP.features.chuNha.control.init();
                 }
             })
