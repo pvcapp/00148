@@ -9,8 +9,8 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
         
         let tabMain = document.createElement('div');
         tabMain.id = 'chuNha_quanLyKhuNha_form_main';
-        tabMain.className = 'tab__container';
-        tabMain.innerHTML = `
+        tabMain.className = 'tab__main';
+        tabMain.innerHTML = `<div style="max-width:450px;">
             <div class="form__field_01" style="display: none;">
                 <label for="chuNha_quanLyKhuNha_form_idKhuNha">Id khu Nhà</label>
                 <input type="text" id="chuNha_quanLyKhuNha_form_idKhuNha">
@@ -37,6 +37,7 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
                     <option value="dangHoatDong">Đang hoạt động</option>
                     <option value="tamDung">Ngừng hoạt động</option>
                 </select>
+            </div>
             </div>
         `;
         APP.view.ui.addElementToTab('chuNha', 'quanLyKhuNha', 'form', tabMain);
