@@ -1,5 +1,5 @@
 
-const loadingScreen = (id = '', type='02') => 
+const loadingScreen = (noiDung= '', id = '', type='02') => 
 {
     switch (type)
     {
