@@ -163,7 +163,7 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             `
         });
 
-        cardThongTinKhac.innerHTML = `
+        cardThongTinThuePhong.innerHTML = `
             <div class="card__caption">
                 Thông tin thuê phòng
             </div>
