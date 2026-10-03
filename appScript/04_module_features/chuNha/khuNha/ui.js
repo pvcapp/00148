@@ -13,5 +13,9 @@ APP.features.chuNha.quanLyKhuNha.ui =
     {
         APP.features.chuNha.quanLyKhuNha.list.ui.init();
         APP.features.chuNha.quanLyKhuNha.form.ui.init();
+    },
+    render: function()
+    {
+        APP.features.chuNha.quanLyKhuNha.list.ui.render();
     }
 };
