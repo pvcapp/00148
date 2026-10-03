@@ -9,7 +9,7 @@ APP.features.chuNha.quanLyKhuNha.form.ui =
         
         let tabMain = document.createElement('div');
         tabMain.id = 'chuNha_quanLyKhuNha_form_main';
-        tabMain.className = 'tab__main';
+        tabMain.className = 'card__container';
         tabMain.innerHTML = `
             <div class="form__field_01" style="display: none;">
                 <label for="chuNha_quanLyKhuNha_form_idKhuNha">Id khu Nhà</label>
