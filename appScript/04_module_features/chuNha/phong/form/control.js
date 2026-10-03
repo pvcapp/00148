@@ -87,6 +87,7 @@ APP.features.chuNha.quanLyPhong.form.control =
             }
 
             APP.cache.danhSachPhong.data.push(ketQua);
+            APP.features.chuNha.dashboard.list.control.updateRoomCounts(null, ketQua);
             APP.features.chuNha.quanLyPhong.list.ui.render();
             APP.features.chuNha.quanLyPhong.list.ui.show();
             this.reset();
@@ -115,16 +116,19 @@ APP.features.chuNha.quanLyPhong.form.control =
                 return;
             }
 
-            const viTri = (APP.cache.danhSachPhong.data || []).findIndex(function(dong)
+            const danhSachPhong = APP.cache.danhSachPhong.data || [];
+            const viTri = danhSachPhong.findIndex(function(dong)
             {
                 return String(dong.idPhong) === String(idPhong);
             });
 
+            const phongCu = viTri === -1 ? null : danhSachPhong[viTri];
             if (viTri !== -1)
             {
-                APP.cache.danhSachPhong.data[viTri] = ketQua;
+                danhSachPhong[viTri] = ketQua;
             }
 
+            if (phongCu) APP.features.chuNha.dashboard.list.control.updateRoomCounts(phongCu, ketQua);
             APP.features.chuNha.quanLyPhong.list.ui.render();
             APP.features.chuNha.quanLyPhong.list.ui.show();
             this.reset();
@@ -155,9 +159,9 @@ APP.features.chuNha.quanLyPhong.form.control =
         if (phong)
         {
             phong.active = '0';
+            APP.features.chuNha.dashboard.list.control.updateRoomCounts(phong, null);
         }
         APP.features.chuNha.quanLyPhong.list.ui.render();
-        //capNhatTongQuanTuCache();
         toast('Đã xóa phòng');
     },
     abort: function()

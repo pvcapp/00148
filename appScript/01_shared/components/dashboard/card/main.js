@@ -6,6 +6,8 @@ const card = ({data , type = 'detailCard_01'}) =>
             return detailCard_01(data);
         case 'numberCard_01':
             return numberCard_01(data);
+        case 'numberCard_02':
+            return numberCard_02(data);
         default:
             return JSON.stringify(data);
     }

@@ -33,7 +33,7 @@ APP.features.chuNha.quanLyKhachHang.control =
                 }
                 APP.features.chuNha.quanLyKhachHang.list.render();
                 APP.features.chuNha.quanLyKhachHang.update.hide();
-                capNhatTongQuanTuCache();
+                    APP.features.chuNha.dashboard.list.control.updateCustomerCount({active: '1'}, khachHang);
             }
         })
         .withFailureHandler(function(loi) 
