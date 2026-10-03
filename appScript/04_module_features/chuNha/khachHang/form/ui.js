@@ -254,19 +254,16 @@ APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui =
 
 
         const footer = div({className: 'form__footer', parent: formKhachHang_card1});
-
         footer.appendChild(button({
             id: 'formKhachHang_thongTinChiTiet_saveButton', 
             text: 'Thêm khách hàng', 
             onclick: () => APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.submit()
         }));
-
         footer.appendChild(button({
             id: 'formKhachHang_thongTinChiTiet_reset', 
             text: 'Làm mới', 
             onclick: () => APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.ui.render()
         }));
-
         footer.appendChild(button({
             text: 'Bỏ qua', 
             onclick: () => APP.features.chuNha.quanLyKhachHang.form.thongTinChiTiet.control.abort()
