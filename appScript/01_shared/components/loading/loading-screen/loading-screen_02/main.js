@@ -1,5 +1,5 @@
 
-const loadingScreen_02 = (id = '') => 
+const loadingScreen_02 = (noiDung = '', id = '') => 
 {
     const container = document.createElement('div');
     if (id !== '') container.id = id;
@@ -12,8 +12,8 @@ const loadingScreen_02 = (id = '') =>
             <h2 class="loading-screen_02-title">
                 Vui lòng chờ
             </h2>
-            <p class="loading-screen_02-message">
-                Dữ liệu của bạn đang được tải lên
+            <p class="loading-screen_02-message" id="loading-screen_message">
+                ${noiDung || 'Dữ liệu của bạn đang được tải lên'}
             </p>
         </div>
     `;

@@ -4,8 +4,9 @@ APP.loadingScreen =
     {
         loadingScreen_init();
     },
-    show: function()
+    show: function(noiDung = 'Dữ liệu của bạn đang được tải')
     {
+        $('#loading-screen_message').innerText = noiDung;
         show('app_loadingScreen');
     },
     hide: function()

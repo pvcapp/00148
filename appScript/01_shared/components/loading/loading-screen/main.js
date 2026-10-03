@@ -14,6 +14,6 @@ const loadingScreen = (id = '', type='02') =>
 
 const loadingScreen_init = (id= 'app_loadingScreen') =>
 {
-    document.body.appendChild(loadingScreen(id));
+    document.body.appendChild(loadingScreen('Đang kiểm tra dữ liệu khởi động',id));
     hide(id);
 }
