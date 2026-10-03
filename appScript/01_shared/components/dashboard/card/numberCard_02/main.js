@@ -25,7 +25,7 @@ const numberCard_02 = ({caption, subCaption, value, loaded}) =>
             const numberSpan = document.createElement('div');
             if (loaded === false)
             {
-                numberSpan.appendChild(loadingText_01({text: 'Đang tải..'}));
+                numberSpan.appendChild(loadingText_02({text: 'Đang tải..'}));
             }
             else
             {
