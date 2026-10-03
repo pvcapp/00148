@@ -42,5 +42,33 @@ APP.features.chuNha.quanLyKhachHang.control =
             canhBao('Có lỗi khi xóa khách hàng:\n' + loi.message);
         })
         .sv_xoaKhachHang(idKhachHang, hoVaTen, APP.user.token);
+    },
+    dangThue: function(idKhachHang)
+    {
+        let hopDong = APP.cache.danhSachHopDong.data.find(function(hd)
+        {
+            return hd.khachHang_idKhachHang == idKhachHang;
+        });
+
+        if (hopDong)
+        {
+            return hopDongActive(hopDong) ? true : false;
+        }
+        else
+        {
+            return false;
+        }
+    },
+    canXacMinh: function(idKhachHang)
+    {
+        let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
+            return dxm.idKhachHang == idKhachHang
+        });
+        
+        if (dongXacMinh && dongXacMinh.xacMinh == '')
+        {
+            return true;
+        }
+        return false;
     }
 };

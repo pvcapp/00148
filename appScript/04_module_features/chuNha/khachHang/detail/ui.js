@@ -170,17 +170,12 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Xác minh</div>
+                <div class="detail__label">Xác minh thông tin: </div>
                 <div id="formKhachHang_detail_xacMinh" class="detail__value"></div>
             </div>
 
             <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Trạng thái</div>
-                <div id="formKhachHang_detail_active" class="detail__value"></div>
-            </div>
-
-            <div class="detail__row" style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px;">
-                <div class="detail__label">Ghi chú</div>
+                <div class="detail__label">Ghi chú: </div>
                 <div id="formKhachHang_detail_ghiChu" class="detail__value"></div>
             </div>
         `;
@@ -239,8 +234,8 @@ APP.features.chuNha.quanLyKhachHang.detail.ui =
         $('#formKhachHang_detail_email').textContent = khachHang.email || '';
         $('#formKhachHang_detail_diaChiThuongTru').textContent = khachHang.diaChiThuongTru || '';
         $('#formKhachHang_detail_ngheNghiep').textContent = khachHang.ngheNghiep || '';
-        $('#formKhachHang_detail_xacMinh').textContent = khachHang.xacMinh || '';
-        $('#formKhachHang_detail_active').textContent = khachHang.active || '';
+
+        $('#formKhachHang_detail_xacMinh').textContent = APP.features.chuNha.quanLyKhachHang.control.canXacMinh(idKhachHang) ? 'Cần xác minh' : 'Đã xác minh';
         $('#formKhachHang_detail_ghiChu').textContent = khachHang.ghiChu || '';
 
         $('#formKhachHang_input_anhKhach').src = khachHang.anhKhach || '';

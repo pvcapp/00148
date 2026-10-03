@@ -61,40 +61,11 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 d += '<td>' + dong.hoVaTen + '</td>';
                 d += '<td>' + dong.email + '</td>';
                 d += '<td>' + dong.dienThoai + '</td>';
-                
-                
-                let hopDong = APP.cache.danhSachHopDong.data.find(function(hd)
-                {
-                    return hd.khachHang_idKhachHang == dong.idKhachHang;
-                });
 
-                let thue = '';
-                if (hopDong)
-                {
-                    thue = hopDongActive(hopDong) ? 'Đang thuê' : 'Chưa thuê';
-                }
-                else
-                {
-                    thue = 'Chưa thuê';
-                }
-                
-                
+                let thue = APP.features.chuNha.quanLyKhachHang.control.dangThue(dong.idKhachHang) ? 'Đang thuê' : 'Chưa thuê';             
                 d += '<td>' + thue + '</td>';
                 
-                let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
-                    return dxm.idKhachHang == dong.idKhachHang
-                });
-
-                if (dongXacMinh && dongXacMinh.xacMinh == '')
-                {
-                    xacMinh = `
-                        <div class="sidebar__button" style="width: 170px;font-size: 14px;" 
-                            onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.show('${dong.idKhachHang}');">                        
-                            Xác minh
-                        </div>
-                    `;
-                }
+                let xacMinh = APP.features.chuNha.quanLyKhachHang.list.ui.renderXacMinh(dong.idKhachHang);
                 d += '<td>' + xacMinh + '</td>';
 
                 d += '<td>';
@@ -131,36 +102,10 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                             ${escapeHtml(dong.dienChi || '')}<br>
                             ${escapeHtml(dong.email || '')}<br>`;
 
-                            let hopDong = APP.cache.danhSachHopDong.data.find(function(hd)
-                            {
-                                return hd.khachHang_idKhachHang == dong.idKhachHang;
-                            });
-
-                            let thue = '';
-                            if (hopDong)
-                            {
-                                thue = hopDongActive(hopDong) ? 'Đang thuê' : 'Chưa thuê';
-                            }
-                            else
-                            {
-                                thue = 'Chưa thuê';
-                            }
+                            let thue = APP.features.chuNha.quanLyKhachHang.control.dangThue(dong.idKhachHang) ? 'Đang thuê' : 'Chưa thuê';
                             html2 += 'Trạng thái: ' + thue;
 
-                            let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
-                            let dongXacMinh = APP.cache.danhSachKhachHang_xacMinh.data.find(function(dxm){
-                                return dxm.idKhachHang == dong.idKhachHang
-                            });
-                            
-                            if (dongXacMinh && dongXacMinh.xacMinh == '')
-                            {
-                                xacMinh = `
-                                    <div class="button button__selected" style="width: 170px;font-size: 14px;" 
-                                        onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.show('${dong.idKhachHang}');">                        
-                                        Xác minh
-                                    </div>
-                                `;
-                            }
+                            let xacMinh = APP.features.chuNha.quanLyKhachHang.list.ui.renderXacMinh(dong.idKhachHang);
                             html2 += '<td>' + xacMinh + '</td>';
 
                             html2 += `
@@ -182,6 +127,21 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
         `;
         $('#chuNha_quanLyKhachHang_list_main').innerHTML = html;
         activeButton('sidebar_chuNha_quanLyKhachHang');
+    },
+    renderXacMinh: function(idKhachHang)
+    {
+        let xacMinh = new PVCImage("https://pvcapp.github.io/00148/img/checked.svg", 'auto', '16px', 'margin-right:6px;').render() + 'Đã xác minh';
+        
+        if (APP.features.chuNha.quanLyKhachHang.control.canXacMinh(idKhachHang))
+        {
+            xacMinh = `
+                <div class="button button__selected" style="width: 170px;font-size: 14px;" 
+                    onclick="event.stopPropagation();APP.features.chuNha.quanLyKhachHang.detail.xacMinh.control.show('${idKhachHang}');">                        
+                    Xác minh
+                </div>
+            `;
+        }
+        return xacMinh;
     },
     show: function()
     {
