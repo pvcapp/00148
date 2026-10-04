@@ -90,7 +90,6 @@ APP.features.chuNha.dashboard.list.ui =
                 type: 'numberCard_02'
             };
         });
-        console.log(JSON.stringify(cardContainerData));
         APP.view.ui.addTab('chuNha', 'dashboard', 'list', card_container(cardContainerData));
         activeButton('sidebar_chuNha_dashboard');
     },

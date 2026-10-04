@@ -159,5 +159,8 @@ APP.features.chuNha.dashboard.list.control =
                 APP.features.chuNha.dashboard.data.soPhongTrong.value ++;
             }
         });
+
+        APP.features.chuNha.dashboard.data.soPhongDangThue.loaded = true;
+        APP.features.chuNha.dashboard.data.soPhongTrong.loaded = true;
     }
 };
