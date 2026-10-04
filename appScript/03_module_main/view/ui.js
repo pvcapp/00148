@@ -60,6 +60,12 @@ APP.view.ui =
     showTab: function(vaiTro, module, type)
     {
         const tabId = vaiTro + '_' + module + '_' + type + '_tab';
+        APP.state.manHinhHienTai = 
+        {
+            vaiTro: vaiTro,
+            module: module,
+            type: type
+        }
         const tabs = document.querySelectorAll('#view > .view__tab');
 
         tabs.forEach(function(tab)

@@ -11,6 +11,10 @@ APP.features.chuNha.dashboard.list.control =
     {
         APP.features.chuNha.dashboard.list.control.capNhatDataTuClientCache();
         APP.features.chuNha.dashboard.list.ui.render();
+        if (APP.state.manHinhHienTai == {vaiTro: 'chuNha', module: 'dashboard', type: 'list'})
+        {
+            APP.features.chuNha.dashboard.list.ui.show();
+        }
     },
     syncFromServer: function(tongQuan)
     {
