@@ -11,7 +11,8 @@ APP.features.chuNha.dashboard.list.control =
     {
         APP.features.chuNha.dashboard.list.control.capNhatDataTuClientCache();
         APP.features.chuNha.dashboard.list.ui.render();
-        if (APP.state.manHinhHienTai == {vaiTro: 'chuNha', module: 'dashboard', type: 'list'})
+        const state = APP.state.manHinhHienTai;
+        if (state && state.vaiTro === 'chuNha' && state.module === 'dashboard' && state.type === 'list')
         {
             APP.features.chuNha.dashboard.list.ui.show();
         }
@@ -147,7 +148,7 @@ APP.features.chuNha.dashboard.list.control =
     {
         APP.features.chuNha.dashboard.data.soPhongDangThue.value = 0;
         APP.features.chuNha.dashboard.data.soPhongTrong.value = 0;
-        APP.cache.danhSachPhong.data.forEach(phong => function()
+        APP.cache.danhSachPhong.data.forEach(function(phong)
         {
             if (APP.features.chuNha.quanLyPhong.control.dangChoThue(phong))
             {
