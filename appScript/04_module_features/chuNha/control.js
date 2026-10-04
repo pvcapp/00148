@@ -36,7 +36,7 @@ APP.features.chuNha.control =
                 APP.features.chuNha.quanLyPhong.ui.render();
                 //APP.features.chuNha.quanLyHopDong.startup();
                 APP.features.chuNha.setting.ui.list.render();
-                
+                APP.features.chuNha.dashboard.list.control.rerender();
             })
             .withFailureHandler(function(loi)
             {

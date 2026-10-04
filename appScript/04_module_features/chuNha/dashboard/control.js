@@ -7,6 +7,11 @@ APP.features.chuNha.dashboard.list.control =
         //this.syncFromServer(APP.cache.tongQuan);
         APP.features.chuNha.dashboard.list.ui.init();
     },
+    rerender: function()
+    {
+        APP.features.chuNha.dashboard.list.control.capNhatDataTuClientCache();
+        APP.features.chuNha.dashboard.list.ui.render();
+    },
     syncFromServer: function(tongQuan)
     {
         const rows = Array.isArray(tongQuan)
@@ -132,6 +137,22 @@ APP.features.chuNha.dashboard.list.control =
         }).catch(function(loi)
         {
             console.error('Không thể tải số liệu dashboard:', loi);
+        });
+    },
+    capNhatDataTuClientCache: function()
+    {
+        APP.features.chuNha.dashboard.data.soPhongDangThue = 0;
+        APP.features.chuNha.dashboard.data.soPhongTrong = 0;
+        APP.features.chuNha.danhSachPhong.data.forEach(phong => function()
+        {
+            if (APP.features.chuNha.quanLyPhong.control.dangChoThue(phong))
+            {
+                APP.features.chuNha.dashboard.data.soPhongDangThue ++;
+            }
+            else
+            {
+                APP.features.chuNha.dashboard.data.soPhongTrong ++;
+            }
         });
     }
 };
