@@ -60,7 +60,7 @@ APP.features.chuNha.quanLyPhong.list.ui =
                     }
                 });
 
-                
+                let dangChoThue = APP.features.chuNha.quanLyPhong.control.dangChoThue(dong.idPhong) ? 'Đang cho thuê' : 'Đang trống';
                 dataHtml += `
                     <tr class="${APP.features.chuNha.quanLyPhong.list.style.tableStyle}__row"
                         onclick="APP.features.chuNha.quanLyPhong.form.control.show('edit', '${escapeHtml(dong.idPhong)}')">
@@ -69,15 +69,14 @@ APP.features.chuNha.quanLyPhong.list.ui =
                         <td>${escapeHtml(dong.tang || '')}</td>
                         <td>${escapeHtml(String(dong.dienTich || ''))}</td>
                         <td>${formatMoney(dong.giaNiemYet)}</td>                                   
-                        <td>${escapeHtml(trangThaiArray[dong.trangThai] || '')}</td>
+                        <td>${dangChoThue}</td>
                         <td>
                             <div class="deleteButton imageButton" onclick="event.stopPropagation();APP.features.chuNha.quanLyPhong.form.control.delete('${escapeHtml(dong.idPhong)}')">
                                 ${new PVCImage("https://pvcapp.github.io/00148/img/recycle.svg", 'auto', '16px', 'margin-right:6px;', '0.6').render()}
                             </div>
                         </td>
                     </tr>
-                `;
-                        
+                `;                        
             }
         }
 
