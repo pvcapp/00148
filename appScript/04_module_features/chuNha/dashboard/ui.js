@@ -1,43 +1,39 @@
 APP.features.chuNha.dashboard = APP.features.chuNha.dashboard || {};
 APP.features.chuNha.dashboard.list = APP.features.chuNha.dashboard.list || {};
 
-APP.features.chuNha.dashboard.data =  [
-    {
+APP.features.chuNha.dashboard.data =  
+{
+    tongSoKhuNha: {
         caption: 'Tổng số khu nhà',
-        tenBien: 'tongSoKhuNha',
         value: '0',
         subCaption: 'Tổng số khu/toà nhà quản lý',
         loaded: false
     },
-    {
+    tongSoPhong: {
         caption: 'Tổng số phòng',
-        tenBien: 'tongSoPhong',
         value: '0',
         subCaption: '',
         loaded: false
     },
-    {
+    soPhongDangThue: {
         caption: 'Số phòng đang thuê',
-        tenBien: 'soPhongDangThue',
         value: '0',
         subCaption: '',
         loaded: false
     },
-    {
+    soPhongTrong: {
         caption: 'Số phòng trống',
-        tenBien: 'soPhongTrong',
         value: '0',
         subCaption: '',
         loaded: false
     },
-    {
+    tongSoKhach: {
         caption: 'Tổng số khách',
-        tenBien: 'tongSoKhach',
         value: '0',
         subCaption: 'Tổng số khách đang thuê',
         loaded: false
     }
-];
+};
 
 /* 
 APP.cache.serverCache = {
@@ -68,29 +64,28 @@ APP.features.chuNha.dashboard.list.ui =
         if (!APP.cache.serverCache || Object.keys(APP.cache.serverCache).length === 0) {}
         else
         {
-            for (let i = 0; i < APP.features.chuNha.dashboard.data.length; i++)
+            Object.entries(APP.features.chuNha.dashboard.data).forEach(function([tenBien, item]) 
             {
                 for (let j = 0; j < APP.cache.serverCache.data.length; j++)
                 {
-                    if (APP.features.chuNha.dashboard.data[i].tenBien === APP.cache.serverCache.data[j].tenBien)
+                    if (tenBien === APP.cache.serverCache.data[j].tenBien)
                     {
-                        APP.features.chuNha.dashboard.data[i].value = APP.cache.serverCache.data[j].value;
-                        APP.features.chuNha.dashboard.data[i].loaded = true;
+                        item.value = APP.cache.serverCache.data[j].value;
+                        item.loaded = true;
                         break;
                     }
                 }
-            }
+            });
         }
 
-
-        const cardContainerData = APP.features.chuNha.dashboard.data.map(function(row)
+        const cardContainerData = Object.values(APP.features.chuNha.dashboard.data).map(function(item)
         {
             return {
                 data: {
-                    caption: row.caption,
-                    value: row.value,
-                    subCaption: row.subCaption,
-                    loaded: row.loaded
+                    caption: item.caption,
+                    value: item.value,
+                    subCaption: item.subCaption,
+                    loaded: item.loaded
                 },
                 type: 'numberCard_02'
             };
