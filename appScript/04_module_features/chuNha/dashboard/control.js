@@ -148,7 +148,7 @@ APP.features.chuNha.dashboard.list.control =
     {
         APP.features.chuNha.dashboard.data.soPhongDangThue.value = 0;
         APP.features.chuNha.dashboard.data.soPhongTrong.value = 0;
-        APP.cache.danhSachPhong.data.forEach(function(phong)
+        APP.cache.danhSachPhong.data.forEach(phong => function()
         {
             if (APP.features.chuNha.quanLyPhong.control.dangChoThue(phong))
             {
