@@ -141,17 +141,17 @@ APP.features.chuNha.dashboard.list.control =
     },
     capNhatDataTuClientCache: function()
     {
-        APP.features.chuNha.dashboard.data.soPhongDangThue = 0;
-        APP.features.chuNha.dashboard.data.soPhongTrong = 0;
+        APP.features.chuNha.dashboard.data.soPhongDangThue.value = 0;
+        APP.features.chuNha.dashboard.data.soPhongTrong.value = 0;
         APP.cache.danhSachPhong.data.forEach(phong => function()
         {
             if (APP.features.chuNha.quanLyPhong.control.dangChoThue(phong))
             {
-                APP.features.chuNha.dashboard.data.soPhongDangThue ++;
+                APP.features.chuNha.dashboard.data.soPhongDangThue.value ++;
             }
             else
             {
-                APP.features.chuNha.dashboard.data.soPhongTrong ++;
+                APP.features.chuNha.dashboard.data.soPhongTrong.value ++;
             }
         });
     }
