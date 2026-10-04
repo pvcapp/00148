@@ -150,13 +150,16 @@ APP.features.chuNha.dashboard.list.control =
         APP.features.chuNha.dashboard.data.soPhongTrong.value = 0;
         APP.cache.danhSachPhong.data.forEach(function(phong)
         {
-            if (APP.features.chuNha.quanLyPhong.control.dangChoThue(phong.idPhong))
+            if (String(phong.active) == '1')
             {
-                APP.features.chuNha.dashboard.data.soPhongDangThue.value ++;
-            }
-            else
-            {
-                APP.features.chuNha.dashboard.data.soPhongTrong.value ++;
+                if (APP.features.chuNha.quanLyPhong.control.dangChoThue(phong.idPhong))
+                {
+                    APP.features.chuNha.dashboard.data.soPhongDangThue.value ++;
+                }
+                else
+                {
+                    APP.features.chuNha.dashboard.data.soPhongTrong.value ++;
+                }
             }
         });
 
