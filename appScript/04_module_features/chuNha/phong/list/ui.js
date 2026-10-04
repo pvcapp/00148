@@ -60,7 +60,7 @@ APP.features.chuNha.quanLyPhong.list.ui =
                     }
                 });
 
-                let dangChoThue = APP.features.chuNha.quanLyPhong.control.dangChoThue(dong.idPhong) ? 'Đang cho thuê' : 'Đang trống';
+                let dangChoThue = APP.features.chuNha.quanLyPhong.control.dangChoThue(dong.idPhong) ? '<b>Đang cho thuê</b>' : 'Đang trống';
                 dataHtml += `
                     <tr class="${APP.features.chuNha.quanLyPhong.list.style.tableStyle}__row"
                         onclick="APP.features.chuNha.quanLyPhong.form.control.show('edit', '${escapeHtml(dong.idPhong)}')">

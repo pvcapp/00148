@@ -62,7 +62,7 @@ APP.features.chuNha.quanLyKhachHang.list.ui =
                 d += '<td>' + dong.email + '</td>';
                 d += '<td>' + dong.dienThoai + '</td>';
 
-                let thue = APP.features.chuNha.quanLyKhachHang.control.dangThue(dong.idKhachHang) ? 'Đang thuê' : 'Chưa thuê';             
+                let thue = APP.features.chuNha.quanLyKhachHang.control.dangThue(dong.idKhachHang) ? '<b>Đang thuê</b>' : 'Chưa thuê';             
                 d += '<td>' + thue + '</td>';
                 
                 let xacMinh = APP.features.chuNha.quanLyKhachHang.list.ui.renderXacMinh(dong.idKhachHang);
