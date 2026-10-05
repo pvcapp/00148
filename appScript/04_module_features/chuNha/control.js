@@ -7,7 +7,7 @@ APP.features.chuNha.control =
         APP.features.chuNha.quanLyKhachHang.control.init();
         APP.features.chuNha.quanLyKhuNha.control.init();
         APP.features.chuNha.quanLyPhong.control.init();
-        //hopDong
+        APP.features.chuNha.quanLyHopDong.control.init();
         APP.features.chuNha.setting.control.list.init();
         APP.ui.setManHinh('chuNha', 'dashboard', 'list');
 
@@ -34,7 +34,7 @@ APP.features.chuNha.control =
                 APP.features.chuNha.quanLyKhachHang.ui.render();
                 APP.features.chuNha.quanLyKhuNha.ui.render();
                 APP.features.chuNha.quanLyPhong.ui.render();
-                //APP.features.chuNha.quanLyHopDong.startup();
+                APP.features.chuNha.quanLyHopDong.list.control.render();
                 APP.features.chuNha.setting.ui.list.render();
                 APP.features.chuNha.dashboard.list.control.rerender();
             })
