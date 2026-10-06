@@ -18,7 +18,9 @@ APP.sidebar.ui =
             id: 'sidebar_hamburger', 
             className: 'sidebar__hamburger', 
             parentId: 'header'
-        });        
+        });
+
+        $('#sidebar_hamburger').innerHTML = '☰';
         
         div({
             id: 'sidebar_divChe',
