@@ -19,7 +19,7 @@ APP.sidebar.ui =
             className: 'sidebar__hamburger', 
             parentId: 'header',
             onclick: el => {
-                APP.ui.sidebar.toggle();
+                APP.sidebar.ui.toggle();
             }
         });
 
@@ -30,7 +30,7 @@ APP.sidebar.ui =
             className: 'sidebar__divChe',
             parent: document.body,
             onclick: el => {
-                APP.ui.sidebar.hide();
+                APP.sidebar.ui.hide();
             }
         });
 
