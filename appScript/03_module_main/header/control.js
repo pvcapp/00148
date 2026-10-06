@@ -5,8 +5,9 @@ APP.header.control =
         div({
             id: 'header', 
             className: 'header',
-            text: 'Nhà cho thuê',
             parent: document.body
         });
+
+        $('#header').innerHTML = `<span class="hide-on-mobile">Phòng cho thuê</span>`;
     }
 };
