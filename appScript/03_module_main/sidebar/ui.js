@@ -17,7 +17,10 @@ APP.sidebar.ui =
         div({
             id: 'sidebar_hamburger', 
             className: 'sidebar__hamburger', 
-            parentId: 'header'
+            parentId: 'header',
+            onclick: el => {
+                APP.ui.sidebar.toggle();
+            }
         });
 
         $('#sidebar_hamburger').innerHTML = '☰';
