@@ -42,8 +42,8 @@ APP.features.chuNha.quanLyHopDong.list.ui =
             .hopdong-builder__section-head { padding:14px 16px 10px; border-bottom:1px solid var(--hd-line); }
             .hopdong-builder__section-head h2, .hopdong-builder__dates h2 { margin:0 0 10px; font-size:17px; }
             .hopdong-builder__count { display:block; margin-top:7px; color:var(--hd-muted); font-size:13px; }
-            .hopdong-builder__table-wrap { overflow:auto; max-height:300px; }
-            #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { height:300px; box-sizing:border-box; overflow-y:scroll; overflow-x:hidden; }
+            .hopdong-builder__table-wrap { overflow:auto; max-height:200px; }
+            #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { height:200px; box-sizing:border-box; overflow-y:scroll; overflow-x:hidden; }
             .hopdong-builder__table-wrap { max-height:none; overflow-x:auto; overflow-y:visible; }
             .hopdong-builder__table { width:100%; border-collapse:collapse; text-align:left; }
             .hopdong-builder__table th, .hopdong-builder__table td { padding:10px 12px; border-bottom:1px solid #e8edeb; vertical-align:top; }
