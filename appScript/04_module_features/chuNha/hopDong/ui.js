@@ -18,7 +18,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
     {
         const tabHeader = document.createElement('div');
         tabHeader.className = 'tab__header';
-        tabHeader.innerHTML = '<span class="card__caption">Ghép khách hàng và phòng thuê</span>';
+        tabHeader.innerHTML = '<span class="card__caption">Cho thuê phòng</span>';
         APP.view.ui.addTab('chuNha', 'quanLyHopDong', 'list', tabHeader);
 
         const main = document.createElement('div');
@@ -167,7 +167,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
     {
         return `
             <div class="hopdong-builder">
-                <div class="hopdong-builder__intro"><p>Chọn khách hàng và phòng để xem thông tin ghép thuê.</p></div>
+                
                 <div class="hopdong-builder__columns">
                     <section class="hopdong-builder__section" aria-labelledby="chuNha_hopDong_customer_heading">
                         <div class="hopdong-builder__section-head">
