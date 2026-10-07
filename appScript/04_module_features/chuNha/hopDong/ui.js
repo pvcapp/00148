@@ -171,8 +171,10 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                 <div class="hopdong-builder__columns">
                     <section class="hopdong-builder__section" aria-labelledby="chuNha_hopDong_customer_heading">
                         <div class="hopdong-builder__section-head">
-                            <h2 id="chuNha_hopDong_customer_heading">Khách hàng</h2>
-                            <input class="hopdong-builder__search" id="chuNha_hopDong_customer_search" type="search" autocomplete="off" placeholder="Họ tên, CCCD hoặc số điện thoại" aria-label="Tìm khách hàng">
+                            <div style="display: flex; flex-direction: row;">
+                                <div class="card__caption">Khách hàng </div>
+                                <input class="hopdong-builder__search" id="chuNha_hopDong_customer_search" type="search" autocomplete="off" placeholder="Họ tên, CCCD hoặc số điện thoại" aria-label="Tìm khách hàng">
+                            </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_customer_count"></span>
                         </div>
                         <div id="chuNha_hopDong_customer_list"></div>
@@ -180,8 +182,10 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                     </section>
                     <section class="hopdong-builder__section" aria-labelledby="chuNha_hopDong_room_heading">
                         <div class="hopdong-builder__section-head">
-                            <h2 id="chuNha_hopDong_room_heading">Phòng thuê</h2>
-                            <input class="hopdong-builder__search" id="chuNha_hopDong_room_search" type="search" autocomplete="off" placeholder="Tìm theo tên phòng" aria-label="Tìm phòng">
+                            <div style="display: flex; flex-direction: row;">
+                                <div class="card__caption">Phòng thuê</div>
+                                <input class="hopdong-builder__search" id="chuNha_hopDong_room_search" type="search" autocomplete="off" placeholder="Tìm theo tên phòng" aria-label="Tìm phòng">
+                            </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_room_count"></span>
                         </div>
                         <div id="chuNha_hopDong_room_list"></div>
