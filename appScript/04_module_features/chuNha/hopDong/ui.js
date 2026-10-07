@@ -345,7 +345,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
 };APP.features.chuNha.quanLyHopDong = APP.features.chuNha.quanLyHopDong || {};
 APP.features.chuNha.quanLyHopDong.list = APP.features.chuNha.quanLyHopDong.list || {};
 //STT, Khu nhà, phòng, khách thuê/chưa thuê
-APP.features.chuNha.quanLyHopDong.list.ui =
+APP.features.chuNha.quanLyHopDong.list.uiLegacy =
 {
     expandedIndex: -1,
     fields: [
