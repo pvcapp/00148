@@ -6,6 +6,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
     selectedRoomId: '',
     customerSearch: '',
     roomSearch: '',
+    outsideClickHandlerInstalled: false,
     fields: [
         ['idHopDong', 'Mã hợp đồng'],
         ['khachHang_hoVaTen', 'Khách thuê'],
@@ -38,13 +39,14 @@ APP.features.chuNha.quanLyHopDong.list.ui =
             .hopdong-builder__intro { display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0 0 14px; }
             .hopdong-builder__intro p { margin:0; color:var(--hd-muted); }
             .hopdong-builder__columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; align-items:start; }
-            .hopdong-builder__section { min-width:0; border:1px solid var(--hd-line); border-radius:6px; background:#fff; overflow:hidden; }
+            .hopdong-builder__section { position:relative; min-width:0; border:1px solid var(--hd-line); border-radius:6px; background:#fff; overflow:visible; }
             .hopdong-builder__section-head { padding:14px 16px 10px; border-bottom:1px solid var(--hd-line); }
+            .hopdong-builder__picker { position:relative; flex:1; min-width:0; }
+            .hopdong-builder__picker input { width:100%; box-sizing:border-box; }
             .hopdong-builder__section-head h2, .hopdong-builder__dates h2 { margin:0 0 10px; font-size:17px; }
             .hopdong-builder__count { display:block; margin-top:7px; color:var(--hd-muted); font-size:13px; }
-            .hopdong-builder__table-wrap { overflow:auto; max-height:200px; }
-            #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { height:200px; box-sizing:border-box; overflow-y:scroll; overflow-x:hidden; }
-            .hopdong-builder__table-wrap { max-height:none; overflow-x:auto; overflow-y:visible; }
+            #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { position:absolute; z-index:5; top:calc(100% + 6px); left:0; width:100%; max-height:240px; box-sizing:border-box; overflow:auto; border:1px solid var(--hd-line); border-radius:4px; background:#fff; box-shadow:0 5px 14px #1c2b2526; }
+            .hopdong-builder__table-wrap { overflow:visible; }
             .hopdong-builder__table { width:100%; border-collapse:collapse; text-align:left; }
             .hopdong-builder__table th, .hopdong-builder__table td { padding:10px 12px; border-bottom:1px solid #e8edeb; vertical-align:top; }
             .hopdong-builder__table th { position:sticky; top:0; background:#f4f7f5; font-size:12px; color:var(--hd-muted); }
@@ -67,7 +69,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
             .hopdong-builder__validation { min-height:20px; margin:10px 0 0; color:#a1372d; font-size:13px; }
             @media (max-width:760px) {
                 .hopdong-builder__columns { grid-template-columns:1fr; gap:12px; }
-                #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { height:300px; }
+                #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { max-height:300px; }
                 .hopdong-builder__facts { grid-template-columns:1fr; }
                 .hopdong-builder__date-fields { grid-template-columns:1fr; }
                 .hopdong-builder__intro { align-items:flex-start; flex-direction:column; }
@@ -171,22 +173,26 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                         <div class="hopdong-builder__section-head">
                             <div style="display:flex; flex-direction:row; align-items:center;">
                                 <div class="card__caption" style="width:128px;">Khách hàng </div>
-                                <input class="inputBox" id="chuNha_hopDong_customer_search" type="search" autocomplete="off" placeholder="Họ tên, CCCD hoặc số điện thoại" aria-label="Tìm khách hàng">
+                                <div class="hopdong-builder__picker">
+                                    <input class="inputBox" id="chuNha_hopDong_customer_search" type="search" autocomplete="off" placeholder="Họ tên, CCCD hoặc số điện thoại" aria-label="Tìm khách hàng" aria-expanded="false" aria-controls="chuNha_hopDong_customer_list">
+                                    <div id="chuNha_hopDong_customer_list" hidden></div>
+                                </div>
                             </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_customer_count"></span>
                         </div>
-                        <div id="chuNha_hopDong_customer_list"></div>
                         <div class="hopdong-builder__detail" id="chuNha_hopDong_customer_detail" hidden></div>
                     </section>
                     <section class="hopdong-builder__section" aria-labelledby="chuNha_hopDong_room_heading">
                         <div class="hopdong-builder__section-head">
                             <div style="display:flex; flex-direction:row; align-items:center;">
                                 <div class="card__caption" style="width:128px;">Phòng thuê</div>
-                                <input class="inputBox" id="chuNha_hopDong_room_search" type="search" autocomplete="off" placeholder="Tìm theo tên phòng" aria-label="Tìm phòng">
+                                <div class="hopdong-builder__picker">
+                                    <input class="inputBox" id="chuNha_hopDong_room_search" type="search" autocomplete="off" placeholder="Tìm theo tên phòng" aria-label="Tìm phòng" aria-expanded="false" aria-controls="chuNha_hopDong_room_list">
+                                    <div id="chuNha_hopDong_room_list" hidden></div>
+                                </div>
                             </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_room_count"></span>
                         </div>
-                        <div id="chuNha_hopDong_room_list"></div>
                         <div class="hopdong-builder__detail" id="chuNha_hopDong_room_detail" hidden></div>
                     </section>
                 </div>
@@ -207,16 +213,32 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         main.innerHTML = this.initMarkup();
         $('#chuNha_hopDong_customer_search').value = this.customerSearch;
         $('#chuNha_hopDong_room_search').value = this.roomSearch;
+        const customerSearch = $('#chuNha_hopDong_customer_search');
+        const roomSearch = $('#chuNha_hopDong_room_search');
+        customerSearch.addEventListener('focus', () => this.showPicker('customer'));
+        customerSearch.addEventListener('click', () => this.showPicker('customer'));
+        roomSearch.addEventListener('focus', () => this.showPicker('room'));
+        roomSearch.addEventListener('click', () => this.showPicker('room'));
         $('#chuNha_hopDong_customer_search').addEventListener('input', () =>
         {
             this.customerSearch = $('#chuNha_hopDong_customer_search').value;
+            this.showPicker('customer');
             this.renderCustomerRows();
         });
         $('#chuNha_hopDong_room_search').addEventListener('input', () =>
         {
             this.roomSearch = $('#chuNha_hopDong_room_search').value;
+            this.showPicker('room');
             this.renderRoomRows();
         });
+        if (!this.outsideClickHandlerInstalled)
+        {
+            document.addEventListener('click', (event) =>
+            {
+                if (!event.target.closest('.hopdong-builder__picker')) this.closePickers();
+            });
+            this.outsideClickHandlerInstalled = true;
+        }
         $('#chuNha_hopDong_customer_list').addEventListener('click', (event) =>
         {
             const button = event.target.closest('[data-customer-id]');
@@ -233,6 +255,29 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         this.renderRoomRows();
         this.renderCustomerDetail();
         this.renderRoomDetail();
+    },
+    showPicker: function(type)
+    {
+        const customerList = $('#chuNha_hopDong_customer_list');
+        const roomList = $('#chuNha_hopDong_room_list');
+        const customerSearch = $('#chuNha_hopDong_customer_search');
+        const roomSearch = $('#chuNha_hopDong_room_search');
+        if (!customerList || !roomList || !customerSearch || !roomSearch) return;
+        customerList.hidden = type !== 'customer' || Boolean(this.selectedCustomerId);
+        roomList.hidden = type !== 'room' || Boolean(this.selectedRoomId);
+        customerSearch.setAttribute('aria-expanded', String(!customerList.hidden));
+        roomSearch.setAttribute('aria-expanded', String(!roomList.hidden));
+    },
+    closePickers: function()
+    {
+        const customerList = $('#chuNha_hopDong_customer_list');
+        const roomList = $('#chuNha_hopDong_room_list');
+        const customerSearch = $('#chuNha_hopDong_customer_search');
+        const roomSearch = $('#chuNha_hopDong_room_search');
+        if (customerList) customerList.hidden = true;
+        if (roomList) roomList.hidden = true;
+        if (customerSearch) customerSearch.setAttribute('aria-expanded', 'false');
+        if (roomSearch) roomSearch.setAttribute('aria-expanded', 'false');
     },
     renderCustomerRows: function()
     {
@@ -324,11 +369,13 @@ APP.features.chuNha.quanLyHopDong.list.ui =
     selectCustomer: function(id)
     {
         this.selectedCustomerId = String(id);
+        this.closePickers();
         this.renderCustomerDetail();
     },
     selectRoom: function(id)
     {
         this.selectedRoomId = String(id);
+        this.closePickers();
         this.renderRoomDetail();
     },
     validateDates: function()
