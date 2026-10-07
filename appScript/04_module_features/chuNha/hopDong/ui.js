@@ -44,6 +44,8 @@ APP.features.chuNha.quanLyHopDong.list.ui =
             .hopdong-builder__search { width:100%; min-height:40px; box-sizing:border-box; border:1px solid #aebbb5; border-radius:4px; padding:8px 10px; font:inherit; }
             .hopdong-builder__count { display:block; margin-top:7px; color:var(--hd-muted); font-size:13px; }
             .hopdong-builder__table-wrap { overflow:auto; max-height:390px; }
+            #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { height:390px; box-sizing:border-box; overflow-y:scroll; overflow-x:hidden; }
+            .hopdong-builder__table-wrap { max-height:none; overflow-x:auto; overflow-y:visible; }
             .hopdong-builder__table { width:100%; border-collapse:collapse; text-align:left; }
             .hopdong-builder__table th, .hopdong-builder__table td { padding:10px 12px; border-bottom:1px solid #e8edeb; vertical-align:top; }
             .hopdong-builder__table th { position:sticky; top:0; background:#f4f7f5; font-size:12px; color:var(--hd-muted); }
@@ -67,7 +69,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
             .hopdong-builder__validation { min-height:20px; margin:10px 0 0; color:#a1372d; font-size:13px; }
             @media (max-width:760px) {
                 .hopdong-builder__columns { grid-template-columns:1fr; gap:12px; }
-                .hopdong-builder__table-wrap { max-height:300px; }
+                #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { height:300px; }
                 .hopdong-builder__facts { grid-template-columns:1fr; }
                 .hopdong-builder__date-fields { grid-template-columns:1fr; }
                 .hopdong-builder__intro { align-items:flex-start; flex-direction:column; }
