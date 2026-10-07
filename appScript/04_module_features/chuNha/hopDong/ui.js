@@ -203,6 +203,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                         <div><label for="chuNha_hopDong_end_date">Ngày kết thúc</label><input id="chuNha_hopDong_end_date" type="date"></div>
                     </div>
                     <p class="hopdong-builder__validation" id="chuNha_hopDong_date_validation" aria-live="polite"></p>
+                    <button class="button_01" id="chuNha_hopDong_save" type="button">Lưu hợp đồng</button>
                 </section>
             </div>`;
     },
@@ -251,6 +252,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         });
         $('#chuNha_hopDong_start_date').addEventListener('change', () => this.validateDates());
         $('#chuNha_hopDong_end_date').addEventListener('change', () => this.validateDates());
+        $('#chuNha_hopDong_save').addEventListener('click', () => this.saveContract());
         this.renderCustomerRows();
         this.renderRoomRows();
         this.renderCustomerDetail();
@@ -386,6 +388,79 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         $('#chuNha_hopDong_date_validation').textContent = message;
         $('#chuNha_hopDong_end_date').setCustomValidity(message);
         return !message;
+    },
+    saveContract: async function()
+    {
+        const startDate = $('#chuNha_hopDong_start_date').value;
+        const endDate = $('#chuNha_hopDong_end_date').value;
+        const validation = $('#chuNha_hopDong_date_validation');
+        const saveButton = $('#chuNha_hopDong_save');
+        if (!this.selectedCustomerId)
+        {
+            validation.textContent = 'Vui lòng chọn khách hàng.';
+            return;
+        }
+        if (!this.selectedRoomId)
+        {
+            validation.textContent = 'Vui lòng chọn phòng.';
+            return;
+        }
+        if (!startDate)
+        {
+            validation.textContent = 'Vui lòng chọn ngày bắt đầu thuê.';
+            return;
+        }
+        if (!this.validateDates()) return;
+
+        const getDateParts = (date) =>
+        {
+            const [year = '', month = '', day = ''] = date ? date.split('-') : [];
+            return {ngay: day, thang: month, nam: year};
+        };
+        const now = new Date();
+        const createdDate = {
+            ngay: String(now.getDate()).padStart(2, '0'),
+            thang: String(now.getMonth() + 1).padStart(2, '0'),
+            nam: String(now.getFullYear())
+        };
+        const start = getDateParts(startDate);
+        const end = getDateParts(endDate);
+        const data = {
+            khachHang_idKhachHang: this.selectedCustomerId,
+            phong_idPhong: this.selectedRoomId,
+            ngayLap: createdDate.ngay,
+            thangLap: createdDate.thang,
+            namLap: createdDate.nam,
+            ngayBatDau: start.ngay,
+            thangBatDau: start.thang,
+            namBatDau: start.nam,
+            ngayKetThuc: end.ngay,
+            thangKetThuc: end.thang,
+            namKetThuc: end.nam
+        };
+
+        saveButton.disabled = true;
+        validation.textContent = '';
+        try
+        {
+            await APP.features.chuNha.quanLyHopDong.api.create(data);
+            this.selectedCustomerId = '';
+            this.selectedRoomId = '';
+            $('#chuNha_hopDong_start_date').value = '';
+            $('#chuNha_hopDong_end_date').value = '';
+            this.renderCustomerDetail();
+            this.renderRoomDetail();
+            toast('Đã lưu hợp đồng.');
+            APP.features.chuNha.control.getData();
+        }
+        catch (error)
+        {
+            validation.textContent = error && error.message ? error.message : 'Không thể lưu hợp đồng.';
+        }
+        finally
+        {
+            saveButton.disabled = false;
+        }
     },
     show: function()
     {
