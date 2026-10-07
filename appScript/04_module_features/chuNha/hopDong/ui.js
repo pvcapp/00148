@@ -171,7 +171,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                     <section class="hopdong-builder__section" aria-labelledby="chuNha_hopDong_customer_heading">
                         <div class="hopdong-builder__section-head">
                             <div style="display: flex; flex-direction: row;">
-                                <div class="card__caption" style="width:100px;">Khách hàng </div>
+                                <div class="card__caption" style="width:128px;">Khách hàng </div>
                                 <input class="inputBox" id="chuNha_hopDong_customer_search" type="search" autocomplete="off" placeholder="Họ tên, CCCD hoặc số điện thoại" aria-label="Tìm khách hàng">
                             </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_customer_count"></span>
@@ -182,7 +182,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                     <section class="hopdong-builder__section" aria-labelledby="chuNha_hopDong_room_heading">
                         <div class="hopdong-builder__section-head">
                             <div style="display: flex; flex-direction: row;">
-                                <div class="card__caption" style="width:100px;">Phòng thuê</div>
+                                <div class="card__caption" style="width:128px;">Phòng thuê</div>
                                 <input class="inputBox" id="chuNha_hopDong_room_search" type="search" autocomplete="off" placeholder="Tìm theo tên phòng" aria-label="Tìm phòng">
                             </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_room_count"></span>
