@@ -41,7 +41,6 @@ APP.features.chuNha.quanLyHopDong.list.ui =
             .hopdong-builder__section { min-width:0; border:1px solid var(--hd-line); border-radius:6px; background:#fff; overflow:hidden; }
             .hopdong-builder__section-head { padding:14px 16px 10px; border-bottom:1px solid var(--hd-line); }
             .hopdong-builder__section-head h2, .hopdong-builder__dates h2 { margin:0 0 10px; font-size:17px; }
-            .hopdong-builder__search { width:100%; min-height:40px; box-sizing:border-box; border:1px solid #aebbb5; border-radius:4px; padding:8px 10px; font:inherit; }
             .hopdong-builder__count { display:block; margin-top:7px; color:var(--hd-muted); font-size:13px; }
             .hopdong-builder__table-wrap { overflow:auto; max-height:300px; }
             #chuNha_hopDong_customer_list, #chuNha_hopDong_room_list { height:300px; box-sizing:border-box; overflow-y:scroll; overflow-x:hidden; }
@@ -173,7 +172,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                         <div class="hopdong-builder__section-head">
                             <div style="display: flex; flex-direction: row;">
                                 <div class="card__caption">Khách hàng </div>
-                                <input class="hopdong-builder__search" id="chuNha_hopDong_customer_search" type="search" autocomplete="off" placeholder="Họ tên, CCCD hoặc số điện thoại" aria-label="Tìm khách hàng">
+                                <input class="inputBox" id="chuNha_hopDong_customer_search" type="search" autocomplete="off" placeholder="Họ tên, CCCD hoặc số điện thoại" aria-label="Tìm khách hàng">
                             </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_customer_count"></span>
                         </div>
@@ -184,7 +183,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
                         <div class="hopdong-builder__section-head">
                             <div style="display: flex; flex-direction: row;">
                                 <div class="card__caption">Phòng thuê</div>
-                                <input class="hopdong-builder__search" id="chuNha_hopDong_room_search" type="search" autocomplete="off" placeholder="Tìm theo tên phòng" aria-label="Tìm phòng">
+                                <input class="inputBox" id="chuNha_hopDong_room_search" type="search" autocomplete="off" placeholder="Tìm theo tên phòng" aria-label="Tìm phòng">
                             </div>
                             <span class="hopdong-builder__count" id="chuNha_hopDong_room_count"></span>
                         </div>
