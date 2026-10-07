@@ -238,7 +238,6 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         $('#chuNha_hopDong_customer_count').textContent = `${customers.length} khách hàng`;
         $('#chuNha_hopDong_customer_list').innerHTML = customers.length ? `
             <div class="hopdong-builder__table-wrap"><table class="hopdong-builder__table">
-                <thead><tr><th>Khách hàng</th><th>Trạng thái thuê</th></tr></thead>
                 <tbody>${customers.map((customer) => `
                     <tr><td><button class="hopdong-builder__pick" type="button" data-customer-id="${escapeHtml(customer.idKhachHang)}">
                         <strong>${escapeHtml(customer.hoVaTen || '')}</strong>
@@ -253,7 +252,6 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         $('#chuNha_hopDong_room_count').textContent = `${rooms.length} phòng`;
         $('#chuNha_hopDong_room_list').innerHTML = rooms.length ? `
             <div class="hopdong-builder__table-wrap"><table class="hopdong-builder__table">
-                <thead><tr><th>Phòng</th><th>Khu nhà</th><th>Trạng thái thuê</th></tr></thead>
                 <tbody>${rooms.map((room) => `
                     <tr><td><button class="hopdong-builder__pick" type="button" data-room-id="${escapeHtml(room.idPhong)}"><strong>${escapeHtml(room.tenPhong || '')}</strong></button></td>
                     <td>${escapeHtml(this.getNeighborhoodName(room.idKhuNha))}</td>
