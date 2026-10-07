@@ -56,7 +56,6 @@ APP.features.chuNha.quanLyHopDong.list.ui =
             .hopdong-builder__detail { padding:16px; }
             .hopdong-builder__detail-top { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
             .hopdong-builder__detail-top h3 { margin:0; font-size:18px; }
-            .hopdong-builder__change { border:1px solid var(--hd-line); border-radius:4px; padding:7px 10px; background:#fff; color:var(--hd-ink); font:inherit; cursor:pointer; }
             .hopdong-builder__facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 18px; margin:0; }
             .hopdong-builder__facts div { padding:9px 0; border-top:1px solid #e8edeb; min-width:0; }
             .hopdong-builder__facts dt { color:var(--hd-muted); font-size:12px; }
@@ -280,7 +279,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         detail.hidden = !customer;
         if (!customer) return;
         detail.innerHTML = `
-            <div class="hopdong-builder__detail-top"><h3>${escapeHtml(customer.hoVaTen || 'Khách hàng')}</h3><button class="hopdong-builder__change" type="button" data-change-customer>Đổi khách</button></div>
+            <div class="hopdong-builder__detail-top"><h3>${escapeHtml(customer.hoVaTen || 'Khách hàng')}</h3><button class="button_01" type="button" data-change-customer>Đổi khách</button></div>
             ${this.renderFacts([
                 ['Số điện thoại', customer.dienThoai],
                 ['Số CCCD', customer.soCCCD],
@@ -307,7 +306,7 @@ APP.features.chuNha.quanLyHopDong.list.ui =
         const settings = this.getSettings();
         const rate = (index) => settings[index] && settings[index].giaTri !== '' ? formatMoney(settings[index].giaTri) : 'Chưa cài đặt';
         detail.innerHTML = `
-            <div class="hopdong-builder__detail-top"><h3>${escapeHtml(room.tenPhong || 'Phòng')}</h3><button class="hopdong-builder__change" type="button" data-change-room>Đổi phòng</button></div>
+            <div class="hopdong-builder__detail-top"><h3>${escapeHtml(room.tenPhong || 'Phòng')}</h3><button class="button_01" type="button" data-change-room>Đổi phòng</button></div>
             ${this.renderFacts([
                 ['Khu nhà', this.getNeighborhoodName(room.idKhuNha)],
                 ['Tên phòng', room.tenPhong],
